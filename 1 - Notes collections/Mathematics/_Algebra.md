@@ -1,0 +1,30 @@
+This is a tag related to algebra.
+# Vectors
+1. [[Vector]]
+2. [[Vector space]]
+3. [[Direction of a vector]]
+4. [[Distance between vectors]]
+5. [[Eigenvectors]]
+6. [[Vectors - Geometric intuition]]
+	1. [[Vectors visualization]]
+	2. [[Sparsely and densely distributed vectors - Visualization]]
+	3. [[Distance between vectors - visualization]]
+	4. [[Multiplying vectors by a scalar - Visualization]]
+	5. [[Multiple vectors groups - Visualization]]
+# matrices
+1. [[Matrix]]
+2. [[Matrix as a linear transformation]]
+3. [[Concatenating matrices]]
+4. [[Elementwise matrix multiplication]]
+5. [[Diagonal matrix]]
+6. [[Identity matrix]]
+7. [[Multiplication of matrices]]
+8. [[Vectorization of a matrix]]
+	1. [[Vectorization properties]]:
+		1. [[Matrix vectorization identity]]
+9. [[Kronecker product]]
+	1. [[Kronecker product - Properties]]
+		1. [[Transposed Kronecker product]]
+		2. [[Matrix vectorization identity]]
+# Other notes
+1. [[Tensor]]
