@@ -16,22 +16,24 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 10. [[Kubernetes - Node]]
 11. [[Kubernetes - Operators]]
 12. [[Kubernetes - Pod]]
-13. [[Kubernetes - podTemplateFile]]
-14. [[Kubernetes - Resources]]
+	1. [[Kubernetes - Pod metadata]]
+13. [[Kubernetes - Resources]]
 	1. [[Kubernetes - Manifest]]
 	2. [[Kubernetes - CRD]]
-15. [[Kubernetes - Replicas]]
-16. [[Kubernetes - Service Account]]
-17. [[Kubernetes - StatefulSet]]
-18. [[Kubernetes - Secret]]
-19. [[Kubernetes - Taints]]
-20. [[Kubernetes - Volumes and volumeMounts]]
-21. [[Kubernetes - Webhooks]]
-22. [[Kubernetes - Gang scheduling]]
+		1. [[Kubernetes - podTemplateFile]]
+14. [[Kubernetes - Replicas]]
+15. [[Kubernetes - Service Account]]
+16. [[Kubernetes - StatefulSet]]
+17. [[Kubernetes - Secret]]
+18. [[Kubernetes - Taints]]
+19. [[Kubernetes - Volumes and volumeMounts]]
+20. [[Kubernetes - Webhooks]]
+21. [[Kubernetes - Gang scheduling]]
 ## Details
 1. [[Kubernetes - Containerd]]
 2. [[Kubernetes - Kubeconfig file]]
 3. [[Kubernetes - Kube context]]
+4. [[Kubernetes - CRI (Container Runtime Interface)]]
 # Networking
 1. [[Kubernetes - Networking]]
 2. [[Kubernetes - CNI]]
@@ -45,4 +47,4 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 # Debugging
 5. [[Kubernetes - Debugging]]
 # To learn
-1. MPI
+1. 

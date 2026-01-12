@@ -23,7 +23,7 @@ Ray Train advantages
 # Performance
 When we want to run a code, Ray needs to:
 - Start on a node an actor ([[Ray Core - Actors|link]]) (Python worker process which will perform computations) and reserve for it CPUs / GPUs
-- Save / read data in object store ([[Ray - Plasma object store|link]])
+- Save / read data in object store ([[Ray - Plasma object storage|link]])
 - Use serialization ([[Ray - Serialization|link]])
 All of that takes time. 
 

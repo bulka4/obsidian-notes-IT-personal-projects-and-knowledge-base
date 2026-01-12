@@ -5,6 +5,6 @@ When we call actor’s method using the .remote() method, then that actor’s m
 
 That means, that it doesn’t return a result immediately, it runs in a background and it doesn’t block our Python code. After running .remote() method, our Python code goes immediately to the next line of code.
 
-In order to get the actual result of the actor’s method we called used using .remote(), we need to use the ray.get() function, like in the example above.
+In order to get the actual result of the actor’s method we called used using .remote(), we need to use the ray.get() function.
 
 #MLEngineering 

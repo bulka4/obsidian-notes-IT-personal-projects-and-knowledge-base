@@ -7,7 +7,7 @@ In this document we are describing and comparing different tools for building Re
 **Introduction:**
 Ray is a tool for distributed code execution. We can send to Ray code to execute and Ray will choose a node (a computer) from a cluster (set of computers) which has enough resources (CPU, RAM) and will execute this code.
 
-It is not able to distribute a single process across multiple nodes (like a single ML model prediciton).
+It is not able to distribute a single process across multiple nodes (like a single ML model prediction).
 
 Using Ray Serve we define a deployment which represents our app, and that deployment is used to generate multiple replicas of our app, running concurrently and handling requests:
 ```python
@@ -28,7 +28,7 @@ class MyApp:
 ```
 
 **Pros:**
-- Requests distribution
+- Load balancing
 	- When Rest API server receives multiple requests, Ray Serve can distribute those requests across multiple servers
 - Request’s tasks distribution
 	- When a single Rest API call consists of multiple tasks, Ray Serve can distribute those tasks across multiple servers and run them in parallel.
@@ -41,7 +41,7 @@ class MyApp:
 	- For example it can take data from multiple requests and run a single process where ML model makes predictions using it.
 	- This is more efficient when making predictions using GPUs.
 - Autoscaling
-	- Ray Serve can automaticall increase or decrease number of replicas of our app depending on a traffic (number of requests coming in).
+	- Ray Serve can automatically increase or decrease number of replicas of our app depending on a traffic (number of requests coming in).
 - Source aware scheduling
 	- Ray knows which resources (CPU, GPU) have enough capacity to handle given request and routes that request to the replica (worker process) which has enough resources to handle that request.
 - Fractional GPUs
@@ -55,12 +55,13 @@ class MyApp:
 - Python native and flexible
 	- We can easily deploy any Python code along with the model.
 	- Good when we want to serve as Rest API multi step, complex code.
+
+**Cons:**
+- Ray Serve makes it easier to create an efficient distributed Rest API by abstracting away from us a lot of difficulties in setting it up but that abstraction makes debugging harder. It is harder to find out what is happening and why.
 ## KServe
 **Introduction:**
 KServe is good for creating Rest APIs on Kubernetes which:
-
 - Serves a single ML model prediction
-
 - Chains multiple ML models in such a way, that output of one model is used as an input for another model.
 
 But it is not good if we want to create more complex workflows, for example:

@@ -13,9 +13,10 @@ This is a tag related to a computer hardware. What elements a computer consists 
 	2. [[GPU shared memory banks]]
 4. [[GPU SMs (Streaming Multiprocessors)]]
 5. [[GPU Warps]]
-6. [[NVIDIA GPU Cuda Cores]]
-7. [[NVIDIA GPU Tensor Cores]]
-8. 
+## NVIDIA
+1. [[NVIDIA GPU Cuda Cores]]
+2. [[NVIDIA GPU Tensor Cores]]
+3. 
 # Memory
 1. [[Memory addresses]]
 2. [[Memory fragmentation and reallocation]]

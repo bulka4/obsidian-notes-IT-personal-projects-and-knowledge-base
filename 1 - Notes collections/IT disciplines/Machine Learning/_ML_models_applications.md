@@ -1,4 +1,4 @@
-This is a collection of documents related to applications of machine learning models.
+This is a collection of documents related to applications of machine learning models. It focuses on mathematical theory.
 
 # Introduction
 1. [[Applications of ML models - overview]]
@@ -31,4 +31,5 @@ This is a collection of documents related to applications of machine learning mo
 		1. [[Token generation - Speculative Decoding]]
 		2. [[Token generation - Beam Search]]
 		3. [[Token generation - Parallel Sampling]]
+		4. [[Token generation - Context window]]
 2. [[Semantic search]]

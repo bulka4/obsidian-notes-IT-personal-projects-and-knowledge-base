@@ -1,4 +1,8 @@
 This is a tag about Data Engineering.
+
+# Data Engineering tasks and problems
+1. [[Data ingestion]]
+2. [[Schema validation]]
 # Airflow
 [[_Airflow]]
 # dbt

@@ -15,7 +15,6 @@ This is a collection of documents about my projects.
 	- [[Rag app project - Helm charts]]
 	- [[Rag app project - Terraform]]
 - [[RAG app project - Next steps and plan]]
-	- [[DeepSpeed on K8s with MPI - Guide from ChatGPT]]
 	- [[DeepSpeed - Kubernetes deployment with Ray Serve]]
 # Ideas
 1. [[Apka do medycyny]]

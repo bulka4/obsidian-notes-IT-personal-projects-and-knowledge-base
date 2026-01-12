@@ -2,11 +2,17 @@ Tags: [[_Ray]], [[__Machine_Learning_Engineering]]
 #Ray #MLEngineering 
 
 # Introduction
-`Trainer` is a high-level interface in Ray Train that orchestrates distributed training. It handles:
+Ray Train API is a high-level interface in Ray Train that orchestrates distributed training. It handles:
 - Launching multiple workers (processes / actors ([[Ray Core - Actors|link]]))
 - Splitting data across workers
 - Aggregating gradients and synchronizing model parameters
 - Checkpointing and logging
+
+Ray Train API performs batch jobs, that is:
+- Loads a model
+- Performs predictions (one or many, but fixed amount)
+
+It is not designed to run a service which listens to requests and performs predictions for every request.
 # Components
 ## Training function
 A function that:
@@ -29,6 +35,8 @@ trainer = Trainer(
 The backed which we choose here (PyTorch, TensorFlow etc.) will be responsible for distributed calculations, i.e. splitting data, aggregating gradients and synchronizing parameters.
 
 If our training function is called train_loop_per_worker, then it will be used by default.
+
+For example, in case of PyTorch, that function will handle creating a Torch Distributed process group ([[Torch Distributed process group|link]]).
 ## ScalingConfig
 Defines resources per worker: CPUs, GPUs, etc. 
 

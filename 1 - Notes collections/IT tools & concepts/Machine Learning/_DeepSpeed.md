@@ -1,7 +1,5 @@
 This is a collection of notes related to DeepSpeed, an IT tool for distributed ML model computing (training and inference).
 
-# Others
-1. [[DeepSpeed on K8s with MPI - Guide from ChatGPT]]
 # Setup
 1. [[DeepSpeed - Setup]]
 # Kubernetes deployment
@@ -48,6 +46,15 @@ This is a collection of notes related to DeepSpeed, an IT tool for distributed M
 1. [[DeepSpeed - Training stability tools]]
 	1. [[DeepSpeed - Numerical stability]]
 	2. [[DeepSpeed - Distributed-training stability]]
+# How to use it
+## Writing code
+1. [[DeepSpeed - Running a script (deepspeed command)]]
+2. [[DeepSpeed - Initializing a model]]
+## Preparing nodes
+1. [[DeepSpeed - Running other apps on the same nodes]]
+# Computer hardware
+When learning about DeepSpeed, it is also good to learn about hardware (especially GPUs):
+1. [[_Computer_hardware]]
+2. [[_Hardware_abstraction]]
 # Concepts to learn
-1. [[DeepSpeed - Kubernetes deployment with MPI Operator (MPIJob CRD)]]
-2. 
+1. 

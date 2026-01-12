@@ -1,4 +1,5 @@
 Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]]
+#Cloud #DevOps #DistributedComputing #DataEngineering 
 
 # Introduction
 It is a resource which is the smallest unit in Kubernetes. It is an abstraction of a container. Inside of a Pod we have a container running with app, and that Pod is running on one of the nodes.
@@ -30,5 +31,3 @@ Readiness probe:
 
 We define Liveness and Readiness in a containers specification of a Pod:
 ![[2 - Images/Kubernetes - Details/Screenshot 1.png]]
-
-#Cloud #DevOps #DistributedComputing #DataEngineering 
