@@ -1,12 +1,17 @@
 Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]]
 
 # Introduction
+In Kubernetes we create a cluster consisting of many nodes (servers). Kubernetes helps us with scheduling our applications, i.e. we specify what application we want to run, Kubernetes finds a proper node and run our app on it.
 
-In short Kubernetes allows us to manage multiple applications running across multi node cluster.
+Kubernetes is for running containerized applications, for example Docker containers.
 
-It helps with allocating computer resources (CPU, RAM etc.) to applications. In that aspect, it is like a kernel but for a cluster consisting of multiple servers.
+We specify what application to run and how using a YAML file. For example, we can specify there:
+- What Docker image to use
+- What shell command to execute
+- How to set up environment variables
+- How to mount external storage to a Docker container
 
-It gives us a possibility of deploying multiple applications as containers by using YAML files where we provide a specification about how those containers need to be created.
+Kubernetes helps with allocating computer resources (CPU, RAM etc.) to applications. In that aspect, it is like a kernel but for a cluster consisting of multiple servers.
 
 It also helps with networking between containers. Each container can get assigned easily a static IP address and a DNS name.
 

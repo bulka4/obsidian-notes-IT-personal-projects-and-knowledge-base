@@ -3,6 +3,9 @@ This is a tag about Data Engineering.
 # Data Engineering tasks and problems
 1. [[Data ingestion]]
 2. [[Schema validation]]
+## Questions
+- What is the 'late or corrupted data' problem about in data ingestion?
+- What is Backfilling historical data about?
 # Airflow
 [[_Airflow]]
 # dbt

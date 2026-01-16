@@ -1,21 +1,37 @@
 Tags: [[__Machine_Learning_Engineering]]
+#MLEngineering 
 
 # Introduction
-Deployment is an object used for running a long-running service, for example a Rest API.
+Deployment is an object used for running a long-running service, for example a Rest API server.
 
-We typically create a Deployment by creating a Python class decorated with @serve.deployment. Its methods can for example specify how to handle HTTP endpoints:
-![[2 - Images/Ray/Screenshot 1.png]]
+We typically create a deployment by creating a Python class decorated with `@serve.deployment`. Its methods can for example specify how to handle HTTP endpoints:
+```python
+from ray import serve
+from fastapi import FastAPI
 
-Deployment is a logical definition of the service. We can assign to a deployment specific amount of resources (CPU, GPU).
+# create FastAPI app
+app = FastAPI()
 
-There is also created a proxy which receives clients requests and forwards them to a proper replica.
+@serve.deployment(route_prefix="/api")
+@serve.ingress(app)
+class MyAPI:
+	def __init__(self):
+		pass
+		
+	@app.get("/hello")
+	async def hello(self, name: str = "world"):
+		return {"message": f"Hello, {name}!"}
+		
+# Bind the deployment
+my_api = MyAPI.bind()
+```
 
-Deployment brings additional functionalities to Ray Core Actor, such as:
-- Autoscaling and replication – Set up a number of replicas or allow Ray Serve to automatically scale up / down replicas.
-- Request routing – Ray Serve Deployment adds a proxy that routes HTTP/gRPS requests or internal calls (using .remote() in our Python code where we created a Deployment) automatically to replicas.
-- HTTP/gRPC Ingress - Can expose REST/gRPC endpoints (via route_prefix or FastAPI integration).
-- Fault Tolerance & Lifecycle Management - Serve automatically restarts Deployment replicas if they fail.
+Deployment is a logical definition of a service. 
+# Running a deployment
+After running a deployment, Ray Serve creates:
+- One or more replicas ([[Ray Serve - Replica|link]]) which are processes which will be executing deployment's code
+- Proxy ([[Ray Serve - Serve Proxy|link]]) that listens to clients' requests and forwards them to a proper replica that will handle it (execute deployment's code) and send back a response
 
-More info about Ray Core Actors and Worker processes can be found in the ‘Ray Core > Actors’ section in this document.
+Replicas are ran on a Ray cluster ([[Ray - Cluster|link]]), each replica can be ran on a different node in the cluster.
 
-#MLEngineering 
+We can assign to a deployment specific amount of resources (CPU, GPU) which are needed. Ray will ran each replica on a node which have enough of those resources.

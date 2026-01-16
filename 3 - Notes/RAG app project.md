@@ -39,5 +39,5 @@ To learn more about this project, refer to the documents with link listed below:
 - [[Rag app project - Testing app deployment using Docker compose]]
 - [[Rag app project - Helm charts]]
 - [[Rag app project - Terraform]]
-# Next steps
-More information about the plan for next steps regarding this project - [[RAG app project - Next steps and plan]].
+# Next steps plan
+More information about the Next steps plan regarding this project - [[RAG app project - Next steps plan]].

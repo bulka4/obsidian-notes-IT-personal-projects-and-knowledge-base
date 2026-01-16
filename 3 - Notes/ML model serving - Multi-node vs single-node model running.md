@@ -7,8 +7,7 @@ This document describes different aspects of what we can / should take care of w
 Serving an ML model is about creating a long-running service (like Rest API server) which listens to requests and sends back model's predictions as a response.
 
 When serving ML models, we have a few options how to run a model:
-- On a single node (server), single GPU
-- Single node, multiple GPUs
+- On a single node (server) with a single or multiple GPUs
 - Multiple nodes
 # Multiple nodes
 When running a model distributed across many nodes (a single prediction needs to be distributed across many nodes), we usually have only one cluster (set of nodes) running our model.
@@ -35,16 +34,14 @@ Below are documents describing how to set up a multi-node DeepSpeed cluster usin
 - Ray Train ([[DeepSpeed - Kubernetes deployment with Ray Train|link]])
 - MPI Operator ([[DeepSpeed - Kubernetes deployment with MPI Operator (MPIJob CRD)|link]])
 # Single node
-When model can be ran on a single node (calculations for a single prediction doesn't have to distributed across many nodes), we can have multiple nodes with an entire model loaded, ready to handle requests (make predictions).
-
-So each node can independently make predictions, without other nodes.
+When model can be ran on a single node (calculations for a single prediction doesn't have to distributed across many nodes), we can have multiple nodes with an entire model loaded, ready to handle requests (make predictions) independently, without other nodes.
 ## Node failure
 When one node fails, only this one node needs to be restarted, not all the nodes in the cluster, and other nodes can still handle upcoming requests.
 ## Routing
 When we have many nodes, where a single node can handle requests, we can route requests to those nodes which are the least busy.
 ## Tools
 For serving a model inference which runs on a single node, we can use tools like:
-- Ray Serve ([[Ray Serve - Introduction|link]])
+- Ray Serve ([[_Ray#Ray Serve|link]])
 # Node failures causes and how to avoid them
 Node failures are especially costly when our model runs on multiple nodes. In that scenario, as we already mentioned, when one node goes down, the entire system (all the nodes in the cluster) needs to be restarted.
 

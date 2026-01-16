@@ -4,7 +4,7 @@ This is a collection of documents related to Ray, an IT tool for ML model traini
 1. [[Ray debugging]]
 # Deployment on Kubernetes
 1. [[Ray - Deployment on Kubernetes using KubeRay]]
-	1. [[KubeRay - RayService]]
+	1. [[KubeRay - RayService CRD]]
 		1. [[KubeRay - RayService - YAML configuration]]
 		2. [[KubeRay - Installing RayService - flow of events]]
 # Introduction
@@ -23,19 +23,22 @@ This is a collection of documents related to Ray, an IT tool for ML model traini
 # Ray Serve
 1. [[Ray Serve - Introduction]]
 ## How it works
+### Components
 1. [[Ray Serve - Components]]
 	1. [[Ray Serve - Deployment]]
 	2. [[Ray Serve - Replica]]
 	3. [[Ray Serve - Serve Proxy]]
 	4. [[Ray Serve - Serve Controller]]
-2. [[Ray Serve - Multiple replicas for one actor]]
-3. [[Ray Serve - Multiple deployments]]
-4. [[Ray Serve - Running a Deployment]]
-	1. [[Ray Serve - Local Python & Ray cluster]]
-	2. [[Ray Serve - Kubernetes RayService CRD]]
-5. [[Ray Serve + FastAPI - HTTP requests handling workflow and communication]]
-6. [[Ray Serve - Python functions for monitoring]]
-7. [[Ray Serve - Checkpoints]]
+2. [[Ray Serve Deployment vs Actor - Benefits]]
+3. [[Ray Serve - Running a Deployment]]
+	1. [[Ray Serve - Running a deployment using local Python & Ray cluster]]
+	2. [[Ray Serve - Running a deployment using Kubernetes RayService CRD]]
+4. [[Ray Serve - Multiple requests handled by a replica concurrently]]
+5. [[Ray Serve - Multiple deployments]]
+### Other topics
+1. [[Ray Serve + FastAPI - HTTP requests handling workflow and communication]]
+2. [[Ray Serve - Python functions for monitoring]]
+3. [[Ray Serve - Checkpoints]]
 ## Use cases and features
 1. [[Ray Serve - Use cases and features]]
 ## Features, pros and cons

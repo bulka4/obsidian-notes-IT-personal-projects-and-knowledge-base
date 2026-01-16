@@ -23,3 +23,5 @@ This is a collection of documents related to the dbt IT tool.
 # Cosmos
 Cosmos is a tool for running dbt using Airflow.
 [[_Cosmos]]
+# dbt with Spark
+1. [[dbt with Spark]]

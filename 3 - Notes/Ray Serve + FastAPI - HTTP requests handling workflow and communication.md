@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning_Engineering]]
+#MLEngineering 
 
 # Introduction
 If we use Ray Serve and FastAPI to create a Rest API app, then workflow looks like this:
@@ -7,12 +8,30 @@ If we use Ray Serve and FastAPI to create a Rest API app, then workflow looks li
 - Ray Serve’s HTTP gateway sends the parsed request to an actor (a replica process).
 - Inside the Actor, FastAPI chooses a correct route handler (a function assigned to the request’s endpoint).
 - If the route has dependencies (e.g., DB sessions, auth checks), FastAPI resolves them here.
-- Actor executes the code from the route handler.
+- Actor (a worker process assigned to that actor to be specific) executes the code from the route handler.
 - FastAPI serializes the result from the route handler (dict -> JSON).
 - Actor sends results back to the Ray Serve’s HTTP Gateway.
 - Ray Serve’s HTTP Gateway converts result into a HTTP response and send it back to the client.
 
 For example, we can use Ray with FastAPI to create a Rest API endpoint this way:
-![[2 - Images/Ray/Screenshot 4.png]]
+```python
+from ray import serve
+from fastapi import FastAPI
 
-#MLEngineering 
+# create FastAPI app
+app = FastAPI()
+
+@serve.deployment(route_prefix="/api")
+@serve.ingress(app)
+class MyAPI:
+	def __init__(self):
+		pass
+		
+	@app.get("/hello")
+	async def hello(self, name: str = "world"):
+		return {"message": f"Hello, {name}!"}
+		
+# Bind the deployment
+my_api = MyAPI.bind()
+serve.run(my_api)
+```

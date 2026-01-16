@@ -2,13 +2,142 @@ Tags: [[__Machine_Learning_Engineering]]
 
 # Introduction
 If we have for example a Ray Serve app like this:
-![[2 - Images/Ray - Running on Kubernetes/Screenshot 1.png]]
+```python
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+from ray import serve
+from rag_workflow import RAGWorkflow
+from transformers import pipeline
+import os
+import traceback
+
+
+@serve.deployment(ray_actor_options={"num_cpus": 2})
+@serve.ingress(app)
+class RAGService:
+    def __init__(...):
+        ...
+
+    def init_rag(
+        self
+    ):
+        if self.rag_workflow == None:
+	        # Object for answering questions using a RAG system
+            self.rag_workflow = RAGWorkflow(...)
+
+
+    @app.get("/ask")
+    async def ask(self, query: str) -> dict:
+        self.init_rag()
+        answer = await self.rag_workflow.answer(query)
+        return answer
+
+  
+rag_service = RAGService.bind(
+    mcp_server_url=mcp_server_url
+)
+```
 
 And it is saved as /app/ray_serve_app.zip, then a YAML manifest for RayService will look like this (below are 3 screenshots of the same YAML file):
-![[2 - Images/Ray - Running on Kubernetes/Screenshot 2.png]]
-
-![[2 - Images/Ray - Running on Kubernetes/Screenshot 3.png]]
-![[2 - Images/Ray - Running on Kubernetes/Screenshot 4.png]]
+```yaml
+apiVersion: ray.io/v1
+kind: RayService
+metadata:
+  name: {{ .Values.rayService.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  # Specify which Ray Serve app to use
+  # import_path has the following format: <app-filename>:<bound-deployment>, where:
+  # - app-filename - Name of the file with the Ray Serve app (without the .py extension)
+  # - bound-deployment - Name of the bound deployment - output of the APIClassName.bind() command, where APIClassName is name of the
+  #                      class where we define Rest API endpoints.
+  # working_dir - Indicates where to find our Ray Serve app files. There are multiple options for this value:
+  #             - Local .zip file with our app saved in the image: 'file:///folder1/folder2/file.zip'
+  #             - Remote storage like Azure Blob Storage or GitHub repo (it might need to be .zip as well)
+  serveConfigV2: |
+    applications:
+      - name: rag-service
+        import_path: "{{ .Values.app.fileName }}.{{ .Values.app.boundDeploymentName }}"
+        runtime_env:
+          working_dir: {{ .Values.app.workingDir }}
+  rayClusterConfig:
+    rayVersion: {{ .Values.rayService.rayVersion }}
+    # Ray Head node specification
+    headGroupSpec:
+      serviceType: ClusterIP
+      rayStartParams: {}
+      template:
+        spec:
+          containers:
+            - name: ray-head
+              image: {{ .Values.image.url }} # URL of an image from a registry
+              imagePullPolicy: Always # Always pull the image when restarting the Pod
+              resources:
+                requests:
+                  cpu: {{ .Values.rayService.headCpu }}
+                  memory: {{ .Values.rayService.headMemory }}
+                limits:
+                  cpu: {{ .Values.rayService.headCpu }}
+                  memory: {{ .Values.rayService.headMemory }}
+              env:
+                - name: MCP_SERVER_URL
+                  value: {{ .Values.app.env.mcpServerUrl }}
+              {{- if .Values.scriptsMounting.enabled }}
+              volumeMounts:
+                # Mount a folder from a volume linked to Azure File share containing scripts to run.
+                - name: scripts
+                  mountPath: {{ .Values.app.folderPath }}
+                  subPath: {{ .Values.scriptsMounting.volumePath }}
+              {{- end}}
+          # Secret for authentication when pulling image from ACR
+          imagePullSecrets:
+            - name: {{ .Values.acrSecret.secretName }}
+          {{- if .Values.scriptsMounting.enabled }}
+          # Volume linked to Azure File share containing scripts to run
+          volumes:
+            - name: scripts
+              persistentVolumeClaim:
+                claimName: {{ .Values.scriptsMounting.pvcName }}
+          {{- end}}
+    # Ray Worker nodes specification
+    workerGroupSpecs:
+      # Number of replicas of Worker Pods
+      - replicas: {{ .Values.rayService.replicas }}
+        minReplicas: 1
+        maxReplicas: 5
+        groupName: small-group
+        rayStartParams: {}
+        template:
+          spec:
+            containers:
+              - name: ray-worker
+                image: {{ .Values.image.url }} # URL of an image from a registry
+                imagePullPolicy: Always # Always pull the image when restarting the Pod
+                resources:
+                  requests:
+                    cpu: {{ .Values.rayService.workerCpu }}
+                    memory: {{ .Values.rayService.workerMemory }}
+                  limits:
+                    cpu: {{ .Values.rayService.workerCpu }}
+                    memory: {{ .Values.rayService.workerMemory }}
+                {{- if .Values.scriptsMounting.enabled }}
+                volumeMounts:
+                  # Mount a folder from a volume linked to Azure File share containing scripts to run.
+                  - name: scripts
+                    mountPath: {{ .Values.app.folderPath }}
+                    subPath: {{ .Values.scriptsMounting.volumePath }}
+                {{- end}}
+            # Secret for authentication when pulling image from ACR
+            imagePullSecrets:
+              - name: {{ .Values.acrSecret.secretName }}
+            {{- if .Values.scriptsMounting.enabled }}
+            # Volume linked to Azure File share containing scripts to run
+            volumes:
+              - name: scripts
+                persistentVolumeClaim:
+                  claimName: {{ .Values.scriptsMounting.pvcName }}
+            {{- end}}
+```
 
 Here we specify number of replicas of Worker Pods, not Actors. Number of Actors replicas is specified in the Python script with defined Ray Serve app.
 

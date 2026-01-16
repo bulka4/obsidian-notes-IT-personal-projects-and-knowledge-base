@@ -14,7 +14,12 @@ This is a collection of documents about my projects.
 	- [[Rag app project - Testing app deployment using Docker compose]]
 	- [[Rag app project - Helm charts]]
 	- [[Rag app project - Terraform]]
-- [[RAG app project - Next steps and plan]]
+- [[RAG app project - Next steps plan]]
 	- [[DeepSpeed - Kubernetes deployment with Ray Serve]]
+# DeepSpeed cluster
+1. [[DeepSpeed cluster project]]
+2. [[DeepSpeed cluster project - Next steps plan]]
+# Data processing and ML system
+- [[Data processing and ML system project]]
 # Ideas
 1. [[Apka do medycyny]]

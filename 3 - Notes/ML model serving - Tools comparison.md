@@ -1,31 +1,10 @@
 Tags: [[__Machine_Learning_Engineering]]
 
 # Introduction
-In this document we are describing and comparing different tools for building Rest APIs which are efficient for serving ML models. That is, an API that takes as a request data, makes predictions using this data and a ML model, and returns model’s predictions as a response.
+This document describes and compares different tools for building Rest APIs which are efficient for serving ML models ([[ML model serving - Introduction|link]]).
 # Tools comparison
 ## Ray Serve
-**Introduction:**
-Ray is a tool for distributed code execution. We can send to Ray code to execute and Ray will choose a node (a computer) from a cluster (set of computers) which has enough resources (CPU, RAM) and will execute this code.
-
-It is not able to distribute a single process across multiple nodes (like a single ML model prediction).
-
-Using Ray Serve we define a deployment which represents our app, and that deployment is used to generate multiple replicas of our app, running concurrently and handling requests:
-```python
-from fastapi import FastAPI
-from ray import serve
-
-app = FastAPI()
-
-@serve.deployment(ray_actor_options={"num_cpus": 2})
-@serve.ingress(app)
-class MyApp:
-	def __init__(..):
-		...
-	
-	@app.get("/ask")
-	async def ask(self, query: str) -> dict:
-		...
-```
+More info about Ray Serve - [[_Ray#Ray Serve|link]].
 
 **Pros:**
 - Load balancing
@@ -43,15 +22,14 @@ class MyApp:
 - Autoscaling
 	- Ray Serve can automatically increase or decrease number of replicas of our app depending on a traffic (number of requests coming in).
 - Source aware scheduling
-	- Ray knows which resources (CPU, GPU) have enough capacity to handle given request and routes that request to the replica (worker process) which has enough resources to handle that request.
+	- When we create an app, we can specify how much resources (CPU, GPU) we want to have available for it.
+	- When Ray will be creating processes which will be executing our code, it will run them on nodes which have enough of those resources.
 - Fractional GPUs
-	- We can assign a fraction of a GPU for our app (deployment). So Ray Serve makes it easier to run multiple processes on a single GPU.
+	- We can assign a fraction of a GPU for our app. So Ray Serve makes it easier to run multiple processes on a single GPU.
 	- For example in Kubernetes we need to allocate the entire GPU for one Pod (we can’t run multiple Pods on the same GPU).
 	- If we want to run multiple processes at the same time using the same GPU even without using Kubernetes or containers at all, then using Ray Serve it might be easier as well.
 - Flexible resource allocation
-	- In Ray Serve we specify deployments (our app) and each deployment creates a specific number of replicas of our app.
-	- For each deployment we can assign different resources (CPU, GPU, RAM) and each replica generated from this deployment will get those resources assigned. So it works like in Kubernetes deployment.
-	- But in Ray Serve we can create multiple deployments, assign different resources to each one and deploy all of them easily, much easier than in Kubernetes.
+	- When we create an app and assign resources to it like explained earlier, we can split our app into multiple parts (each part will be handling different endpoints) and to each part we can assign different resources
 - Python native and flexible
 	- We can easily deploy any Python code along with the model.
 	- Good when we want to serve as Rest API multi step, complex code.
@@ -113,7 +91,17 @@ But it is not good if we want to create more complex workflows, for example:
 - Deploy on **Kubernetes**, AWS, or other cloud platforms using the generated container.
 
 **Example usage:**
-![[BentoML.png]]
+```python
+import bentoml
+from bentoml.io import JSON
+
+@bentoml.artifacts([PickleArtifact("model")])
+@bentoml.env(auto_pip_dependencies=True)
+class MyService(bentoml.BentoService):
+	@bentoml.api(input=JSON(), output=JSON())
+	def predict(self, parsed_json):
+		return self.artifacts.model.predict(parsed_json["input"])
+```
 ## TensorFlow Serving
 **Type:** Model server specialized for TensorFlow.
 
@@ -230,7 +218,18 @@ tritonserver --model-repository=/models --http-port=8000 --grpc-port=8001
 - SageMaker automatically handles REST API creation, scaling, and monitoring.
 
 **Example usage:**
-![[SageMaker.png]]
+```python
+import sagemaker
+from sagemaker.pytorch import PyTorchModel
+
+model = PyTorchModel(
+	model_data = "s3://bucket/model.tar.gz"
+	,role=role
+	,entry_point="inference.py"
+)
+
+predictor = model.deploy(instance_type="ml.m5.large", initial_instance_count=1)
+```
 ## Azure Machine Learning Endpoints
 **Type:** Fully managed ML model serving.
 
@@ -254,15 +253,37 @@ tritonserver --model-repository=/models --http-port=8000 --grpc-port=8001
 - Azure handles scaling, REST endpoint exposure, and logging.
 
 **Example usage:**
-![[Azure ML.png]]
+```python
+from azure.ai.ml import MLClient
+from azure.ai.ml.entities import ManagedOnlineEndpoint, ManagedOnlineDeployment
+
+endpoint = ManagedOnlineEndpoint(name="my-endpoint")
+deployment = ManagedOnlineDeployment(
+	name="blue"
+	,endpoint_name="my-endpoint"
+	,model=model
+	,code_configuration=code_config
+)
+ml_client.begin_create_or_update(endpoint)
+ml_client.begin_create_or_update(deployment)
+```
 ## Summary table
-![[Summary table.png]]
+
+| Tool       | Python flexibility | Multi-step Workflows | Multi-framework       | Autoscaling | GPU routing | Request Batching |
+| ---------- | ------------------ | -------------------- | --------------------- | ----------- | ----------- | ---------------- |
+| Ray Serve  | High               | High                 | Yes (any Python code) | Yes         | Yes         | Yes              |
+| BentoML    | High               | Medium               | Yes                   | Yes         | Partial     | Limited          |
+| TFServing  | Low                | Low                  | TF only               | Limited     | Partial     | Yes              |
+| TorchServe | Low                | Low                  | PyTorch only          | Limited     | Partial     | Yes              |
+| Triton     | Low                | Low                  | Multi                 | Limited     | Yes         | Yes              |
+| SageMaker  | Medium             | Medium               | Multi                 | Yes         | Yes         | Limited          |
+| Azure ML   | Medium             | Medium               | Multi                 | Yes         | Yes         | Limited          |
 # Comparison of Ray Serve to a load balancer
 Load balancer takes care of assuring that each server receives a similar amount of requests.
 
 It doesn’t look at the computational cost of those requests. So different servers might receive the same amount of requests, but total amount of computational resources required for those requests might be much bigger for some of those servers.
 
-Load balancer distributes only the entire reqeusts, that is it chooses a server which will handle the entire request.
+Load balancer distributes only the entire requests, that is it chooses a server which will handle the entire request.
 
 In contrast, Ray Serve can split multiple tasks from a single request across multiple servers and it is aware of computational resources of those servers.
 # Request batching explanation
