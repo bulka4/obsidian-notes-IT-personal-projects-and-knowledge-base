@@ -1,4 +1,5 @@
-Tags: [[__Data_Engineering]]
+Tags: [[__Data_Engineering]] [[_Airflow]]
+#DataEngineering #Airflow 
 
 # Introduction
 Example workflow then Celery executor is used:
@@ -11,5 +12,3 @@ Example workflow then Kubernetes executor is used:
 -  Executor tells Kubernetes to start a Pod (Worker) for this task.
 -  Kubernetes creates a Pod.
 -  Pod runs a task.
-
-#DataEngineering 

@@ -20,6 +20,8 @@ This is a collection of documents related to the dbt IT tool.
 7. [[dbt - Profiles file]]
 8. [[dbt - Targets]]
 9. [[dbt - Selector patterns - methods]]
+# How dbt works
+1. [[dbt - Using a catalog]]
 # Cosmos
 Cosmos is a tool for running dbt using Airflow.
 [[_Cosmos]]

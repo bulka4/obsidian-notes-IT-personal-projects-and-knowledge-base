@@ -1,4 +1,5 @@
 Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]]
+#Cloud #DevOps #DistributedComputing #DataEngineering 
 
 # Introduction
 Helm is a package manager for Kubernetes that helps you define, install, and manage Kubernetes applications.
@@ -70,5 +71,3 @@ And use it in a YAML file like this:
 So in place of a helper name will be inserted its content like this:
 ![[2 - Images/Kubernetes/Screenshot 6.png]]
 
-
-#Cloud #DevOps #DistributedComputing #DataEngineering 

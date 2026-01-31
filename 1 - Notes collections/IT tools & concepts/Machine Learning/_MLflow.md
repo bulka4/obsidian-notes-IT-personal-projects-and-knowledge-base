@@ -12,3 +12,5 @@ This is a collection of documents related to MLflow, which is an IT tool for bui
 5. [[MLflow - Querying runs]]
 # MLflow commands
 1. [[MLflow commands]]
+# Kubernetes deployment
+1. [[MLflow - Kubernetes deployment]]

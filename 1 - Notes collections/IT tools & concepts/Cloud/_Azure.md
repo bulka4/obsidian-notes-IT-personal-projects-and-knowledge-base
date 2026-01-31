@@ -7,3 +7,4 @@ This is a collection of documents related to Azure cloud platform.
 3. [[Azure CLI]]
 	1. [[Azure CLI - Installation]]
 	2. [[Azure CLI - Logging in]]
+4. [[Azure VNet]]

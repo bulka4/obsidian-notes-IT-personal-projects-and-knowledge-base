@@ -1,4 +1,5 @@
-Tags: [[__Data_Engineering]]
+Tags: [[__Data_Engineering]] [[_Airflow]]
+#DataEngineering #Airflow 
 
 # Introduction
 There are a few options for deploying Airflow:
@@ -23,5 +24,3 @@ Ranking of solutions according to simplicity of usage:
 2. Astronomer
 3. Docker / Kubernetes serverless services
 4. VM
-
-#DataEngineering 

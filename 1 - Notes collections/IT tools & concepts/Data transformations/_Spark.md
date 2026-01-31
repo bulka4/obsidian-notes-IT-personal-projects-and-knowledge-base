@@ -14,6 +14,10 @@ This is a collection of documents related to Spark.
 9. [[Spark - Submitting Spark jobs]]
 10. [[Spark - Monitoring]]
 11. [[Spark - Code development]]
+12. [[Spark - Session]]
+## Spark SQL
+1. [[Spark - Tables metadata]]
+2. [[Spark - Managed and external tables]]
 # Running Spark 
 ## On YARN
 1. [[Running Spark on YARN - ApplicationMaster]]
@@ -24,5 +28,12 @@ This is a collection of documents related to Spark.
 	2. [[Running Spark on Kubernetes - Spark Operator and SparkApplication CRD]]
 2. [[Running Spark on Kubernetes - Spark Operator]]
 3. [[Running Spark on Kubernetes - SparkApplication]]
+# Thrift Server
+1. [[Spark Thrift Server]]
+2. [[Spark Thrift Server - External Hive Metastore benefits]]
+## Kubernetes deployment
+1. [[Spark Thrift Server with an external Hive Metastore - Kubernetes deployment]]
+# Hive Metastore
+
 # Debugging
 1. [[Spark running on Kubernetes - debugging]]

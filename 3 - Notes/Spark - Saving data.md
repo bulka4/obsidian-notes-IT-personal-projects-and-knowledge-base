@@ -1,4 +1,5 @@
 Tags: [[__Data_Engineering]], [[__Distributed_computing]]
+#DataEngineering #DistributedComputing 
 
 # Introduction
 When we save data using df.write, then Spark always saves this data as set of files in a folder.
@@ -12,5 +13,3 @@ If we have already saved a table, that is a folder consisting of mutiple files, 
 We will create a new file which have different columns and data types than other files in that folder creating a table and that will cause problems. If we want to read data from that table after that we might not be able to do that.
 
 That’s why it is recommended to use additional tools which can prevent that, for example Delta lake.
-
-#DataEngineering #DistributedComputing 

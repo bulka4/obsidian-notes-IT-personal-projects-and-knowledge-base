@@ -14,7 +14,8 @@ More info about Ray Serve - [[_Ray#Ray Serve|link]].
 	- For example, when a request consist of tasks like:
 		- Two different models makes predictions (2 tasks)
 		- Make additional calculation using those predictions
-		then Ray Serve can assign different tasks to different nodes.
+	  
+	  then Ray Serve can assign different tasks to different nodes.
 - Request batching
 	- When server receives multiple requests, Ray Serve can combine them into a single forward pass.
 	- For example it can take data from multiple requests and run a single process where ML model makes predictions using it.
@@ -29,7 +30,7 @@ More info about Ray Serve - [[_Ray#Ray Serve|link]].
 	- For example in Kubernetes we need to allocate the entire GPU for one Pod (we can’t run multiple Pods on the same GPU).
 	- If we want to run multiple processes at the same time using the same GPU even without using Kubernetes or containers at all, then using Ray Serve it might be easier as well.
 - Flexible resource allocation
-	- When we create an app and assign resources to it like explained earlier, we can split our app into multiple parts (each part will be handling different endpoints) and to each part we can assign different resources
+	- When we create an app and assign resources to it like explained earlier in the 'Source aware scheduling' point, we can split our app into multiple parts (each part will be handling different endpoints) and to each part we can assign different resources
 - Python native and flexible
 	- We can easily deploy any Python code along with the model.
 	- Good when we want to serve as Rest API multi step, complex code.

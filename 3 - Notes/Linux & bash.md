@@ -24,28 +24,7 @@ Shell takes an input from a user and returns an output.
 
 On Linux the sh shell is installed in the /bin/sh and bahs in the /bin/bash.
 # Processes
-## Daemons
-Daemons are background, long running processes.
-## List processes
-The ‘ps aux’ command shows all processes.
 
-It returns a table with, among the others, those fields:
-- User – who started the process
-- Command – command used to start the process
-- ID – id of a process
-
-Any command we execute in shell starts a process and it will be visible in the table returned by the ‘ps’ command.
-
-For example if we ran a Python script using a command:
-- python script.py
-
-Then after running ‘ps’ we will see ‘python script.py’ in the returned list as long as this script is running.
-## Kill a process
-We can use those commands to kill a process:
-- kill \<process-id\>  kill a process
-- kill -9 \<process-id\> - force killing a process
-
-To get process ID we can use ‘ps aux’ command.
 # Useful bash commands and CLI Linux tools
 ## Commands outputs
 There are two types of bash commands outputs:
