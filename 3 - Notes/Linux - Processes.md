@@ -1,4 +1,4 @@
-Tags: [[_Linux & bash]] [[__Operating_systems]] [[__Infrastructure_IT_tools]]
+Tags: [[_Linux & Bash]] [[__Operating_systems]] [[__Infrastructure_IT_tools]]
 #Linux #OperatingSystems #InfrastructureITTools 
 
 # PID

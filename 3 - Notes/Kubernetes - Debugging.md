@@ -1,13 +1,37 @@
 Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]], [[_Kubernetes]]
 
-# Networking
-## Create a testing Pod
-Create a Pod for testing networking. We can use for that for example the busybox – publicly available Docker image.
+# Create a testing Pod
+Create a pod, connect into it (using `exec -it`) and run from it commands for testing different things, for example networking, file permissions, how commands work.
+
+We can use for that for example the busybox – publicly available Docker image.
 
 We can use this command to create a Pod, get access to its terminal and remove it once we exit its terminal:
-- kubectl run dns-test --image=busybox:1.28 --restart=Never -it --rm -- /bin/sh
-
-From the Pod’s terminal execute commands for testing networking.
+```bash
+kubectl run dns-test --image=busybox:1.28 --restart=Never -it --rm -- /bin/sh
+```
+Or use YAML manifest:
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug
+  namespace: <namespace>
+spec:
+  containers:
+    - name: example
+      image: busybox
+      command: ["sh", "-c"]
+      args: ["ls -la /data"]
+      volumeMounts:
+        - name: data-volume
+          mountPath: /data
+  volumes:
+    - name: data-volume
+      persistentVolumeClaim:
+        claimName: my-pvc
+  restartPolicy: Never
+```
+# Networking
 ## CoreDNS
 Create a testing Pod using this command:
 - kubectl run -rm -it \<pod-name\> --image=your-docker-image -- /bin/bash
@@ -28,7 +52,9 @@ Other things to check:
 - Check if I can ping from inside of a Pod other Pods / Services using their IP address instead of DNS name
 # Testing a Docker image
 If we want to test how a Docker image behaves in a Pod, we can quickly create a testing Pod using that image:
-- kubectl run -rm -it \<pod-name\> --image=your-docker-image -- /bin/bash
+```bash
+kubectl run -rm -it \<pod-name\> --image=your-docker-image -- /bin/bash
+```
 
 After creating it we can get access to its terminal and execute some bash commands or we can check its logs.
 
@@ -41,6 +67,10 @@ More information about that command is in the ‘Kubernetes useful commands’ f
 We can check resources logs using the following commands:
 - Kubectl logs \<pod-name\>
 	- Check logs of the pod
+- kubectl logs \<pod> -n \<namespace> | grep \<key-word>
+	- Check logs and look only for the \<key-word> word
+- kubectl logs \<pod> -n \<namespace> -c \<container>
+	- Check for logs only from a specific container
 - Kubectl describe \<resource-type\> \<resource-name\>
 	- Look under the ‘events’ section for logs.
 - kubectl get events -n \<namespace\> --sort-by=.lastTimestamp

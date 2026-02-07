@@ -1,45 +1,55 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
+# Run Terraform code
+## Prepare variables
+Create the `terraform.tfvars` file and assign there values to the variables. We can use for that the `terraform-draft.tfvars` file which is a draft showing what variables to set up.
+
+We need to have big enough number of nodes and their size need to be big enough. Otherwise, we can have not enough computational power. It is recommended to leave the default values (they are a minimum to run this platform).
+## Run the code
+```bash
+# execute from the terraform folder
+terraform init # Only when running for the first time
+terraform plan -out main.tfplan
+terraform apply "main.tfplan"
+```
+
+Later, to destroy all the Azure resources:
+```bash
+# execute from the terraform folder
+terraform plan -destroy -out main.destroy.tfplan
+terraform apply "main.destroy.tfplan"
+```
 # Run an image for interacting with AKS
 Run an image for interacting with AKS using the `interacting.aks.Dockerfile` Dockerfile, connect to it and from that image perform all the next steps.
-# Build and push images to ACR
-Build and push to ACR all the images using the `/root/apps/build_and_push.sh` script.
-# Create ACR secret
-- Create a secret in every namespace with credentials for accessing Docker images in ACR
-	- It stores credentials of a Service Principal with permissions to that ACR
-	- We can get those values from Terraform outputs
 ```bash
-for ns in "airflow" "spark" "mlflow"; do
-	kubectl create secret docker-registry acr-secret \
-		--namespace $ns \
-		--docker-server=${acr_url} \ # ACR URL (<registry-name>.azurecr.io) 
-		--docker-username=${client_id} \
-		--docker-password=${client_secret} \
-		--docker-email=unused@example.com # It doesn't matter what we put here but it is needed
-done
+# execute from the repo root folder
+docker build -t interacting-aks -f interacting.aks.Dockerfile . # build an image
+docker run -it interacting-aks bash # run the container and connect into it
 ```
-# Airflow setup
-- Create a secret for Storage Account
-	- It stores credentials of a Service Principal used for authentication when accessing Azure Storage Account where logs will be saved
-	- Values we need to provide here can be taken from Terraform outputs
-```bash
-kubectl create secret generic airflow-azure-blob \
-  --from-literal=client_id=<client-id> \
-  --from-literal=client_secret=<client-secret> \
-  --from-literal=tenant_id=<tenant-id> \
-  --from-literal=account_name=<storage-account-name> \
-  -n airflow
-```
-- Install Airflow:
-```bash
-kubectl create namespace airflow
 
+Cleanup for later:
+```bash
+docker rm $(docker ps -aq) # remove all containers
+docker rmi $(docker image ls -aq) # remove all images
+docker system prune --all --volumes # remove everything
+```
+# Build and push images to ACR
+Build and push to ACR all the images using the `/root/dockerfiles/build_and_push.sh` script. Those are images we will be running in Kubernetes pods.
+# Create namespaces and secrets
+Run the `/bin/bash create_k8s_secrets.bash` command to create Kubernetes namespaces and secrets:
+- For pulling images from ACR
+- For Airflow to access Storage Account to save logs there
+- For Airflow to connect to PostgreSQL metadata db
+- For PostgreSQL deployment (to create a user and database used by Airflow)
+# Install Airflow chart
+```bash
+# execute from the helm_charts/airflow folder
 helm dependency update
 
-helm install airflow ./helm_charts/airflow \
+helm install airflow . \
   -n airflow \
-  -f values.yaml
+  -f values.yaml &
 ```
 # Spark Thrift Server and Hive Metastore setup
 - Create a secret with Service Principal's credentials which will be used by Spark to get access to data in the Storage Account.

@@ -4,10 +4,10 @@ Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure
 ConfigMap is a resource which we can use to provide an external configuration for an application running as a container in a Pod.
 
 We can store there data as key value pairs which will be used by our app running in Pod, and we can change them without changing the app itself.
-# Mounting a file
-We can use ConfigMap to create a file with specified content and mount it into a pod:
-
-ConfigMap:
+# Creating a content of a file
+We can create a ConfigMap which stores a content of a file. It can be later mounted into a pod to make that file available in the pod's filesystem.
+## Defining content in a manifest
+We can define a content of a file in a YAML manifest where we create a ConfigMap:
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -18,8 +18,15 @@ data:
     <configuration>
     ...
 ```
-
-Mount it into a pod:
+## Reading content from an existing file
+We can also create a file content in a ConfigMap by reading an existing file:
+```bash
+kubectl create configmap my-config \
+	--from-file=filename.txt=/path/to/file.txt
+```
+where `/path/to/file.txt` is the local path.
+# Mounting into a pod
+Once we have a ConfigMap with a content of a file, we can mount it into a pod to make that file available in the pod's filesystem:
 ```yaml
 apiVersion: apps/v1
 kind: Deployment

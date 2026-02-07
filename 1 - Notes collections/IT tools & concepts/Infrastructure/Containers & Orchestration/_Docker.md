@@ -8,7 +8,7 @@ This is a collection of documents related to the Docker which is an IT tool for 
 # Useful commands
 1. [[Docker - useful commands]]
 # Troubleshooting
-1. [[Docker - troubleshooting]]
+1. [[Docker - Windows troubleshooting]]
 # Docker theory
 5. [[Docker - Image]]
 6. [[Docker - Container]]

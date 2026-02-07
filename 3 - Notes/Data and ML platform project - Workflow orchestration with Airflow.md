@@ -9,12 +9,18 @@ To deploy Airflow on Kubernetes we use the official Helm chart. It is used as a 
 The `values.yaml` file will be provided for that chart in the `helm_charts/airflow` folder and it will be created by Terraform.
 
 It interpolates the `terraform/template_files/helm_charts/values-airflow.yaml` template to create it ((inserts variables values into the template file). 
-# Git-sync
-We use git-sync to pull code from the repo, with Airflow tasks to run, create a volume and mount it into pods created by Airflow where that code runs.
+## Git-sync
+We use git-sync to pull code from a repo. That code will be available in pods running Airflow components (scheduler etc) and also in pods running tasks created using KubernetesExecutor and KubernetesPodOperator.
 
-We create a separate PVC which will be used by git-sync to store code there, so we can later use this PVC to mount it to other pods, for example pods created by Airflow for executing tasks using KubernetesPodOperator.
+git-sync runs in a separate pod, pulls code from repo and saves it in a persistent volume. Then we can mount that volume to other pods to make the code available.
 
-By default, git-sync would create a volume available only for Airflow pods (scheduler etc).
+More details about how git-sync works can be found here - [[Git-sync - Kubernetes deployment]].
+### File Share
+Persistent volume, mounted into the pod running git-sync, into which pulled code is being saved, stores that code in Azure File Share.
+
+We do this because File Share supports RWX (ReadWriteMany) access mode, so we can use that volume for read/write in many pods running on many nodes.
+
+Kubernetes secret with an access key to the Storage Account with that File Share is used for accessing it.
 # Airflow logs
 Airflow logs are being saved in Azure Storage Account. We configure that in the `values.yaml` file.
 ## Service Principal

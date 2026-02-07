@@ -14,6 +14,7 @@ This is a collection of documents related to the Airflow IT tool.
 6. [[Airflow - Metadata database]]
 7. [[Airflow - DAGs]]
 8. [[Airflow - Connection]]
+9. [[Airflow - DAG processor]]
 # Deployment
 1. [[Airflow - Deployment]]
 ## Kubernetes deployment

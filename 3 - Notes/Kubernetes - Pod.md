@@ -5,17 +5,28 @@ Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure
 It is a resource which is the smallest unit in Kubernetes. It is an abstraction of a container. Inside of a Pod we have a container running with app, and that Pod is running on one of the nodes.
 
 We don’t work with the container itself in Kubernetes, just with a Pod or abstractions of Pod (for example Deployment).
-# Pod container settings
-Here are described settings related to the Pod container:
+# Example pod's manifest
+We can create a pod using for example this manifest:
 ```
 apiVersion: v1
 kind: Pod
 metadata:
-	...
+  name: example-pod
 spec:
-	containers:
-		- name: myapp-container
-		  image: myapp:latest
+  containers:
+    - name: example
+      image: python:3.10
+      command: ["bash", "-c"]
+      args: ["ls -la /data"]
+      volumeMounts:
+        - name: data-volume
+          mountPath: /data
+  volumes:
+    - name: data-volume
+      persistentVolumeClaim:
+        claimName: my-pvc
+  restartPolicy: Never
+``
 ```
 
 ## Readiness & Liveness

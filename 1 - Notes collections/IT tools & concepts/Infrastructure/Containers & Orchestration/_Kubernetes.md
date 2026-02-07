@@ -25,12 +25,22 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 15. [[Kubernetes - StatefulSet]]
 16. [[Kubernetes - Secret]]
 17. [[Kubernetes - Taints]]
-18. [[Kubernetes - Volumes and volumeMounts]]
+18. [[Kubernetes - Volume]]
+	1. [[Kubernetes - Persistent Volume (PV)]]
+	2. [[Kubernetes - Persistent Volume Claim (PVC)]]
+	3. [[Kubernetes - Volume with configMap]]
+	4. [[Kubernetes - Dynamic storage provisioner]]
+	5. [[Kubernetes - Volume mounting - SubPath]]
+	6. [[Kubernetes - PVC access modes]]
+	7. [[Kubernetes - Volume mounting -  File permissions]]
 19. [[Kubernetes - Webhooks]]
 20. [[Kubernetes - Gang scheduling]]
 # Practical notes
 1. [[Kubernetes - Running databases]]
 2. [[Kubernetes - Entrypoint as PID 1]]
+3. [[Kubernetes - Port foward]]
+4. [[Kubernetes - Checking permissions]]
+5. [[Kubernetes - Resources limits and requests]]
 ## Details
 1. [[Kubernetes - Containerd]]
 2. [[Kubernetes - Kubeconfig file]]
@@ -46,6 +56,8 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 1. [[Kubernetes - Helm]]
 2. [[Helm - Helpers]]
 3. [[Helm - Pods failures and restarts]]
+4. [[Helm - Dependencies]]
+5. [[Helm - values.yaml]]
 # AKS
 [[AKS - Volumes]]
 # Useful commands

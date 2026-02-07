@@ -16,6 +16,9 @@ More info about Ray Serve - [[_Ray#Ray Serve|link]].
 		- Make additional calculation using those predictions
 	  
 	  then Ray Serve can assign different tasks to different nodes.
+- Task level fault tolerance
+	- If one Rest API call consist of multiple tasks, each of them can be executed independently, at the same time, potentially on different servers.
+	- If one task fails is can be retried without affecting other tasks and restarting the entire Rest API call
 - Request batching
 	- When server receives multiple requests, Ray Serve can combine them into a single forward pass.
 	- For example it can take data from multiple requests and run a single process where ML model makes predictions using it.
