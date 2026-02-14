@@ -29,3 +29,14 @@ airflow:
 	param1: ...
 	...
 ```
+# Parameters specified twice
+If we specify the same parameters twice, for example:
+```yaml
+param1:
+	param2: 
+	
+param1:
+	param3:
+```
+
+Then only one section will take effect.

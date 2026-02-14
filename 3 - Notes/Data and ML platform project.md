@@ -18,23 +18,28 @@ Technologies used:
 - Python
 - dbt
 - MLflow
-# Repository guide
-Information about how to use code from the repository for this project is here - [[Data and ML platform project - Repository guide]]
-# Platform components
-This platform consist of many components:
-- AKS (Kubernetes cluster) for running applications
-- Azure Service Principal for authentication when accessing different Azure services
-- MLflow Tracking Server
-- and more
+# Dev and prod repositories
+This project consists of two repositories:
+- Dev - [data_and_ml_platform_kind](https://github.com/bulka4/data_and_ml_platform_kind) 
+- Prod - [data_and_ml_platform](https://github.com/bulka4/data_and_ml_platform) 
 
-All of them are described here - [[Data and ML platform project - Components]]
+The dev repository is used for running the platform on kind (Kubernetes in Docker), a local Kubernetes cluster running on localhost.
+
+The prod repository is used for running the platform on AKS (Azure Kubernetes Service) and using other cloud services.
+# Repository guide
+Information about how to use code from both prod and dev repositories is here:
+ - [[Data and ML platform project - Prod repository guide (AKS)]]
+ - [[Data and ML platform - Dev repository guide (kind)]]
 # Infrastructure
-For preparing infrastructure to run our platform we use:
+## Prod
+For preparing infrastructure to run our platform in production we use:
 - AKS - Kubernetes cluster to run applications on
 - ACR - Container registry where we keep Docker images used to run applications on Kubernetes
 - Terraform - IaC (infrastructure as code) tool for preparing Azure resources
 
-More details about it can be found here - [[Data and ML platform project - Infrastructure]].
+More details about it can be found here: [[Data and ML platform project - Infrastructure - Production]]
+## Dev
+How we are preparing a kind cluster for development is described here - [[Data and ML platform - Setting up a kind cluster]].
 # Docker image for interacting with AKS
 Terraform creates a Dockerfile which can be used to build an image from which we can interact with AKS and ACR through CLI using:
 - Helm
@@ -47,6 +52,13 @@ From inside of that image we perform operations like:
 - Interacting with Kubernetes pods (checking statuses, logs, connecting to them and executing CLI commands)
 
 More details about it can be found here - [[Data and ML platform project - Docker image for interacting with AKS]]
+# Platform components
+Components from which this platform consist of:
+- AKS (Kubernetes cluster) for running applications
+- Azure Service Principal for authentication when accessing different Azure services
+- MLflow Tracking Server
+- and more
+are described here - [[Data and ML platform project - Components]]
 # Data storage
 We use Azure Storage Account (object storage) for storing:
 - DWH (data warehouse) data 
@@ -69,13 +81,17 @@ All the processes are orchestrated using Airflow:
 - Airflow logs (which are also visible in Airflow UI) are being saved in an Azure Storage Account
 - We use PostgreSQL as Airflow's metadata db (deployed on Kubernetes as well)
 
-More information can be found here - [[Data and ML platform project - Workflow orchestration with Airflow]]
+More information can be found here:
+- [[Data and ML platform project - Workflow orchestration with Airflow (prod, AKS)]]
+- [[Data and ML platform project - Workflow orchestration with Airflow (dev, kind)]]
 # Data ingestion
 Data ingestion is performed using Python. Python script is ran in its own pod on Kubernetes created by the Airflow KubernetesPodOperator.
 # Data transformation
 For data transformation we use dbt and Spark. For running Spark we use Thrift Server.
 
-More information about it can be found here - [[Data and ML platform project - Data transformation]].
+More information about it can be found here
+- [[Data and ML platform project - Data transformation (prod, AKS)]]
+- [[Data and ML platform project - Data transformation (dev, kind)]]
 ## Different data refreshing times
 Tables have different refresh time, some of them are being updated daily while others are being updated weekly or monthly.
 

@@ -12,9 +12,9 @@ Terraform prepares:
 	- values.yaml files for Helm charts
 
 More information about objects prepared by Terraform can be found here - [[Data and ML platform project - Components]].
-## VNet
+# VNet
 We don't create here a VNet so we can easily access AKS from our local computer. For production, it is recommended to use an VNet for security as explained here - [[Azure VNet]].
-## Preparing files
+# Preparing files
 Terraform prepares the following files and saves them on the localhost:
 - `values.yaml` for Helm charts:
 	- `helm_charts/airflow/values.yaml`

@@ -21,6 +21,8 @@ This is a collection of documents related to the Airflow IT tool.
 1. [[Airflow - Kubernetes deployment]]
 # Operators
 1. [[Airflow - KubernetesPodOperator]]
+# Others
+1. [[Airflow - KubernetesExecutor with KubernetesPodOperator]]
 
 # Other notes
 - 

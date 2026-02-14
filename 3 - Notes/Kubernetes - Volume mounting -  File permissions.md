@@ -7,4 +7,4 @@ Native Linux filesystem is saved on a disk and permissions to files as well. Whe
 
 We can also modify permissions in a pod and they will become relevant in the mounted filesystem as well.
 ## SMB-based filesystems
-SMB-based filesystems are for example Azure File Share. They do not support POSIX permission (like native Linux filesystems).
+SMB-based filesystems (for example Azure File Share) do not support POSIX permission.

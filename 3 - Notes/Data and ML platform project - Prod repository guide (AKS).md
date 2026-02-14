@@ -52,26 +52,11 @@ helm install airflow . \
   -f values.yaml &
 ```
 # Spark Thrift Server and Hive Metastore setup
-- Create a secret with Service Principal's credentials which will be used by Spark to get access to data in the Storage Account.
-	  - We can get those values from the Terraform outputs
-```bash
-kubectl create secret generic adls-sp-secret \
-  --from-literal=client-id=XXXX \
-  --from-literal=client-secret=XXXX \
-  --from-literal=tenant-id=XXXX \
-  -n spark
-```
-- Create a secret for Hive Metastore for accessing PostgreSQL metadata db:
-```bash
-kubectl create secret generic hive-metastore-db-secret \
-  --from-literal=hive-password=hivepassword \
-  --from-literal=postgres-password=adminpassword \
-  -n spark
-```
 - Install Helm chart:
 ```bash
+# Execute below commands from the helm_charts/spark_thrift_server folder
 helm dependency update
-helm install spark-thrift-server ./helm_charts/spark_thrift_server
+helm install spark-thrift-server .
 ```
 # MLflow setup
 - Create a secret with credentials to the MySQL backend store. That secret will be used when installing the 'MLflow setup' Helm chart:

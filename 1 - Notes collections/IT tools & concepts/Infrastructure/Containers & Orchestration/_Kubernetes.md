@@ -16,6 +16,7 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 10. [[Kubernetes - Operators]]
 11. [[Kubernetes - Pod]]
 	1. [[Kubernetes - Pod metadata]]
+	2. [[Kubernetes - Pod containers sharing namespace]]
 12. [[Kubernetes - Resources]]
 	1. [[Kubernetes - Manifest]]
 	2. [[Kubernetes - CRD]]

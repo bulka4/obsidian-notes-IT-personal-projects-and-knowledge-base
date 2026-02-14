@@ -5,10 +5,13 @@ This is a collection of documents related to the Docker which is an IT tool for 
 # Setup
 ## Windows
 1. [[Docker - Windows setup]]
+2. [[Docker - Windows - Change resource limits]]
 # Useful commands
 1. [[Docker - useful commands]]
 # Troubleshooting
 1. [[Docker - Windows troubleshooting]]
+# Others
+1. [[Docker - Windows - Disk cleanup]]
 # Docker theory
 5. [[Docker - Image]]
 6. [[Docker - Container]]

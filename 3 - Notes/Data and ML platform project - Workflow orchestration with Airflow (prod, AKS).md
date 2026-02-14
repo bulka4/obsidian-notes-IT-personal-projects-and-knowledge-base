@@ -29,3 +29,47 @@ We create a connection which uses credentials of a Service Principal with permis
 We create a PostgreSQL db for Airflow metadata using Airflow Helm chart.
 
 We do this so we don't pay for a managed service but for production it is recommended to use a managed service since running a database on Kubernetes is problematic as described here - [[Kubernetes - Running databases]].
+# Service account
+We create a service account which will be used by Airflow pods for creating new pods where tasks will be executed. 
+
+In that service account we specify what secret will be used in created pods for authentication when pulling an image.
+# Exposing and accessing the Airflow webserver
+For exposing the Airflow webserver we use a load balancer Kubernetes service. Its external ip can be used to access Airflow UI in a browser. It is accessible under this URL: 
+```
+<webserver-service-external-ip>:8080
+```
+
+This service is specified in `helm_charts/airflow/values.yaml` file.
+# To do
+## webserver URL env var
+Either update webserver URL env var after installation or create an ingress. Start with the first option (simpler), if it works, then check an ingress option.
+### Update after chart installation
+Update webserver URL in pods after installation:
+```bash
+kubectl -n airflow exec -it airflow-webserver -- /bin/bash
+AIRFLOW__WEBSERVER__BASE_URL="http://<webserver_service_external_ip"
+```
+### Create an ingress
+I can create ingress in values.yaml:
+```yaml
+webserver:
+  ingress:
+    enabled: true
+    ingressClassName: nginx   # or azure/application-gateway
+    hosts:
+      - name: airflow.example.com
+        path: /
+    tls:
+      enabled: true
+      secretName: airflow-tls
+  config:
+    AIRFLOW__WEBSERVER__BASE_URL:
+      value: "https://airflow.example.com"
+```
+
+or use nginx ingress controller:
+```bash
+kubectl get pods -n ingress-nginx # check if it already exists
+helm install ingress-nginx ingress-nginx/ingress-nginx # install
+kubectl get ingress # get address
+```

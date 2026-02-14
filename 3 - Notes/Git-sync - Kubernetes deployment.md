@@ -11,20 +11,27 @@ Git-sync tries to set up permissions on folders it uses so we need a storage for
 There might be a problem with finding a storage for PV which supports both RWX and setting file permissions. For example:
 - Azure disk supports permissions but no RWX
 - Azure File Share supports RWX but no permissions
-# Solution
-As a workaround, we create a pod which runs two containers:
+- Azure NetApp Files supports both but is much more expensive
+# Using a PV which supports RWX but not POSIX permissions
+This section describes how to use git-sync in order to pull code, save it in a PV which uses a storage which supports RWX but not POSIX permissions (Azure File share) and mount it into other pods.
+## Saving code by git-sync
+git-sync can't save files in a PV which doesn't support POSIX permissions because git-sync tries to set up permissions automatically.
+
+As a workaround we create a pod which runs two containers:
 - One 'git-sync' container running git-sync which pulls code and saves it in an ephemeral volume
 	- So there is no problem with setting file permissions by git-sync
 - Second one, the 'copier' container running a script which copies pulled code into a PV
 	- So the code is saved in a PV with RWX access mode and can be mounted into many pods on different nodes
 
 This way we get code saved in a PV with RWX which can be mounted into many pods on different nodes and git-sync doesn't have a problem with file permissions when saving code in an ephemeral volume.
+
+A con of that solution is that we save pulled code on the node's disk (ephemeral volume saves it there). If we could pull code and save in straight away in a mounted PV, it would be saved only in that PV, without saving on a node's disk.
 ## rsync
-The copier container is using 
+The copier container is using this command:
 ```bash
 rsync -a --delete /source/folder/ /target/folder/
 ```
-command to copy files from the source folder into the target one. `rsync` is efficient as it copies only changes in files, not all the files.
+to copy files from the source folder into the target one. `rsync` is efficient as it copies only changes in files, not all the files.
 
 The `--delete` option makes sure that files deleted at the source will get deleted at the target.
 # git-sync deployment
