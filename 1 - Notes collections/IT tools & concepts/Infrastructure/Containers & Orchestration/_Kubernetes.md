@@ -1,3 +1,6 @@
+Tags: [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]]
+#Cloud #DevOps #DistributedComputing #DataEngineering 
+
 This is a collection of documents related to Kubernetes which is an IT tool for managing infrastructure for running software.
 
 # Introduction
@@ -23,6 +26,7 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 		1. [[Kubernetes - podTemplateFile]]
 13. [[Kubernetes - Replicas]]
 14. [[Kubernetes - Service Account]]
+	1. [[Kubernetes - Check Service Account permissions]]
 15. [[Kubernetes - StatefulSet]]
 16. [[Kubernetes - Secret]]
 17. [[Kubernetes - Taints]]
@@ -36,6 +40,7 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 	7. [[Kubernetes - Volume mounting -  File permissions]]
 19. [[Kubernetes - Webhooks]]
 20. [[Kubernetes - Gang scheduling]]
+21. [[Kubernetes - Security Context]]
 # Practical notes
 1. [[Kubernetes - Running databases]]
 2. [[Kubernetes - Entrypoint as PID 1]]

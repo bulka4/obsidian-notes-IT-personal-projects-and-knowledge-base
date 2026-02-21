@@ -1,3 +1,6 @@
+Tags: [[__Infrastructure_Engineering]] [[_Linux & Bash]]
+#InfrastructureEngineering #LinuxBash 
+
 This is a collection of documents related to Linux (operating system) and bash.
 
 # Introduction
@@ -13,6 +16,7 @@ This is a collection of documents related to Linux (operating system) and bash.
 	5. [[Linux & bash - Run command in a background]]
 6. [[Linux & Bash - Editing files context (sed, heredoc)]]
 7. [[Linux & Bash - Modifying files and folders permissions and ownerships]]
+	1. [[Linux & Bash - Umask]]
 8. [[Linux & Bash - Installing packages]]
 9. [[Linux & Bash - Logical operators]]
 10. [[Linux & Bash - Loops]]
@@ -21,3 +25,5 @@ This is a collection of documents related to Linux (operating system) and bash.
 	1. [[Linux & bash - cgroups]]
 	2. [[Linux & bash - Namespaces]]
 13. [[Linux - Processes]]
+# Bash debugging
+1. [[Bash - Debug mode]]

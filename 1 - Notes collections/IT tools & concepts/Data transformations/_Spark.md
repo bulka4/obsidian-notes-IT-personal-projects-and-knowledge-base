@@ -1,3 +1,6 @@
+Tags: [[__Data_Engineering]], [[__Distributed_computing]]
+#DataEngineering #DistributedComputing 
+
 This is a collection of documents related to Spark.
 
 # Materials to learn from
@@ -28,11 +31,16 @@ This is a collection of documents related to Spark.
 	2. [[Running Spark on Kubernetes - Spark Operator and SparkApplication CRD]]
 2. [[Running Spark on Kubernetes - Spark Operator]]
 3. [[Running Spark on Kubernetes - SparkApplication]]
+4. [[Spark - Client vs cluster mode]]
 # Thrift Server
 1. [[Spark Thrift Server]]
 2. [[Spark Thrift Server - External Hive Metastore benefits]]
+3. [[Spark Thrift Server - How clients connect]]
+4. [[Spark Thrift Server - Starting the Thrift Server]]
 ## Kubernetes deployment
 1. [[Spark Thrift Server with an external Hive Metastore - Kubernetes deployment]]
+2. [[Spark Thrift Server - Starting the Thrift Server in Kubernetes pod]]
+3. [[Spark Thrift Server - Kubernetes deployment - Testing]]
 # Hive Metastore
 
 # Debugging

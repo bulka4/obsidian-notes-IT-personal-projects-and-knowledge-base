@@ -20,7 +20,7 @@ wsl --unregister docker-desktop
 	netsh winsock reset
 	netsh int ip reset all
 	```
-	and restart PC
+	and restart PC (optional)
 - Above two solutions are usually enough
 - Uninstall Docker in the Control Panel
 - Remove all the files related to Docker:

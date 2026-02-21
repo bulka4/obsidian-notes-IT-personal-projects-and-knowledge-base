@@ -11,7 +11,9 @@ HiveServer2 acts as the gateway between users/tools and Hive:
 
 HiveServer2 is the service that allows multiple users and applications to safely and efficiently run SQL queries on Hive.
 # How clients connect
-Clients connect to HiveServer2 using JDBC or ODBC drivers.
+Clients connect to HiveServer2 using:
+- JDBC or ODBC drivers
+- Thrift protocol
 # Purpose and benefits
 It replaced the older Hive CLI / Hive Thrift Server to solve major limitations:
 - Multi-user concurrency

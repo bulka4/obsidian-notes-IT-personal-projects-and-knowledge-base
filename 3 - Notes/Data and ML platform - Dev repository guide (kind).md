@@ -42,13 +42,26 @@ kind delete cluster --name data-platform
 # Execute below commands from the helm_charts/airflow folder
 helm dependency update
 
-helm install airflow . \
-  -n airflow \
-  -f values.yaml &
+helm -n airflow install airflow . &
+```
+# Spark common resources deployment
+Install Helm chart which creates resources in the `spark` namespace used by other Helm charts related to Spark (Spark Thrift Server and Hive metastore):
+```bash
+# Execute below commands from the helm_charts/spark_common folder
+helm dependency update
+
+helm -n spark install common . &
+```
+# Hive deployment
+```bash
+# Execute below commands from the helm_charts/hive_metastore folder
+helm dependency update
+
+helm -n spark install hive . &
 ```
 # Spark Thrift Server deployment
 - Install Helm chart:
 ```bash
 # Execute below commands from the helm_charts/spark_thrift_server folder
-helm install spark . -n spark -f values.yaml &
+helm -n spark install spark . &
 ```

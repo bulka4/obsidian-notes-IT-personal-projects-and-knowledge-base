@@ -30,5 +30,18 @@ Where:
 Specify what bash command will be executed when starting a container.
 ### ENTRYPOINT
 Specify what bash script will be executed when starting a container.
+### WORKDIR
+The `WORKDIR` instruction creates a folder if it doesn't exist and causes that all the further instructions run inside that folder. For example, if we have:
+```Dockerfile
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+```
+
+then:
+- `requirements.txt` will be copied into the `/app` folder (`.` means `/app`)
+- `RUN` command will be executed in the `/app` folder
+- 
 
 #DevOps #DataEngineering 
