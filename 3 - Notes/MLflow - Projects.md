@@ -24,10 +24,46 @@ The MLproject file is a YAML file which describes:
 - Parameters (if any)
 
 It can look for example like that:
-![[2 - Images/MLflow/Screenshot 2.png]]
+```yaml
+name: mlflow-project
+
+docker_env:
+	image: mlflow:latest
+	build_context: .
+	
+entry_points:
+	preprocess:
+		command: "python preprocess.py"
+		
+	train:
+		parameters:
+			lr:
+				type: float
+				default: 0.001
+			epochs:
+				type: int
+				default: 50
+		command: "python train.py --lr {lr} --epochs {epochs}"
+		
+	evaluate:
+		parameters:
+			model_path:
+				type: str
+			command: "python eval.py --model {model_path}"
+```
+
 ### MLflow project content
 Here is a typical folder structure for a MLflow project:
-![[2 - Images/MLflow/Screenshot 3.png]]
+```bash
+|-- MLproject        # Project definition
+|-- conda.yaml       # environment setup
+|-- Dockerfile       # alternative to conda.yaml
+|-- train.py         # training script
+|-- preprocess.py    # script preprocessing data
+|-- eval.py          # evluating script
+|-- any other files
+```
+
 ### Docker
 We can use Docker for preparing an environment where scripts (entry points) from the MLflow project will be executed.
 
@@ -36,7 +72,17 @@ In the MLproject file we can specify either a Dockerfile or a Docker image which
 Docker image which we want to use in the MLflow project can be saved either on our local computer or in a remote registry.
 ### Deploying on Kubernetes
 In order to run our MLflow project on Kubernetes we need to include a backend_config.yaml file in the MLflow project repository (in the same folder as Dockerfile) and provide the following parameters:
-![[2 - Images/MLflow/Screenshot 4.png]]
+```yaml
+kube-context: cluster-name
+namespace: namespace-name
+service_account: service-account-name
+
+repository-uri: repo-name.azurecr.io/image-name:latest
+
+env:
+	MLFLOW_TRACKING_URI: http://mlflow-server.mlflow.svc:5000
+```
+
 
 - kube-context
 	- Which kube context (which Kubernetes cluster) we want to use.

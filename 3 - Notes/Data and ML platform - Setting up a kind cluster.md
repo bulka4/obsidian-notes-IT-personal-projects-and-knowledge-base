@@ -2,7 +2,9 @@ Tags: [[_kind]] [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infr
 #kind #Cloud #DevOps #DistributedComputing #DataEngineering 
 
 # Introduction
-This document describes how setting up a kind cluster works in this repo - [link](https://github.com/bulka4/data_and_ml_platform_kind).
+This document describes how setting up a kind cluster works in this repo - [link](https://github.com/bulka4/data_and_ml_platform_kind). 
+
+This repo is part of the Data and ML platform project. More info about that project can be found here - [[Data and ML platform project]].
 # Kubeconfig file
 A kubeconfig file, needed to interact with the cluster, is saved in the `%USERPROFILE%\.kube\config` file (`%USERPROFILE%` is user's folder, for example `C:\Users\<user-name>`) automatically by kind when we create a cluster.
 # Docker image for interacting with the kind cluster

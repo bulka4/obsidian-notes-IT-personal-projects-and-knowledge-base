@@ -2,12 +2,15 @@ Tags: [[__DevOps]], [[__Infrastructure_Engineering]], [[_Docker]]
 #DevOps #InfrastructureEngineering #Docker 
 
 ## Wsl related problems
-To solve problems when we see an error related to the wsl, below materials and methods might be useful.
+To solve problems when we see an error related to the wsl (when Docker Engine can't start), below materials and methods might be useful.
 ## Materials
 For running Docker on Windows we are using either wsl 2 or hyper v. Check which option we are using and then when looking for solutions check if they are related to wsl 2 or hyper v.
 - [www.reddit.com](https://www.reddit.com/r/docker/comments/1ft6u6f/docker_desktop_unexpected_wsl_error/)
 - [www.reddit.com](http://www.reddit.com) – Here we are disabling and enabling windows features what can be also done using the Windows Features UI. We just need to look for ‘windows features’ in the search bar next to the windows logo.
 ## Solutions
+## Solution 1
+This solution is usually enough, If not, then try additionally the solution 2.
+
 - Run:
 ```bash
 # Restart wsl
@@ -21,7 +24,9 @@ wsl --unregister docker-desktop
 	netsh int ip reset all
 	```
 	and restart PC (optional)
-- Above two solutions are usually enough
+## Solution 2
+Try first the solution 1. If it is not enough, then try this one.
+
 - Uninstall Docker in the Control Panel
 - Remove all the files related to Docker:
 	- C:\Users\<YourUsername>\.docker

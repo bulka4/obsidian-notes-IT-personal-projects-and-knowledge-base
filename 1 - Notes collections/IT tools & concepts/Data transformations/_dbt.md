@@ -1,3 +1,6 @@
+Tags: [[_dbt]] [[__Data_Engineering]]
+#dbt #DataEngineering 
+
 This is a collection of documents related to the dbt IT tool.
 
 # Benefits
@@ -20,6 +23,11 @@ This is a collection of documents related to the dbt IT tool.
 7. [[dbt - Profiles file]]
 8. [[dbt - Targets]]
 9. [[dbt - Selector patterns - methods]]
+10. [[dbt - Running a Python script in a dbt model]]
+# Debugging
+1. [[dbt - Run a project in a debug mode]]
+# Details
+1. [[dbt - Model names - Case sensitiveness]]
 # How dbt works
 1. [[dbt - Using a catalog]]
 # Cosmos

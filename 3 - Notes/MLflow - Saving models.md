@@ -1,14 +1,37 @@
-Tags: [[__Machine_Learning_Engineering]]
+Tags: [[__Machine_Learning_Engineering]] [[_MLflow]]
+#MLEngineering #MLflow 
 
 # Introduction
-When creating and saving a model, we can assign it to a specific experiment and run:
-![[2 - Images/MLflow/Screenshot 5.png]]
+We can save a model using for example the `mlflow.sklearn.log_model` function:
+```python
+import mlflow
 
-Model’s name specified as the artifact_path argument will be a folder name where model will be stored.
+model = LinearRegression(
+    fit_intercept=args.fit_intercept
+    ,positive=args.positive
+)
 
-We can use that name when loading a model.
+model.fit(X_train, y_train)
 
-In artifact store we have this file structure:
-![[2 - Images/MLflow/Screenshot 6.png]]
+# We can use also 'name' argument instead of 'artifact_path'
+mlflow.sklearn.log_model(model, artifact_path="model_name")
+```
 
-#MLEngineering 
+Model's name specified by the `artifact_path / name` argument can be used when loading a model.
+
+Models and artifacts are saved there in the following structure:
+```bash
+|-- experiment_1_ID
+	|-- run_1_ID
+		|-- artifacts
+		|-- metrics
+		...
+	|-- run_2_ID
+	...
+	|-- models
+		|-- model_1_ID
+		|-- model_2_ID
+		...
+|-- experiment_2_ID
+...
+```

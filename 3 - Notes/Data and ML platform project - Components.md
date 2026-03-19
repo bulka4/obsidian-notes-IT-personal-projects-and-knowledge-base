@@ -1,6 +1,8 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
+# Introduction
+This document explains components of the Data and ML platform project. More info about that project can be found here - [[Data and ML platform project]].
 # ACR
 - We use ACR for storing Docker images which we use to run applications on Kubernetes
 - It is created using Terraform

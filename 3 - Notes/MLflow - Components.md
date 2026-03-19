@@ -1,4 +1,5 @@
-Tags: [[__Machine_Learning_Engineering]]
+Tags: [[__Machine_Learning_Engineering]] [[_MLflow]]
+#MLEngineering #MLflow 
 
 # Introduction
 MLflow has 4 main components:
@@ -6,5 +7,3 @@ MLflow has 4 main components:
 2. **Projects** ([[MLflow - Projects|link]]) – packaging code
 3. **Models** ([[MLflow - Models|link]]) – managing ML models
 4. **Registry** ([[MLflow - Registry|link]]) – central store for versioned models
-
-#MLEngineering 

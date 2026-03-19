@@ -40,7 +40,14 @@ For tracking we are using 3 components:
 	- Serving the **web UI** to browse runs
 
 We set up a Tracking Server with a single command:
-![[2 - Images/MLflow/Screenshot 1.png]]
+```bash
+mlflow server \
+	--host 0.0.0.0 \
+	--port 8885 \
+	--backend-store-uri <url> \
+	--artifacts-destination <url>
+```
+
 
 
 #MLEngineering 

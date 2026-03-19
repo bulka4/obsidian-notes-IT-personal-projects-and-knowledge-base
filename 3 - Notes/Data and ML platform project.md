@@ -26,141 +26,91 @@ This project consists of two repositories:
 The dev repository is used for running the platform on kind (Kubernetes in Docker), a local Kubernetes cluster running on localhost.
 
 The prod repository is used for running the platform on AKS (Azure Kubernetes Service) and using other cloud services.
-# Repository guide
-Information about how to use code from both prod and dev repositories is here:
- - [[Data and ML platform project - Prod repository guide (AKS)]]
- - [[Data and ML platform - Dev repository guide (kind)]]
 # Infrastructure
-## Prod
-For preparing infrastructure to run our platform in production we use:
-- AKS - Kubernetes cluster to run applications on
-- ACR - Container registry where we keep Docker images used to run applications on Kubernetes
-- Terraform - IaC (infrastructure as code) tool for preparing Azure resources
+Below sections and documents describe infrastructure setup, that is how do we set up all the tools which we then can use for developing applications.
+## Infrastructure guide
+A guide for how to set up infrastructure:
+	 - [[Data and ML platform project - Prod repository guide (AKS)]]
+	 - [[Data and ML platform - Dev repository guide - kind setup]]
+## Cloud resources
+Below document explains:
+- What cloud resources we set up
+- How do we configure them
+- How do we use Terraform for that
+[[Data and ML platform project - Cloud resources]] 
+## kind cluster for local testing
+Below document describes setting up a kind Kubernetes cluster for local testing before deploying on AKS:
+[[Data and ML platform - Setting up a kind cluster]] 
+## Docker image for interacting with AKS
+This document describes the Docker image which can be used for interacting with AKS and other cloud resources: [[Data and ML platform project - Docker image for interacting with Kubernetes]]
 
-More details about it can be found here: [[Data and ML platform project - Infrastructure - Production]]
-## Dev
-How we are preparing a kind cluster for development is described here - [[Data and ML platform - Setting up a kind cluster]].
-# Docker image for interacting with AKS
-Terraform creates a Dockerfile which can be used to build an image from which we can interact with AKS and ACR through CLI using:
-- Helm
-- kubectl
-- Azure CLI
+In that container we have prepared all the tools needed, like for example `kubectl`.
+## Platform components (to delete)
+This document gives overview of all the components of this platform, like cloud resources, Kubernetes resources, applications we run - [[Data and ML platform project - Components]].
+## Code development
+Those documents describe how to set up environment for developing code on Kubernetes:
+- Using VS Code Kubernetes extension for this project - [[Data and ML platform project - VS Code Kubernetes extension setup for code development|link]] 
+- Code development on Kubernetes general notes - [[Data and ML platform project - Code development setup|link]] 
+## Making code available in pods
+This document describes how do we make code available in pods, i.e. either via git-sync or by cloning a git repo in an init container - [[Data and ML platform project - Making code available in pods]].
+## Data storage
+This document describes data storage systems used for this platform - [[Data and ML platform project - Data storage]]
+## Airflow setup
+Those documents describe how do we setup Airflow:
+- [[Data and ML platform project - Airflow setup (prod, AKS)]]
+- [[Data and ML platform project - Airflow setup (dev, kind)]]
+## Data transformation setup
+Below sections describe how to set up tools used for data transformation:
+- Spark Thrift Server with Iceberg
+- dbt
+- Hive Metastore (optional, not used currently)
+### Spark Thrift Server and Iceberg
+Those documents explain how do we set up Spark Thrift Server and Iceberg:
+- [[Data and ML platform project - Spark Thrift Server setup]]
+- [[Data and ML platform project - Spark Thrift Server setup - Details]]
+### dbt
+This document explains how do we set up dbt - [[Data and ML platform project - dbt setup]]
+### Hive Metastore
+This document explains how do we set up Hive Metastore - [[Data and ML platform project - Hive Metastore setup]]
 
-From inside of that image we perform operations like:
-- Building Docker images and pushing them to ACR
-- Deploying Helm charts
-- Interacting with Kubernetes pods (checking statuses, logs, connecting to them and executing CLI commands)
-
-More details about it can be found here - [[Data and ML platform project - Docker image for interacting with AKS]]
-# Platform components
-Components from which this platform consist of:
-- AKS (Kubernetes cluster) for running applications
-- Azure Service Principal for authentication when accessing different Azure services
-- MLflow Tracking Server
-- and more
-are described here - [[Data and ML platform project - Components]]
-# Data storage
-We use Azure Storage Account (object storage) for storing:
-- DWH (data warehouse) data 
-	- Used for analytics and ML
-	- We use Delta Lake storage framework for that data
-- Airflow logs
-- MLflow artifacts
-
-Additionally, we use:
-- PostgreSQL for Hive Metastore metadata (deployed on AKS)
-- PostgreSQL for Airflow metadata (deployed on AKS)
-- MySQL as a MLflow backend store (deployed on AKS)
-# Workflow orchestration with Airflow
-All the processes are orchestrated using Airflow:
-- Data ingestion
-- Data transformation
-- Running MLflow projects
-
-- We use git-sync to pull code from a repo, with Airflow tasks to run, into Kubernetes pods where code will be executed 
-- Airflow logs (which are also visible in Airflow UI) are being saved in an Azure Storage Account
-- We use PostgreSQL as Airflow's metadata db (deployed on Kubernetes as well)
-
-More information can be found here:
-- [[Data and ML platform project - Workflow orchestration with Airflow (prod, AKS)]]
-- [[Data and ML platform project - Workflow orchestration with Airflow (dev, kind)]]
-# Data ingestion
-Data ingestion is performed using Python. Python script is ran in its own pod on Kubernetes created by the Airflow KubernetesPodOperator.
-# Data transformation
-For data transformation we use dbt and Spark. For running Spark we use Thrift Server.
-
-More information about it can be found here
-- [[Data and ML platform project - Data transformation (prod, AKS)]]
-- [[Data and ML platform project - Data transformation (dev, kind)]]
-## Different data refreshing times
-Tables have different refresh time, some of them are being updated daily while others are being updated weekly or monthly.
-
-We update all the tables with the same refresh time by using tags (we run a single dbt run command and it builds all the tables with a specific tag which corresponds to a specific refresh time).
-# MLflow setup
+Using Hive Metastore is optional, we don't use it currently.
+## MLflow setup
 We use MLflow for ML model creation, monitoring and retraining.
 
 More details can be found here - [[Data and ML platform project - MLflow setup]].
-# ML model creation
-## Data preparation
-To prepare a dataset for a model, it is probably better to prepare it together with other datasets within the same dbt run, outside of a MLflow project.
+# Data and ML workflows
+Below sections and documents describe how to use this platform to create data and ML workflows.
+## Platform usage guide
+A guide for how to use this platform for data processing and developing ML models:
+- [[Data and ML platform project - Using the platform guide]]
+## Code development & testing scripts
+This document explains how we can develop code on a local computer and run it on Kubernetes to test it - [[Data and ML platform project - Code development & testing scripts]]
+## Common code
+In the `apps/common` folder we have a common code used by all other applications.
+## Workflow orchestration with Airflow
+This document describes how workflow orchestration looks like - [[Data and ML platform project - Workflow orchestration with Airflow]].
+## Data transformation
+Documents about data transformation:
+- [[Data and ML platform project - Data transformation workflow (dev, kind)]]
+	- [[Data and ML platform project - dbt with Airflow]]
+## Data ingestion
+This document describes how do we perform data ingestion - [[Data and ML platform project - Data ingestion]]
+## MLOps with MLflow
+MLOps consists of:
+- ML model creation
+- Performance monitoring
+- Retraining
+- Updating the model used in production with a new one
 
-Preparing a dataset within a MLflow project might make sense only if we know, that this dataset will be used only for this one model and nothing else.
-## Data reproducibility
-We make sure, that when we prepare a dataset for training a model within a MLflow project, we always get exactly the same dataset, no matter when we run that project.
-
-To ensure that, we:
-- Select data within a specific time frame
-- Save data used for every training in a table using Delta Lake 
-	- Time travel can be used for versioning - we save different versions of data (used for different trainings) and we can access them later
-- For features that change over time (like user status), use dbt snapshots
-- MLflow run logs:
-	- Table name or path
-	- Delta version or timestamp
-	- Information which tells us:
-		- For which time frame we selected data for training 
-		- Which version we used (For features that change over time)
-	- dbt commit hash
-
-We want to keep both:
-- Data used for training (saved in a storage)
-- Query which generated it
-
-Thanks to that:
-- Saved data gives us a guarantee that we will have available exactly the same dataset available which was used for training (query might not be able to reproduce it later in the future) 
-- Query tells us how that dataset was created
-# ML model performance monitoring
-We monitor ML model performance over time as new data arrives by performing calculations described below. 
-
-We perform those calculations using dbt whenever possible and Python for more complex calculations, and save results in tables.
-## Model performance metrics
-- Accuracy, RMSE etc
-## Prediction behavior
-Check:
-- Prediction mean
-- Prediction variance
-- Class balance
-- Confidence distribution
-
-If those values changes significantly, something might be wrong.
-## Data drift
-Check for new data:
-- Feature distributions
-- Null rates
-- Cardinality
-- Summary stats
-
-and compare it with the data used for training. If those values are different, then model can start making bad predictions.
-
-This way we can detect problems with predictions before they appear.
-# Model retraining
-Once we have results of monitoring in tables, we run MLflow projects which retrains the model if specified conditions are satisfied (model performs badly).
-
-We create many different models using different hyper parameters and datasets.
-# Updating the model
-Once we have new models created, then we can run a Python script which:
-- Checks models' performance from MLflow database
-- Picks up the best model
-- Saves the model in a specified location which will be used in a production pipeline
+More info about this workflow using MLflow on this platform can be found in documents below:
+- [[Data and ML platform project - MLOps with MLflow]]
+	- [[Data and ML platform project - Making and saving predictions]]
+	- [[Data and ML platform project - MLOps - MLflow workflow]]
+	- [[Data and ML platform project - Code - MLflow projects]]
+	- [[Data and ML platform project - Code development & testing scripts]]
+# Code
+## MLflow projects
+Notes about MLflow code - [[Data and ML platform project - Code - MLflow projects]]
 # Optional improvements for later
 ## Monitoring
 Use Prometheus and Grafana for monitoring.
@@ -170,6 +120,16 @@ Set up a server running a Jupyter Notebook which users can use over a browser to
 Training models using DeepSpeed and Kubeflow TrainingRuntime CRD like described here - [[DeepSpeed cluster project]].
 ## RAG system
 RAG system with access to dbt data dictionary. Use the RAG system I already created and modify it - [[RAG app project]].
+## PyIceberg
+Use PyIceberg for writing data into the Iceberg catalog instead of Spark. That can be used for example when:
+- Ingesting data from external sources
+- Making prediction with a ML model and saving them in an Iceberg table
+
+Benefit of that is that PyIceberg image would be much smaller than the Spark one and we don't need to mount Spark configuration files.
+# Reference docs
+Official docs which describes tools used in this project are listed here - [[Data and ML platform project - Official docs]]
+# To do next
+Notes about what to do next - [[Data and ML platform project - To do]] 
 # Questions
 - Is the `as_of_date` a tag assigned to a table by dbt to know when it was created?
 - 

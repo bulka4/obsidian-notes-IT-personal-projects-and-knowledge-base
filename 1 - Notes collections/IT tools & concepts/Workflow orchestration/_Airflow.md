@@ -1,3 +1,6 @@
+Tags: [[__Data_Engineering]] [[_Airflow]]
+#DataEngineering #Airflow 
+
 This is a collection of documents related to the Airflow IT tool.
 
 # Materials to learn from
@@ -15,6 +18,9 @@ This is a collection of documents related to the Airflow IT tool.
 7. [[Airflow - DAGs]]
 8. [[Airflow - Connection]]
 9. [[Airflow - DAG processor]]
+# Tools
+1. [[Airflow - Sensors]]
+2. [[Airflow - Event-driven triggers]]
 # Deployment
 1. [[Airflow - Deployment]]
 ## Kubernetes deployment

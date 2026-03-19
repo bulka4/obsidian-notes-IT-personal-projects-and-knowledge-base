@@ -15,8 +15,10 @@ Runs on each node, launches containers, monitors resources.
 Every process we want to run with YARN (for example Spark jobs) gets its own ApplicationMaster.
 
 It is responsible for:
--Requesting containers from the ResourceManager
--Requesting NodeManagers to launch containers
+- Requesting containers from the ResourceManager
+- Requesting NodeManagers to launch containers
+- Monitoring the job’s progress
+- Handling task failures and retries
 
 More information about how this works in case of Spark is in the ‘spark/spark on YARN notes’ document.
 

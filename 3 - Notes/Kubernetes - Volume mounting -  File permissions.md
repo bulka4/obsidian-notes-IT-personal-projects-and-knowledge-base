@@ -7,7 +7,7 @@ File permissions which we set up in:
 - Any pod having that volume mounted
 Are propagated (take effect) to data storage and all the pods.
 # Different data storage types
-How file permissions behave when using mounting, depends on what data storage (filesystem) we use for the volume.
+How file permissions behave when using mounting, depends on what data storage (filesystem) we use for the volume. Some of them supports POSIX permissions ([[POSIX-like ACL|link]]), others doesn't.
 ## Native Linux filesystems
 Native Linux filesystem is saved on a disk and permissions to files as well. When we set permissions in that filesystem and mount it into a pod, they are relevant in the pod as well.
 

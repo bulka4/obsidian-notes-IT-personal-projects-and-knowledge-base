@@ -2,7 +2,7 @@ Tags: [[_dbt]] [[_Spark]]
 #dbt #Spark 
 
 # Introduction
-When using dbt with Spark, it is generally better to use a persistent Spark session ([[Spark - Session|link]]) (for example via Spark Thrift Server) rather than creating a new Spark session for every dbt run.
+When using dbt with Spark, it is generally better to use a persistent Spark session ([[SparkSession|link]]) (for example via Spark Thrift Server) rather than creating a new Spark session for every dbt run.
 
 This recommendation applies specifically to dbt-style workloads, which execute many SQL statements which uses database metadata a lot and expect database-like behavior.
 

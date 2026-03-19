@@ -1,4 +1,5 @@
 Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_IT_tools]]
+#InfrastructureEngineering #OperatingSystems #InfrastructureITTools 
 
 # Introduction
 Kernel manages hardware (CPU, RAM). It is a bridge between applications / processes and hardware.
@@ -26,5 +27,3 @@ For example when we run a Python script then Kernel:
 - Allocates memory
 - Schedules it to run on the CPU
 - Tracks when it finishes
-
-#InfrastructureEngineering #OperatingSystems #InfrastructureITTools 

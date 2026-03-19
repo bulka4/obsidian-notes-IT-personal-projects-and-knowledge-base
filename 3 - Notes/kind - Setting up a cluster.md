@@ -6,7 +6,7 @@ How to set up a kind cluster and use it for deploying Kubernetes resources refer
 
 They show how to use kind for deploying example resources for data processing and ML:
 - [[Data and ML platform - Setting up a kind cluster]]
-- [[Data and ML platform - Dev repository guide (kind)]]
+- [[Data and ML platform - Dev repository guide - kind setup]]
 # Prerequisites
 - We need to have Docker installed and running - [[Docker - Windows setup]]
 ## kind config file

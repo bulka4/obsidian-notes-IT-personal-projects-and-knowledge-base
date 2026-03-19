@@ -6,6 +6,7 @@ For information about how to deploy Spark Thrift Server with an external Hive Me
 
 In this project we deploy more solutions than just Thrift Server but its code and documentation can be used to deploy only Thrift Server:
 - [[Data and ML platform project]]
-- [[Data and ML platform project - Data transformation (prod, AKS)]]
+- [[Data and ML platform project - Spark Thrift Server setup]]
+- [[Data and ML platform project - Hive Metastore setup]]
 - [[Data and ML platform project - Prod repository guide (AKS)]]
-- [[Data and ML platform - Dev repository guide (kind)]]
+- [[Data and ML platform - Dev repository guide - kind setup]]

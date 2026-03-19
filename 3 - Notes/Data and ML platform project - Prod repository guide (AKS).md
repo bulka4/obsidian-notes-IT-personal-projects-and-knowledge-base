@@ -1,6 +1,10 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
+# Introduction
+This is a guide for how to deploy code from this repo - [link](https://github.com/bulka4/data_and_ml_platform_kind) on AKS for production. 
+
+That is code from the Data and ML platform project about which more info we can find here - [[Data and ML platform project]].
 # Run Terraform code
 ## Prepare variables
 Create the `terraform.tfvars` file and assign there values to the variables. We can use for that the `terraform-draft.tfvars` file which is a draft showing what variables to set up.
