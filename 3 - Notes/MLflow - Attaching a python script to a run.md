@@ -21,7 +21,7 @@ with mlflow.start_run() as run:
 	mlflow.sklearn.log_model(model)
 ```
 
-The `mlflow.start_run()` function can start a new run if it was not started yet (if we run our script using `python script.py` instead of `mlflow run`) or attach our script to the current run where this script runs.
+How the `mlflow.start_run()` function works is described here - [[MLflow - Start a run]].
 
 If our script is not attached to a run, then we can have problems such that:
 - When we search logged models using `search_logged_models` ([[MLflow - Searching logged models|link]]) we might not see the `source_run_id` assigned to the model. Because of that we can have a problem with finding that model because we will not be able to find the model for a specific run ID.

@@ -9,3 +9,5 @@ We orchestrate workflow using Airflow. That workflow includes:
 Notes about using dbt with Airflow are here - [[Data and ML platform project - dbt with Airflow]].
 # Making and saving predictions
 More info about making and saving predictions - [[Data and ML platform project - Making and saving predictions]].
+
+Info about how to run it with Airflow - [[Data and ML platform project - Making and saving predictions - Airflow orchestration]]

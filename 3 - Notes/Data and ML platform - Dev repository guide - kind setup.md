@@ -80,3 +80,18 @@ kind delete cluster --name data-platform
 	# Execute below commands from the helm_charts/mlflow_setup folder
 	helm -n mlflow install mlflow . &
   ```
+# Installing Kubernetes operators
+- Install Spark Operator (more details here - [[Data and ML platform project - Spark Operator setup|link]])
+	- It is needed when making predictions with ML models and saving them in the Iceberg catalog, for example in the scripts:
+		- `apps/airflow/dags/make_predictions/make_predictions_spark_operator.py`
+  ```bash
+	helm repo add spark-operator https://kubeflow.github.io/spark-operator
+	helm repo update
+	
+	helm install spark-operator spark-operator/spark-operator -n spark \
+	--set sparkOperatorVersion=v1beta2-2.1.0-3.5.0 \
+	--set spark.jobNamespaces={spark} \
+	--set webhook.enable=true \
+	--set webhook.enableCertManager=false \
+	--set webhook.generateSelfSignedCert=true
+  ```

@@ -16,4 +16,6 @@ Tags: [[_My_projects]]
 	- Write Python code for ingesting data into Data Lake
 		- Save it as Iceberg table straight away (optional)
 	- Run it with Airflow
+- In dbt, mark tables ingested from external sources as source tables
+- testing source data in dbt
 - dbt with Airflow and Cosmos

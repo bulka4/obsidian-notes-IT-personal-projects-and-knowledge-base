@@ -78,6 +78,8 @@ Using Hive Metastore is optional, we don't use it currently.
 We use MLflow for ML model creation, monitoring and retraining.
 
 More details can be found here - [[Data and ML platform project - MLflow setup]].
+## Spark Operator
+This document explains how to set up Spark Operator - [[Data and ML platform project - Spark Operator setup]]
 # Data and ML workflows
 Below sections and documents describe how to use this platform to create data and ML workflows.
 ## Platform usage guide
@@ -88,11 +90,14 @@ This document explains how we can develop code on a local computer and run it on
 ## Common code
 In the `apps/common` folder we have a common code used by all other applications.
 ## Workflow orchestration with Airflow
-This document describes how workflow orchestration looks like - [[Data and ML platform project - Workflow orchestration with Airflow]].
+This document describes how workflow orchestration looks like:
+- [[Data and ML platform project - Workflow orchestration with Airflow]]
+	- [[Data and ML platform project - dbt with Airflow]]
+	- [[Data and ML platform project - Making and saving predictions - Airflow orchestration]]
 ## Data transformation
 Documents about data transformation:
+- [[Data and ML platform project - Data transformation - Code and practices followed]]
 - [[Data and ML platform project - Data transformation workflow (dev, kind)]]
-	- [[Data and ML platform project - dbt with Airflow]]
 ## Data ingestion
 This document describes how do we perform data ingestion - [[Data and ML platform project - Data ingestion]]
 ## MLOps with MLflow
@@ -104,13 +109,12 @@ MLOps consists of:
 
 More info about this workflow using MLflow on this platform can be found in documents below:
 - [[Data and ML platform project - MLOps with MLflow]]
+	- [[Data and ML platform project - Training, evaluating and saving ML models with MLflow]]
 	- [[Data and ML platform project - Making and saving predictions]]
-	- [[Data and ML platform project - MLOps - MLflow workflow]]
-	- [[Data and ML platform project - Code - MLflow projects]]
-	- [[Data and ML platform project - Code development & testing scripts]]
+	- [[Data and ML platform project - MLflow projects code]]
+	- [[Data and ML platform project - ML model performance monitoring]]
 # Code
-## MLflow projects
-Notes about MLflow code - [[Data and ML platform project - Code - MLflow projects]]
+- MLflow projects - [[Data and ML platform project - MLflow projects code]]
 # Optional improvements for later
 ## Monitoring
 Use Prometheus and Grafana for monitoring.

@@ -6,39 +6,48 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 # Introduction
 1. [[Kubernetes - Introduction]]
 2. [[Kubernetes - Benefits]]
-# Theory
+# Components
+1. [[Kubernetes - Master node & worker node]]
+2. [[Kubernetes - Components - Container runtime]]
+3. [[Kubernetes - Components - Kubelet]]
+4. [[Kubernetes - Components - Kube proxy]]
+5. [[Kubernetes - Components - API server]]
+6. [[Kubernetes - Components - Scheduler]]
+7. [[Kubernetes - Components - Controller manager]]
+8. [[Kubernetes - Components - Etcd]]
+# How Kubernetes work
+## Basics
 1. [[Kubernetes - Materials to learn from]]
-2. [[Kubernetes - CronJobs]]
-3. [[Kubernetes - ConfigMap]]
-4. [[Kubernetes - Deployment]]
-5. [[Kubernetes - Job]]
-6. [[Kubernetes - Kubectl]]
-7. Components:
-	1. [[Kubernetes - Master node & worker node]]
-	2. [[Kubernetes - Components - Container runtime]]
-	3. [[Kubernetes - Components - Kubelet]]
-	4. [[Kubernetes - Components - Kube proxy]]
-	5. [[Kubernetes - Components - API server]]
-	6. [[Kubernetes - Components - Scheduler]]
-	7. [[Kubernetes - Components - Controller manager]]
-	8. [[Kubernetes - Components - Etcd]]
-8. [[Kubernetes - Namespace]]
-9. [[Kubernetes - Node]]
-10. [[Kubernetes - Operators]]
-11. [[Kubernetes - Pod]]
-	1. [[Kubernetes - Pod metadata]]
-	2. [[Kubernetes - Pod containers sharing namespace]]
-12. [[Kubernetes - Resources]]
+2. [[Kubernetes - Kubectl]]
+3. [[Kubernetes - Namespace]]
+4. [[Kubernetes - Node]]
+5. [[Kubernetes - Operators]]
+6. [[Kubernetes - Resources]]
 	1. [[Kubernetes - Manifest]]
 	2. [[Kubernetes - CRD]]
 		1. [[Kubernetes - podTemplateFile]]
-13. [[Kubernetes - Replicas]]
-14. [[Kubernetes - Service Account]]
+## Details
+1. [[Kubernetes - Containerd]]
+2. [[Kubernetes - Kubeconfig file]]
+3. [[Kubernetes - Kube context]]
+4. [[Kubernetes - CRI (Container Runtime Interface)]]
+5. [[Kubernetes - Interacting with Kubernetes API using in-cluster config]]
+	1. [[Kubernetes - Interacting with Kubernetes API using in-cluster config from Python]]
+# Kubernetes resources
+1. [[Kubernetes - CronJobs]]
+2. [[Kubernetes - ConfigMap]]
+3. [[Kubernetes - Deployment]]
+4. [[Kubernetes - Job]]
+5. [[Kubernetes - Pod]]
+	1. [[Kubernetes - Pod metadata]]
+	2. [[Kubernetes - Pod containers sharing namespace]]
+6. [[Kubernetes - Replicas]]
+7. [[Kubernetes - Service Account]]
 	1. [[Kubernetes - Check Service Account permissions]]
-15. [[Kubernetes - StatefulSet]]
-16. [[Kubernetes - Secret]]
-17. [[Kubernetes - Taints]]
-18. [[Kubernetes - Volume]]
+8. [[Kubernetes - StatefulSet]]
+9. [[Kubernetes - Secret]]
+10. [[Kubernetes - Taints]]
+11. [[Kubernetes - Volume]]
 	1. [[Kubernetes - Persistent Volume (PV)]]
 	2. [[Kubernetes - Persistent Volume Claim (PVC)]]
 	3. [[Kubernetes - Volume with configMap]]
@@ -47,14 +56,12 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 	6. [[Kubernetes - PVC access modes]]
 	7. [[Kubernetes - Volume mounting -  File permissions]]
 	8. [[Kubernetes - Storages for volumes]]
-19. [[Kubernetes - Webhooks]]
-20. [[Kubernetes - Gang scheduling]]
-21. [[Kubernetes - Security Context]]
-## Details
-1. [[Kubernetes - Containerd]]
-2. [[Kubernetes - Kubeconfig file]]
-3. [[Kubernetes - Kube context]]
-4. [[Kubernetes - CRI (Container Runtime Interface)]]
+12. [[Kubernetes - Webhooks]]
+13. [[Kubernetes - Gang scheduling]]
+14. [[Kubernetes - Security Context]]
+## Resource manifests parameters
+### Pod manifest
+1. [[Kubernetes - Pod manifest - Command parameter]]
 # Practical notes / good practices
 1. [[Kubernetes - Running databases]]
 2. [[Kubernetes - Entrypoint as PID 1]]
@@ -77,9 +84,6 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 	1. [[Kubernetes - Check pods attached to a service]]
 8. Deployment
 	1. [[Kubernetes - Restart (rollout) a deployment]]
-# Manifest parameters - details
-## Pod manifest
-1. [[Kubernetes - Pod manifest - Command parameter]]
 # Networking
 1. [[Kubernetes - Networking]]
 2. [[Kubernetes - CNI]]
@@ -99,7 +103,7 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 4. [[Helm - Check rendered YAML manifest that will be applied]]
 # AKS
 [[AKS - Volumes]]
-# Code development on Kubernetes
+# Code development in Kubernetes pods
 1. [[Kubernetes - Code development]]
 2. [[Kubernetes code development - Telepresence]]
 3. [[Kubernetes code development - VS Code and Remote Kubernetes container]]

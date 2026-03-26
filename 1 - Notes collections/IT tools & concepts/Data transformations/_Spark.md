@@ -36,7 +36,8 @@ This is a collection of documents related to Spark.
 ## Spark SQL
 1. [[Spark - Catalog]]
 2. [[Spark - Tables metadata]]
-3. [[Spark - Managed and external tables]]
+3. [[Spark and metadata store roles when executing SQL queries]]
+4. [[Spark - Managed and external tables]]
 # Spark configuration and setup
 1. [[Spark - Adding jars]]
 ## Debugging
@@ -71,6 +72,8 @@ This is a collection of documents related to Spark.
 1. [[SparkApplication CRD - Mounting a volume to an init container]]
 2. [[SparkApplication CRD - Dynamic configs (using values from secrets)]]
 3. [[SparkApplication CRD - mainApplicationFile - Script to run]]
+## Spark Operator debugging
+1. [[Spark Operator - Check controller logs]]
 # Others
 1. [[Spark - Monitoring]]
 2. [[Spark - Code development]]

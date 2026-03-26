@@ -18,45 +18,26 @@ To query data we created in a Spark catalog, we can:
     /opt/spark/bin/beeline -u jdbc:hive2://localhost:10000
     ```
 - Then, we can run SQL queries
-# Running a dbt project
-To run a dbt project we can use:
+# Building tables with dbt
+To build tables we need to run a dbt project. For that we can use:
 - Helm chart
 - Airflow DAG
-
-dbt will use code from the git repo, from the path `apps/dbt`, so we need to have that code uploaded to the repo.
-## Helm chart
-- We need to have Spark running (as described in the previous section)
+## dbt files to run
+dbt will use code from the git repo, from the path `apps/dbt` (it will be pulled when starting the pod), so we need to have that code uploaded to the repo.
+## Dev pod
+- We need to have Spark Thrift Server running (as described in the previous section)
 - Install the chart:
 ```bash
-# Run this command in the helm_charts/dbt folder
+# Run this command in the helm_charts/development_pods/dbt folder
 helm -n spark install dbt . &
 ```
-- Connect to the dbt pod:
+- Get access to a bash session in the created dbt pod:
 ```bash
 kubectl -n dbt exec -it dbt -- /bin/bash
 ```
-- Run dbt project:
-```bash
-dbt run
-```
+- Now we can run dbt commands in the pod.
+
+That should create tables visible in Azure Data Lake. dbt connects to the Spark Thrift server in order to build those tables and they are created in the Iceberg catalog.
 ## Airflow DAG
 - Go to the Airflow UI at `localhost:8080`
 - Trigger the dbt DAG from the Airflow UI
-# dbt tags
-We use dbt tags to group models based on different criteria:
-- Data source
-- Dimension and fact tables
-## Data source group
-Models have tags indicating from which source they use data.
-
-For each data source, models which use its data are build together in a single run, right after data from that source has been ingested. 
-
-Both data ingestion and running dbt models using this data is a single Airflow DAG.
-# Simulating data from external sources
-In the `dbt/workspace/models/source` folder we have folders with models which simulates data from external sources. Each folder corresponds to a single data source.
-# Different data refreshing times
-Tables have different refresh time, some of them are being updated daily while others are being updated weekly or monthly.
-
-We update all the tables with the same refresh time by using tags (we run a single dbt run command and it builds all the tables with a specific tag which corresponds to a specific refresh time).
-# dbt with Airflow
-Notes about using dbt with Airflow are here - [[Data and ML platform project - dbt with Airflow]].

@@ -34,10 +34,20 @@ Then, the traffic will go like this:
 - host port (port on the host specified in the `kind-config.yaml`) ->
 - container port / node port (port in the kind node container, specified in the `kind-config.yaml` as `containerPort` and in the service as `nodePort`) ->
 - target port (port in the container running in the kind cluster, specified in the service)
-# Git-sync
-We use git-sync to pull code from a git repo and make it available in pods running Airflow components (scheduler etc).
+# Mounting DAGs code into Airflow pods
+To make DAGs code available for Airflow, we need to mount a folder from the local host. There are two approaches:
+- Mount the `apps` folder to have local files available
+- Mount the `git_code` folder and use git-sync to pull code from a repo into that folder.
 
-Git-sync is deployed separately using its own Helm chart (`helm_charts/git_sync`).
+The `dagsPvc.hostPath` parameter in the `values.yaml` specifies which folder we want to mount.
+
+Depending on what option we choose, we need to also provide a proper `subPath` parameter:
+- When `hostPath` = `apps`, then `subPath` = `airflow/dags`
+- When `hostPath` = `git_code`, then `subPath` = `apps/airflow/dags`
+## Git-sync
+We can use git-sync to pull code from a git repo and make it available in pods running Airflow components (scheduler etc).
+
+Git-sync is deployed separately using its own Helm chart (`helm_charts/git_sync`). It will save code on the host in the `git_code` folder which we can then mount into Airflow pods.
 
 More info about it can be found here - [[Data and ML platform project - Making code available in pods]], in the 'git-sync' section.
 # Metadata db

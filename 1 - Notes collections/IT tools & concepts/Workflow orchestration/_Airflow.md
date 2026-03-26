@@ -21,6 +21,8 @@ This is a collection of documents related to the Airflow IT tool.
 # Tools
 1. [[Airflow - Sensors]]
 2. [[Airflow - Event-driven triggers]]
+3. [[Airflow - PythonOperator]]
+4. [[Airflow - Custom operators]]
 # Deployment
 1. [[Airflow - Deployment]]
 ## Kubernetes deployment

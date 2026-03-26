@@ -11,7 +11,9 @@ We can use the `search_runs` function to get information about different runs. I
 - Tags
 - Params
 - Metrics
-# Examples
-In documents listed below we can find examples of how we can search through runs:
+# Search options
+In documents listed below we can find what options do we have when searching through runs:
+## Sort
+We can sort results as described here - [[MLflow - Searching runs - Sort results|link]]. This can be used for example to:
 - Find ID of the latest run - [[MLflow - Searching runs examples - Find ID of the latest run|link]] 
 - Find ID of the run with the highest / lowest metrics - [[MLflow - Searching runs examples - Find ID of the run with the highest or lowest metrics|link]] 

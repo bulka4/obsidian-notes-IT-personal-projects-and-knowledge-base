@@ -23,6 +23,8 @@ We can use git-sync which runs in a separate pod or sidecar container and which:
 - Saves code in a PV
 - Other pods / containers can take that code using a PV connected to the same storage
 
+When deployed on kind, it saves data in the `git_code` folder.
+
 More details about how git-sync works can be found here - [[Git-sync - Kubernetes deployment]].
 
 It is good when we run in a pod a long-running service, which is supposed to run all the time, not finish in a specific period. The benefit is that we have the latest code available all the time.

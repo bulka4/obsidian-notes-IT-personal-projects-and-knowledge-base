@@ -16,7 +16,7 @@ containers:
 	- /opt/spark/conf/spark.properties
 	- --class
 	- org.apache.spark.deploy.PythonRunner
-	- local:///opt/spark/scripts/test/make_predictions_spark_operator.py
+	- local:///opt/spark/scripts/folder_name/script.py
 ```
 
 We can check it by using `kubectl -n <namespace> get pod <spark-application-name>-driver -o yaml`.

@@ -1,7 +1,7 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
-# MLflow projects
+# Introduction
 In the `apps/mlflow_projects` we have folders:
 - `common` - Common functions to be used by other MLflow projects:
 	- `my_mlflow.py` - Class with useful functions for working with MLflow
@@ -12,3 +12,4 @@ In the `apps/mlflow_projects` we have folders:
 	- `train.py` - Script for training the model
 	- `run_script.bash` - Commands to run a MLflow project with different parameters and entrypoints
 	- `promote_model.py` - Find the model with the best evaluation metrics and register it (so it can be then easily loaded and used in production data pipelines)
+	- `delete_exp_run.py` - Delete an experiment or run

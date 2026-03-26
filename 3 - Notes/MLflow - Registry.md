@@ -9,5 +9,7 @@ MLflow registry is a centralized model store where we manage the lifecycle of yo
 - Easy model loading: Load a model using its name and version
 
 It basically brings model governance and collaboration to your ML pipeline.
+# Versions and stages
+Each model in a registry gets assigned a version and stage like described here - [[MLflow - Model versions and stages]].
 
 #MLEngineering 

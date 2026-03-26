@@ -17,8 +17,4 @@ def get_experiment_id(experiment_name):
 			return e.experiment_id
 ```
 # Get experiment by name
-There is also a function to find experiment based on its name:
-```python
-experiment = mlflow.get_experiment_by_name(experiment_name)
-experiment_id = experiment.experiment_id
-```
+There is also a function to find experiment based on its name - [[MLflow - Get experiment by name|link]].
