@@ -1,9 +1,8 @@
-Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_IT_tools]]
+Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_Engineering]]
+#InfrastructureEngineering #OperatingSystems #InfrastructureEngineering 
 
 # Introduction
 Operating system consists of:
 - Files (binaries, libraries, configs, system scripts, filesystems)
 - Processes
 - Kernel
-
-#InfrastructureEngineering #OperatingSystems #InfrastructureITTools 

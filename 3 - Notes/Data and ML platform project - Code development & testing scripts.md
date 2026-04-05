@@ -9,8 +9,9 @@ In the `helm_charts/development_pods` folder we have Helm charts which can be us
 They create pods to which we can connect, edit files in them and run scripts.
 
 Available development pods in the `development_pods` folder are:
-- `mlflow` - Contains everything to run MLflow and Spark
+- `mlflow_spark` - Contains everything to run MLflow and Spark
 - `dbt` - For running dbt projects. More info about using it is in the 'Building tables with dbt' section here - [[Data and ML platform project - Data transformation workflow (dev, kind)|link]].
+- `airflow` - For testing Airflow code (e.g. custom operators from `airflow/dags/common` folder, creating pods using Kubernetes Python client)
 # Connecting to the pods
 We can connect to the created development pods so we can edit files in them and run scripts. To do this, there are two approaches described in sections below.
 ## Interactive shell

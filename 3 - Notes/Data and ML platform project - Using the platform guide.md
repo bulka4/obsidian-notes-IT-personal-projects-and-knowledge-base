@@ -5,6 +5,7 @@ Tags: [[_kind]] [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infr
 We can access UIs of different services by using below URLs in a browser:
 - Airflow UI - `localhost:8080`
 - MLflow Tracking server UI - `localhost:5000`
+- Grafana - `localhost:3000`
 # Data transformation
 For information about data transformation, including:
 - Running SQL queries using Spark Thrift Server

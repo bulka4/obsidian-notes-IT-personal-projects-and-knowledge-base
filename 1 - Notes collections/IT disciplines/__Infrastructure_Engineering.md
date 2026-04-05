@@ -10,8 +10,16 @@ We have the following notes linked to this tag:
 [[__Cloud]]
 # DevOps
 [[__DevOps]]
-# Infrastructure
-[[__Infrastructure_IT_tools]]
+# Containers & Orchestration
+## Docker
+ [[_Docker]]
+## Kubernetes
+[[_Kubernetes]]
+# Operating systems
+[[__Operating_systems]]
+# Resource management
+## YARN
+[[_YARN]]
 # Computer hardware
 [[_Computer_hardware]]
 # Others

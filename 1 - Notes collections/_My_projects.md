@@ -29,7 +29,7 @@ This is a collection of documents about my projects.
 # DeepSpeed cluster
 1. [[DeepSpeed cluster project]]
 2. [[DeepSpeed cluster project - Next steps plan]]
-# Data processing and ML system
+# Data and ML project
 - [[Data and ML platform project]]
 # Ideas
 1. [[Apka do medycyny]]

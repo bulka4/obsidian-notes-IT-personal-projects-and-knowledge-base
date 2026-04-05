@@ -1,5 +1,5 @@
-Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_IT_tools]]
-#InfrastructureEngineering #OperatingSystems #InfrastructureITTools 
+Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_Engineering]]
+#InfrastructureEngineering #OperatingSystems #InfrastructureEngineering 
 
 # Introduction
 POSIX-like ACL ([[ACL (access control list)|link]]) mimics Unix permissions but is more flexible:

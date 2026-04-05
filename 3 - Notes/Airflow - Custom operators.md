@@ -23,7 +23,7 @@ we can create a custom operator like that:
 from airflow.models import BaseOperator  
 import requests  
   
-class SimpleApiOperator(BaseOperator):  
+class SimpleApiOperator(BaseOperator):
   
 	def __init__(self, url, **kwargs):  
 		super().__init__(**kwargs)  
@@ -43,4 +43,18 @@ task = SimpleApiOperator(
 	task_id="get_data",  
 	url="https://api.example.com/data"  
 )
+```
+
+So in the operator class we need to define the `execute` function and only that function will be executed when using the operator in an Airflow DAG.
+# Operator's init function
+Operator's init function runs during DAG parsing, not during task execution. If we create some variables needed for task execution, it is better to create them in the `execute` function.
+
+For example, when we want to create Kubernetes resources and we load configs and create a client for doing this:
+```python
+# create configs with credentials used for authentication when making Rest API calls to Kubernetes API
+config.load_incluster_config()
+# Create Kubernetes API client to work with jobs (by making a Rest API call to Kubernetes)
+batch_v1 = client.BatchV1Api()
+# Create Kubernetes API client to work with pods (by making a Rest API call to Kubernetes)
+v1 = client.CoreV1Api()
 ```

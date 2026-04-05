@@ -80,6 +80,8 @@ We use MLflow for ML model creation, monitoring and retraining.
 More details can be found here - [[Data and ML platform project - MLflow setup]].
 ## Spark Operator
 This document explains how to set up Spark Operator - [[Data and ML platform project - Spark Operator setup]]
+## Prometheus
+This document explains how to set up Prometheus - [[Data and ML platform project - Prometheus setup]]
 # Data and ML workflows
 Below sections and documents describe how to use this platform to create data and ML workflows.
 ## Platform usage guide
@@ -94,6 +96,7 @@ This document describes how workflow orchestration looks like:
 - [[Data and ML platform project - Workflow orchestration with Airflow]]
 	- [[Data and ML platform project - dbt with Airflow]]
 	- [[Data and ML platform project - Making and saving predictions - Airflow orchestration]]
+	- [[Data and ML platform project - Automatic update of ML models based on their performance]]
 ## Data transformation
 Documents about data transformation:
 - [[Data and ML platform project - Data transformation - Code and practices followed]]
@@ -109,15 +112,20 @@ MLOps consists of:
 
 More info about this workflow using MLflow on this platform can be found in documents below:
 - [[Data and ML platform project - MLOps with MLflow]]
+	- [[Data and ML platform project - MLflow - Running and developing code]]
 	- [[Data and ML platform project - Training, evaluating and saving ML models with MLflow]]
 	- [[Data and ML platform project - Making and saving predictions]]
 	- [[Data and ML platform project - MLflow projects code]]
 	- [[Data and ML platform project - ML model performance monitoring]]
+	- [[Data and ML platform project - Automatic update of ML models based on their performance]]
+## Monitoring
+This document describes what we can monitor and how:
+- [[Data and ML platform project - Monitoring]]
 # Code
 - MLflow projects - [[Data and ML platform project - MLflow projects code]]
 # Optional improvements for later
 ## Monitoring
-Use Prometheus and Grafana for monitoring.
+Additional ideas for monitoring - [[Data and ML platform project - Monitoring - Ideas]].
 ## Jupyter Notebook
 Set up a server running a Jupyter Notebook which users can use over a browser to use Spark.
 ## Training with DeepSpeed

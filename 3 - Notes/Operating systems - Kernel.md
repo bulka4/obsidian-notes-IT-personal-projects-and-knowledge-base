@@ -1,5 +1,5 @@
-Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_IT_tools]]
-#InfrastructureEngineering #OperatingSystems #InfrastructureITTools 
+Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_Engineering]]
+#InfrastructureEngineering #OperatingSystems #InfrastructureEngineering 
 
 # Introduction
 Kernel manages hardware (CPU, RAM). It is a bridge between applications / processes and hardware.

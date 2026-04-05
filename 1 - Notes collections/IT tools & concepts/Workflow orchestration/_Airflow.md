@@ -21,8 +21,16 @@ This is a collection of documents related to the Airflow IT tool.
 # Tools
 1. [[Airflow - Sensors]]
 2. [[Airflow - Event-driven triggers]]
-3. [[Airflow - PythonOperator]]
-4. [[Airflow - Custom operators]]
+3. [[Airflow - Task instance (the 'ti' variable)]]
+4. [[Airflow - PythonOperator]]
+5. [[Airflow - Custom operators]]
+6. [[Airflow - Conditional tasks in a DAG]]
+	1. [[Airflow - Skipping tasks in a DAG]]
+	2. [[Airflow - Branching tasks in a DAG]]
+7. [[Airflow - XCom - Share data between tasks]]
+	1. [[Airflow - Using XCom when running a task starting a Kubernetes pod]]
+# Practices
+1. [[Airflow - Get output of a task starting a Kubernetes pod]]
 # Deployment
 1. [[Airflow - Deployment]]
 ## Kubernetes deployment

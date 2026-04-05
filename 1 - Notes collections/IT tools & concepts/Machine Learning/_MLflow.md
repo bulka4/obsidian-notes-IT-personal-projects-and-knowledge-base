@@ -10,6 +10,7 @@ This is a collection of documents related to MLflow, which is an IT tool for bui
 	3. [[MLflow - Models]]
 	4. [[MLflow - Registry]]
 		1. [[MLflow - Model versions and stages]]
+		2. [[MLflow - Model aliases]]
 2. [[MLflow - Experiments and runs]]
 # MLflow commands
 1. [[MLflow - The 'mlflow run' command]]
@@ -29,7 +30,9 @@ This is a collection of documents related to MLflow, which is an IT tool for bui
 	1. [[MLflow - Get ID of the current run where the script runs]]
 9. Registering models
 	1. [[MLflow - Register a model]]
-	2. [[MLflow - Get info about a registered model]]
+	2. [[MLflow - Move a registered model to a specific stage]]
+	3. [[MLflow - Load registered model]]
+	4. [[MLflow - Get info about a registered model]]
 10. Search through experiments, runs and logged models
 	1. [[MLflow - Searching runs]]
 		1. [[MLflow - Searching runs - Sort results]]

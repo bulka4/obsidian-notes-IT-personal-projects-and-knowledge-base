@@ -1,5 +1,5 @@
-Tags: [[_Linux & Bash]] [[__Operating_systems]] [[__Infrastructure_IT_tools]]
-#Linux #OperatingSystems #InfrastructureITTools 
+Tags: [[_Linux & Bash]] [[__Operating_systems]] [[__Infrastructure_Engineering]]
+#Linux #OperatingSystems #InfrastructureEngineering  
 
 # PID
 Every process get assigned a unique ID, denoted as PID (Process ID).

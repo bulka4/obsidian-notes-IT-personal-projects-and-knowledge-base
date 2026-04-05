@@ -80,16 +80,21 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 	1. [[Kubernetes - Check pod logs]]
 	2. [[Kubernetes - Check pod specification (describe command)]]
 	3. [[Kubernetes - Connect to a pod's bash session]]
+	4. [[Kubernetes - Pod status]]
+		1. [[Kubernetes - Termination logs (write a message which can be read from pod's status)]]
 7. Service
 	1. [[Kubernetes - Check pods attached to a service]]
 8. Deployment
 	1. [[Kubernetes - Restart (rollout) a deployment]]
 # Networking
+## Tools
 1. [[Kubernetes - Networking]]
 2. [[Kubernetes - CNI]]
 3. [[Kubernetes - Service]]
 4. [[Kubernetes - Ingress]]
 5. [[Kubernetes - CoreDNS]]
+## Practices
+1. [[Kubernetes - Communicate with a pod from a localhost]]
 # Helm
 1. [[Kubernetes - Helm]]
 2. [[Helm - Helpers]]

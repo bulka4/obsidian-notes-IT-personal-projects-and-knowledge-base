@@ -3,6 +3,7 @@ This is a collection of documents related to evaluating machine learning models.
 # Introduction
 1. [[Evaluating ML models]]
 2. [[Train - test split of a dataset]]
+	1. [[Time series data - Train test split (to confirm)]]
 3. Techniques used for validating models:
 	- [[Cross Validation]]
 4. Evaluation metrics for classification models:

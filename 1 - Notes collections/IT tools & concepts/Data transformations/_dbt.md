@@ -5,7 +5,7 @@ This is a collection of documents related to the dbt IT tool.
 
 # Benefits
 1. [[dbt benefits - Tables dependencies resolution]]
-2. [[dbt benefits - Data quality tests]]
+2. [[dbt benefits - Data quality tests (unit tests)]]
 3. [[dbt benefits - Slowly changing dimensions type 2]]
 4. [[dbt benefits - Data documentation]]
 5. [[dbt benefits - Specifying the target database]]

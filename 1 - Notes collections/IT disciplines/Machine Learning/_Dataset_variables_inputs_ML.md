@@ -45,6 +45,7 @@ This is a collection of documents related to datasets, variables and inputs for 
 - [[ML models for different types of time series datasets]]
 - [[Time series data - Feature engineering]]
 - [[Time series data - Stationarity and transformations]]
+- [[Time series data - Train test split (to confirm)]]
 # Imbalanced dataset
 Before we train a model, we can modify the available dataset which will be used for training, so the model performs better.
 1. [[Training ML models on an imbalanced dataset]]

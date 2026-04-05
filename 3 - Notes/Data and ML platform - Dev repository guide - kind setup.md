@@ -1,5 +1,5 @@
-Tags: [[_kind]] [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]]
-#kind #Cloud #DevOps #DistributedComputing #DataEngineering 
+Tags: [[_kind]] [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infrastructure_Engineering]] [[_My_projects]]
+#kind #Cloud #DevOps #DistributedComputing #DataEngineering #MyProjects 
 
 # Introduction
 This is a guide for how to deploy code from this repo - [link](https://github.com/bulka4/data_and_ml_platform_kind) on a kind cluster for development. 
@@ -80,6 +80,17 @@ kind delete cluster --name data-platform
 	# Execute below commands from the helm_charts/mlflow_setup folder
 	helm -n mlflow install mlflow . &
   ```
+- Prometheus and Grafana:
+	```bash
+	# Run this from the helm_charts/prometheus_grafana folder
+	helm dependency update
+	helm -n prometheus install monitoring . &
+	```
+	
+	Get Grafana 'admin' user password by running:
+	```bash
+	kubectl -n prometheus get secrets monitoring-grafana -o jsonpath="{.data.admin-password}" | base64 -d ; echo
+	```
 # Installing Kubernetes operators
 - Install Spark Operator (more details here - [[Data and ML platform project - Spark Operator setup|link]])
 	- It is needed when making predictions with ML models and saving them in the Iceberg catalog, for example in the scripts:

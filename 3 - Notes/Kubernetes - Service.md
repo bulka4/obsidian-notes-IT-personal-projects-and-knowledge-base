@@ -11,11 +11,11 @@ It also acts as a load balancer. We can have two replicas (described in the next
 ## Service types
 There are different Service types:
 - ClusterIP (default)
-	- Exposes the Service **only inside the cluster**.
-	- Clients inside the cluster can connect to myservice:port or \<ClusterIP\>:port.
+	- Exposes the Service only inside the cluster.
+	- Clients inside the cluster can connect to `myservice:port` or `<ClusterIP>:port`.
 - NodePort
-	- Opens the Service on a static port (range: 30000–32767) on _every_ Node’s IP.
-	- Clients outside the cluster can call \<NodeIP\>:\<NodePort\> and get routed to a Pod.
+	- Opens the Service on a static port (range: 30000–32767) on every Node’s IP.
+	- Clients outside the cluster can call `<NodeIP>:<NodePort>` and get routed to a Pod.
 	- If a client wants to reach a Pod, it needs to use an IP of the Node on which this Pod is running.
 - LoadBalancer
 	- Provisions a cloud load balancer that routes external traffic into the Service.

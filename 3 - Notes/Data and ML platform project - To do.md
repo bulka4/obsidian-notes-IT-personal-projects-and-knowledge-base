@@ -2,15 +2,18 @@ Tags: [[_My_projects]]
 #MyProjects 
 
 # To do
-- Jupyter Notebook for code development
-- MLOps
-	- Create some code for model monitoring and updating 
+- Make additional notes about:
+	- Further improvements which could be done
+	- How to use this platform in practice and what are its benefits
+- Additional ML monitoring metrics
+	- Monitor additional metrics about ML performance, like data drift
 - dbt UI
 	- Prepare a Helm chart running dbt UI
 	- Use `dbt docs generate` and `dbt docs serve` commands
-- Monitoring
+- Monitoring tools
 	- Use Prometheus and / or Grafana for monitoring:
 		- Nodes resources utilization
+- Jupyter Notebook for code development
 - Data ingestion
 	- Set up PostgreSQL pod as data source
 	- Write Python code for ingesting data into Data Lake
@@ -19,3 +22,10 @@ Tags: [[_My_projects]]
 - In dbt, mark tables ingested from external sources as source tables
 - testing source data in dbt
 - dbt with Airflow and Cosmos
+# Updating a model
+In the Airflow DAG for updating the model, when we pick up the best model, check only new metrics (calculated for new data).
+# Airflow operators
+- Create an Airflow operator for making and saving predictions and use it in the `make_predictions` DAG
+	- Draft prepared, need to test it
+- Use the Airflow operator I created for running Kubernetes jobs in the dbt DAG
+- 

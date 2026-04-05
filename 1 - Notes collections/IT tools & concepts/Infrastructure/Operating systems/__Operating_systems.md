@@ -1,5 +1,5 @@
-Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_IT_tools]]
-#InfrastructureEngineering #OperatingSystems #InfrastructureITTools 
+Tags: [[__Infrastructure_Engineering]], [[__Operating_systems]], [[__Infrastructure_Engineering]]
+#InfrastructureEngineering #OperatingSystems #InfrastructureEngineering 
 
 This is a collection of notes about operating systems.
 
