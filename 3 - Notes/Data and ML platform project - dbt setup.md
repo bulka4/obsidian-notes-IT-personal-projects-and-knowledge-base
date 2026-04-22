@@ -2,13 +2,13 @@ Tags: [[_My_projects]]
 #MyProjects 
 
 # Introduction
-We use the Thrift protocol to connect to the Spark Thrift Server and send SQL queries to execute.
+dbt uses the Thrift protocol to connect to the Spark Thrift Server ([[Data and ML platform project - Spark Thrift Server setup|link]]) and send SQL queries to execute.
 ## Schema where tables will be saved
 Tables will be saved in the schema called `{project_schema}_{profiles_schema}`, where:
-- project_schema - schema name specified in dbt_project.yml file
-- profiles_schema - schema name specified in profiles.yml file
+- `project_schema` - schema name specified in `dbt_project.yml` file
+- `profiles_schema` - schema name specified in `profiles.yml` file
 ## Iceberg catalog
-dbt uses saves tables in an Iceberg catalog configured in Spark.
+dbt saves tables in an Iceberg catalog configured in Spark.
 
 Looks like in dbt we can't specify the catalog where to save tables, so we need to set up the Iceberg catalog as a default one in the Spark Thrift Server to which dbt connects.
 

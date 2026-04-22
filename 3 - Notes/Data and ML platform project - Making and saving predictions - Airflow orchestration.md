@@ -13,12 +13,12 @@ On kind, Spark script to run is provided through mounting from the host (more de
 # Running from Airflow
 We can run the 'make_predictions' DAG from Airflow UI. 
 
-It creates then the `pyspark-app` SparkApplication resource which we need to then delete before the next run (otherwise Airflow will try to create another resource with the same name and fail):
+It creates then a `pyspark-app` SparkApplication resource which we need to delete then before the next run (otherwise Airflow will try to create another resource with the same name and fail):
 ```bash
 kubectl -n spark delete sparkapplication pyspark-app
 ```
 ## Checking logs
-To check logs we can use:
+To check logs about executing Spark job we can check logs from the pod running the Spark driver using this command:
 ```bash
 kubectl -n spark logs pyspark-app-driver
 ```

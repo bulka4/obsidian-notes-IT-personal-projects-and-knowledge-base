@@ -3,6 +3,8 @@ Tags: [[_Iceberg]] [[__Data_Engineering]], [[Object storage]]
 
 This is collection of documents about Apache Iceberg.
 
+# Benefits
+1. [[Iceberg - Benefits]]
 # Notes
 1. [[Iceberg - Introduction]]
 2. [[Iceberg - Data structure]]

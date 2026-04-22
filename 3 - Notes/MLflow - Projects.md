@@ -1,101 +1,28 @@
-Tags: [[__Machine_Learning_Engineering]]
+Tags: [[__Machine_Learning_Engineering]] [[_MLflow]]
+#MLEngineering #MLflow 
 
 # Introduction
-This helps you **package your ML code** with all dependencies to make it reproducible and shareable.
+MLflow project helps to package our ML code with all dependencies to make it reproducible and shareable.
 
 That can include code for:
 - Training models
 - Preprocess data
 - Run evaluations
 
-We can specify parameters when running a project which will be used by the code (like hyperparameters).
-### Entry points
-An entry point consist of a command and parameters used in that command. That command executes a function related to our ML model, for example a function for:
-- Training models
-- Preprocess data
-- Run evaluations
+MLflow project is a folder containing:
+- MLflow project file ([[MLflow - Projects - MLproject file|link]])
+- Scripts (e.g. `preprocess.py`, `train.py`, `evaluate.py`)
+- Files for environment setup (e.g. `conda.yaml`, `Dockerfile`)
+- Any other files
+# MLproject file
+A MLproject file is a YAML file which describes the project. More info can be found here - [[MLflow - Projects - MLproject file]].
+# Entry points
+An entry point is a parametrized command to run a Python script, e.g. for training a model.
 
-Entry points are defined in a MLproject file. An example of how it looks like is in the next section ‘MLproject file’.
-### MLproject file
-The MLproject file is a YAML file which describes:
-- Project name
-- Environment (conda, docker, or system)
-- Entry points (commands for running scripts)
-- Parameters (if any)
+More info can be found here - [[MLflow - Projects - Entrypoint]].
+# Environment preparation
+In a MLflow project, we can specify how to prepare an environment for running entrypoints. We can use for that:
+- Conda
+- Docker
 
-It can look for example like that:
-```yaml
-name: mlflow-project
-
-docker_env:
-	image: mlflow:latest
-	build_context: .
-	
-entry_points:
-	preprocess:
-		command: "python preprocess.py"
-		
-	train:
-		parameters:
-			lr:
-				type: float
-				default: 0.001
-			epochs:
-				type: int
-				default: 50
-		command: "python train.py --lr {lr} --epochs {epochs}"
-		
-	evaluate:
-		parameters:
-			model_path:
-				type: str
-			command: "python eval.py --model {model_path}"
-```
-
-### MLflow project content
-Here is a typical folder structure for a MLflow project:
-```bash
-|-- MLproject        # Project definition
-|-- conda.yaml       # environment setup
-|-- Dockerfile       # alternative to conda.yaml
-|-- train.py         # training script
-|-- preprocess.py    # script preprocessing data
-|-- eval.py          # evluating script
-|-- any other files
-```
-
-### Docker
-We can use Docker for preparing an environment where scripts (entry points) from the MLflow project will be executed.
-
-In the MLproject file we can specify either a Dockerfile or a Docker image which will be used to prepare that environment.
-
-Docker image which we want to use in the MLflow project can be saved either on our local computer or in a remote registry.
-### Deploying on Kubernetes
-In order to run our MLflow project on Kubernetes we need to include a backend_config.yaml file in the MLflow project repository (in the same folder as Dockerfile) and provide the following parameters:
-```yaml
-kube-context: cluster-name
-namespace: namespace-name
-service_account: service-account-name
-
-repository-uri: repo-name.azurecr.io/image-name:latest
-
-env:
-	MLFLOW_TRACKING_URI: http://mlflow-server.mlflow.svc:5000
-```
-
-
-- kube-context
-	- Which kube context (which Kubernetes cluster) we want to use.
-	- It is required only if we are working with multiple clusters.
-- Service_account
-	- Name of the Service Account to use.
-	- It is required only if we are pulling a Docker image from a private repository and we need to authenticate.
-	- That Service Account needs to have assigned a proper role allowing for reading Kubernetes Secrets
-	- It will be used to read data from a Secret which is used to authenticate to a private container repository.
-- Env.MLFLOW_TRACKING_URI
-	- This environment variable is needed if we are not use the default local Tracking Server but instead we have it deployed somewhere else (Kubernetes, VM, Databricks)
-
-Then we run our project using this command:
->mlflow run . -b kubernetes -P lr=0.01 -P epochs=5 --backend-config backend_config.yaml
-
-#MLEngineering 
+More info is here - [[MLflow - Projects - Environment preparation]].

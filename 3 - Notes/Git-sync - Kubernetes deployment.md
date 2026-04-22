@@ -3,7 +3,7 @@ Tags: [[_Git]] [[_Kubernetes]]
 
 # Introduction
 We run git-sync in its own pod which has mounted a PV (Azure File Share in this example). It pulls code from a repo and saves it in this PV which can be then used in other pods.
-## PV problem
+# PV problem
 If we want to be able to mount a PV with pulled code into many pods on different nodes, we need to use RWX access mode ([[Kubernetes - PVC access modes|link]]) in our PV.
 
 Git-sync tries to set up permissions on folders it uses so we need a storage for the PV which supports granting file permissions.
@@ -104,3 +104,5 @@ spec:
           persistentVolumeClaim:
             claimName: airflow-dags-pvc
 ```
+# Making code available for pods in different namespaces
+In order to make the pulled code available for other pods which are in different namespaces than the one where git-sync is running, we need to create a PV in the pod's namespace and link it to the same storage where git-sync saved the code (we can use the same PV manifest as in the git-sync Helm chart).

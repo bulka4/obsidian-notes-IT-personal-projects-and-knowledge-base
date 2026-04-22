@@ -2,14 +2,13 @@ Tags: [[_My_projects]]
 #MyProjects 
 
 # Introduction
-This is a guide for how to deploy code from this repo - [link](https://github.com/bulka4/data_and_ml_platform_kind) on AKS for production. 
-
-That is code from the Data and ML platform project about which more info we can find here - [[Data and ML platform project]].
+This is a guide for how to prepare infrastructure to deploy code from this repo - [link](https://github.com/bulka4/data_and_ml_platform_kind) on AKS for production.
 # Run Terraform code
+Run Terraform code to prepare cloud resources ([[Data and ML platform project - Cloud resources - Prod|link]]).
 ## Prepare variables
 Create the `terraform.tfvars` file and assign there values to the variables. We can use for that the `terraform-draft.tfvars` file which is a draft showing what variables to set up.
 
-We need to have big enough number of nodes and their size need to be big enough. Otherwise, we can have not enough computational power. It is recommended to leave the default values (they are a minimum to run this platform).
+We need to have big enough number of nodes for the AKS cluster and their size need to be big enough. Otherwise, we can have not enough computational power to run apps. It is recommended to leave the default values (they are a minimum to run this platform).
 ## Run the code
 ```bash
 # execute from the terraform folder
@@ -25,7 +24,7 @@ terraform plan -destroy -out main.destroy.tfplan
 terraform apply "main.destroy.tfplan"
 ```
 # Run an image for interacting with AKS
-Run an image for interacting with AKS using the `interacting.aks.Dockerfile` Dockerfile, connect to it and from that image perform all the next steps.
+Run an image for interacting with AKS ([[Data and ML platform project - Docker image for interacting with AKS|link]]) using the `interacting.aks.Dockerfile` Dockerfile, connect to it and from that image perform all the next steps:
 ```bash
 # execute from the repo root folder
 docker build -t interacting-aks -f interacting.aks.Dockerfile . # build an image
@@ -39,7 +38,7 @@ docker rmi $(docker image ls -aq) # remove all images
 docker system prune --all --volumes # remove everything
 ```
 # Build and push images to ACR
-Build and push to ACR all the images using the `/root/dockerfiles/build_and_push.sh` script. Those are images we will be running in Kubernetes pods.
+Build and push to ACR all the images using the `/root/dockerfiles/build_and_push.sh` script (we need to run commands from that script outside of the image for interacting with Kubernetes as they require to use Docker). Those are images we will be running in Kubernetes pods.
 # Create namespaces and secrets
 Run the `/bin/bash create_k8s_secrets.bash` command to create Kubernetes namespaces and secrets:
 - For pulling images from ACR

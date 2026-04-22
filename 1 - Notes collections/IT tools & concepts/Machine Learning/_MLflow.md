@@ -3,15 +3,24 @@ Tags: [[__Machine_Learning_Engineering]] [[_MLflow]]
 
 This is a collection of documents related to MLflow, which is an IT tool for building machine learning models.
 
+# Benefits
+1. [[MLflow - Benefits and key features]]
 # How it works
 1. [[MLflow - Components]]
-	1. [[MLflow - Tracking]]
+	1. [[MLflow - Tracking server]]
 	2. [[MLflow - Projects]]
+		1. [[MLflow - Projects - Entrypoint]]
+		2. [[MLflow - Projects - MLproject file]]
+		3. [[MLflow - Projects - Environment preparation]]
+			1. [[MLflow - Projects - Environment preparation with Docker]]
 	3. [[MLflow - Models]]
 	4. [[MLflow - Registry]]
 		1. [[MLflow - Model versions and stages]]
 		2. [[MLflow - Model aliases]]
 2. [[MLflow - Experiments and runs]]
+3. [[MLflow - Execution modes (environments)]]
+	1. [[MLflow - Local execution mode]]
+	2. [[MLflow - Docker execution mode]]
 # MLflow commands
 1. [[MLflow - The 'mlflow run' command]]
 2. [[MLflow - Setting up an experiment]]

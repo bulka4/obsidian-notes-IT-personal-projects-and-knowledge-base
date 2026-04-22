@@ -1,8 +1,6 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
-# Introduction
-This document explains the Workflow orchestration with Airflow which is part of the Data and ML platform project. More info about that project can be found here - [[Data and ML platform project]].
 # Accessing Airflow webserver
 We can access Airflow UI at the `localhost:8080` URL.
 
@@ -37,7 +35,7 @@ Then, the traffic will go like this:
 # Mounting DAGs code into Airflow pods
 To make DAGs code available for Airflow, we need to mount a folder from the local host. There are two approaches:
 - Mount the `apps` folder to have local files available
-- Mount the `git_code` folder and use git-sync to pull code from a repo into that folder.
+- Mount the `git_code` folder and use git-sync to pull code from a repo into that folder (to test git-sync).
 
 The `dagsPvc.hostPath` parameter in the `values.yaml` specifies which folder we want to mount.
 
@@ -47,6 +45,8 @@ Depending on what option we choose, we need to also provide a proper `subPath` p
 ## Git-sync
 We can use git-sync to pull code from a git repo and make it available in pods running Airflow components (scheduler etc).
 
+It is not necessary on kind as we can mount from the localhost but once we want to run Airflow on a Kubernetes cluster in cloud, this is a good option.
+
 Git-sync is deployed separately using its own Helm chart (`helm_charts/git_sync`). It will save code on the host in the `git_code` folder which we can then mount into Airflow pods.
 
 More info about it can be found here - [[Data and ML platform project - Making code available in pods]], in the 'git-sync' section.
@@ -55,11 +55,9 @@ We create a PostgreSQL db for Airflow metadata as a separate deployment in the s
 
 We do this so we don't pay for a managed service but for production it is recommended to use a managed service since running a database on Kubernetes is problematic as described here - [[Kubernetes - Running databases]].
 # Service account
-We create a service account which will be used by Airflow pods for creating new pods with pod operator where tasks will be executed. 
+We create a service account which will be used by Airflow pods for creating new pods where tasks will be executed. 
 
 In `values.yaml` we define that this service account will be used by Airflow components (scheduler etc.).
-# KubernetesPodOperator
-In the Airflow dag, when using the `KubernetesPodOperator` for running a task in a new pod, we need to use `image_pull_policy="IfNotPresent"` argument so we don't try to pull an image for that pod from a remote registry but we use a local image loaded to kind instead.
 # dbt with Airflow
 Notes about using dbt with Airflow are here - [[Data and ML platform project - dbt with Airflow]].
 # Airflow logs

@@ -1,4 +1,5 @@
 Tags: [[__DevOps]], [[__Infrastructure_Engineering]], [[_Docker]] 
+#DevOps #InfrastructureEngineering #Docker 
 
 # Introduction
 Every time Docker has an instruction to perform during building an image, it checks that instruction has been built before.
@@ -13,5 +14,3 @@ In order to decide whether to use a cached layer or not Docker checks:
 -  Any files in the build context (the directory where we run ‘docker build’) has changed (even those not mentioned in the dockerfile)
 
 If we change an instruction in a Dockerfile, then all the next instructions will be reexecuted (caching will not be used).
-
-#DevOps #InfrastructureEngineering #Docker 

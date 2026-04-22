@@ -27,6 +27,8 @@ This is a collection of documents related to the Docker which is an IT tool for 
 7. [[Docker - Containerd]]
 8. [[Docker - Dockerd]]
 9. [[Docker - Docker disk space usage (Windows)]]
+# Docker practice
+1. [[Docker - Change container resource limits]]
 # Docker Compose
 1. [[Docker Compose - File syntax]]
 2. [[Docker Compose - Networking]]

@@ -14,7 +14,7 @@ We have the `helm_charts/spark_operator` Helm chart which can be used to either:
 
 Whether or not we want to create `SparkApplication` is controlled by the `createSparkApplication` parameter.
 
-Service account is used by the Spark Operator to create a Spark driver pod.
+Service account is used by the Spark Operator to create a Spark driver pod so we can create only it and create `SparkApplication` later which will use this service account.
 # Setup
 ## Install Spark Operator
 In order to install Spark Operator, we can use commands from the `helm_scripts/install_spark_operator.sh` script:
@@ -30,9 +30,13 @@ helm install spark-operator spark-operator/spark-operator -n spark \
   --set webhook.generateSelfSignedCert=true
 ```
 ## Create service account for Spark Operator
-Spark Operator needs a service account so it can create a Spark driver pod. We can create it by installing the `helm_charts/spark_operator` Helm chart without creating `SparkApplication`:
+Spark Operator needs a service account so it can create a Spark driver pod. 
+
+We can create it without creating `SparkApplication` by installing the `helm_charts/spark_operator` Helm chart with the `createSparkApplication=false` parameter:
 ```shell
 # Run this from the helm_charts/spark_operator folder
 helm -n spark install spark-operator-sa . \
 	--set createSparkApplication=false &
 ```
+
+We can use it when creating a `SparkApplication` later.

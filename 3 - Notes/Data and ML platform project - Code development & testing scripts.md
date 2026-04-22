@@ -12,10 +12,14 @@ Available development pods in the `development_pods` folder are:
 - `mlflow_spark` - Contains everything to run MLflow and Spark
 - `dbt` - For running dbt projects. More info about using it is in the 'Building tables with dbt' section here - [[Data and ML platform project - Data transformation workflow (dev, kind)|link]].
 - `airflow` - For testing Airflow code (e.g. custom operators from `airflow/dags/common` folder, creating pods using Kubernetes Python client)
-# Connecting to the pods
-We can connect to the created development pods so we can edit files in them and run scripts. To do this, there are two approaches described in sections below.
+# Connecting to pods
+We can connect to a created development pod so we can edit files in them and run scripts. To do this, there are two approaches described in sections below.
 ## Interactive shell
-We can start an interactive shell session using `exec -it`. That gives us access to the shell session inside the pod so we can run shell commands and see their outputs.
+We can start an interactive shell session using:
+```shell
+kubectl -n <namespace> exec -it <pod-name> -- /bin/bash
+```
+That gives us access to the shell session inside the pod so we can run shell commands and see their outputs.
 ## Attaching VS Code to a pod
 We can attach VS Code to the created development pods and from it we can edit pod's files and run shell commands.
 

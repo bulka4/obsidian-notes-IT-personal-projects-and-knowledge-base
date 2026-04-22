@@ -14,15 +14,15 @@ This is needed because:
 ## Data source group
 Models have tags indicating from which source they use data.
 
-For each data source, models which use its data are build together in a single run, right after data from that source has been ingested. 
+For each data source, models which use its data can be built together in a single run, right after data from that source has been ingested. 
 
-Both data ingestion and running dbt models using this data is a single Airflow DAG.
+Both data ingestion and running dbt models using this data can be done in a single Airflow DAG.
 # Simulating data from external sources
 In the `dbt/workspace/models/source` folder we have folders with models which simulates data from external sources. Each folder corresponds to a single data source.
 # Different data refreshing times
-Tables have different refresh time, some of them are being updated daily while others are being updated weekly or monthly.
+Tables can have different refresh time, some of them can be updated daily while others can be updated weekly or monthly.
 
-We update all the tables with the same refresh time by using tags (we run a single dbt run command and it builds all the tables with a specific tag which corresponds to a specific refresh time).
+We can update all the tables with the same refresh time by using tags (we run a single dbt run command and it builds all the tables with a specific tag which corresponds to a specific refresh time).
 # Tables created
 We use dbt to prepare data in schemas:
 - `source1` and `source2` - Fake external data

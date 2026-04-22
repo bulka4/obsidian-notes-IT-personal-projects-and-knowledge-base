@@ -5,6 +5,8 @@ This is a collection of documents related to the Airflow IT tool.
 
 # Materials to learn from
 1. [[Airflow - Materials to learn from]]
+# Benefits
+1. [[Airflow - Benefits]]
 # Concepts
 1. [[Airflow - Scheduler]]
 2. [[Airflow - Executor]]
@@ -18,7 +20,8 @@ This is a collection of documents related to the Airflow IT tool.
 7. [[Airflow - DAGs]]
 8. [[Airflow - Connection]]
 9. [[Airflow - DAG processor]]
-# Tools
+10. [[Airflow - Pools]]
+# Features and functionalities
 1. [[Airflow - Sensors]]
 2. [[Airflow - Event-driven triggers]]
 3. [[Airflow - Task instance (the 'ti' variable)]]
@@ -29,6 +32,9 @@ This is a collection of documents related to the Airflow IT tool.
 	2. [[Airflow - Branching tasks in a DAG]]
 7. [[Airflow - XCom - Share data between tasks]]
 	1. [[Airflow - Using XCom when running a task starting a Kubernetes pod]]
+8. [[Airflow - Dynamic tasks]]
+9. [[Airflow - Multi-DAG dependencies]]
+10. [[Airflow - Rerunning tasks]]
 # Practices
 1. [[Airflow - Get output of a task starting a Kubernetes pod]]
 # Deployment
@@ -39,6 +45,5 @@ This is a collection of documents related to the Airflow IT tool.
 1. [[Airflow - KubernetesPodOperator]]
 # Others
 1. [[Airflow - KubernetesExecutor with KubernetesPodOperator]]
-
-# Other notes
-- 
+# To learn next
+- Dynamic pipelines

@@ -4,14 +4,15 @@ Tags: [[_dbt]] [[__Data_Engineering]]
 This is a collection of documents related to the dbt IT tool.
 
 # Benefits
-1. [[dbt benefits - Tables dependencies resolution]]
-2. [[dbt benefits - Data quality tests (unit tests)]]
-3. [[dbt benefits - Slowly changing dimensions type 2]]
-4. [[dbt benefits - Data documentation]]
-5. [[dbt benefits - Specifying the target database]]
-6. [[dbt benefits - dbt project yaml file]]
-7. [[dbt benefits - Macros]]
-8. [[dbt benefits - Built-in useful functions]]
+1. [[dbt - Benefits]]
+	1. [[dbt benefits - Tables dependencies resolution]]
+	2. [[dbt benefits - Data quality tests (unit tests)]]
+	3. [[dbt benefits - Slowly changing dimensions type 2]]
+	4. [[dbt benefits - Data documentation]]
+	5. [[dbt benefits - Specifying the target database]]
+	6. [[dbt benefits - dbt project yaml file]]
+	7. [[dbt benefits - Macros]]
+	8. [[dbt benefits - Built-in useful functions]]
 # Setup
 1. [[dbt - Setup]]
 # Functionalities

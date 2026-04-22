@@ -65,6 +65,7 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 # Practical notes / good practices
 1. [[Kubernetes - Running databases]]
 2. [[Kubernetes - Entrypoint as PID 1]]
+3. [[Kubernetes - Making code available in pods]]
 # Useful commands and tools
 1. [[Kubernetes - Port foward]]
 2. [[Kubernetes - Checking permissions]]

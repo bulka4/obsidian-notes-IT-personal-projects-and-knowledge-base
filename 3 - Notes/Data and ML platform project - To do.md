@@ -4,7 +4,9 @@ Tags: [[_My_projects]]
 # To do
 - Make additional notes about:
 	- Further improvements which could be done
-	- How to use this platform in practice and what are its benefits
+	- How to use this platform in practice (what practices to follow)
+	- What are the benefits of the tools used here (done)
+- Record videos about how to use this platform
 - Additional ML monitoring metrics
 	- Monitor additional metrics about ML performance, like data drift
 - dbt UI

@@ -1,8 +1,6 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
-# Introduction
-This document describes Hive Metastore setup for the Data and ML platform project. More info about this project can be found here - [[Data and ML platform project]].
 # Connecting from clients
 Clients can connect to the Hive Metastore using URL:
 ```bash
@@ -28,14 +26,6 @@ helm -n spark install hive . &
 ```
 
 More info about setting up Hive can be found here - [[Data and ML platform project - Hive Metastore setup]].
-# Hive vs Iceberg
-Currently we use only Iceberg but it is possible to use:
-- Only Hive Metastore
-- Both Hive Metastore and Iceberg together
-
-Hive can be used like Iceberg to manage metadata allowing Spark to execute SQL queries.
-
-More info about comparison between Hive and Iceberg can be found here - [[Iceberg vs Hive]].
 # Spark configs for using Hive
 In order to use Hive Metastore we need to use different Spark config files which are located in the `helm_charts/spark_thrift_server/spark_configs` folder (they are not being used currently):
 - `hive-conf.yaml` - Config files to use only Hive

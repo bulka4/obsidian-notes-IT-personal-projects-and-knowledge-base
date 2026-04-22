@@ -5,6 +5,8 @@ This is a collection of documents related to Spark.
 
 # Materials to learn from
 1. [[Spark - Materials to learn from]]
+# Benefits
+Spark enables partitioning data what has benefits described here - [[Data Engineering - Partition-based writes]].
 # How Spark works
 ## Components, processes and communication
 1. Submitting jobs (starting calculations):

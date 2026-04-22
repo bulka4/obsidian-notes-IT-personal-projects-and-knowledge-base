@@ -2,11 +2,11 @@ Tags: [[_My_projects]]
 #MyProjects 
 
 # Introduction
-In the `apps/mlflow_projects` we have folders:
-- `common` - Common functions to be used by other MLflow projects:
-	- `my_mlflow.py` - Class with useful functions for working with MLflow
-	- `postgresql.py` - Class with functions for working with PostgreSQL which is used as MLflow metadata db. It can be used for example to modify experiments and runs metadata.
-- `linear_regression_revenue` - MLflow project for building and evaluating a linear regression model for predicting a revenue:
+In the repository we have folders:
+- `apps/common` - Common functions to be used by other MLflow projects:
+	- `mlflow` folder - Set of classes with useful functions for working with MLflow
+	- `postgresql.py` - Class with functions for performing operations in PostgreSQL which is used as MLflow metadata db. It can be used for example to modify or delete experiments and runs metadata.
+- `apps/mlflow_projects/linear_regression_revenue` - MLflow project for building and evaluating a linear regression model for predicting a revenue:
 	- `evaluate_all.py` - Script for evaluating all the models from the experiment
 	- `evaluate_latest.py` - Script for evaluating the latest model from the experiment
 	- `train.py` - Script for training the model

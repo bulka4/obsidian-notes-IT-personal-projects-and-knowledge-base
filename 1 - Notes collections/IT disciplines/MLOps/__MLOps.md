@@ -3,27 +3,29 @@ Tags: [[__MLOps]]
 
 This is a collection of documents related to MLOps, i.e. a set of practices and tools related to creating, monitoring and updating ML models.
 
-# MLOps tasks and problems
+# MLOps tasks, problems and practices
 1. [[MLOps - Collaboration]]
 2. [[MLOps - Feature engineering]]
 	1. [[MLOps - Feature store]]
-3. [[MLOps - Monitoring]]
-	1. [[MLOps - Model performance monitoring & automatic model update]]
-	2. [[MLOps - ML system performance monitoring]]
-4. [[MLOps - Model reproducibility]]
+		1. [[MLOps - Incremental + streaming features]]
+		2. [[MLOps - Feature store - Online store for real-time inference]]
+		3. [[MLOps - Feature store - Time correctness]]
+		4. [[MLOps - Feature store - Metadata, documentation and versioning]]
+3. [[MLOps - Model reproducibility]]
 	1. [[MLOps - Data reproducibility]]
-5. [[MLOps - Model versioning]]
-6. [[MLOps - Experiment management (keeping track of how different models perform)]]
-7. [[MLOps - Canary testing - shadow deployment]]
+4. [[MLOps - Model versioning]]
+5. [[MLOps - Experiment management (keeping track of how different models perform)]]
+6. [[MLOps - CI-CD for ML]]
+	1. [[MLOps - CI for ML]]
+	2. [[MLOps - CD for ML]]
+		1. [[MLOps - Canary & shadow deployment]]
+		2. [[MLOps - A-B testing]]
+		3. [[MLOps - Monitoring]]
+			1. [[MLOps - Model performance monitoring & automatic model update]]
+			2. [[MLOps - ML system performance monitoring]]
 ## Questions
 ## Other topics
 - Scaling
-- CI/CD for ML
-	- When I train models using MLflow and Airflow and save them in MLflow registry (to release them into production), is this a CI/CD?
-- integration tests for ML pipelines
-	- and other kinds of testing
-- Feature stores – centralized storage for reusable, consistent features
-- Online vs offline feature consistency – avoiding training/serving skew
 - Governance & Compliance
 	- Model governance – approvals, audit trails
 	- Explainability / interpretability – SHAP, LIME, etc.
@@ -44,7 +46,6 @@ This is a collection of documents related to MLOps, i.e. a set of practices and 
 - Multi-model / System design
 	- Ensemble systems
 	- Model routing (which model to use when)
-	- A/B testing for models
 # GPU ML computing
 1. [[_GPU_ML_computing]]
 # ML model inference

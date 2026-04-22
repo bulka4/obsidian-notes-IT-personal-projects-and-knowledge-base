@@ -3,6 +3,8 @@ Tags: [[_My_projects]]
 
 # Introduction
 This document describes next steps plan regarding the DeepSpeed cluster project - [[DeepSpeed cluster project|link]].
+
+More info about DeepSpeed in general (including Kubernetes deployment) - [[_DeepSpeed]].
 # Kubernetes setup (Terraform)
 Prepare Kubernetes nodes to run DeepSpeed on GPUs.
 

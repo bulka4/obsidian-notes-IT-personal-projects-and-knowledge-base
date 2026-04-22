@@ -2,10 +2,12 @@ Tags: [[_kind]] [[__Cloud]], [[__DevOps]], [[__Distributed_computing]], [[__Infr
 #kind #Cloud #DevOps #DistributedComputing #DataEngineering 
 
 # Introduction
-To make available code to execute in pods we run, we have three options:
+To make available code to execute in pods we run, we have four options:
 - Include code in the image
 - Run an init container which pull code from a repo
 - Use git-sync running in a separate pod / sidecar container
+- Use a PV with a hostPath
+- Use a PV with Azure File share
 # Init container pulling code
 If we want to run code in a pod which will be finished after a specific amount of time, it is good to use an init container which pulls code from a repo using git.
 
@@ -17,7 +19,7 @@ Pros:
 
 Cons:
 - Pods start is slightly delayed as we need to wait for code to be pulled
-## Git-sync
+# Git-sync
 We can use git-sync which runs in a separate pod or sidecar container and which:
 - Pulls code from a repo systematically, once per specified period of time
 - Saves code in a PV
@@ -39,11 +41,15 @@ If we one git-sync pod which saves code in a PV which is then used in many other
 	- There is only one pod pulling the code and code is stored only in one place (Azure File share)
 - Cons
 	- All the pods uses the same code (we might want to get code from a different repo, commit or branch for different pods)
-### Preparing a PV
+## Making code available for pods in different namespaces
 In order to make the pulled code available for other pods, we need to create a PV in the pod's namespace and link it to the same storage where git-sync saved the code (we can use the same PV manifest as in the git-sync Helm chart).
-### Storage for a PV on kind vs AKS
+## Storage for a PV on kind vs AKS
 On AKS we can use Azure File share as storage for a PV where code from a git repo is saved.
 
 On kind, there is no proper driver for connecting into a File share so we need to use host drive instead (`hostPath` parameter in a PV).
 
 We need to have all the pods on the same kind node so the can access the same PV linked to the host.
+# PV with a hostPath
+When using kind, we can create a PV with a hostPath to make the code from the host available in pods.
+# PV with Azure File share
+If we want to run a pod in AKS, then another option for making code available in that pod except for pulling that code from git, is to use a PV which uses Azure File share as a storage and upload code there.

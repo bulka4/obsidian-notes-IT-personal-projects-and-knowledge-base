@@ -11,7 +11,7 @@ We save ML models predictions in tables (as described here - [[Data and ML platf
 
 We perform those calculations using dbt whenever possible and Python for more complex calculations, and save results in tables.
 # Metrics for monitoring
-This section describes metrics we calculate and save in table which will be then used to decide whether or not a model needs retraining.
+This section describes metrics we can calculate and save in table which will be then used to decide whether or not a model needs retraining.
 ## Model performance
 Model performance metrics:
 - Accuracy, RMSE etc
@@ -40,13 +40,6 @@ and compare it with the data used for training. If those values are different, t
 
 This way we can detect problems with predictions before they appear.
 # Calculating and saving metrics
-Metrics are calculated by dbt and saved in the `dwh_ml_metrics` schema.
-
-Before we build tables with metrics about ML predictions, we need to have the `dwh_fact.clients_total_revenue_predictions` table prepared with predictions (more info here - [[Data and ML platform project - Making and saving predictions|link]])
-
-Once we have the table with predictions, we can build tables with ML metrics (with the `ml_metrics` tag) using the command:
-```bash
-dbt run -s tag:ml_metrics
-```
+Metrics are calculated by dbt as described here - [[Data and ML platform project - Data transformation workflow (dev, kind)|link]] in the 'Build tables with ML metrics' section.
 # Prometheus / Grafana for monitoring
 Use Prometheus / Grafana for monitoring those metrics.

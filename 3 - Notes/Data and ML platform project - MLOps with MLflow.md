@@ -1,12 +1,6 @@
 Tags: [[_My_projects]]
 #MyProjects 
 
-# Questions
-- What is canary testing or shadow deployment
-	- can be used for retrained models before moving them into prod
-- what are unit tests for dbt models and integration tests for ML pipelines
-# Running and developing code
-How to run and develop MLflow code is deescriebed here - [[Data and ML platform project - MLflow - Running and developing code]]
 # Training, evaluating and saving ML models
 How to train, evaluate and save ML models is described here - [[Data and ML platform project - Training, evaluating and saving ML models with MLflow]].
 # Making and saving predictions
