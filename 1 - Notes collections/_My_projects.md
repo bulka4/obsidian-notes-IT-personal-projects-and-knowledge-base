@@ -44,7 +44,6 @@ The main document - [[Data and ML platform project]]
 	- [[Data and ML platform project - Docker image for interacting with kind]]
  - Code development
 	 - [[Data and ML platform project - VS Code Kubernetes extension setup for code development]]
-	 - [[Data and ML platform project - Code development setup]]
  - [[Data and ML platform project - Making code available in pods]]
  - [[Data and ML platform project - Data storage]]
  - Airflow setup
@@ -67,7 +66,7 @@ The main document - [[Data and ML platform project]]
 	- [[Data and ML platform project - Automatic update of ML models based on their performance]]
 - Data transformations:
 	- [[Data and ML platform project - Data transformation - Code and practices followed]]
-	- [[Data and ML platform project - Data transformation workflow (dev, kind)]]
+	- [[Data and ML platform project - Data transformation - Running dbt (dev, kind)]]
 - [[Data and ML platform project - Data ingestion]]
 - [[Data and ML platform project - MLOps with MLflow]]
 	- [[Data and ML platform project - Training, evaluating and saving ML models with MLflow]]

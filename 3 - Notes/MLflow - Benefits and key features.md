@@ -1,7 +1,9 @@
 Tags: [[__Machine_Learning_Engineering]] [[_MLflow]]
 #MLEngineering #MLflow 
 
-# Saving models with metadata
+# Experiment tracking
+MLflow help us with experiment tracking, i.e. keeping track of information about models we create.
+
 We can run a script which trains or evaluates a model and logs metadata about the process, such as:
 - hyperparameters used
 - data used (SQL query)

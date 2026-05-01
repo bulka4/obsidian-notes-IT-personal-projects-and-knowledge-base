@@ -70,6 +70,10 @@ Spark enables partitioning data what has benefits described here - [[Data Engine
 3. [[Spark Thrift Server - Kubernetes deployment - Testing]]
 # Spark Operator
 1. [[Spark Operator - Introduction]]
+2. [[Spark Operator - Pros and cons]]
+3. [[Running Spark on Kubernetes - Spark Operator and SparkApplication CRD]]
+4. [[Running Spark on Kubernetes - Spark Operator]]
+5. [[Running Spark on Kubernetes - SparkApplication]]
 ## SparkApplication CRD - Implementation details
 1. [[SparkApplication CRD - Mounting a volume to an init container]]
 2. [[SparkApplication CRD - Dynamic configs (using values from secrets)]]

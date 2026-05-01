@@ -1,11 +1,8 @@
-Tags: [[__Machine_Learning_Engineering]]
+Tags: [[__Machine_Learning_Engineering]] [[_MLflow]]
+#MLEngineering #MLflow 
 
 # Introduction
-MLflow tracking server is a HTTP server used to save metadata and artifacts, such as:
-- **Parameters:** Hyperparameters like learning rate, batch size, etc.
-- **Metrics:** Accuracy, loss, AUC, any numeric measure
-- **Artifacts:** Model files, plots, datasets, any output file
-- **Source info:** Git commit hashes, code version, who ran it, when
+MLflow tracking server is a HTTP server used for experiment tracking ([[MLflow - Experiment tracking|link]]), i.e. to save metadata and artifacts.
 
 When we run a MLflow script, it communicates with a tracking server to save or read data. We use for that MLflow client API (`mlflow.log_param()`, `mlflow.log_metric()`, etc.).
 # UI
@@ -36,7 +33,3 @@ mlflow server \
 	--backend-store-uri <url> \
 	--artifacts-destination <url>
 ```
-
-
-
-#MLEngineering 

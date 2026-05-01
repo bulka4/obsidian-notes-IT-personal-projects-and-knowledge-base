@@ -131,9 +131,9 @@ Install:
 helm -n <namespace> install dev-pod .
 ```
 ## Kubeconfig file
-We need to have properly configured the kubeconfig file (usually saved at `/user/.kube/config`). This is the same config file used by `kubectl` to interact with Kubernetes. 
+VS Code uses a kubeconfig file to connect to the Kubernetes cluster.
 
-It is used by VS Code to connect to the Kubernetes cluster.
+It is usually saved at `/user/.kube/config` on Linux or `C:\Users\username\.kube\config` on Windows. This is the same config file used by `kubectl` to interact with Kubernetes. 
 ### Local Kubernetes cluster
 If we run a Kubernetes cluster on our local computer using for example kind, then in the kubeconfig file, in the `clusters.cluster_name.server` field we need to have `127.0.0.1` as IP address, not `0.0.0.0`
 ## Attach VS Code to the Kubernetes container

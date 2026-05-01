@@ -6,7 +6,7 @@ To prepare a dataset for training a model, we use dbt to build tables:
 - In the `source1`  and `source2` schemas (fake external sources)
 - Other tables which are a result of transformations of data from those sources (used for training)
 
-More info here - [[Data and ML platform project - Data transformation workflow (dev, kind)|link]] in the 'Build tables using data from source1 and source2 sources' section.
+More info here - [[Data and ML platform project - Data transformation - Running dbt (dev, kind)|link]] in the 'Build tables using data from source1 and source2 sources' section.
 ## Data reproducibility
 We make sure, that when we prepare a dataset for training a model within a MLflow project, we always get exactly the same dataset, no matter when we run that project.
 
@@ -80,7 +80,7 @@ and connect to it like described here -  [[Data and ML platform project - Code d
 The `apps` folder from the host will be mounted to the created development pod. So we can edit code on the host and then run it from that pod.
 ## Run MLflow projects
   Use files from the `/root/apps/mlflow_projects/linear_regression_revenue` folder in a dev pod to perform actions described below:
-  - Use commands from the `run_script.bash` file:
+  - Use commands from the `run_scripts.bash` file:
 	  - Run the command for training (we can create multiple models using different parameters `fit_intercept` and `positive`)
 	  - Run the command for evaluating all the models
   - Run the `python3 promote_model.py` command to run the Python script which takes the best model (with the best metrics from the evaluation) and saves it in the MLflow registry

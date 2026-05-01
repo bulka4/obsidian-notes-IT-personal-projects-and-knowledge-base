@@ -40,6 +40,6 @@ and compare it with the data used for training. If those values are different, t
 
 This way we can detect problems with predictions before they appear.
 # Calculating and saving metrics
-Metrics are calculated by dbt as described here - [[Data and ML platform project - Data transformation workflow (dev, kind)|link]] in the 'Build tables with ML metrics' section.
+Metrics are calculated by dbt as described here - [[Data and ML platform project - Data transformation - Running dbt (dev, kind)|link]] in the 'Build tables with ML metrics' section.
 # Prometheus / Grafana for monitoring
 Use Prometheus / Grafana for monitoring those metrics.
