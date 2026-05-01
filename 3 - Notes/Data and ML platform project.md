@@ -5,16 +5,16 @@ Tags: [[_My_projects]]
 In this project we build a platform which can be used for:
 - Data ingestion - Using Python scripts
 - Data storage - Using Azure Data Lake Gen2 (object data storage) and Iceberg
-- Distributed data transformation - Using Spark
+- Distributed data transformation - Using Spark and dbt
 - MLOps - Using MLflow:
 	- Training, evaluating and registering ML models
 	- Experiment tracking (keeping track of information about models we create, e.g. hyperparameters used or evaluation metrics)
-	- Automatic model update when performance drops
+	- Automatic model update when its performance drops
 - Workflow orchestration - Using Airflow
 
 It is designed to be deployed on Kubernetes.
 
-As a part of this project, we also build an example data and ML pipeline using this platform.
+As a part of this project, we also build an example ML pipeline (data pipeline + CI/CD for ML) using this platform.
 
 Technologies used:
 - Containers and orchestration - Docker and Kubernetes
@@ -23,7 +23,7 @@ Technologies used:
 - Data transformation - dbt, Spark
 - Data storage - Iceberg, Azure Data Lake Gen2
 - MLOps - MLflow
-- Programming languages - Python, SQL
+- Programming languages - Python, SQL, bash
 # Platform overview
 Here is a high level overview of the most important features of this platform - [[Data and ML platform project - Platform overview]].
 # Benefits of the tools used

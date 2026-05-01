@@ -9,7 +9,7 @@ A probability distribution of a random variable ([[Random variable|link]]) $X$ (
 $$
 X: (\Omega, \mathcal{F}) \rightarrow (\mathcal{X}, \mathcal{B}_{\mathcal{X}})
 $$
-is the pushforward measure ([[Measure|link]]) of the probability measure  under $X$, that is:
+is the pushforward measure ([[Measure|link]]) of the probability measure under $X$, that is:
 $$
 P_X = P \circ X^{-1}
 $$
