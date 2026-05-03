@@ -14,7 +14,8 @@ This is a collection of documents about my projects.
 7. [[MLflow on AKS project - Docker container for interacting with AKS]]
 8. [[MLflow on AKS project - Creating Azure resources with Terraform]]
 9. [[MLflow on AKS project - Problems, ideas for improvements and notes]]
-# RAG app
+# RAG systems
+## RAG system with Ray Serve, LangGraph, Milvus, Kubernetes
 - [[RAG app project]]
 	- [[Rag app project - Architecture]]
 	- [[Rag app project - Deployment guide]]
@@ -26,6 +27,8 @@ This is a collection of documents about my projects.
 	- [[Rag app project - Terraform]]
 - [[RAG app project - Next steps plan]]
 	- [[DeepSpeed - Kubernetes deployment with Ray Serve]]
+# RAG sytem wtih LangChain
+1. [[Simple RAG system with LangChain and OpenAI API project]]
 # DeepSpeed cluster
 1. [[DeepSpeed cluster project]]
 2. [[DeepSpeed cluster project - Next steps plan]]
@@ -57,7 +60,7 @@ The main document - [[Data and ML platform project]]
 - [[Data and ML platform project - MLflow setup]]
 - [[Data and ML platform project - Spark Operator setup]]
 - [[Data and ML platform project - Prometheus setup]]
-## Data and ML workflows
+## Data and ML platform
 - [[Data and ML platform project - Example workflow]]
 - [[Data and ML platform project - Code development & testing scripts]]
 - [[Data and ML platform project - Workflows orchestrated by Airflow]]
@@ -78,5 +81,7 @@ The main document - [[Data and ML platform project]]
 - Code
 	- [[Data and ML platform project - MLflow projects code]]
 - [[Data and ML platform project - Official docs for the tools used]]
+# Transformer from scratch
+1. [[Transformer from scratch for translation project]]
 # Ideas
-1. [[Apka do medycyny]]
+1. [[Apka dla placowek medycznych]]
