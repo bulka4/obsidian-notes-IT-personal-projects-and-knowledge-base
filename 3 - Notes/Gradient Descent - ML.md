@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]], [[_Mathematical_analysis]], [[__Mathematics]]
+#MachineLearning #MathematicalAnalysis #Mathematics 
 
 # Introduction
 Gradient descent is an optimization algorithm used to find a minimum of a function.
@@ -52,5 +53,3 @@ But if we start the algorithm with the initial $x=3$, then algorithm will contin
 That's why the initial value of $x$ is important.
 # Vanishing / exploding gradient problem
 When using gradient descent, we might encounter a problem with vanishing / exploding gradients like described here - [[Vanishing - exploding gradients]].
-
-#MachineLearning #MathematicalAnalysis #Mathematics 

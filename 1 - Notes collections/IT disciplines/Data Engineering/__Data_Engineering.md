@@ -11,6 +11,7 @@ This is a tag about Data Engineering.
 	2. [[Data Engineering - Schema validation]]
 3. [[Data Engineering - Data lineage]]
 4. [[Data Engineering - Code documentation]]
+5. [[Data Engineering - Saving metadata in tables about when records has been created or modified and by which process run]]
 # Data modelling
  [[_Data_modelling]]
 # Data architecture

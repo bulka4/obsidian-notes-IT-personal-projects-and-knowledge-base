@@ -33,3 +33,4 @@ This is a collection of documents related to applications of machine learning mo
 		3. [[Token generation - Parallel Sampling]]
 		4. [[Token generation - Context window]]
 2. [[Semantic search]]
+	1. [[Sentence embeddings]]

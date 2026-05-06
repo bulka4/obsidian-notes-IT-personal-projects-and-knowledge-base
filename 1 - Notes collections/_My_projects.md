@@ -81,7 +81,12 @@ The main document - [[Data and ML platform project]]
 - Code
 	- [[Data and ML platform project - MLflow projects code]]
 - [[Data and ML platform project - Official docs for the tools used]]
-# Transformer from scratch
-1. [[Transformer from scratch for translation project]]
+# Custom Transformer model for translation
+1. [[Custom Transformer model for translation project]]
+# Semantic search
+## LSTM seq2seq semantic search
+1. [[LSTM seq2seq semantic search project]]
+## Fine tuning a Hugging Face model for semantic search
+1. [[Fine tuning a Hugging Face model for semantic search project]]
 # Ideas
 1. [[Apka dla placowek medycznych]]
