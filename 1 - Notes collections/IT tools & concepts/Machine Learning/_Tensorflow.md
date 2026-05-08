@@ -5,3 +5,4 @@ This is a collection of notes related to Tensorflow - a Python library for Machi
 
 # Notes
 1. [[Tensorflow - Tensorflow Hub]]
+2. [[Tensorflow - Creating a custom model as a subclass]]

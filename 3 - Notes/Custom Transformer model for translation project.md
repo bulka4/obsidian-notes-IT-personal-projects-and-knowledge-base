@@ -9,6 +9,8 @@ We program a custom Transformer model in the `Transformer.py` file where we defi
 - Encoder
 - Decoder
 
+Model is defined as a class which inherits from the Tensorflow model class ([[Tensorflow - Creating a custom model as a subclass|link]]).
+
 Different parts of this model are programmed:
 - Using higher-level abstractions, for example functions for:
 	- Dense layer

@@ -40,7 +40,7 @@ E --> F[Dense]
 
 We use LSTM and Bahdau Attention neural network layers.
 ## Creating word embeddings
-We use a file `glove.840B.300d.txt` which contains already prepared words and their embeddings. We don't create embeddings on our own (although we can modify those embeddings using the embedding layer we use in the encoder).
+We use a file `glove.840B.300d.txt` which contains already prepared words and their embeddings ([[Word2vec (word embeddings)|link]]). We don't create embeddings on our own (although we can modify those embeddings using the embedding layer we use in the encoder).
 
 It can be downloaded from [nlp.stanford.edu](https://nlp.stanford.edu/projects/glove/).
 
@@ -57,7 +57,7 @@ This way encoder learns how to convert a sentence into an embedding (a vector) r
 ## Data
 Data used for training is a CSV file with different sentences which we are comparing how similar they are.
 # Tensorflow code
-Here is a high level overview of what Tensorflow code we use for defining and training models.
+Here is a high level overview of what Tensorflow code we use for defining and training models. We define our own custom model by creating a class which inherits from Tensorflow ([[Tensorflow - Creating a custom model as a subclass|link]]).
 ## Encoder and decoder classes
 Encoder and decoder are separate classes:
 ```python

@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 Transformer model is primarily used for token generation ([[Token generation|link]]), like generating answers for questions. 
@@ -207,5 +208,3 @@ We still predict all the tokens so we don't need to change the transformer archi
 During training we perform some unnecessary calculations because of that (predicting tokens we don't care about) but computational cost of that is very small compared to the cost of the entire training.
 
 Even if we didn't make predictions for those tokens, they would will still have an impact on calculations because we would still calculate for them Q, K and V vectors in the attention layer. That is very expensive operation computationally and making additional predictions is very little compared to that.
-
-#MachineLearning 

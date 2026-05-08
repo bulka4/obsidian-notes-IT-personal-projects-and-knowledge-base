@@ -1,5 +1,10 @@
+Tags: [[__AI_systems]] [[__Machine_Learning]] [[__Machine_Learning_Engineering]]
+#AISystems #MachineLearning #MLEngineering 
+
 This is a collection of documents related to AI systems, i.e. systems / applications which use AI.
 
+# AI system examples
+1. [[RAG system]]
 # Disciplines
 [[__Data_Engineering]]
 [[__Infrastructure_Engineering]]

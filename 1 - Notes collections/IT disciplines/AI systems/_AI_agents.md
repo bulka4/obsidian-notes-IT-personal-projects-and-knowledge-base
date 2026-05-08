@@ -5,6 +5,7 @@ This is a collection of documents related to AI agents.
 2. [[Tools for AI agents]]
 3. [[Tools for AI agents - MCP]]
 4. [[Instruction tuned LLMs]]
+5. [[Domain specific LLMs]]
 # LangChain
 1. [[_LangChain]]
 # MCP
