@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 LSTM (Long short term memory) layer is a type of a recurrent neural network layer designed to deal effectively with the problem with vanishing and exploding gradients as described here - [[Neural Network - Recurrent layer]] in the section about problems.
@@ -122,5 +123,6 @@ $$
 where $\odot$ is elementwise multiplication ([[Elementwise matrix multiplication|link]]).
 
 That solves vanishing / exploding gradient problem, if values of each $\large f_i$ are close to 1.
-
-#MachineLearning 
+# Useful materials
+Additional, useful materials about this topic:
+- [github.com](https://github.com/bulka4/Useful_materials/tree/main/Recurrent%20Neural%20Networks) 

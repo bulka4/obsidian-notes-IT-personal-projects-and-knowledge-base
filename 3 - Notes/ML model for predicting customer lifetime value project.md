@@ -168,6 +168,24 @@ If we have for example 2000 clients for the first future revenue cluster, 400 fo
 After creating a few separate datasets we can train one model on those datasets one by one or we can train multiple models each on a different dataset. If we train multiple models then in order to make final predictions on a new dataset we are making predictions using all the models and taking the average or maximum of all models’ outputs.
 
 For now it looks like training one model on all subsets gives similar results as training different models for each subset and taking the average of all models’ outputs.
+## Moving client sales data in time
+When preparing data, we choose a threshold date such that we predict revenue after that threshold based on data from the past before that threshold.
+
+There might be a situation that some of the customers from our dataset were not active for a long time so after our chosen threshold date they didn't buy anything. 
+
+We can't train and test our model on such a customers because we don't know their true revenue after the threshold date which we want to predict. 
+
+In such a case, we are moving in time all the sales orders for that customer such that the last order for that customer is the same as for the other customers
+## Preparing multiple samples for one client
+If a client was making orders for a long time, we can create multiple samples for them.
+
+For example, if we want to predict revenue for the next 6 months based on the past 6 months, that means we need 12 months of data.
+
+If a client was making orders for 18 months, we can create multiple samples by taking data for different time intervals:
+- 1st - 12th month
+- 2nd - 13th month
+- ...
+- 7th - 18th month
 # Model evaluation
 To evaluate the model we use:
 - Accuracy

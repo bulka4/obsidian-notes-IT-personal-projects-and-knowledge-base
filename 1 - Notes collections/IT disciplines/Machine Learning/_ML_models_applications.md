@@ -40,3 +40,7 @@ This is a collection of documents related to applications of machine learning mo
 	1. [[Sentence embeddings]]
 # Event frequency and magnitude
 1. [[Machine Learning - Event frequency and magnitude modeling]]
+# Price optimization
+1. [[ML Price optimization - Useful materials]]
+# Reinforcement learning
+1. [[Bouncy ball game - Reinforcement learning - Useful materials]]

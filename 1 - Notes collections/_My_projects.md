@@ -1,57 +1,56 @@
 This is a collection of documents about my projects.
 
 # Data Engineering
-## Spark & HDFS
-- [github - hadoop_spark](https://github.com/bulka4/hadoop_spark) – Running a multinode HDFS, Yarn and Spark cluster on Azure Linux VMs.
-## Airflow
-- [[MS SQL - Data Lake data ingestion with Airflow]]
+- [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project]]
+- [[Spark Operator on Kubernetes on Linux VMs project]]
+- MS SQL - Data Lake data ingestion:
+	- [[MS SQL - Data Lake data ingestion with Airflow project]]
+	- [[MS SQL - Data Lake data ingestion project]]
+- [[Airflow and dbt project]]
 # ML systems
-## MLflow on AKS
-1. [[MLflow on AKS project - Introduction]]
-2. [[MLflow on AKS project - Important notes before you use this repo]]
-3. [[MLflow on AKS project - Repository guide]]
-4. [[MLflow on AKS project - Prerequisites]]
-5. [[MLflow on AKS project - MLflow setup Helm chart]]
-6. [[MLflow on AKS project - MLflow project]]
-7. [[MLflow on AKS project - Docker container for interacting with AKS]]
-8. [[MLflow on AKS project - Creating Azure resources with Terraform]]
-9. [[MLflow on AKS project - Problems, ideas for improvements and notes]]
+1. [[Data and ML platform project]]
+2. [[MLflow on AKS project]]
+3. [[MLflow on Kubernetes on Linux VMs project]]
+4. [[DeepSpeed cluster project]]
+5. [[Chatbot with transformers library project]]
 ## RAG systems
-### RAG system with Ray Serve, LangGraph, Milvus, Kubernetes
-- [[RAG app project]]
-	- [[Rag app project - Architecture]]
-	- [[Rag app project - Deployment guide]]
-	- [[Rag app project - Docker image for interacting with AKS]]
-	- [[Rag app project - Apps]]
-	- [[Rag app project - Dockerfiles]]
-	- [[Rag app project - Testing app deployment using Docker compose]]
-	- [[Rag app project - Helm charts]]
-	- [[Rag app project - Terraform]]
-- [[RAG app project - Next steps plan]]
-	- [[DeepSpeed - Kubernetes deployment with Ray Serve]]
-### RAG sytem wtih LangChain
-1. [[Simple RAG system with LangChain and OpenAI API project]]
-## Chatbot with transformers library
-1. [[Chatbot with transformers library project]]
-## DeepSpeed cluster
-1. [[DeepSpeed cluster project]]
-2. [[DeepSpeed cluster project - Next steps plan]]
-## Data and ML platform
-The main document - [[Data and ML platform project]]
+1. RAG system on Kubernetes - [[RAG system on Kubernetes project]]
+2. [[Simple RAG system with LangChain and OpenAI API project]]
 # Machine Learning models
-## Custom Transformer model for translation
-1. [[Custom Transformer model for translation project]]
-## Semantic search
-### LSTM seq2seq semantic search
-1. [[LSTM seq2seq semantic search project]]
-### Fine tuning a Hugging Face model for semantic search
-1. [[Fine tuning a Hugging Face model for semantic search project]]
-## ML model for predicting customer lifetime value
+## Classification / regression
 1. [[ML model for predicting customer lifetime value project]]
-## ML model for predicting words received
-1. [[ML model for predicting words received project]]
+2. [[ML model for predicting words received project]]
+3. [[ML - Predicting marketing campaign results project]]
+4. [[Add click prediction project]]
+5. [[LinkedIn ML webscraping project]]
+6. [[Otomoto ML webscraping project]]
+## Semantic search
+1. [[LSTM seq2seq semantic search project]]
+2. [[Fine tuning a Hugging Face model for semantic search project]]
+## Computer vision
+1. [[Mask R-CNN - Instance segmentation project]]
+## Recommendation systems
+1. [[Movies recommendation system project]]
+2. [[Filmweb ML webscraping project]]
+## NLP
+1. [[NLP words vectorization project]]
+2. [[Custom Transformer model for translation project]]
+## Models from scratch
+1. [[RNN from scratch with NumPy project]]
+## AB testing / Exploratory data analysis
+1. [[AB testing - Fit predictor data project]]
+2. [[Oil transactions - Exploratory data analysis project]]
+# Preparing datasets
+1. [[Poker dataset project]]
+2. [[Preparing Confluence documents data using Rest API project]]
+## Webscraping
+1. [[LinkedIn ML webscraping project]]
+2. [[Otomoto ML webscraping project]]
+# Terraform
+1. [[Preparing MS SQL, Data Lake and Databricks using Terraform project]]
+# DevOps
+1. [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project]]
 # Web applications
-## Data governance application (data dictionary and lineage)
 1. [[Data governance application (data dictionary and lineage) project]]
 # Ideas
 1. [[Apka dla placowek medycznych]]

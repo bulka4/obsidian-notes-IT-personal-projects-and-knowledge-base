@@ -1,7 +1,7 @@
 Tags: [[__Machine_Learning]]
 
 # Introduction
-Layer normalization is a technique used in neural networks ([[Neural Network|link]]) which normalizes input for a layer. It is not just a standard normalization because it contains trainable parameters.
+Layer normalization is a technique used in neural networks ([[Neural Network|link]]) which normalizes input for a layer. It is not just a standard normalization ([[Min-Max scaling|link]]) because it contains trainable parameters.
 
 It helps with the vanishing / exploding gradients problem ([[Vanishing - exploding gradients|link]]) because it rescales the input for the layer to have a stable mean and variance (mean $\approx$ 0, variance $\approx$ 1). Thanks to that, changing that layer's parameters doesn't make too big nor too small change in the final output (so gradients are not too small nor too big).
 

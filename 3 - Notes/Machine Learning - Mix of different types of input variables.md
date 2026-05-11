@@ -9,9 +9,9 @@ When input for a model is a mix of different types of variables (e.g. categorica
 So then, the model architecture looks like this:
 ```mermaid
 flowchart LR
-A[Categorical variable] --> B[Dense layer]
-C[Continuous variable] --> D[Dense layer]
-E[Sequence] --> F[Recurrent layer]
+A[Discrete variables] --> B[Dense layer]
+C[Continuous variables] --> D[Dense layer]
+E[Sequences] --> F[Recurrent layer]
 
 B --> G[Concatenate outputs]
 D --> G
@@ -19,6 +19,18 @@ F --> G
 
 G --> H[Dense layer]
 H --> I[Final output]
+```
+# Concatenating output of a layer for discrete variables with continuous variables
+We can also concatenate an output of a dense layer for for discrete variables directly with continuous variables:
+```mermaid
+flowchart LR
+A[Discrete variables] --> B[Dense layer]
+C[Continuous variables] --> D[Concatenate vectors]
+
+B --> D
+
+D --> E[Dense layer]
+E --> F[Final output]
 ```
 # Decision tree
 Also, a Decision tree model can handle such a mix of different kinds of variables.

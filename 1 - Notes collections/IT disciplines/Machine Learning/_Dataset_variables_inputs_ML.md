@@ -19,6 +19,9 @@ This is a collection of documents related to datasets, variables and inputs for 
 		3. [[Machine Learning models - 3-D input]]
 3. Methods of converting categorical variables into numeric ones:
 	1. [[Encoding categorical variables]]
+		1. [[Encoding categorical variables - One hot encoding]]
+		2. [[Encoding categorical variables - Target - mean encoding]]
+		3. [[Encoding categorical variables - Frequency encoding]]
 	2. [[Feature embeddings]]
 	3. [[Positional encoding]]
 ### Converting text into numeric variables
@@ -71,7 +74,8 @@ Before we train a model, we can modify the available dataset which will be used 
 			2. [[Focal loss]]
 		4. Balanced Ensemble Methods
 			1. [[EasyEnsemble]]
-			2. [[Balanced Random Forest]]
+			2. [[Cluster-based ensemble]]
+			3. [[Balanced Random Forest]]
 	2. [[Training regression models on an imbalanced dataset]]
 ## Missing data
 1. [[Training ML models on a dataset with missing data]]
@@ -92,7 +96,7 @@ Before we train a model, we can modify the available dataset which will be used 
 4. [[Feature engineering - Dropping uncorrelated features]]
 ### Feature scaling
 1. [[Feature scaling]]
-	1. [[Min-Max scaling (Normalization)]]
+	1. [[Min-Max scaling]]
 	2. [[Standarization]]
 # Other concepts and techniques
 1. [[Training datasets for ML models - Outliers]]

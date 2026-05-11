@@ -16,7 +16,7 @@ Set up a server running a Jupyter Notebook which users can use over a browser to
 ## Training with DeepSpeed
 Training models using DeepSpeed and Kubeflow TrainingRuntime CRD like described here - [[DeepSpeed cluster project]].
 ## RAG system
-RAG system with access to dbt data dictionary. Use the RAG system I already created and modify it - [[RAG app project]].
+RAG system with access to dbt data dictionary. Use the RAG system I already created and modify it - [[RAG system on Kubernetes project]].
 ## PyIceberg
 Use PyIceberg for writing data into the Iceberg catalog instead of Spark. That can be used for example when:
 - Ingesting data from external sources

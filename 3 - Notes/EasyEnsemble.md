@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 EasyEnsemble is a balanced ensemble method used to train ML models for classification on an imbalanced dataset ([[Training classification models on an imbalanced dataset|link]]).
@@ -15,6 +16,8 @@ It is similar to Balanced Random Forest ([[Balanced Random Forest|link]]) but de
 - Train a classifier (usually AdaBoost) on this balanced dataset
 - Repeat steps 2–3 many times (e.g., 10–50 balanced datasets)
 - To make predictions, combine predictions from all models (usually by averaging or weighted voting)
+## Training a single model
+It might also work to train a single model on each new balanced dataset we create but usually it is less effective.
 # Pros
 - Uses more majority-class information than random undersampling
 - Uses all minority samples every time
@@ -22,5 +25,3 @@ It is similar to Balanced Random Forest ([[Balanced Random Forest|link]]) but de
 - Less prone to overfitting than SMOTE-based ([[SMOTE (Synthetic Minority Oversampling Technique)|link]]) approaches
 # Cons
 - Multiple models → higher computational cost
-
-#MachineLearning 

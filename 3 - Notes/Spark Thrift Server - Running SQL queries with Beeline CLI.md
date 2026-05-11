@@ -1,5 +1,5 @@
-Tags: [[__Data_Engineering]], [[__Distributed_computing]]
-#DataEngineering #DistributedComputing 
+Tags: [[__Data_Engineering]], [[__Distributed_computing]] [[_Spark]]
+#DataEngineering #DistributedComputing #Spark 
 
 # Introduction
 We can use Beeline `/opt/spark/bin/beeline` to connect to the Thrift Server and run SQL queries from a command line.

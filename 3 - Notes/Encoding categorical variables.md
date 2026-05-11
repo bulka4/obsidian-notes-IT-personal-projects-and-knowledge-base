@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 Encoding is a method of converting categorical variables into numeric ones ([[Converting categorical variables into numeric ones|link]]) so they can be used as an input for ML models.
@@ -8,12 +9,7 @@ A new numeric variable is either:
 - New numerical value derived from statistics - Which does reflect a relation between category and variable we are trying to predict (for example target / mean encoding)
 # Examples
 Example methods of encoding include:
-- One hot encoding
-	- For each category we create a column in which we have values 0 or 1
-	- Number 1 in a column means that this record belongs to the category assigned to this column
-- Target / mean
-	- For each category, replace its value with the average of the variable we are trying to predict from samples for this category
-- Frequency encoding
-	- For each category, replace its value with the number of samples with that category in the dataset
-
-#MachineLearning  
+- One hot encoding ([[Encoding categorical variables - One hot encoding|link]])
+- Target / mean ([[Encoding categorical variables - Target - mean encoding|link]])
+- Frequency encoding ([[Encoding categorical variables - Frequency encoding|link]])
+ 

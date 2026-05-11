@@ -1,5 +1,5 @@
-Tags: [[__Data_Engineering]], [[__Distributed_computing]]
-#DataEngineering #DistributedComputing 
+Tags: [[__Data_Engineering]], [[__Distributed_computing]] [[_Spark]]
+#DataEngineering #DistributedComputing #Spark 
 
 # Introduction
 In order to start the Thrift server, we can use the script:

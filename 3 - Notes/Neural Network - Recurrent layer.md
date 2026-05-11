@@ -108,5 +108,7 @@ If values in every $\large J^T_{h_{i-1}}(h_i)$ are bigger than 1, then we have e
 	- [https://www.youtube.com/watch?v=YCzL96nL7j0](https://www.youtube.com/watch?v=YCzL96nL7j0) 
 - LSTM
 	- [https://colah.github.io/posts/2015-08-Understanding-LSTMs/](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+- Other
+	- [github.com](https://github.com/bulka4/Useful_materials/tree/main/Recurrent%20Neural%20Networks) 
 
 #MachineLearning 

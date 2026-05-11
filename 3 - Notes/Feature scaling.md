@@ -9,7 +9,8 @@ Without scaling, if a model relies on distances or gradients, features with smal
 
 That causes, that a model relies more on features with high values when making predictions.
 # Common scaling methods
-- Min-Max scaling (Normalization) - [[Min-Max scaling (Normalization)|link]]
+- Min-Max scaling - [[Min-Max scaling|link]]
 - Standarization - [[Standarization|link]]
+- 
 
 #MachineLearning  

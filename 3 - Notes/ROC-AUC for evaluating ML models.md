@@ -2,7 +2,7 @@ Tags: [[__Machine_Learning]]
 
 # Introduction
 ### ROC graph
-This graph helps us to choose the best decision threshold for classification models. 
+This graph helps us to choose the best decision threshold ([[Decision - classification threshold|link]]) for classification models ([[Classification models|link]]). 
 
 In order to create a ROC graph we are calculating two values, a True and False Positive Rate for different decision thresholds:
 $$
