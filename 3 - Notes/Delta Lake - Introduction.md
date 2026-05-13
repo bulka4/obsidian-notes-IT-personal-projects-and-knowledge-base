@@ -2,7 +2,7 @@ Tags: [[__Data_Engineering]], [[Object storage]]
 #DataEngineering #ObjectStorage 
 
 # Introduction
-Delta lake is a storage framework that adds useful functionalities for working with data files. Main benefits are:
+Delta lake is a table format that adds useful functionalities for working with data files. Main benefits are:
 
 · **Enabling SQL** – Delta lake stores tables metadata like Hive and enables running SQL queries on them. It is also more efficient than Hive.
 

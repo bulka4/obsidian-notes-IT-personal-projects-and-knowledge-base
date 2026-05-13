@@ -1,10 +1,12 @@
-Tags: [[_My_projects]] [[__Machine_Learning]]
+Tags: [[__My_projects]] [[__Machine_Learning]]
 #MyProjects #MachineLearning 
 
 # Introduction
 In this project we train a custom Transformer model ([[Transformer model|link]]) for language translation. 
 # Programming a Transformer
-We program a custom Transformer model in the `Transformer.py` file where we define on our own:
+We program a custom Transformer model in the `Transformer.py` file where we define on our own what Neural Network layers are used and how to generate an output.
+
+We define on our own:
 - Multi-head attention layer ([[Neural Network - Multi-Head Attention (MHA) layer|link]])
 - Encoder
 - Decoder

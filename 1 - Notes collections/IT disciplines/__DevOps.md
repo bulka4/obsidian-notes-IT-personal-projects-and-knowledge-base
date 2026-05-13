@@ -7,7 +7,8 @@ This is a tag related to DevOps - process of automatic code deployment.
 [[_Azure]]
 # CI/CD
 1. [[CI-CD pipelines]]
-2. [[CI-CD pipelines in Azure DevOps]]
+# Azure DevOps
+[[_Azure_DevOps]]
 # Code development
 1. [[Code development]]
 # Docker

@@ -1,15 +1,14 @@
-Tags: [[_My_projects]]
+Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
-**GitHub link**: [link](https://github.com/bulka4/rag_ai_agent)
 **Key technologies**: LangGraph, MCP, vector database (Milvus), FastAPI, Ray Serve, Terraform, Kubernetes, Helm, Docker, Azure Container Registry
 
 **Goal**
 In this project I have created a RAG (Retrieval-Augmented Generation) application that answers users' questions based on the available documentation. It works in the following way:
-- User submits a question
-- Documents relevant to this question are retrieved using semantic search
-- Response is generated using retrieved documents
+- One LLM converts user’s question into a vector embedding
+- Documents relevant to this question are retrieved from a vector database (semantic search)
+- Another LLM generates a response using retrieved documents
 
 **Architecture overview**
 Here are the most important components of this RAG system:
@@ -22,10 +21,6 @@ Here are the most important components of this RAG system:
 This project includes files enabling automatic deployment of the application on AKS (Azure Kubernetes Service):
 - Terraform - Creates Azure resources (AKS and more)
 - Helm charts - Create resources on AKS
-
-To simplify code development, this project gives a possibility to:
-- Build a Docker image for interacting with Azure resources (e.g. pushing images to ACR, creating Kubernetes resources using `kubectl`)
-- Upload application files to Azure File share and mount them to Kubernetes pods, allowing for changing code without rebuilding images, what saves time
 
 **Code development**
 To simplify code development, this project gives a possibility to:

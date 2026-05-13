@@ -43,4 +43,5 @@ This is a collection of documents related to applications of machine learning mo
 # Price optimization
 1. [[ML Price optimization - Useful materials]]
 # Reinforcement learning
-1. [[Bouncy ball game - Reinforcement learning - Useful materials]]
+1. [[Reinforcement learning]]
+2. [[Bouncy ball game - Reinforcement learning - Useful materials]]

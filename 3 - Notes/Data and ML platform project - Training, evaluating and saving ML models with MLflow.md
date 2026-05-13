@@ -1,4 +1,4 @@
-Tags: [[_My_projects]]
+Tags: [[__My_projects]]
 #MyProjects 
 
 # Data preparation in dbt

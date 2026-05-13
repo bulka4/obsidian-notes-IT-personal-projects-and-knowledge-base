@@ -109,17 +109,18 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 4. [[Helm - Check rendered YAML manifest that will be applied]]
 # AKS
 [[AKS - Volumes]]
+[[Interacting with AKS]]
 # Code development in Kubernetes pods
 1. [[Kubernetes - Code development]]
 2. [[Kubernetes code development - Telepresence]]
 3. [[Kubernetes code development - VS Code and Remote Kubernetes container]]
 # Debugging
-5. Networking:
+1. Networking:
 	1. [[Kubernetes - Check firewall rules for kube-proxy and CoreDNS]]
 	2. [[Kubernetes - Test resolving DNS names]]
 	3. [[Kubernetes - Network debugging - Things to check]]
 	4. [[Kubernetes - Setting up from scratch - Useful tools for debugging]]
-6. Pods:
+2. Pods:
 	1. [[Kubernetes - Create a pod for debugging and get access to its bash session]]
 # To learn
 1. 

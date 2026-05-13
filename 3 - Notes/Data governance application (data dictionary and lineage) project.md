@@ -1,4 +1,4 @@
-Tags: [[_My_projects]] [[__Machine_Learning]]
+Tags: [[__My_projects]] [[__Machine_Learning]]
 #MyProjects #MachineLearning 
 
 # Introduction
@@ -9,12 +9,18 @@ This is an application which:
 	- It shows how tables in a SQL server are being created 
 	- And also which tables are used for which dashboards in Sisense
 
+We have here an algorithm which automatically positions nodes in data lineage graphs to form a tree diagram:
+![[2 - Images/Data governance application (data dictionary and lineage) project/screenshot 1.png]]
+
+Semantic search is implemented by:
+- Running locally a LLM to convert user query into a vector embedding
+- Comparing it with vector embeddings in a database created from a documentation
+
 Technologies used:
 - Express
 - EJS
-- MongoDB
+- MongoDB, Redis
 - JavaScript, HTML, CSS
-- Redis
 # Code repository
 Repository with the code for this project is here - [github.com](https://github.com/bulka4/ml_words_received_prediction).
 # Data lineage 

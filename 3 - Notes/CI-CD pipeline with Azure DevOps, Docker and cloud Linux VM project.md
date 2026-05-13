@@ -1,10 +1,12 @@
-Tags: [[_My_projects]] [[__Machine_Learning]]
+Tags: [[__My_projects]] [[__Machine_Learning]]
 #MyProjects #MachineLearning 
 
 # Introduction
 This repository contains code for preparing infrastructure for creating a CI/CD pipeline using Azure Pipelines which deploys an application as a Docker container on Azure Linux VM.
 
-Code from this repo doesn't build the CI/CD pipeline itself. It only prepares all the resources needed and after that we can create a CI/CD pipeline on Azure DevOps website with a minimal manual effort. 
+Code from this repo doesn't build the CI/CD pipeline itself. It only prepares all the resources needed so we can create a pipeline with a minimal manual effort:
+- Azure DevOps resources - created using its Rest API
+- VM - Terraform creates it and runs a bash script on it to configure it (e.g. install Docker)
 
 Using infrastructure prepared by this code we can create a CI/CD pipeline deploying for example Airflow app from the `airflow_data_lake_ingestion` repository ([github.com](https://github.com/bulka4/airflow_data_lake_ingestion)).
 # Code repository

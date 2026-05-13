@@ -1,4 +1,4 @@
-Tags: [[_My_projects]] [[__Data_Engineering]]
+Tags: [[__My_projects]] [[__Data_Engineering]]
 #MyProjects #DataEngineering 
 
 # Installing Spark Operator and preparing `SparkApplication` manifest

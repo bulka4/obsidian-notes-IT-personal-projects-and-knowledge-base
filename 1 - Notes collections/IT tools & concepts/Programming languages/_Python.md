@@ -10,3 +10,5 @@ This is a collection of documents related to Python programming language.
 4. [[Python - venv]]
 5. [[Python - Install on Ubuntu]]
 6. [[Python - Installing with pip - No cache]]
+# Benefits and tool comparison
+1. [[Python vs GUI tools comparison]]

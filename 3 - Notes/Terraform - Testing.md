@@ -1,4 +1,5 @@
 Tags: [[__Cloud]], [[__DevOps]], [[__Infrastructure_Engineering]], [[_Terraform]]
+#Cloud #DevOps #InfrastructureEngineering #Terraform 
 
 # Introduction
 There are tools helping with testing if our code is correct. Not only if that code will work without errors but if it is gonna work as excpected and we are not violating any common rules.
@@ -19,5 +20,3 @@ There is the mocking option in Terraform for testing our code.
 We can use the validation argument in a variable in order to validate if the entered values for that variable is correct.
 ### Terraform test cli
 There is the Terraform test cli tool which can be used for testing as well.
-
-#Cloud #DevOps #InfrastructureEngineering #Terraform 

@@ -24,25 +24,33 @@ Each component of those services can run in an isolated containerized environmen
 - **Each data ingestion process**
 # Benefits
 Benefits which Kubernetes offers are:
-- **Isolation**
-	- Each application is running in a separate container with dedicated dependecies.
-	- Application dependencies do not conflict.
-	- Application’s failures don’t affect other applications.
-- **High Availability and Fault Tolerance**
-	- We can create multiple replicas of an application.
-	- When application crashes then another replica takes over.
-	- Zero-downtime deployments of apps’ updates. Instead of following this practice:
-		- Stop the application
-		- Start the updated application - we follow this:
-			- Prepare new application
-			- Once new application is ready then replace the old application with the new one (immediately)
-- **Networking**
-	- Kubernetes can assign a static IP address and DNS names to the application (a container running an app)
-	- Even after restart of a container, it will still have the same IP address and DNS name.
-- **Declarative applications deployments using YAML files**
-	- Configuration files define how application will be deployed, they allow for example:
-		- Specifying how many resources that application can use (CPU, RAM)
-		- Define environmental variables
-		- Executing bash scripts before application starts
-		- What volumes to mount
-	- This enhances reproducibility, automation and supports version control with Git.
+## Isolation
+- Each application is running in a separate container with dedicated dependencies.
+- Application dependencies do not conflict.
+- Application’s failures don’t affect other applications.
+## High Availability and Fault Tolerance
+Easy to:
+- Create multiple replicas of an application
+- Replace crashed replica with another one
+- Retry failed batch jobs
+
+Make zero-downtime deployments of apps’ updates possible - immediately replace an old application with a new one once it is ready.
+## Networking
+- Kubernetes can assign a static IP address and DNS names to the application (a container running an app)
+- Even after restart of a container, it will still have the same IP address and DNS name.
+## Easy management of multiple containerized applications
+We can efficiently manage multiple containerized applications by deploying them in a declarative way with YAML files.
+
+Those configuration YAML files allow for example to define:
+- How many resources that application can use (CPU, RAM)
+- Environmental variables
+- What bash script to execute before application starts
+- What volumes to mount
+
+This enhances reproducibility, automation and supports version control with Git.
+## Container scheduling
+ Automatically:
+- Assign resources (CPU, RAM) to containerized applications 
+- Find a server which to run it on
+## Scaling
+Easily add servers to a Kubernetes cluster.

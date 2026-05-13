@@ -1,4 +1,4 @@
-Tags: [[_My_projects]] [[__Machine_Learning]]
+Tags: [[__My_projects]] [[__Machine_Learning]]
 #MyProjects #MachineLearning 
 
 # Azure subscription

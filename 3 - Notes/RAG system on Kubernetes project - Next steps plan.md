@@ -1,4 +1,4 @@
-Tags: [[_My_projects]]
+Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
@@ -6,11 +6,17 @@ This document describes next steps and plan regarding the RAG app project - [[RA
 # Additional information
 Additional information about next steps and plan:
 - [[DeepSpeed - Kubernetes deployment with Ray Serve]]
-# Things to take care of
+# Updating vector database
+Currently, there is no mechanism to update a vector database when documentation changes.
+
+We would need to recreate the entire vector database. Some kind of incremental load would be useful.
+# Other things to take care of
 - Autoscaling
 - Monitoring
 - Handling failures
-# Prepare a DeepSpeed cluster
+# DeepSpeed for distributed inference
+We can use DeepSpeed for distributed model inference to make predictions faster and use bigger models.
+## Prepare a DeepSpeed cluster
 Prepare a multi-node DeepSpeed cluster with a Rest API server serving distributed inference using that cluster. That is a separate project described here - [[DeepSpeed cluster project]].
 
 This Rest API will be used to create a new MCP tool which will be used in the LangChain workflow to generate the final answer.
@@ -22,7 +28,7 @@ DeepSpeed cluster is a separate deployment so:
 - We can scale it separately
 
 DeepSpeed will run on its own dedicated nodes where other apps will not run. Why it is a good practice, is described here - [[DeepSpeed - Running other apps on the same nodes]].
-# Create a new MCP tool
+## Create a new MCP tool
 Create a new MCP tool for making predictions with DeepSpeed. It will use Rest API created using Kubeflow TrainingRuntime CRD.
 
 In LangGraph:
@@ -30,6 +36,10 @@ In LangGraph:
 - The node calls:
     - Internal DeepSpeed LLM service
     - With retrieved documents as context
+# Single node model inference serving on GPU
+Instead of running a model for inference distributed across many nodes, take a smaller model and run it on a single node with many GPUs.
+
+Use Ray Serve to create many nodes serving that model where each model handles requests independently (can make predictions on its own).
 # Scheduling & resource isolation
 Kubernetes:
 - GPU node pool taints
@@ -50,7 +60,3 @@ This avoids resource contention.
     - mTLS between services
 # Future extensions and other versions
 - Multi-model routing inside LangGraph
-## Single node model inference serving
-Instead of running a model for inference distributed across many nodes, take a smaller model and run it on a single node with many GPUs.
-
-Use Ray Serve to create many nodes serving that model where each model handles requests independently (can make predictions on its own).

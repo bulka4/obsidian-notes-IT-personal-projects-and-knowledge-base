@@ -1,4 +1,4 @@
-Tags: [[_My_projects]]
+Tags: [[__My_projects]]
 #MyProjects 
 
 # Preparing a dev pod for running dbt commands

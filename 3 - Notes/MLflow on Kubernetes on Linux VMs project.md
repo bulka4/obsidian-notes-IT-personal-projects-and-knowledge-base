@@ -1,4 +1,4 @@
-Tags: [[_My_projects]] [[__Data_Engineering]]
+Tags: [[__My_projects]] [[__Data_Engineering]]
 #MyProjects #DataEngineering 
 
 # Introduction
@@ -7,7 +7,7 @@ In this project, we:
 - Run MLflow Tracking Server and project on it
 - Prepare all the cloud resources needed using Terraform
 
-This code is not production ready but is rather for learning about how to set up a multinode Kubernetes cluster and run MLflow on it.
+This code is not production ready but is rather for learning about how to set up a multi-node Kubernetes cluster and run MLflow on it.
 # Code repository
 Repository with the code - [github.com](https://github.com/bulka4/mlflow_kubernetes_linux_vms).
 # Repository guide

@@ -1,5 +1,6 @@
 Tags: [[__DevOps]]
 
+# Introduction
 In order to develop code we can run Jupyter Notebook (or JupyterLab or JupyterHub) in a Docker container running on a Linux VM in cloud. That container will be properly set up for running code.
 
 Then we can connect to the Jupyter through a browser from our local computer to develop and run a code.

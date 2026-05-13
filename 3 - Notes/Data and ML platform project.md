@@ -1,33 +1,33 @@
-Tags: [[_My_projects]]
+Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
-In this project we build a platform which can be used for:
-- Data ingestion - Using Python scripts
-- Data storage - Using Azure Data Lake Gen2 (object data storage) and Iceberg
-- Distributed data transformation - Using Spark and dbt
-- MLOps - Using MLflow:
+In this project we build a platform that can be deployed on Kubernetes and used for:
+- **Data ingestion** - Using Python scripts
+- **Data storage** - Using Azure Data Lake Gen2 (object data storage) and Iceberg
+- **Distributed data transformation** - Using Spark and dbt
+- **MLOps** - Using MLflow:
 	- Training, evaluating and registering ML models
 	- Experiment tracking (keeping track of information about models we create, e.g. hyperparameters used or evaluation metrics)
 	- Automatic model update when its performance drops
-- Workflow orchestration - Using Airflow
-
-It is designed to be deployed on Kubernetes.
+- **Workflow orchestration** - Using Airflow
 
 As a part of this project, we also build an example ML pipeline (data pipeline + CI/CD for ML) using this platform.
 
 Technologies used:
-- Containers and orchestration - Docker and Kubernetes
-- IaC - Terraform
-- Workflow orchestration - Airflow
-- Data transformation - dbt, Spark
-- Data storage - Iceberg, Azure Data Lake Gen2
-- MLOps - MLflow
-- Programming languages - Python, SQL, bash
+- **Docker and Kubernetes** - Containers and orchestration
+- **Terraform** - IaC
+- **Airflow** - Workflow orchestration
+- **dbt and Spark** - Data transformation
+- **Iceberg and Azure Data Lake Gen2** - Object data storage and table format enabling running SQL queries
+- **MLflow** - MLOps
+- **Python, SQL, bash** - Programming languages
 # Platform overview
 Here is a high level overview of the most important features of this platform - [[Data and ML platform project - Platform overview]].
-# Benefits of the tools used
-Benefits of the tools used in this platform:
+# Benefits
+High level overview of benefits of using this platform - [[Data and ML platform project - Benefits]].
+## Benefits of the tools used
+More detailed benefits of individual tools used in this platform:
 - Airflow - [[Data and ML platform project - Airflow - Benefits and key features]]
 - dbt - [[Data and ML platform project - dbt benefits]]
 - Spark enables partitioning data what has benefits described here - [[Data Engineering - Partition-based writes]].

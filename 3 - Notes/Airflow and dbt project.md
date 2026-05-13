@@ -1,4 +1,4 @@
-Tags: [[_My_projects]] [[__Data_Engineering]]
+Tags: [[__My_projects]] [[__Data_Engineering]]
 #MyProjects #DataEngineering 
 
 # Introduction
@@ -10,6 +10,8 @@ In order to run the app we need to start Docker on our machine and run the comma
 That will run the Airflow app and also create and configure the MS SQL server.
 
 In the below sections we can find a description of how this app works and what functionalities it provides.
+# Code repository
+Repository with the code - [github.com](https://github.com/bulka4/airflow_dbt).
 # Apps code
 - DAGs - [[Airflow and dbt project - DAGs]]
 - dbt project - [[Airflow and dbt project - dbt code]]

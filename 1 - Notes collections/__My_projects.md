@@ -1,12 +1,14 @@
 This is a collection of documents about my projects.
 
 # Data Engineering
-- [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project]]
-- [[Spark Operator on Kubernetes on Linux VMs project]]
-- MS SQL - Data Lake data ingestion:
-	- [[MS SQL - Data Lake data ingestion with Airflow project]]
-	- [[MS SQL - Data Lake data ingestion project]]
-- [[Airflow and dbt project]]
+1. [[Data and ML platform project]]
+2. [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project]]
+3. [[Spark Operator on Kubernetes on Linux VMs project]]
+4. MS SQL - Data Lake data ingestion:
+	1. [[MS SQL - Data Lake data ingestion with Airflow project]]
+	2. [[MS SQL - Data Lake data ingestion project]]
+5. [[Airflow and dbt project]]
+6. [[dbt project]]
 # ML systems
 1. [[Data and ML platform project]]
 2. [[MLflow on AKS project]]
@@ -24,6 +26,8 @@ This is a collection of documents about my projects.
 4. [[Add click prediction project]]
 5. [[LinkedIn ML webscraping project]]
 6. [[Otomoto ML webscraping project]]
+7. [[Classifying sensor measurements - Transmission Dynamics]]
+8. [[Filmweb ML webscraping project]]
 ## Semantic search
 1. [[LSTM seq2seq semantic search project]]
 2. [[Fine tuning a Hugging Face model for semantic search project]]
@@ -37,7 +41,7 @@ This is a collection of documents about my projects.
 2. [[Custom Transformer model for translation project]]
 ## Models from scratch
 1. [[RNN from scratch with NumPy project]]
-## AB testing / Exploratory data analysis
+# AB testing / Exploratory data analysis
 1. [[AB testing - Fit predictor data project]]
 2. [[Oil transactions - Exploratory data analysis project]]
 # Preparing datasets
@@ -46,11 +50,15 @@ This is a collection of documents about my projects.
 ## Webscraping
 1. [[LinkedIn ML webscraping project]]
 2. [[Otomoto ML webscraping project]]
-# Terraform
-1. [[Preparing MS SQL, Data Lake and Databricks using Terraform project]]
+3. [[Filmweb ML webscraping project]]
 # DevOps
 1. [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project]]
+## Terraform
+1. [[Preparing MS SQL, Data Lake and Databricks using Terraform project]]
 # Web applications
 1. [[Data governance application (data dictionary and lineage) project]]
+# Programming
+1. [[Useful Python scripts]]
 # Ideas
 1. [[Apka dla placowek medycznych]]
+2. [[ML models project ideas]]

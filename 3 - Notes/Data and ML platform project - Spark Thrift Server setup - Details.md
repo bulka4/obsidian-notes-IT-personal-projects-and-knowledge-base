@@ -1,4 +1,4 @@
-Tags: [[_My_projects]]
+Tags: [[__My_projects]]
 #MyProjects 
 
 # iceberg catalog exists but is not listed
