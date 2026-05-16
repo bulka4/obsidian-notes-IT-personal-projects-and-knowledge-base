@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 Class Weights / Cost-Sensitive Learning is an algorithm-level method for training ML models for classification on an imbalanced dataset ([[Training classification models on an imbalanced dataset|link]]).
@@ -27,5 +28,3 @@ Weights causes, that wrong predictions for the minority class has bigger impact 
 Compared to a focal loss ([[Focal loss|link]]):
 - In this method we can assign higher or lower weights to any class to make a model to focus more on making correct predictions for this class
 - While when using a focal loss, we make the model to focus more on making correct predictions just on samples for which probability is small. We can't choose which samples to focus.
-
-#MachineLearning 

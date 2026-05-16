@@ -51,3 +51,7 @@ This is a collection of documents related to training machine learning models.
 1. [[Triplet learning]]
 # Reinforcement learning
 1. [[Reinforcement learning]]
+# Training on an imbalanced dataset
+1. [[ML training algorithms for an imbalanced dataset]]
+	1. [[Class Weights - Cost-Sensitive Learning]]
+	2. [[Focal loss]]

@@ -70,8 +70,7 @@ Before we train a model, we can modify the available dataset which will be used 
 			2. [[Tomek links]]
 			3. [[Undersampling with cluster centroids]]
 		3. Algorithm modification
-			1. [[Class Weights - Cost-Sensitive Learning]]
-			2. [[Focal loss]]
+			1. [[ML training algorithms for an imbalanced dataset]]
 		4. Balanced Ensemble Methods
 			1. [[EasyEnsemble]]
 			2. [[Cluster-based ensemble]]
