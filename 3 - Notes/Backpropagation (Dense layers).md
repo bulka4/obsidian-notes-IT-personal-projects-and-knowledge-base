@@ -21,7 +21,7 @@ It returns a scalar. If it returns a vector, we reduce it to scalar by taking fo
 # Goal
 The final goal of backpropagation is to find derivatives of the loss w.r.t. weights and biases:
 $$
-\Large \nabla_{W^{(l)}} L$ \quad \Large \nabla_{b^{(l)}} L
+\Large \nabla_{W^{(l)}} L \quad \Large \nabla_{b^{(l)}} L
 $$
 for every layer $l$ .
 

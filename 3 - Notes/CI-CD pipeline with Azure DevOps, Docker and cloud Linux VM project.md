@@ -8,15 +8,17 @@ Code from this repo doesn't build the CI/CD pipeline itself. It only prepares al
 - Azure DevOps resources - created using its Rest API
 - VM - Terraform creates it and runs a bash script on it to configure it (e.g. install Docker)
 
-Using infrastructure prepared by this code we can create a CI/CD pipeline deploying for example Airflow app from the `airflow_data_lake_ingestion` repository ([github.com](https://github.com/bulka4/airflow_data_lake_ingestion)).
+Using infrastructure prepared by this code, we can create a CI/CD pipeline deploying any application which contains a Dockerfile and a docker-compose file, for example Airflow app from the `airflow_data_lake_ingestion` repository ([github.com](https://github.com/bulka4/airflow_data_lake_ingestion)).
 # Code repository
 Repository with project's code - [github.com](https://github.com/bulka4/azure_ci_cd).
+# Project overview
+Project overview - [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Project overview|link]].
 # Pipeline design
-[[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Pipeline design]]
+Pipeline design - [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Pipeline design|link]].
 # Repository guide
-[[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Repository guide]]
+Repository guide - [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Repository guide|link]].
 # Prerequisites
-[[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Prerequisites]]
+Prerequisites - [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Prerequisites|link]].
 # Preparing cloud resources with Terraform
 - Preparing cloud resources - [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Preparing cloud resources with Terraform|link]] 
 - Terraform outputs - [[CI-CD pipeline with Azure DevOps, Docker and cloud Linux VM project - Terraform outputs|link]] 

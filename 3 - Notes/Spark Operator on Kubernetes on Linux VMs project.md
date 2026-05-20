@@ -8,11 +8,20 @@ In this project, we:
 - Create all the cloud resources needed using Terraform
 - Enable running Spark scripts developed in Jupyter Notebook in a cluster mode on Kubernetes using Spark Operator
 
-This code is not production ready but it is a good starting point for preparing a framework for submitting Spark jobs on Kubernetes using Spark Operator. 
+**Architecture overview**
+- Kubernetes cluster runs on both VMs. One VM acts as a Master node, another one as a Worker.
+- Jupyter Notebook and Spark in a standalone mode run on one of the VMs in a Docker container.
+- Spark scripts developed in Jupyter Notebook are saved on the host using mounting and can be ran on the Kubernetes cluster in a distributed way.
 
-It helps with learning how to:
-- Configure a multi node Kubernetes cluster
-- Submit Spark jobs using Spark Operator
+**Implementation overview**
+This project allows for starting Kubernetes cluster and Jupyter Notebook by following steps below:
+- Run Terraform code in order to create VMs and execute on them bash scripts which:
+	- Configure Kubernetes cluster
+	- Configure Spark to run in a local mode
+	- Launch Jupyter Notebook
+- Connect to VMs through SSH and execute on them a few commands to start a cluster
+
+All of this can’t be done fully automatically using Terraform because it is necessary to run commands on both servers in a proper order. This would require a different tool, for example Ansible.
 # Code repository
 Repository with the code: [github.com](https://github.com/bulka4/spark_kubernetes_linux_vms).
 # Repository guide

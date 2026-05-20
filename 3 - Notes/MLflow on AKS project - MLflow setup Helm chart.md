@@ -2,52 +2,70 @@ Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
-We use the Helm chart from the docker > helm_charts > mlflow_setup folder to deploy all the resources needed to run MLflow projects. There are 3 subfolders in the templates folder for deploying different resources:
+We use the Helm chart from the `docker > helm_charts > mlflow_setup` folder to deploy all the resources needed to run MLflow projects. 
+
+There are 3 subfolders in the `templates` folder for deploying different resources:
 - common - Common resources for both, deploying the Tracking Server and running MLflow project:
     - ACR Secret
-        - Created by the acr-secret.yaml template.
-        - Contains value for authentication when pulling images from ACR.
-        - Used by the Tracking Server deployment and in the Service Account used in the Job running MLflow project.
-- mlflow_project - Resources needed specifically for running MLflow project (not related to the Tracking Server):
+- `mlflow_project` - Resources needed specifically for running MLflow project (not related to the Tracking Server):
     - Volume claim
-        - Created by the pvc.yaml template.
-        - Used in the Job which runs MLflow project. It is linked to File share in Azure Storage Account and it provides project files to run.
     - Secret
-        - Created by the sa-secret.yaml template.
-        - It is used by the Volume to authenticate when connecting to Storage Account.
     - Service Account
-        - Created by the service-account.yaml template.
-        - Used in the Job which runs MLflow project. It enables reading a secret used for authentication when pulling images from ACR.
     - Role binding
-        - Created by the service-account-role-binding.yaml template
-        - Assing proper permissions to the Service Account allowing for reading secrets.
-- tracking_server - Resources used for deploying Tracking Server:
+- `tracking_server` - Resources used for deploying Tracking Server:
     - Volume Claim
-        - Created by the mysql-pvc.yaml template
-        - Which will be used by MySQL which will act as a backend store. It will store data in Azure Disk (created on demand when deploying Volume claim).
     - Tracking Server Secret
-        - Created by the secret.yaml template
-        - With values for connecting to MySQL (backend store) and Azure Storage Account (artifact store)
-        - Used in the Tracking Server deployment
     - MLflow Tracking Server deployment
-        - Created by the deployment.yaml template
-        - Uses a secret for pulling image from ACR
-        - Uses another secret for connecting to MySQL (backend store) and Azure Storage Account (artifact store)
-        - Uses image from ACR pushed there from the container for interacting with AKS
-        - Runs the `mlflow server` command to start the Tracking Server
     - Service
-        - Created by the service.yaml template
-        - Used to assign DNS name to the Tracking Server Pod
-
+# Common - ACR Secret
+The `ACR Secret` resources created using a YAML template from the `common` folder:
+- Contains Service Principal credentials for authentication when pulling images from ACR.
+	- This Service Principal is prepared by Terraform ([[MLflow on AKS project - Creating Azure resources with Terraform|link]])
+- Is used by the Tracking Server deployment and in the Service Account used in the Job running MLflow project.
+# mlflow_project
+Resources created using YAML templates from the `mlflow_project` folder:
+- Volume claim
+	- Used in the Job which runs MLflow project. It is linked to File share in Azure Storage Account and it provides project files to run.
+- Secret
+	- It is used by the Volume to authenticate when connecting to Storage Account.
+- Service Account
+	- Used in the Job which runs MLflow project. It enables reading a secret used for authentication when pulling images from ACR.
+- Role binding
+	- Assing proper permissions to the Service Account allowing for reading secrets.
+# tracking_server
+Resources created using YAML templates from the `tracking_server` folder:
+- Volume Claim
+	- Which will be used by MySQL which will act as a backend store. It will store data in Azure Disk (created on demand when deploying Volume claim).
+- Tracking Server Secret
+	- With values for connecting to MySQL (backend store) and Azure Storage Account (artifact store)
+	- Used in the Tracking Server deployment
+- MLflow Tracking Server deployment
+	- Uses a secret for pulling image from ACR
+	- Uses another secret for connecting to MySQL (backend store) and Azure Storage Account (artifact store)
+	- Uses image from ACR pushed there from the container for interacting with AKS
+	- Runs the `mlflow server` command to start the Tracking Server
+- Service
+	- Used to assign DNS name to the Tracking Server Pod
+# Dependencies
 In the chart dependencies we have:
    - MySQL - Which will act as a backend store.
+# Installing the chart
+Everything will be running in the namespace we define. We install this chart by running the following commands in the `/root/k8s/helm_charts > mlflow_setup` directory:
+```
+# Install dependency chart, i.e. MySQL (backend store)
+helm dependency update
 
-Everything will be running in the namespace we define. We install this chart by running the following commands in the /root/k8s/helm_charts > mlflow_setup directory:
->helm dependency update                             # <- Install dependency chart, i.e. MySQL (backend store)
->helm install mlflow . -n mlflow --create-namespace # <- Install the chart
-
+# Install the chart
+helm install mlflow . -n mlflow --create-namespace
+```
+## Prerequisites
 For deploying this chart we need:
-- Docker image in ACR - Which can be prepared using the container for interacting with AKS. More info about that in the 'Docker container for interacting with AKS' section in this document.
-- values.yaml file - Which can be generated by the Terraform code. More info about that in the 'Files generated by Terraform (using template files)' section in this document.
-## Service Principal for ACR Secret
-When creating the secret from this chart (templates > common > acr-secret.yaml) we need to use for username and password Service Principal's credentials which has a scope for our ACR and role 'acrpush'. It is required for proper authentication.
+- Docker image in ACR
+	- Which will be used for deploying pods.
+	- It can be prepared using the container for interacting with AKS. More info here - [[MLflow on AKS project - Docker container for interacting with AKS|link]].
+- `values.yaml` file
+	- Which can be generated by the Terraform code. More info here - [[MLflow on AKS project - Files generated by Terraform (using template files)|link]].
+- Service Principal
+	- We use Service Principal's credentials when creating a ACR secret (`common > acr-secret.yaml`)
+	- This Service Principal needs to have a scope for our ACR and role 'acrpush' allowing to pull images from ACR
+	- It is being created by Terraform ([[MLflow on AKS project - Creating Azure resources with Terraform|link]])

@@ -2,10 +2,10 @@ Tags: [[__My_projects]] [[__Machine_Learning]]
 #MyProjects #MachineLearning 
 
 # Introduction
-This is an application which:
-- Enables creating a data dictionary (tables and columns descriptions)
-- Search through a data dictionary using semantic search
-- Automatically generates data lineage using SQL scripts from a SQL server and Sisense (a BI platform)
+This is an application which enables users to find quickly tables and scripts on a MS SQL server by providing such features as:
+- Creating a data dictionary (tables and columns descriptions)
+- Semantic search engine allowing to search through a data dictionary 
+- Automatic generation of data lineage graphs using SQL scripts from a SQL server and Sisense (a BI platform)
 	- It shows how tables in a SQL server are being created 
 	- And also which tables are used for which dashboards in Sisense
 
@@ -34,7 +34,9 @@ The `db_preparation/tables_docs.js` script prepares data in MongoDB about tables
 ## Algorithm for creating a visualization
 We create here a custom algorithm for creating data lineage visualizations.
 
-That visualization consists of nodes connected by links and our algorithm calculates coordinates on the screen for each node such that they form a tree diagram.
+Collected metadata about SQL scripts is processed to prepare data lineage data which indicates which SQL scripts creates which tables, and which tables are used in this script.
+
+Data lineage visualizations are generated automatically in form of nodes connected with links. For every node, x and y coordinates are calculated which determines their position on a screen to form a tree diagram.
 # Model for semantic search
 For semantic search we use a model from Hugging Face which we save in the onnx format. 
 

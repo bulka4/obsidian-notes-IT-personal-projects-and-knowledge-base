@@ -1,18 +1,38 @@
 Tags: [[__My_projects]] [[__Data_Engineering]]
 #MyProjects #DataEngineering 
 
-# Introduction
-In this repository we have:
+# Introduction new
+In this project, we create a multi-node Hadoop cluster from scratch on Azure Linux VMs allowwing for distributed storage and processing big amounts of data. The cluster consists of:
+- HDFS
+- YARN
+- Spark
+
+To set it up, we use:
 - Terraform scripts for creating Linux VMs in Azure.
 - Bash scripts for setting up HDFS, YARN, Spark and Jupyter Notebook on those VMs. 
-
-We will create two Linux VMs which:
-- Will act as a master and a slave node
-- We will be able to connect to using SSH
 
 We will be able to:
 - Access a Jupyter Notebook through a browser from our local computer and run Spark code from it.
 - Review data in HDFS UI
+- Connect to VMs using SSH
+
+**Architecture overview**
+- We create a cluster consisting of 2 nodes - one acts as a master, another one as a slave.
+- YARN is used as a scheduler for running Spark jobs.
+- Jupyter Notebook is launched on the master node which allows for developing and running Spark code which can interact with HDFS.
+
+**Implementation overview**
+Hadoop cluster can be started by following steps below:
+- Run Terraform code to:
+	- Create two Azure Linux VMs
+	- Execute on them bash scripts which configure both servers:
+- Make preparations for Hadoop cluster
+- Start Jupyter Notebook
+- Connect to both VMs using SSH and run on them a few commands which start the cluster.
+
+All of this can’t be done fully automatically using Terraform because it is necessary to run commands on both servers in a proper order.
+
+This would require using a different tool, for example Ansible.
 # Code repository
 Repository with the code: [github.com](https://github.com/bulka4/hadoop_spark).
 # Repository guide

@@ -8,6 +8,10 @@ In this project we create and train a LSTM ([[Neural Network - LSTM layer|link]]
 - Updating model's parameters using gradients
 # Project code repository
 A repository with a code for this project is here - [github.com](https://github.com/bulka4/rnn_from_scratch).
+# Backpropagation
+We don't use here a proper backpropagation where we reuse gradients calculated once to calculate another gradients. Instead, we calculate the same gradients multiple times.
+
+A proper backpropagation for a Dense layer is described here - [[Backpropagation (Dense layers)]].
 # Vanishing gradient
 There is a problem with a vanishing gradient. It is very small (around 10 ** -70) and it is being rounded to 0.
 
