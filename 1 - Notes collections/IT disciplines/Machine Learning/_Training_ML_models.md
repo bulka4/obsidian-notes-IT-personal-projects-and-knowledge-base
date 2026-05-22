@@ -40,6 +40,8 @@ This is a collection of documents related to training machine learning models.
 # Gradient-based optimization
 1. [[Gradient Descent - ML]]
 2. [[Adam optimizer]]
+3. [[Backpropagation]]
+	1. [[Backpropagation (Dense layers)]]
 ## Optimization stability
 1. [[Vanishing - exploding gradients]]
 2. [[Gradient control]]

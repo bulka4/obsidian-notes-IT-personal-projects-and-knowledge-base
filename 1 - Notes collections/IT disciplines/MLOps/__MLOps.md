@@ -4,25 +4,8 @@ Tags: [[__MLOps]]
 This is a collection of documents related to MLOps, i.e. a set of practices and tools related to creating, monitoring and updating ML models.
 
 # MLOps tasks, problems and practices
-1. [[MLOps - Collaboration]]
-2. [[MLOps - Feature engineering]]
-	1. [[MLOps - Feature store]]
-		1. [[MLOps - Incremental + streaming features]]
-		2. [[MLOps - Feature store - Online store for real-time inference]]
-		3. [[MLOps - Feature store - Time correctness]]
-		4. [[MLOps - Feature store - Metadata, documentation and versioning]]
-3. [[MLOps - Model reproducibility]]
-	1. [[MLOps - Data reproducibility]]
-4. [[MLOps - Model versioning]]
-5. [[MLOps - Experiment management (keeping track of how different models perform)]]
-6. [[MLOps - CI-CD for ML]]
-	1. [[MLOps - CI for ML]]
-	2. [[MLOps - CD for ML]]
-		1. [[MLOps - Canary & shadow deployment]]
-		2. [[MLOps - A-B testing]]
-		3. [[MLOps - Monitoring]]
-			1. [[MLOps - Model performance monitoring & automatic model update]]
-			2. [[MLOps - ML system performance monitoring]]
+[[MLOps tasks, problems and practices]]
+
 ## Questions
 ## Other topics
 - Scaling
@@ -47,8 +30,13 @@ This is a collection of documents related to MLOps, i.e. a set of practices and 
 	- Ensemble systems
 	- Model routing (which model to use when)
 # GPU ML computing
-1. [[_GPU_ML_computing]]
-# ML model inference
-[[_ML_model_inference]]
-# ML model training
+[[_GPU_ML_computing]]
+# Model training
 [[_ML_model_training]]
+# Model inference
+[[_ML_model_inference]]
+# Experiment tracking
+[[_MLflow]]
+# Programming models
+1. [[_PyTorch]]
+2. [[_Tensorflow]]

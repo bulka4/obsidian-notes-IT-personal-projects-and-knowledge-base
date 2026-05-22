@@ -3,8 +3,10 @@ This is collection of documents related to machine learning model inference, tha
 # Introduction
 1. [[Why to run LLMs locally]]
 # Ray
-Ray Train and Serve can be used for inference.
-1. [[_Ray]]
+Ray Serve can be used for inference:
+- [[_Ray]]
+ and Ray Train for distributed inference:
+ - [[_Ray#Ray Train]]
 # DeepSpeed
 1. [[_DeepSpeed]]
 # Other tools for ML inference

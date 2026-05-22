@@ -22,5 +22,7 @@ We have the following notes linked to this tag:
 [[_YARN]]
 # Computer hardware
 [[_Computer_hardware]]
+# Networking
+[[_Networking]]
 # Others
 1. [[Tools costs]]

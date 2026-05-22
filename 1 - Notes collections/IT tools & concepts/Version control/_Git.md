@@ -3,6 +3,7 @@ This is a collection of documents about Git.
 # Git
 1. [[Git - Branches]]
 	1. [[Git - Merging branches]]
+	2. [[Git - Fetching a remote branch]]
 2. [[Git - Tracking branch]]
 3. [[Git - Pushing]]
 4. [[Git - Remote]]

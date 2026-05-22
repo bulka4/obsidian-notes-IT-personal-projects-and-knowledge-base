@@ -1,23 +1,16 @@
 Tags: [[__Data_Engineering]]
 #DataEngineering 
 
-This is a tag about Data Engineering.
+This is a collection of notes about Data Engineering.
 
 # Data Engineering tasks, problems and practices
-1. [[Data Engineering - Data ingestion]]
-	1. [[Data ingestion - Testing]]
-2. [[Data Engineering - Data validation]]
-	1. [[Data Engineering - Data quality tests]]
-	2. [[Data Engineering - Schema validation]]
-3. [[Data Engineering - Data lineage]]
-4. [[Data Engineering - Code documentation]]
-5. [[Data Engineering - Saving metadata in tables about when records has been created or modified and by which process run]]
+[[Data Engineering tasks, problems and practices]]
 # Data modelling
  [[_Data_modelling]]
 # Data architecture
 [[_Data_architecture]]
 # Orchestration and workflow design
-[[_DE_orchestration_and_workflow_design]]
+[[Data Engineering - Orchestration and workflow design]]
 # Techniques
 1. [[Data Engineering - Partition-based writes]]
 2. [[Data Engineering - Upsert (MERGE INTO)]]
