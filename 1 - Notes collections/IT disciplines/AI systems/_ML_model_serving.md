@@ -5,7 +5,8 @@ This is a collection of documents related to a machine learning model serving, t
 2. [[ML model serving - Multi-node vs single-node model running]]
 3. [[ML model serving - Load balancing]]
 4. [[ML model serving - Autoscaling]]
-5. [[LLM serving - Latency & throughput]]
+5. [[ML inference serving - Latency & throughput]]
+	1. 
 # Ray Serve
 1. [[_Ray#Ray Serve]]
 # MCP
