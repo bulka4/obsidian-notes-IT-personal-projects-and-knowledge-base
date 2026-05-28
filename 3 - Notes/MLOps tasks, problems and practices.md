@@ -1,0 +1,23 @@
+Tags: [[__MLOps]]
+#MLOps 
+
+# Notes
+1. [[MLOps - Collaboration]]
+2. [[MLOps - Feature engineering]]
+	1. [[MLOps - Feature store]]
+		1. [[MLOps - Incremental + streaming features]]
+		2. [[MLOps - Feature store - Online store for real-time inference]]
+		3. [[MLOps - Feature store - Time correctness]]
+		4. [[MLOps - Feature store - Metadata, documentation and versioning]]
+3. [[MLOps - Model reproducibility]]
+	1. [[MLOps - Data reproducibility]]
+4. [[MLOps - Model versioning]]
+5. [[MLOps - Experiment management (keeping track of how different models perform)]]
+6. [[MLOps - CI-CD for ML]]
+	1. [[MLOps - CI for ML]]
+	2. [[MLOps - CD for ML]]
+		1. [[MLOps - Canary & shadow deployment]]
+		2. [[MLOps - A-B testing]]
+		3. [[MLOps - Monitoring]]
+			1. [[MLOps - Model performance monitoring & automatic model update]]
+			2. [[MLOps - ML system performance monitoring]]

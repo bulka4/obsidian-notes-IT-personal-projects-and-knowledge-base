@@ -11,7 +11,7 @@ This is a tag related to algebra.
 	3. [[Distance between vectors - visualization]]
 	4. [[Multiplying vectors by a scalar - Visualization]]
 	5. [[Multiple vectors groups - Visualization]]
-# matrices
+# Matrices
 1. [[Matrix]]
 2. [[Matrix as a linear transformation]]
 3. [[Concatenating matrices]]

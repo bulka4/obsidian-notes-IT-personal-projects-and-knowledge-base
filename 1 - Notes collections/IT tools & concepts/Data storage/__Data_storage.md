@@ -4,6 +4,8 @@ This is a collection of documents related to a data storage.
 1. [[Data storage catalog]]
 ## Delta Lake
 [[_Delta_lake]]
+# Iceberg
+[[_Iceberg]]
 ## Object storage
 [[_Object_storage]]
 ## HDFS (Hadoop distributed filesystem)
