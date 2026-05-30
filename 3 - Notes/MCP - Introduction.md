@@ -1,4 +1,5 @@
-Tags: [[__Machine_Learning_Engineering]]
+Tags: [[__Machine_Learning_Engineering]] [[_MCP]]
+#MLEngineering #MCP 
 
 # Introduction
 Official documentation about MCP: [modelcontextprotocol.io](https://modelcontextprotocol.io/docs/getting-started/intro).
@@ -41,5 +42,3 @@ async def mcp_add(a, b):
 	async with client:
 		result = await client.call_tool("add", {"a": a, "b": b})
 ```
-
-#MLEngineering 

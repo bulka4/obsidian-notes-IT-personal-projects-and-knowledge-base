@@ -9,7 +9,7 @@ In this project I have created a RAG (Retrieval-Augmented Generation) applicatio
 - One LLM converts user’s question into a vector embedding
 - Documents relevant to this question are retrieved from a vector database (semantic search)
 - Another LLM generates a response using retrieved documents
-
+ 
 **Architecture overview**
 Here are the most important components of this RAG system:
 - Multi-agent workflow created using LangGraph
