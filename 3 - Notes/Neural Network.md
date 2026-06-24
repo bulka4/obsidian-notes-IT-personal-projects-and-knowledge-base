@@ -24,6 +24,18 @@ Below we can find different types of layers with links to documents explaining t
 - Recurrent - [[Neural Network - Recurrent layer|link]]
 - Attention - [[Neural Network - Attention layer|link]]
 - Normalization
+# Benefits
+- Can model very complex relationships
+- Automatic feature learning - It can learn extracting features on its own. Output of each layer can represent features.
+- Works for many data types (images, text, time series)
+- Scales with data well - more data used for training usually gives better performance
+# Drawbacks
+- Requires a lot of data
+- Hard to interpret
+- Computationally expensive
+- A lot of hyperparameters to set up (architecture (layers, neurons), learning rate, optimizer, batch size etc.)
+- Sensitive to training setup - Performance depends a lot on: initialization (of model parameters like weights), normalization, learning rate.
+- Can overfit easily (regularization ([[Regularization|link]]), dropout ([[Neural Networks - Dropout|link]]), weight decay ([[L2 Regularization (Ridge)|link]]) or early stopping ([[Machine Learning - Early stopping|link]]) can help)
 # Training 
 To train a neural network, consisting of any types of layers, we need to choose a loss function ([[Loss functions|link]]) and use an optimizer (e.g. gradient descent ([[Gradient Descent - ML|link]]) or Adam) to calculate, how to change parameters (weights and biases), to reduce value of a loss function.
 ## Backpropagation

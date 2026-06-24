@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 RMSE is an evaluation method for regression task. It tells us an average magnitude of errors (how far are predictions from the real values).
@@ -11,5 +12,3 @@ where:
 - $y_i$ - true value
 - $\hat{y_i}$ - predicted value
 - $n$ - number of samples
-
-#MachineLearning 

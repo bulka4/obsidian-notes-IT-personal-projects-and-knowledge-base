@@ -1,4 +1,5 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 Adam optimizer works similar like gradient descent ([[Gradient Descent - ML|link]]), it just uses a different formula for updating parameters.

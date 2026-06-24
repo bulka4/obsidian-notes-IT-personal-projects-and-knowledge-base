@@ -12,5 +12,15 @@ This usually happens, when:
 - There is too little data samples in the training dataset
 
 Generalization is model's ability to perform well on new data samples, which model has never seen before. So model generalizes well if there is no overfitting.
+# Preventing overfitting
+To prevent overfitting, we can use:
+- Regularization ([[Regularization|link]])
+- Less complex model
+- Dropout (for neural networks) ([[Neural Networks - Dropout|link]])
+- Early stopping ([[Machine Learning - Early stopping|link]])
+
+Or we can change the training dataset:
+- Add more data
+- Make a distribution of values of features and the target variable more similar in both the training and testing datasets.
 
 #MachineLearning 

@@ -5,19 +5,24 @@ This is a collection of documents related to training machine learning models.
 
 # Introduction
 1. [[Training machine learning models - Introduction]]
-2. [[Overfitting and generalization]]
-3. [[Bias and variance]]
-4. [[Batching]]
+2. [[Bias and variance]]
+3. [[Batching]]
 	1. [[Continuous (dynamic) batching]]
+4. [[Machine Learning - Extrapolation]]
 # Likelihood
 1. [[Likelihood function]]
 2. [[Maximum Likelihood Estimation (MLE)]]
+3. [[Relation of Cross-Entropy to the Maximum Likelihood Estimation]]
 # Divergence between probability distributions
 1. [[Minimizing divergence between probability distributions]]
 2. [[KL Divergence]]
 3. [[Relation between KL Divergence and Cross-Entropy and Entropy]]
 4. [[Using KL Divergence for training models]]
-# Regularization
+# Overfitting
+1. [[Overfitting and generalization]]
+	1. [[Machine Learning - Early stopping]]
+	2. [[Neural Networks - Dropout]]
+## Regularization
 1. [[Regularization]]
 2. [[L2 Regularization (Ridge)]]
 3. [[L1 Regularization (Lasso)]]
@@ -32,15 +37,18 @@ This is a collection of documents related to training machine learning models.
 ## Cross-Entropy
 1. [[Cross-Entropy]]
 2. [[Empirical approximation of Cross-Entropy]]
-3. [[Relation of Cross-Entropy to the Maximum Likelihood Estimation]]
-4. [[Cross-Entropy for classification]]
+3. [[Cross-Entropy for classification]]
+4. Relations between Cross-Entropy and other concepts:
+	1. [[Relation of Cross-Entropy to the Maximum Likelihood Estimation]]
+	2. [[Relation between KL Divergence and Cross-Entropy and Entropy]]
 ## MSE (Mean Squared Error)
 1. [[MSE (Mean Squared Error)]]
 2. [[MSE relation to MLE (Maximum Likelihood Estimation)]]
 # Gradient-based optimization
-1. [[Gradient Descent - ML]]
-2. [[Adam optimizer]]
-3. [[Backpropagation]]
+1. [[ML - Gradient-based optimization]]
+	1. [[Gradient Descent - ML]]
+	2. [[Adam optimizer]]
+2. [[Backpropagation]]
 	1. [[Backpropagation (Dense layers)]]
 ## Optimization stability
 1. [[Vanishing - exploding gradients]]

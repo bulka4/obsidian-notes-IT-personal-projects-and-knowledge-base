@@ -50,132 +50,18 @@ A guide for how to set up infrastructure:
  - [[Data and ML platform project - Prod repository guide (AKS)]]
  - [[Data and ML platform - Dev repository guide - kind setup]]
 # Example workflow
-An example workflow created on this platform for data processing and developing ML models:
-- [[Data and ML platform project - Example workflow]]
+An example workflow created on this platform for data processing and developing ML models - [[Data and ML platform project - Example workflow|link]].
 # Infrastructure
-Below sections and documents describe infrastructure setup, that is how we set up all the tools which we then can use for developing applications.
-## Accessing services UIs
-We can access UIs of different services by using below URLs in a browser:
-- Airflow UI - `localhost:8080`
-- MLflow Tracking server UI - `localhost:5000`
-- Grafana - `localhost:3000`
-## Cloud resources
-Below document explains:
-- What cloud resources we set up
-- How we configure them
-- How we use Terraform for that
-
-for both development on kind and production on AKS:
-- [[Data and ML platform project - Cloud resources - Prod]]
-- [[Data and ML platform project - Cloud resources - Dev]]
-## Preparing files with Terraform
-Terraform code except for creating cloud resources, it also prepares files on the localhost with proper values about created cloud resources.
-
-More info can be found here - [[Data and ML platform project - Preparing files with Terraform]].
-## kind cluster for local testing
-Below document describes setting up a kind Kubernetes cluster for local testing before deploying on AKS:
-[[Data and ML platform - Setting up a kind cluster]] 
-## Docker image for interacting with Kubernetes
-We can use a Docker image for interacting with:
-- kind
-- AKS 
-- Other cloud resources
-
-Below documents describes how this image works for both dev and prod:
-- Prod - [[Data and ML platform project - Docker image for interacting with AKS]]
-- Dev - [[Data and ML platform project - Docker image for interacting with kind]]
-
-In that container we have prepared all the tools needed, like for example `kubectl`, Helm or Azure CLI.
-## Code development & testing scripts
-Those documents explain how we can develop code on a local computer and run it on Kubernetes to test it:
-- [[Data and ML platform project - Code development & testing scripts]]
-	- [[Data and ML platform project - VS Code Kubernetes extension setup for code development]]
-	- [[Kubernetes - Code development]]
-## Making code available in pods
-This document describes how we make code available in pods, i.e. either via git-sync or by cloning a git repo in an init container - [[Data and ML platform project - Making code available in pods]].
-## Data storage
-Those documents describe data storage systems used for this platform:
-- [[Data and ML platform project - Data storage]]
-- [[Data and ML platform project - Iceberg storage framework setup]]
-## Airflow setup
-Those documents describe how we setup Airflow:
-- [[Data and ML platform project - Airflow setup (prod, AKS)]]
-- [[Data and ML platform project - Airflow setup (dev, kind)]]
-## Data transformation setup
-Below sections describe how to set up tools used for data transformation:
-- Spark Thrift Server with Iceberg
-- dbt
-- Hive Metastore (optional, not used currently)
-### Spark Thrift Server and Iceberg
-Those documents explain how we set up Spark Thrift Server and Iceberg:
-- [[Data and ML platform project - Spark Thrift Server setup]]
-- [[Data and ML platform project - Spark Thrift Server setup - Details]]
-### dbt
-This document explains how we set up dbt - [[Data and ML platform project - dbt setup]]
-### Hive Metastore
-This document explains how we set up Hive Metastore - [[Data and ML platform project - Hive Metastore setup]]
-
-Using Hive Metastore is optional, we don't use it currently but the code is prepared and it worked.
-#### Hive vs Iceberg
-We can could use:
-- Only Hive Metastore
-- Both Hive Metastore and Iceberg together
-
-Hive can be used like Iceberg to manage metadata allowing Spark to execute SQL queries.
-
-More info about comparison between Hive and Iceberg can be found here - [[Iceberg vs Hive]].
-## MLflow setup
-We use MLflow for ML model creation, monitoring and retraining.
-
-More details about setting it up can be found here - [[Data and ML platform project - MLflow setup]].
-## Spark Operator
-This document explains how to set up Spark Operator - [[Data and ML platform project - Spark Operator setup]]
-## Prometheus
-This document explains how to set up Prometheus - [[Data and ML platform project - Prometheus setup]]
+How infrastructure was prepared for this platform and how it works (configuring all the tools, deploying on Kubernetes, accessing services through a browser) - [[Data and ML platform project - Infrastructure|link]].
 # Data and ML workflows
-Below sections and documents describe how we can use this platform to create data and ML workflows.
-
-In this project, we created one example workflow (more info about it here - [[Data and ML platform project - Example workflow|link]]). 
-
-Next subsections describe what workflows we can create using this platform. It doesn't mean that all of that was implemented in the example workflow.
-## Common code
-In the `apps/common` folder we have a common code used by all other applications.
-## Workflow orchestration with Airflow
-Document below describes how workflow orchestration with Airflow looks like on this platform:
-- [[Data and ML platform project - Airflow - How to build workflows]]
-- [[Data and ML platform project - Workflows orchestrated by Airflow]]
-	- [[Data and ML platform project - dbt with Airflow]]
-	- [[Data and ML platform project - Making and saving predictions - Airflow orchestration]]
-	- [[Data and ML platform project - Automatic update of ML models based on their performance]]
-## Data transformation
-Documents about data transformation:
-- [[Data and ML platform project - Data transformation - Code and practices followed]]
-	- [[Data and ML platform project - dbt folder structure]]
-- [[Data and ML platform project - Data transformation - Running dbt (dev, kind)]]
-- [[Data and ML platform project - Data transformation - Running Spark jobs]]
-- [[Data and ML platform project - Data Transformation - Running SQL queries using Thrift server and Beeline]]
-## Data ingestion
-This document describes how we can perform data ingestion - [[Data and ML platform project - Data ingestion]]
-## MLOps with MLflow
-MLOps consists of:
-- ML model training
-- Performance monitoring
-- Updating the model used in production with a new one when performance drops
-
-More info about this workflow using MLflow on this platform can be found in documents below:
-- [[Data and ML platform project - MLOps with MLflow]]
-	- [[Data and ML platform project - Training, evaluating and saving ML models with MLflow]]
-	- [[Data and ML platform project - Making and saving predictions]]
-	- [[Data and ML platform project - ML model performance monitoring]]
-	- [[Data and ML platform project - Automatic update of ML models based on their performance]]
-## Monitoring
-This document describes what we can monitor and how:
-- [[Data and ML platform project - Monitoring]]
+How to build workflows on this platform - [[Data and ML platform project - Data and ML workflows|link]].
 # Code
 - MLflow projects - [[Data and ML platform project - MLflow projects code|link]] 
+# Problems encountered during the project
+What problems we encountered during working on this project - [[Data and ML platform project - Problems encountered during the project|link]].
 # Optional improvements for later
-[[Data and ML platform project - Improvements for later]]
+Optional improvements for this project for later - [[Data and ML platform project - Improvements for later|link]].
 # Reference docs for the tools used
-Official docs which describes tools used in this project are listed here - [[Data and ML platform project - Official docs for the tools used]]
+Official docs which describe tools used in this project are listed here - [[Data and ML platform project - Official docs for the tools used|link]].
 # To do next
 Notes about what to do next - [[Data and ML platform project - To do]] 

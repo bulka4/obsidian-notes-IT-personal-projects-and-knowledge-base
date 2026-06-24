@@ -15,6 +15,19 @@ It builds on top of linear regression, it also finds parameters for a linear fun
 - Gradient descent - [[Gradient Descent - ML|link]]
 - Loss functions - [[Loss functions|link]]
 - Cross-Entropy loss functions - [[Cross-Entropy|link]]
+# Benefits
+- Relatively easy to interpret
+- Fast to train and make predictions
+- Outputs probabilities, not just labels (so e.g. we can choose a classification threshold ([[Decision - classification threshold|link]]))
+- Works well on linearly separable data
+- Less prone to overfitting than very flexible models
+- Requires relatively little data
+- With regularization ([[Regularization|link]]) handles well high-dimensional datasets and irrelevant features - Irrelevant features contribute a little to the prediction while relevant ones contribute a lot.
+# Drawbacks
+- Assumes a linear relationship between features and the log-odds of the target
+	- Not good for complex, nonlinear relationships
+- Sensitive to outliers
+- Might not work well when features or samples are correlated
 # How predictions are made
 ## Multi-class classification
 Logistic regression is built on top of linear regression, it also finds parameters for a linear function:
@@ -131,6 +144,6 @@ The following assumptions must be met in order to use logistic regression effect
 	  $\log(\text{odds}) = \log(\frac{p}{1-p}) = W^T x + b$
 	- In case of a multi-class classification, odds of observing the $j$ class relative to any chosen reference class are linear:	  $$\text{odds}_{j/K} = \frac{P(y = j | x)}{P(y = K | x)} = W^T x + b$$ 
 - **Independence of observations:** Each observation in the training dataset is independent of others
-- **No multicollinearity:** Predictors (x input values) should not be highly correlated with each other
+- **No multicollinearity:** Features $x_i$ should not be highly correlated with each other
 - **Sufficient sample size:** Logistic regression requires enough samples for each combination of predictor values
 - **No or minimal outliers:** Extreme values in predictors can heavily influence the log-odds, distorting the fit.

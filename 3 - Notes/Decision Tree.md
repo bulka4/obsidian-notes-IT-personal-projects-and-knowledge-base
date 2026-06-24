@@ -1,9 +1,38 @@
 Tags: [[__Machine_Learning]]
 
 # Introduction
-Decision Tree is a model used for classification, regression and clustering.
+Decision Tree is a model used for classification, regression and clustering. It can take as input continuous, categorical and mix of continuous and categorical variables.
 
-It can take as input continuous, categorical and mix of continuous and categorical variables.
+**Architecture**:
+- In a decision tree, we have nodes, each one with defined a condition which is used to split the dataset into two parts - a dataset that satisfy the condition and a dataset that doesn't satisfy it. 
+- At the bottom of a tree are leaves which are datasets containing only the samples that satisfies all the conditions along the path leading to that leaf.
+- By going through a tree, we mean checking all the conditions for a data sample until we reach a leaf.
+
+**We make predictions in the following way**:
+- Take a data sample
+- Go through the tree until we reach a leaf at the bottom
+- That leaf is a dataset and we make a prediction by taking for example the most common class from that leaf or an average value
+
+**Gini impurity**:
+We use the gini impurity to determine what condition should be used in nodes to split the dataset. For both created datasets, we calculate the gini impurity which tells us how accurate will be our predictions for a randomly chosen data sample from that dataset, if we always take the most common class or average value from that dataset.
+# Benefits
+- Interpretability - We can see what conditions are used to make predictions
+- We don't assume here a linear relationship between the target variable and features, and independency between data samples
+- Handles a mix of continuous and discrete features
+- Don't require preprocessing, e.g. scaling, normalization, standardization
+- Works for both classification and regression
+# Drawbacks
+- Extrapolation is not possible ([[Machine Learning - Extrapolation|link]])
+- Tendency to overfitting
+- It favors continuous and high-cardinality categorical variables what can be misleading when we interpret importance of features
+	- That's because for such variables there is more different conditions to split a dataset.
+	- When we generate more different split datasets, there is a higher chance that some of those datasets will be better for making predictions (it will be easier to make predictions for samples from it) than datasets produced by splitting using a different feature which produces less split datasets.
+- High variance - small changes in the training dataset can produce very different trees
+
+A random forest can help with both issues - [[Random Forest|link]].
+# Use cases
+- Clustering - [[Decision Tree - Clustering|link]]
+- Dimensionality reduction - [[Decision Tree - Dimensionality reduction|link]]
 # Decision Tree architecture
 Decision Tree looks like that:
 ```mermaid
@@ -69,10 +98,14 @@ In the process of training a decision tree we create decision nodes and assign s
 ### Building the root node
 In order to create the first, root node, we:
 - Take every possible splitting condition for each feature (column)
-- Split the training dataset into two subsets according to that condition
-- Calculate gini impurity for the generated two subsets
+- For every condition:
+	- Split the training dataset into two subsets according to that condition
+	- Calculate gini impurity for the generated two subsets which tells us how easy it is to make predictions for samples from those subsets
+- Choose the condition which generated subsets for which gini impurity is the lowest (those subsets are the best for making predictions, it is the easiest to make predictions for samples from them)
 
 To find out how to get set of all the possible splitting conditions, refer to the [[#How to choose all the possible splitting conditions]] section further in this document.
+
+Gini impurity tells us how easy it is to make predictions for samples from a dataset, i.e. how easy it is to predict a value of a randomly selected sample from that dataset.
 
 When gini impurity is low, that indicates that most of the samples in the subset are of the same class so when we randomly select a sample from it, there is a high chance that it is of the same class as the most common one.
 
@@ -127,8 +160,7 @@ Making predictions with a decision tree:
 	- **Regression:** The average target value of training samples in that leaf
 
 By 'training samples in that leaf' we mean data samples which went to that leaf during the training process.
-
-***Explanation why this works***
+## Explanation why this works
 During the training process we were trying to make data samples in nodes as similar as possible (many samples of the same class or with value close to the node's average). 
 
 Thanks to that, when we select randomly a sample from that node, it is highly likely that:
@@ -147,8 +179,5 @@ $$
 Where $\bar{y}_{\text{right}}$ and $\bar{y}_{\text{left}}$ are mean target values in each child node and $y_i, i\in\text{left}$, $y_i, i\in\text{right}$ are values from the each child node.
 
 So we create nodes in such a way, that all the values within a node are as similar as possible.
-# Use cases
-- Clustering - [[Decision Tree - Clustering|link]]
-- Dimensionality reduction - [[Decision Tree - Dimensionality reduction|link]]
 
 #MachineLearning 

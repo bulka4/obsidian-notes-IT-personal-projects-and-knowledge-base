@@ -2,13 +2,10 @@ Tags: [[_Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-A circuit breaker is a protection mechanism for handling unreliable external dependencies (like APIs).
-
-It is used for example when we try to make an API call many times, regularly.
-
-It prevents from performing too many failing actions.
-
-It has 3 states:
+- A circuit breaker is a protection mechanism for handling unreliable external dependencies (like APIs).
+- It is used for example when we try to make an API call many times, regularly.
+- It prevents from performing too many failing actions.
+- It has 3 states:
 ### Closed (normal)
 - Requests go through
 - If failures happen → they’re tracked (we count how many failures appears)

@@ -3,7 +3,7 @@ Tags: [[__Machine_Learning]]
 # Introduction
 Regularization is a technique used during training machine learning models by minimalizing a loss function ([[Loss functions|link]]). If a model is not trained by loss minimization, regularization cannot be applied.
 
-It improves generalization of models (prevent overfitting) by making model parameters smaller and more similar to each other.
+It improves generalization of models (prevent overfitting) by making model parameters smaller and more similar to each other. Features for which corresponding parameters are big have bigger impact on predictions than features for which corresponding parameters are small what increases a risk of overfitting.
 
 Parameters are made smaller by adding a penalty function to the loss:
 $$

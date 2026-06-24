@@ -30,7 +30,7 @@ This is a collection of documents related to datasets, variables and inputs for 
 	- [[TF-IDF]]
 	- [[Word2vec (word embeddings)]]
 	- [[Sentence embeddings]]
-## Converting a discrete variable into a continuous
+## Converting a continuous variable into discrete
 1. [[Feature engineering - Converting continuous features into discrete]]
 # Feature space
 1. [[Feature space]]
@@ -52,10 +52,10 @@ This is a collection of documents related to datasets, variables and inputs for 
 [[Machine Learning - Mix of different types of input variables]]
 # Time series
 - [[Time series as an input for ML models - Overview]]
-- [[ML models for different types of time series datasets]]
-- [[Time series data - Feature engineering]]
-- [[Time series data - Stationarity and transformations]]
-- [[Time series data - Train test split (to confirm)]]
+	- [[ML models for different types of time series datasets]]
+	- [[Time series data - Feature engineering]]
+	- [[Time series data - Stationarity and transformations]]
+	- [[Time series data - Train test split (to confirm)]]
 # Preparing a dataset for training
 ## Imbalanced dataset
 Before we train a model, we can modify the available dataset which will be used for training, so the model performs better.
@@ -71,11 +71,13 @@ Before we train a model, we can modify the available dataset which will be used 
 			3. [[Undersampling with cluster centroids]]
 		3. Algorithm modification
 			1. [[ML training algorithms for an imbalanced dataset]]
+				1. [[Class Weights - Cost-Sensitive Learning]]
+				2. [[Focal loss]]
 		4. Balanced Ensemble Methods
 			1. [[EasyEnsemble]]
 			2. [[Cluster-based ensemble]]
 			3. [[Balanced Random Forest]]
-	2. [[Training regression models on an imbalanced dataset]]
+	4. [[Training regression models on an imbalanced dataset]]
 ## Missing data
 1. [[Training ML models on a dataset with missing data]]
 ## Dimensionality reduction

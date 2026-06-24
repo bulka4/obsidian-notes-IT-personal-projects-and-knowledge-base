@@ -190,6 +190,10 @@ If a client was making orders for 18 months, we can create multiple samples by t
 To evaluate the model we use:
 - Accuracy
 - Confusion matrix (the script `modelClassificationTraining.py` saves it as a heatmap image)
+## Improvement
+We want to detect the most valuable customers. It would be good to check what ranking of the most valuable customers model predictions create. 
+
+Even if predicted revenue is inaccurate, model can still predict the highest revenue for the most profitable clients which is good.
 # Ideas to test
 ## Comparing how similar are clients features
 To detect outliers ([[Anomaly Detection models|link]]):

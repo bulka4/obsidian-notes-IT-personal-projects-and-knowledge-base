@@ -6,7 +6,7 @@ Count Vectorization is a method for encoding categorical variables ([[Encoding c
 It converts a collection of text documents into a matrix of word counts. It tells us how many times each word occurs in each document.
 
 That creates a dataset of shape $(n, k)$ where:
-- Rows correspond to documents ($n$ documents in total
+- Rows correspond to documents ($n$ documents in total)
 - Columns correspond to words (one column per word, $k$ columns in total)
 - Values indicates how many times a given word occurred in a given document.
 

@@ -29,23 +29,28 @@ To simplify code development, this project gives a possibility to:
 
 **Outcome**
 After deployment, application is running on a Kubernetes cluster in Azure and it can handle requests from other servers providing answers to questions.
-# Code repository
-Repository with project's code - [github.com](https://github.com/bulka4/rag_system_kubernetes).
-# Infrastructure
-Additional information about preparing infrastructure:
-- [[RAG system on Kubernetes project - Docker image for interacting with AKS]]
-- [[RAG system on Kubernetes project - Terraform]]
-- [[RAG system on Kubernetes project - Helm charts]]
-
-App deployment guide:
-- [[RAG system on Kubernetes project - Deployment guide]]
-- [[RAG system on Kubernetes project - Testing app deployment using Docker compose]]
-# Application architecture and code
-Additional information about application architecture and code:
-- [[RAG system on Kubernetes project - Architecture]]
-- [[RAG system on Kubernetes project - Apps]]
-- [[RAG system on Kubernetes project - Dockerfiles]]
 # Encountered problems
-[[RAG system on Kubernetes project - Encountered problems]]
-# Next steps plan
-More information about the Next steps plan regarding this project - [[RAG system on Kubernetes project - Next steps plan]].
+## Learning new concepts
+I needed to learn a lot of new things:
+- Indexes in a vector database (Milvus)
+- Ray Serve (the most difficult one)
+- Asynchronous functions in Python
+## Making the `answer_agent` function asynchronous
+I made the `answer_agent` function asynchronous, so it can run in parallel with other asynchronous functions.
+
+I made it asynchronous by using commands:
+```python
+loop = asyncio.get_event_loop()
+answer = await loop.run_in_executor(...)
+```
+## Ray Serve app
+### Initiating RAG workflow
+I needed to make sure that we load LLM only once, when we start the HTTP server, not every time when someone makes a request.
+### Kubernetes deployment
+I needed to configure the `RayService` CRD to define how to run Ray Service on Kubernetes. I needed to convert my RAG app into a `.zip` file in order to run it.
+## Architecture design
+I needed to decide where to convert question into an embedding - on the MCP server or in the app with the `LangGraph` workflow.
+
+I have chosen the MCP server to create a clear separation of responsibilities:
+- MCP server does all the heavy computations
+- Other applications that uses this MCP server do only light computations. They mainly deal with request handling.

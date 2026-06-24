@@ -5,7 +5,7 @@ Tags: [[__Data_Engineering]], [[__Distributed_computing]]
 Spark is the execution engine - responsible for query planning and execution while metadata store ([[Spark - Tables metadata|link]]) (like Iceberg or Hive metastore) is responsible only for providing Spark metadata needed to execute queries.
 # Spark
 Specifically, Spark handles:
-- Parsing the SQL: Converts your SQL query into a logical plan.
+- Metadata retrieval and parsing the SQL: Retrieve relevant metadata from a metadata store and convert the SQL query into a logical execution plan.
 - Query Optimization: Applies Catalyst optimizer rules to create a more efficient logical plan.
 - Physical Planning: Decides how to execute the query across the cluster (e.g., which transformations to apply, joins, shuffles).
 - Task Execution: Runs distributed tasks on the cluster to process data in parallel.

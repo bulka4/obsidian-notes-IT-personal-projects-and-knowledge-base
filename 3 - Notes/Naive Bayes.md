@@ -12,6 +12,15 @@ For example, if we want to predict person's age range based on their height, whi
 - For age range 11 - 20, height 1 meter is very unlikely (unpopular)
 
 Then using Naive Bayes, we would predict for that person the age range 0 - 10, because their height (1 meter), is much more likely for that class.
+# Benefits
+- It is fast (for both training and inference)
+- Works well with small datasets
+- Handles well high-dimensional datasets and irrelevant features - Irrelevant features contribute a little to the prediction while relevant ones contribute a lot
+- It outputs a probability of a class, not just a label (so e.g. we can choose a classification threshold ([[Decision - classification threshold|link]])
+# Drawbacks
+- It assumes independence between features
+	- So it also can't model feature dependencies
+- Sensitive to how the training dataset looks like - If a feature value doesn't appear in the dataset, it's probability will be zero and will not contribute to the prediction
 # The main idea
 Let's assume, that:
 - $C$ - Random variable ([[Random variable|link]]) representing a class which we want to predict for a given data sample with a set of possible values $\{C_k\}_{k=1}^K$ 

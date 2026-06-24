@@ -1,13 +1,34 @@
 Tags: [[__Machine_Learning]]
 
 # Introduction
-Random forest is a model for both classification and regression based on the decision tree model ([[Decision Tree|link]]).
+Random forest is a model for classification, regression and clustering. It is good when our dataset is imbalanced.
 
-It builds multiple decision trees, where each tree is built differently because each tree is built using a dataset which is a random modification of the main dataset.
+It is based on the decision tree model ([[Decision Tree|link]]). It builds multiple decision trees, where each tree is built differently because each tree is built using a dataset which is a random modification of the main dataset.
 
-Then all the trees are used together to make predictions. This helps with generalization of models, to prevent overfitting. 
+Then all the trees are used together to make predictions. This helps with generalization of models, to prevent overfitting.
 
 Also, random forest can be used to calculate feature importance scores, which tell us how useful each feature is for making predictions.
+# Benefits
+Random forest helps with issues we have with a decision tree:
+- Tendency to overfitting
+- High variance - small changes in the training dataset can produce very different trees
+
+Plus it has the same benefits as a decision tree:
+- Interpretability - We can see what conditions are used to make predictions. Although interpretability is harder than in case of a single decision tree as here a prediction is done using multiple trees.
+- We don't assume here a linear relationship between the target variable and features, and independency between data samples
+- Handles a mix of continuous and discrete features
+- Don't require preprocessing, e.g. scaling, normalization, standardization
+- Works for both classification and regression
+# Drawbacks
+Like a decision tree:
+- Can struggle with extrapolation ([[Machine Learning - Extrapolation|link]])
+- It favors continuous and high-cardinality categorical variables what can be misleading when we interpret importance of features
+	- That's because for such variables there is more different conditions to split a dataset.
+	- When we generate more different split datasets, there is a higher chance that some of those datasets will be better for making predictions (it will be easier to make a prediction for a sample which we select from it) than datasets produced by splitting using a different feature which produces less split datasets.
+
+Additionally, it is:
+- Slower an requires more memory than a single decision tree. Compared to other models, the speed and memory usage is medium.
+- It is reducing variance but not bias - If all decision trees are wrong, then averaging a result won't help
 # Building Random Forest
 It builds multiple decision trees where each tree is built differently because we use two techniques which ensures randomness in building trees:
 - Bootstrapping (Bagging)
@@ -63,5 +84,9 @@ where:
 Samples assigned to the same leaf by a tree are similar to each other as described in the document about decision trees - [[Decision Tree|link]].
 
 So values $a_{ij}$ indicate how similar samples $i$ and $j$ are. Similar samples will be assigned to the same cluster.
+# Balanced Random Forest (for imbalanced data)
+We can use a Random Forest model when our training dataset is imbalanced. We split then our dataset into multiple balanced datasets and train a separate decision tree on each new dataset.
+
+More information is here - [[Balanced Random Forest|link]].
 
 #MachineLearning 

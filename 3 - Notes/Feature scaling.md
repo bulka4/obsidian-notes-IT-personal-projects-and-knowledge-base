@@ -3,7 +3,7 @@ Tags: [[__Machine_Learning]]
 # Introduction
 Feature scaling is a process of transforming input variables for a model so that they are on a similar range or distribution. 
 
-It ensures that features contribute proportionally to the model, especially for algorithms that rely on distances (like KNN ([[K nearest neighbors (KNN)|link]]), clustering ([[Clustering|link]])) or gradients (gradient descent ([[Gradient Descent - ML|link]])).
+It ensures that all the features contribute proportionally to how the model is trained (what is a value of the loss during training). Especially for algorithms that rely on distances (like KNN ([[K nearest neighbors (KNN)|link]]), clustering ([[Clustering|link]])) or gradients (gradient descent ([[Gradient Descent - ML|link]])).
 
 Without scaling, if a model relies on distances or gradients, features with small numeric ranges are dominated by those with large ranges and they contribute much less to the value of the loss function during training a model.
 

@@ -26,12 +26,14 @@ We will select a specific number of clusters which centroids (average vectors) a
 
 When creating an index we also specifying what metric will be used for finding similar vectors, which is a cosine similarity in this case.
 ## MCP server
-In the mcp_server > mcp_server.py we create the MCP Server with the tool for semantic search. It will use the Milvus db as a vector db where we will store vector embeddings of documents.
+In the mcp_server > mcp_server.py we create the MCP Server with the tool for semantic search which:
+- Uses a local LLM to convert a question into a vector embedding
+- Finds in the Milvus db similar embeddings from the documentation.
 
 This server is created using FastMCP framework and it is using a HTTP Transport. It allows MCP clients to connect from other servers and without starting the server (server is started separately).
 
 MCP Server and clients using its tools are maintained separately.
-### Environment variables used:
+### Environment variables used
 - MILVUS_HOST – DNS name or IP address of the Milvus db where we store documents used for semantic search.
 - MILVUS_COLLECTION_NAME – Name of the Collection in the Milvus db with documents used for semantic search.
 - EMBEDDING_FIELD_NAME - Name of the field in the Collection which holds vector embeddings.

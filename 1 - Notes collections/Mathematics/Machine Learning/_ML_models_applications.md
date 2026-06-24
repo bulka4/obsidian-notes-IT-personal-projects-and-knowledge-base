@@ -29,7 +29,7 @@ This is a collection of documents related to applications of machine learning mo
 	1. [[Z-Score - Standard Deviation]]
 	2. [[Gaussian Mixture Models (GMM)]]
 	3. [[Autoencoders - Anomaly detection]]
-# Applications related to text
+# NLP
 1. [[Token generation]]
 	1. [[Token generation - Techniques]]
 		1. [[Token generation - Speculative Decoding]]

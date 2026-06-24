@@ -46,5 +46,7 @@ Prerequisites we need to satisfy before start using the code from this repositor
 - Terraform outputs - [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project - Terraform outputs|link]] 
 - SSH key generation - [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project - SSH key generation|link]] 
 - Hadoop setup - [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project - Hadoop setup|link]] 
-# Problems and ideas for improvements
+# Problems encountered during working on this project
+Problems encountered during working on this project - [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project - Problems encountered during working on this project|link]].
+# Problems to solve and ideas for improvements
 Problems and ideas for improvements - [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project - Problems and ideas for improvements|link]].

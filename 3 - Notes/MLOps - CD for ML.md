@@ -3,9 +3,8 @@ Tags: [[__MLOps]]
 
 # Introduction
 Below is described step-by-step CD flow for ML.
-## 1. Model is trained and saved
-- Model is trained in a pipeline (e.g. using Airflow)
-- Saved and versioned (we save a new model as a new version of the existing one) (e.g. in MLflow)
+## 1. Take a saved model
+Take a saved model that was already trained.
 ## 2. Model evaluation
 Before deployment:
 - compare with current production model
@@ -44,7 +43,7 @@ After deployment monitor:
 - prediction distribution
 - performance metrics
 
-If something breaks -> rollback.
+If something breaks -> rollback (go back to the previous model) or trigger CI again to create a new one.
 
 More info about monitoring can be found here - [[MLOps - Monitoring]].
 # Questions

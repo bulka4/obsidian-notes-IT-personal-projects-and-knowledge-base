@@ -12,7 +12,11 @@ Milvus is used as a vector database for storing vector embeddings of documents u
 
 User's question is converted into a vector embedding and in Milvus we find documents with the most similar embeddings.
 # MCP
-MCP server provides a tool for performing semantic search. This tool is used by the 'Retriever' agent from the LangGraph workflow.
+MCP server provides a tool for performing semantic search which:
+- Uses a local LLM to convert a question into a vector embedding
+- Finds in the Milvus db similar embeddings from the documentation.
+
+This tool is used by the 'Retriever' agent from the LangGraph workflow.
 # FastAPI
 FastAPI is used to define Rest API endpoints which clients can use to ask a question to our RAG system.
 

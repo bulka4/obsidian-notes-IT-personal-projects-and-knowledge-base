@@ -15,8 +15,8 @@ Topics like random variables, probability distributions, expected value, varianc
 ## Information theory
 Topics like Cross-Entropy, Mutual Information, KL Divergence
 [[_Information_theory]]
-# Dataset, variables and inputs used for creating ML models
-[[_Dataset_variables_inputs_ML]]
+# Training dataset and variables for training ML models
+[[_Training_dataset_variables_ML]]
 # Applications of models
 [[_ML_models_applications]]
 # Models

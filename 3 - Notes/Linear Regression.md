@@ -13,6 +13,17 @@ $$
 for input $X = [x_1, ..., x_n]$.
 
 The $w = [w_1, ..., w_n]$ vector consist of trainable parameters (weights) we are trying to find.
+# Benefits
+- Easy to interpret - Coefficients show what impact each feature has on the target variable
+- Fast to train and make predictions
+- Requires relatively little data
+- Can extrapolate ([[Machine Learning - Extrapolation|link]])
+- Works well when relationship between the target variable and features is linear
+- With regularization ([[Regularization|link]]) handles well high-dimensional datasets and irrelevant features - Irrelevant features contribute a little to the prediction while relevant ones contribute a lot.
+# Drawbacks
+- Assumes a linear relationship between features and target, constant variance, independency of samples
+- Sensitive to outliers
+- Might not learn complex / nonlinear relationships between the target variable and features
 # How linear regression works
 Linear regression finds such a weights $w = [w_1, ..., w_n]$ that minimizes a chosen loss function (more information about loss functions can be found [[Loss functions|here]]).
 
