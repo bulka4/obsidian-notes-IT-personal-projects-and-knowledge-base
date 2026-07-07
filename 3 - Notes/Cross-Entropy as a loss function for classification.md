@@ -6,6 +6,11 @@ This document uses notation and shorthands which are described here - [[Mathemat
 Cross-Entropy ([[Cross-Entropy|link]]) can be used as a loss function ([[Loss functions|link]]) for classification models ([[Classification models|link]]), for both binary and multi-class classifications.
 
 Its formula depends on whether we use it for a multi-class or a binary classification. Those formulas are written in the sections below corresponding to each classification type.
+
+If we assume that:
+- For a binary classification, model defines a Bernoulli distribution ([[Probability distribution represented by a model|link]])
+- For a multi-class classification, model defines a Categorical distribution
+then using Cross-Entropy is equivalent to maximizing likelihood ([[Relation of Cross-Entropy to the Maximum Likelihood Estimation|link]]).
 # Overview of training using Cross-Entropy
 ## Cross-Entropy formula and assumptions
 Cross-Entropy general formula is:

@@ -5,7 +5,7 @@ Focal loss is an algorithm-level method for training ML models, especially neura
 
 It assigns higher loss value to samples for which model predicts small probability. In an imbalanced dataset, model is usually assigning smaller probabilities to a minority-class samples.
 # How it works
-It is extension of the standard Cross-Entropy formula ([[Cross-Entropy for classification|link]]):
+It is extension of the standard Cross-Entropy formula ([[Cross-Entropy as a loss function for classification|link]]):
 $$
 \large
 CE = - \frac{1}{n} \sum_{i=1}^n \log(p_{Y_i \mid X_i}(y_i \mid x_i; \theta))

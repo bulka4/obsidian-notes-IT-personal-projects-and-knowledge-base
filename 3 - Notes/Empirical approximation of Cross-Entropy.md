@@ -3,7 +3,7 @@ Tags: [[__Machine_Learning]]
 # Notation and shorthands
 This document uses notation and shorthands which are described here - [[Mathematical general notations and shorthands|link]].
 # Introduction
-Cross-Entropy ([[Cross-Entropy|link]]) can be used to train statistical models as described here - [[Cross-Entropy for classification]].
+Cross-Entropy ([[Cross-Entropy|link]]) can be used to train statistical models as described here - [[Cross-Entropy as a loss function for classification]].
 
 We can't calculate the Cross-Entropy precisely as it is a theoretical value. It uses the true probability distribution $P$ of random variables $X, Y$ which is unknown.
 

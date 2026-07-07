@@ -5,13 +5,11 @@ This document uses notation and shorthands which are described here - [[Mathemat
 # Introduction
 MSE (Mean Squared Error) is a loss function ([[Loss functions|link]]) for regression models.
 
-MSE formula is derived from using Maximum Likelihood Estimation (MLE) for continuous random variables. Minimalizing the MSE is equivalent to maximizing the likelihood function.
-
-We use a model to define the values $\large p_{Y_i \mid X_i}(y_i \mid x_i; \theta)$ needed for calculating a likelihood by assuming the distribution:
+If we assume that model defines a normal distribution ([[Probability distribution represented by a model|link]]):
 $$
 Y_i \mid X_i \sim \mathcal{N} (f_\theta(X_i), \sigma^2)
 $$
-where $f_\theta$ is our model.
+where $f_\theta$ is our model, then using MSE as a loss function is equivalent to maximizing the likelihood function ([[MSE relation to MLE (Maximum Likelihood Estimation)|link]]).
 # MSE formula
 MSE is calculated using the formula:
 $$

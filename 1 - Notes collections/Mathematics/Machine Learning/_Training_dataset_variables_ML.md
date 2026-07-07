@@ -77,7 +77,8 @@ Before we train a model, we can modify the available dataset which will be used 
 			1. [[EasyEnsemble]]
 			2. [[Cluster-based ensemble]]
 			3. [[Balanced Random Forest]]
-	4. [[Training regression models on an imbalanced dataset]]
+	2. [[Training regression models on an imbalanced dataset]]
+	3. 
 ## Missing data
 1. [[Training ML models on a dataset with missing data]]
 ## Dimensionality reduction

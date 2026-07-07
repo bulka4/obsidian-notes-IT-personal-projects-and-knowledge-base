@@ -32,6 +32,6 @@ To calculate Cross-Entropy, we assume that:
 - $q = q_\theta$ - Parametric probability distribution defined by a statistical model for $(X_i, Y_i)$ samples of $(X, Y)$ ([[Dataset of observations of random variables - Explanation|link]])
 - $p$ and $q = q_\theta$ corresponds to probability distributions $P$ and $Q$ 
 
-Training models by minimizing Cross-Entropy is described here - [[Cross-Entropy for classification]].
+Training models by minimizing Cross-Entropy is described here - [[Cross-Entropy as a loss function for classification]].
 
 #MachineLearning 

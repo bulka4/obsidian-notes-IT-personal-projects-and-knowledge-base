@@ -16,7 +16,7 @@ Cross-Entropy is related to Maximum Likelihood Estimation (MLE) and KL Divergenc
 - [[Relation of Cross-Entropy to the Maximum Likelihood Estimation]]
 - [[Relation between KL Divergence and Cross-Entropy and Entropy]]
 
-Also Cross-Entropy can be used to train classification machine learning models as described here - [[Cross-Entropy for classification]].
+Also Cross-Entropy can be used to train classification machine learning models as described here - [[Cross-Entropy as a loss function for classification]].
 # Cross-Entropy general formula
 Let's assume, that:
 - $P, Q$ - Probability distributions ([[Probability distribution|link]]) for a random variable $X: \Omega \rightarrow (\mathcal{X}, \mathcal{B}_{\mathcal{X}})$ ([[Random variable|link]])

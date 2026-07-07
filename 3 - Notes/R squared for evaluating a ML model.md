@@ -23,7 +23,7 @@ $$
 R^2 = 1 - \frac{\text{unexplained variance}} {\text{total variance}}
 $$
 
-where the total variance in the data is given by:
+where the total variance ([[Variance|link]]) in the data is given by:
 $$
 \large \sum_{i=1}^n(y_i - \bar{y})^2
 $$

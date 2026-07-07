@@ -1,15 +1,12 @@
 Tags: [[__Machine_Learning]]
+#MachineLearning 
 
 # Introduction
 Training machine learning models is often done by minimalizing a loss function.
 
 Loss function represents an error made by a model when making predictions which we want to minimalize. We can use for example the gradient descent ([[Gradient Descent - ML|link]]) algorithm for that purpose.
 # How loss functions are derived
-Loss functions are chosen in such a way, that minimalizing it is equivalent to one of the options:
-- Maximizing the probability of observing given realizations of random variables (Maximum Likelihood Estimation (MLE) (more information here - [[Maximum Likelihood Estimation (MLE)|link]]))
-- Minimizing a divergence or distance between probability distributions (more information here - [[Minimizing divergence between probability distributions|link]]) — e.g., Kullback–Leibler divergence, cross-entropy, or other objectives derived from Bayesian or information-theoretic principles;
-- Minimizing an expected risk (decision-theoretic loss) — where the loss represents the cost of prediction errors under a specific utility or margin-based criterion.
-- Minimizing distance if a feature space - Encourages relative relationships (similar/dissimilar) rather than exact labels. Can be interpreted as minimizing an expected “distance-based risk” rather than standard MSE or CE. For example Triplet loss, contrastive loss.
+[[How loss functions are derived]].
 # Regularization
 Additionally, when training a model, we can use **regularization** in the loss function as described here -  [[Regularization]].
 
@@ -26,6 +23,8 @@ For regression, the most common ones include:
 
 For classification, the most common ones include:
 - Cross-Entropy (for both multi-class and binary classification) - More information [[Cross-Entropy|here]]
+# Minimizing a loss function
+In order to minimize a loss function, we use usually gradient-based optimization algorithms ([[ML - Gradient-based optimization|link]]), like gradient descent ([[Gradient Descent - ML|link]]) or Adam ([[Adam optimizer|link]]).
 # Related topics
 1. Gradient descent - [[Gradient Descent - ML|link]]
 

@@ -14,7 +14,7 @@ We can use it in case of training on an imbalanced dataset by assigning higher w
 Assign higher weight to the minority class and lower to the majority one.
 
 ***2. Modify the loss function***
-Modify the loss function using assigned weights, for example in case of Cross-Entropy ([[Cross-Entropy for classification|link]]):
+Modify the loss function using assigned weights, for example in case of Cross-Entropy ([[Cross-Entropy as a loss function for classification|link]]):
 $$
 \large
 \text{Loss} = - \frac{1}{n} \sum_{i=1}^n w_{Y_i} \log(p_{Y_i \mid X_i}(y_i \mid x_i; \theta))

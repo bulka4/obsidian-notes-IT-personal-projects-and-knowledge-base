@@ -1,0 +1,105 @@
+Tags: [[_Backend_Engineering]]
+#BackendEngineering 
+
+# Materials to learn from
+1. [[Backend Engineering - Materials to learn from]]
+# Other notes
+1. [[Backend Engineering - Rate limiting]]
+	1. [[Backend Engineering - Token bucket]]
+	2. [[Backend Engineering - Handling failures - Circuit breakers]]
+2. [[Backend Engineering - Latency and throughput]]
+	1. [[Backend Engineering - Latency metrics]]
+3. [[Backend Engineering - Stateful vs stateless service]]
+# Application communication
+## Synchronous and asynchronous communication
+1. [[Backend Engineering - Application communication]]
+	1. [[Backend Engineering - Synchronous communication]]
+	2. [[Backend Engineering - Asynchronous communication]]
+		1. [[Backend Engineering - Asynchronous request processing]]
+			1. [[Backend Engineering - Asynchronous request processing - Benefits and drawbacks]]
+			2. [[Backend Engineering - Asynchronous request processing - Message queue]]
+			3. [[Backend Engineering - Asynchronous request processing - Sending back a response]]
+				1. [[Backend Engineering - Asynchronous request processing - Sending back a response using pooling]]
+				2. [[Backend Engineering - Asynchronous request processing - Sending back a response using webhook (callback)]]
+				3. [[Backend Engineering - Asynchronous request processing - Sending back a response using WebSockets]]
+				4. [[Backend Engineering - Asynchronous request processing - Sending back a response via shared storage]]
+## Event-driven systems
+1. [[Backend Engineering - Event-driven architecture]]
+	8. [[Backend Engineering - Event-driven architecture - Benefits and drawbacks]]
+	9. [[Backend Engineering - Event-driven architecture - Events and messages]]
+	10. [[Backend Engineering - Event-driven architecture - Message broker]]
+	11. [[Backend Engineering - Event-driven architecture - Delivery Guarantees]]
+	12. [[Backend Engineering - Event-driven architecture - Queues (point-to-point) and topics (pub-sub)]]
+	13. [[Backend Engineering - Event-driven architecture - Idempotency]]
+	14. [[Backend Engineering - Event-driven architecture - Ordering]]
+	15. [[Backend Engineering - Event-driven architecture - Partitioning]]
+	16. [[Backend Engineering - Event-driven architecture - Dead Letter Queue (DLQ)]]
+## Protocols
+1. [[Networking - Protocols]]
+	1. [[Networking - Protocols - HTTP]]
+	2. [[Networking - Protocols - gRPC]]
+	3. [[Networking - Protocols - WebSockets]]
+	4. [[Networking - Protocols - TCP]]
+	5. [[Networking - Protocols - UDP]]
+## Performance optimization
+1. [[Backend Engineering - Application communication - Performance optimization]]
+	1. [[Backend Engineering - Request batching]]
+	2. [[Backend Engineering - Caching]]
+## Security
+1. [[Backend Engineering - Security]]
+	1. Secure protocols:
+		1. [[Networking - Security - TLS]]
+		2. [[Networking - Security - HTTPS]]
+	2. [[Backend Engineering - Security - Authorization vs authentication]]
+	3. Authentication:
+		1. [[Backend Engineering - Security - Token-based authentication]]
+		2. [[Backend Engineering - Security - JWT access token format]]
+		3. [[Backend Engineering - Security - OAuth2]]
+	4. Authorization:
+		1. [[Backend Engineering - Security - RBAC authorization]]
+		2. [[Backend Engineering - Security - ABAC authorization]]
+		3. [[Backend Engineering - Security - Policy engine]]
+	5. Others:
+		1. [[Backend Engineering - API architectures - API gateway]]
+		2. [[Backend Engineering - Rate limiting]]
+		3. [[Backend Engineering - Security - API key]]
+## API design
+1. [[Backend Engineering - API design principles]]
+	1. [[Backend Engineering - Bulk endpoints]]
+2. [[Backend Engineering - API architectures]]
+	1. [[Backend Engineering - API architectures - REST]]
+	2. [[Backend Engineering - API architectures - GraphQL]]
+	3. [[Backend Engineering - API architectures - API gateway]]
+	4. [[Backend Engineering - API architectures - RPC]]
+	5. [[Backend Engineering - Streaming API Architecture]]
+		1. [[Backend Engineering - Streaming API Architecture - Implementations comparison]]
+		2. [[Networking - Protocols - WebSockets]]
+		3. [[Backend Engineering - Streaming API Architecture - Server-Sent Events (SSE)]]
+		4. [[Backend Engineering - Streaming API Architecture - Chunked HTTP]]
+		5. [[Backend Engineering - Streaming API Architecture - gRPC streaming]]
+## Distributed microservices
+1. [[Backend Engineering - Distributed microservices]]
+	1. [[Backend Engineering - Distributed microservices - Partial failures]]
+	2. [[Backend Engineering - Distributed microservices - Data Consistency Patterns (distributed transactions)]]
+		1. [[Backend Engineering - Distributed microservices - Saga pattern]]
+		2. [[Backend Engineering - Distributed microservices - 2PC]]
+		3. [[Backend Engineering - Distributed microservices - TCC]]
+	3. [[Backend Engineering - Distributed microservices - Outbox pattern]]
+	4. [[Backend Engineering - Distributed microservices - CQRS]]
+	5. [[Backend Engineering - Distributed microservices - Service discovery]]
+	6. [[Backend Engineering - Distributed microservices - Consistency models]]
+# Handling failures
+1. [[Backend Engineering - Handling failures]]
+	1. [[Backend Engineering - Handling failures - Timeouts]]
+	2. [[Backend Engineering - Handling failures - Retries with backoff]]
+	3. [[Backend Engineering - Handling failures - Circuit breakers]]
+	4. [[Backend Engineering - Handling failures - Bulkheads]]
+	5. [[Backend Engineering - Event-driven architecture - Idempotency]]
+# Monitoring
+1. [[Backend Engineering - Monitoring]]
+# Data storage
+1. [[Backend Engineering - Data storage - Event sourcing]]
+	1. [[Backend Engineering - Data storage - Event schema evolution]]
+	2. [[Backend Engineering - Data storage - Event replay]]
+# Networking
+[[_Networking]]

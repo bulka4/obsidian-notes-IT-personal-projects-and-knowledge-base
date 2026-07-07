@@ -34,23 +34,25 @@ This is a collection of documents related to training machine learning models.
 1. [[Relation of L1 and L2 regularizations to MAP]]
 # Loss functions
 1. [[Loss functions]]
+2. [[How loss functions are derived]]
+3. [[Probability distribution represented by a model]]
 ## Cross-Entropy
 1. [[Cross-Entropy]]
 2. [[Empirical approximation of Cross-Entropy]]
-3. [[Cross-Entropy for classification]]
+3. [[Cross-Entropy as a loss function for classification]]
 4. Relations between Cross-Entropy and other concepts:
 	1. [[Relation of Cross-Entropy to the Maximum Likelihood Estimation]]
 	2. [[Relation between KL Divergence and Cross-Entropy and Entropy]]
 ## MSE (Mean Squared Error)
 1. [[MSE (Mean Squared Error)]]
 2. [[MSE relation to MLE (Maximum Likelihood Estimation)]]
-# Gradient-based optimization
+## Gradient-based optimization
 1. [[ML - Gradient-based optimization]]
 	1. [[Gradient Descent - ML]]
 	2. [[Adam optimizer]]
 2. [[Backpropagation]]
 	1. [[Backpropagation (Dense layers)]]
-## Optimization stability
+### Optimization stability
 1. [[Vanishing - exploding gradients]]
 2. [[Gradient control]]
 	1. [[Gradient control - Gradient clipping]]

@@ -1,8 +1,6 @@
 This is a tag related to Obsidian. It contains notes about Obsidian in general as well as my notes in obsidian.
-# Notes to prepare next
-- Review notes related to:
-	- DeepSpeed
-	- AI systems (Ray Serve, LangChain, Rest API)
+# Software Engineering
+
 # Machine Learning
 - [[ML notes to prepare next]]
 - [[ML topics to explore in the future]]

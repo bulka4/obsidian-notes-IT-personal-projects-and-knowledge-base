@@ -20,7 +20,7 @@ CI starts when:
 Example:
 >You modify a feature engineering function → CI runs automatically
 ## 2. Code validation (classic software CI)
-Prepare unit and integration tests ([[Software Engineering - Unit and integration tests|link]]) to test on a small sample of data:
+Prepare unit and integration tests ([[Software Engineering - Testing|link]]) to test on a small sample of data:
 - Training ML models (check if model does train (loss drops))
 - Does Airflow DAGs run successfully (e.g. for data processing and training ML models)
 - Whether MLflow logs metrics and models successfully

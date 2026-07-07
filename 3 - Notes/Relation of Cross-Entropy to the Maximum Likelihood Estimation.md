@@ -53,6 +53,6 @@ For training statistical models, we assume that:
 - $P$ is the true probability distribution ([[Probability distribution|link]]) of $Y \mid X$ 
 - $q_\theta$ is  defined by a statistical model
 
-It is described here - [[Cross-Entropy for classification]].
+It is described here - [[Cross-Entropy as a loss function for classification]].
 
 #MachineLearning 

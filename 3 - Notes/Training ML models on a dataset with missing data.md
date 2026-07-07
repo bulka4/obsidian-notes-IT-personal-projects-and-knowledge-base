@@ -30,6 +30,15 @@ Why this matters: The strategy you choose can introduce bias if missingness is n
     - Constant (e.g., 0 or “Unknown”)
 - Pros: simple, fast
 - Cons: can reduce variance, ignore correlations
+### K-Nearest Neighbors (KNN) Imputation
+- Replace a missing value using similar samples found using KNN
+- Pros: captures local structure
+- Cons: computationally expensive for large datasets
+### Clustering
+- Perform clustering using other, non-missing features
+- Replace a missing value using similar samples from the same cluster as the sample with a missing value
+- Pros: captures local structure
+- Cons: computationally expensive for large datasets
 ### Forward/Backward Fill
 - For time series:
     - Forward fill: use last known value
@@ -40,10 +49,6 @@ Why this matters: The strategy you choose can introduce bias if missingness is n
 - Fill in missing values assuming some relationship between the surrounding points.
 - Linear, spline, or polynomial interpolation
 - Good for numerical time series
-### K-Nearest Neighbors (KNN) Imputation
-- Impute based on similar samples
-- Pros: captures local structure
-- Cons: computationally expensive for large datasets
 ### Multivariate Imputation / MICE
 - Multiple Imputation by Chained Equations
 - Models each feature as a function of others

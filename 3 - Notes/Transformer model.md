@@ -162,7 +162,7 @@ $$
 ### Training using MLE
 We can train the model using the maximum likelihood estimation (MLE) ([[Maximum Likelihood Estimation (MLE)|link]]). In that case, if $t_i$ is the true target token $\large t^{(t)}_t$, then we want to maximize the probability $y_i$ predicted by the model that this is the true token.
 
-MLE is equivalent to minimizing the negative log-likelihood, which we can achieve using the cross-entropy loss ([[Relation of Cross-Entropy to the Maximum Likelihood Estimation|link]], [[Cross-Entropy for classification|link]]).
+MLE is equivalent to minimizing the negative log-likelihood, which we can achieve using the cross-entropy loss ([[Relation of Cross-Entropy to the Maximum Likelihood Estimation|link]], [[Cross-Entropy as a loss function for classification|link]]).
 ### Calculating loss
 When making predictions for every token $\large t^{(\text{out})}_t$ , we calculate a loss for that one token $L_t$ using generated probabilities $\large y = \{y_i\}_{i=1}^m$. 
 

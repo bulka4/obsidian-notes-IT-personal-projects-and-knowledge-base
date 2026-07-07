@@ -4,7 +4,18 @@ Tags: [[__AI_systems]] [[__Machine_Learning]] [[__Machine_Learning_Engineering]]
 This is a collection of documents related to AI systems, i.e. systems / applications which use AI.
 
 # AI system examples
+## RAG
 1. [[RAG system]]
+2. [[Evaluation pipeline for a RAG system]]
+3. [[RAG - Retrieval strategies]]
+	1. [[RAG - Retrieval strategies - BM25 (keyword search)]]
+	2. [[RAG - Retrieval strategies - Vector search (semantic search)]]
+	3. [[RAG - Retrieval strategies - Reranking]]
+	4. [[RAG - Retrieval strategies - Keyphrase extraction models]]
+	5. [[RAG - Retrieval strategies - Sparse neural models]]
+	6. [[Chatbots - Conversation memory]]
+## Chatbots
+1. [[Chatbots - Conversation memory]]
 # Disciplines
 [[__Data_Engineering]]
 [[__Infrastructure_Engineering]]

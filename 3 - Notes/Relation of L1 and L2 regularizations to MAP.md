@@ -8,7 +8,7 @@ $$
 \theta_{MAP} = \text{arg} \min_\theta [-\log(p(D \mid \theta) - \log(p(\theta))]
 $$
 where:
-- $-\log(p(D \mid \theta)$ - Loss function, e.g. MSE ([[MSE (Mean Squared Error)|link]]), Cross-Entropy ([[Cross-Entropy for classification|link]])
+- $-\log(p(D \mid \theta)$ - Loss function, e.g. MSE ([[MSE (Mean Squared Error)|link]]), Cross-Entropy ([[Cross-Entropy as a loss function for classification|link]])
 - $- \log(p(\theta))$ - Regularization penalty ([[Regularization|link]])
 # Relation between MAP and L2
 If we use assume, that prior is the Gaussian distribution ([[Normal (Gaussian) distribution|link]]):

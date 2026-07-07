@@ -12,3 +12,5 @@ where:
 - $y_i$ - true value
 - $\hat{y_i}$ - predicted value
 - $n$ - number of samples
+
+
