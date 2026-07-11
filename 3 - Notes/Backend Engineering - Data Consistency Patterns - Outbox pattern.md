@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Outbox pattern is a technique used in distributed microservices ([[Backend Engineering - Distributed microservices|link]]) when we need to:
+Outbox pattern is a data consistency pattern ([[Backend Engineering - Distributed microservices - Data Consistency Patterns (distributed transactions)|link]]) used in event-driven systems ([[Backend Engineering - Event-driven architecture|link]]) when we need to:
 - update database
 - send an event ([[Backend Engineering - Event-driven architecture - Events and messages|link]])
 

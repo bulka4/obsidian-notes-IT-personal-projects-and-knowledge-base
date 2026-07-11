@@ -2,5 +2,6 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Strong consistency is a consistency model ([[Backend Engineering - Distributed microservices - Consistency models|link]]) where You never see older data after seeing newer data:
-- Prevents time going “backwards” for a user
+In a monotonic reads consistency model ([[Backend Engineering - Distributed microservices - Consistency models|link]]), once a service or user has observed a particular state, all subsequent reads are guaranteed to return the same state or a newer one. 
+
+It will never observe an older version of the data. It prevents time going “backwards” for a user.

@@ -2,9 +2,9 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Eventual consistency is a consistency model ([[Backend Engineering - Distributed microservices - Consistency models|link]]) where if nothing new happens, all nodes will eventually converge:
-- Temporary inconsistencies are allowed
-- System becomes consistent over time
+In an eventual consistency model ([[Backend Engineering - Distributed microservices - Consistency models|link]]), when one service makes a write (changes state), other services may temporarily see the old state. 
+
+However, if no further writes occur, all services will eventually converge to the same, latest state.
 # Pros:
 - High availability
 - High scalability

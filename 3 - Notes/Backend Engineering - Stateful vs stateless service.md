@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-A stateful service is such a service which has a state - i.e. an information needed for that service to work properly, stored in some storage system.
+A stateful service is such a service which has a state ([[Backend Engineering - Distributed microservices - State|link]]) - i.e. an information needed for that service to work properly, stored in some storage system.
 
 A stateless service is a service which also has a state but it doesn't store client/session-specific data between requests.
 

@@ -2,6 +2,8 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Strong consistency is a consistency model ([[Backend Engineering - Distributed microservices - Consistency models|link]]) where After you write, you will see your own data:
+In a read-your-writes consistency model ([[Backend Engineering - Distributed microservices - Consistency models|link]]), after a service or user makes a write (changes state), its subsequent reads are guaranteed to return the updated state, even if other services or users still see an older version.
+
+It is:
 - Common in user sessions
 - Improves user experience

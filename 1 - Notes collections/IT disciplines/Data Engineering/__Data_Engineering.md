@@ -14,6 +14,7 @@ This is a collection of notes about Data Engineering.
 # Techniques
 1. [[Data Engineering - Partition-based writes]]
 2. [[Data Engineering - Upsert (MERGE INTO)]]
+3. [[Data Engineering - Change Data Capture (CDC)]]
 # Tools
 - Airflow - [[_Airflow]]
 - dbt - [[_dbt]]
