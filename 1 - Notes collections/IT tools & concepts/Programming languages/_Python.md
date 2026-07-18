@@ -1,5 +1,5 @@
-Tags: [[_Python]] [[__Programming_languages]]
-#Python #ProgrammingLanguages 
+Tags: [[_Python]] [[__Programming_languages]] [[_Software_Engineering]]
+#Python #ProgrammingLanguages #SoftwareEngineering 
 
 This is a collection of documents related to Python programming language.
 
@@ -14,3 +14,17 @@ This is a collection of documents related to Python programming language.
 8. [[Python - Typing]]
 # Benefits and tool comparison
 1. [[Python vs GUI tools comparison]]
+# Advanced
+1. [[Python - Iterators]]
+2. [[Python - Generators]]
+3. [[Python - Decorators]]
+4. [[Python - Context manager]]
+5. [[Python - Packaging]]
+6. [[Python - Logging]]
+7. [[Python - Exceptions]]
+8. [[Python - Multiprocessing]]
+9. [[Python - Performance optimization]]
+	1. [[Python - Profiling]]
+10. [[Python - ]]
+11. [[Python - ]]
+12. [[Python - ]]

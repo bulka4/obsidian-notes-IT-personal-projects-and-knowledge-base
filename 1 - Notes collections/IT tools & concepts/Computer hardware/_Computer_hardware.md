@@ -1,3 +1,6 @@
+Tags: [[_Computer_hardware]] [[__Infrastructure_Engineering]] [[_Software_Engineering]]
+#ComputerHardware #InfrastructureEngineering #SoftwareEngineering 
+
 This is a tag related to a computer hardware. What elements a computer consists of, what role do they play.
 
 # Computer components (disk, CPU, RAM, GPU, VRAM)
@@ -16,7 +19,11 @@ This is a tag related to a computer hardware. What elements a computer consists 
 ## NVIDIA
 1. [[NVIDIA GPU Cuda Cores]]
 2. [[NVIDIA GPU Tensor Cores]]
-3. 
 # Memory
 1. [[Memory addresses]]
 2. [[Memory fragmentation and reallocation]]
+# CPU
+1. [[Computer hardware - CPU core]]
+2. [[Computer hardware - CPU cache hierarchy]]
+3. [[Computer hardware - CPU - Memory latency]]
+4. [[Computer hardware - CPU - SIMD]]

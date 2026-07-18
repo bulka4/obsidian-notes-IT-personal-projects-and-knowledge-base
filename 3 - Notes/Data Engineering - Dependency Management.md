@@ -169,7 +169,7 @@ Use:
 - Used for example when we try to make an API call many times, regularly.
 - Prevents from performing too many failing actions.
 
-More info here - [[Backend Engineering - Handling failures - Circuit breakers]].
+More info here - [[Software Engineering - Handling failures - Circuit breakers]].
 ## Timeouts
 Never wait forever:
 - Fail fast if dependency isn’t ready

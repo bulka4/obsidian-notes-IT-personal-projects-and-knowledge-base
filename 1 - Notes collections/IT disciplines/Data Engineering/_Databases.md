@@ -30,6 +30,8 @@ Tags: [[_Databases]]
 5. [[SQL databases - Data integrity constraints]]
 6. [[SQL databases - ACID transactions]]
 7. [[SQL databases - Query planners]]
+8. [[SQL databases - Migrations]]
+9. [[SQL databases - ORM vs raw SQL]]
 # NoSQL
 1. [[NoSQL databases - Relationships]]
 2. [[NoSQL databases - Schema flexibility]]

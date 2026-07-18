@@ -32,12 +32,22 @@ Service      Service     Service
 - `Order Service` sends requests to other services `Payment` etc.
 - The `Order Service` response to the client quickly "order received" without waiting for other services to finish processing the request.
 # More notes related to asynchronous communication
+Concepts:
 - Benefits and drawbacks - [[Backend Engineering - Event-driven architecture - Benefits and drawbacks|link]] 
 - Events and messages - [[Backend Engineering - Event-driven architecture - Events and messages|link]] 
+- Producer and consumer - [[Backend Engineering - Event-driven architecture - Producer and consumer|link]] 
 - Message broker - [[Backend Engineering - Event-driven architecture - Message broker|link]] 
 - Delivery Guarantees - [[Backend Engineering - Event-driven architecture - Delivery Guarantees|link]] 
-- Queues (point-to-point) and topics (pub/sub) - [[Backend Engineering - Event-driven architecture - Queues (point-to-point) and topics (pub-sub)|link]] 
+- Queues (point-to-point) - [[Backend Engineering - Event-driven architecture - Queues (point-to-point)|link]] 
+- Topics (pub/sub) - [[Backend Engineering - Event-driven architecture - Topics (pub-sub)|link]] 
+		1. Consumer group - [[Backend Engineering - Event-driven architecture - Consumer group|link]] 
 - Idempotency - [[Backend Engineering - Event-driven architecture - Idempotency|link]] 
 - Ordering - [[Backend Engineering - Event-driven architecture - Ordering|link]] 
+- Partitioning - [[Backend Engineering - Event-driven architecture - Partitioning|link]] 
 - Dead Letter Queue (DLQ) - [[Backend Engineering - Event-driven architecture - Dead Letter Queue (DLQ)|link]] 
-- Eventual Consistency - [[Backend Engineering - Event-driven architecture - Eventual Consistency|link]] 
+- Eventual Consistency - [[Backend Engineering - Consistency models - Eventual consistency|link]] 
+- Offset - [[Kafka - Offsets|link]] 
+- Retention - [[Kafka - Retention policies|link]] 
+
+Tools:
+- Kafka - [[Kafka|link]] 

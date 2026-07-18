@@ -23,7 +23,7 @@ KServe is an open-source framework for serving machine learning models on Kubern
 # Basic Workflow
 1. Train a model (e.g., in TensorFlow or PyTorch).
 2. Store the model in a storage backend (S3, GCS, PVC, etc.).
-3. Create an `InferenceService` YAML specifying the model, runtime ([[Runtime|link]]), and scaling parameters.
+3. Create an `InferenceService` YAML specifying the model, runtime ([[Software Engineering - Runtime|link]]), and scaling parameters.
 4. Apply it to Kubernetes: `kubectl apply -f inference-service.yaml`.
 5. KServe handles serving, scaling, and monitoring automatically.
 # Limits

@@ -15,5 +15,6 @@ Without a transaction, a failure could happen between those two operations:
 So we end up with money disappeared.
 
 With a transaction, we make sure that when money are removed from one account then they are added to another account or we don't remove money at all.
-# ACID transactions
-One common model of transactions are ACID transactions - [[Software Engineering - ACID transactions|link]].
+# Related concepts
+- ACID transactions ([[Software Engineering - ACID transactions|link]]) - One common model of transactions are ACID transactions
+- Rollback ([[Software Engineering - Rollback|link]]) - Undo changes done by a transaciton

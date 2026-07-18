@@ -67,7 +67,7 @@ Europe replica stores a write:
 username = Mike
 ```
 
-Which value wins? We need to use some conflict resolution method ([[Backend Engineering - Distributed microservices - Conflict resolution|link]]).
+Which value wins? We need to use some conflict resolution method ([[Backend Engineering - Distributed systems - Conflict resolution|link]]).
 ## 3. Leaderless replication
 Used by systems like Apache Cassandra and some distributed databases.
 

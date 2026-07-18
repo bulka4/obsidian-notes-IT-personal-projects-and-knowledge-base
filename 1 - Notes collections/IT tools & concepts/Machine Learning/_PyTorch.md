@@ -1,3 +1,6 @@
+Tags: [[__MLOps]] [[_PyTorch]]
+#MLOps #PyTorch 
+
 This is a collection of documents related to PyTorch, a Python library for ML.
 
 # How it works

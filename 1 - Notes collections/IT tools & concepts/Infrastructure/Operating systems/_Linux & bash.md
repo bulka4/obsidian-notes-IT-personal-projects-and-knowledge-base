@@ -1,5 +1,5 @@
-Tags: [[__Infrastructure_Engineering]] [[_Linux & Bash]]
-#InfrastructureEngineering #LinuxBash 
+Tags: [[__Infrastructure_Engineering]] [[_Linux & Bash]] [[_Software_Engineering]]
+#InfrastructureEngineering #LinuxBash #SoftwareEngineering 
 
 This is a collection of documents related to Linux (operating system) and bash.
 
@@ -44,3 +44,13 @@ This is a collection of documents related to Linux (operating system) and bash.
 1. [[Linux & Bash - Watching memory usage live]]
 # Bash debugging
 1. [[Bash - Debug mode]]
+# I/O and asynchronous programming
+1. [[Linux & Bash - Epoll]]
+# Security
+1. [[Linux & Bash - User permissions]]
+2. [[Linux & Bash - Linux capabilities]]
+3. [[Linux & Bash - Sandboxing]]
+4. [[Linux & Bash - Isolation]]
+5. [[Linux & Bash - Mandatory Access Control (MAC)]]
+	1. [[Linux & Bash - SELinux]]
+	2. [[Linux & Bash - AppArmor]]

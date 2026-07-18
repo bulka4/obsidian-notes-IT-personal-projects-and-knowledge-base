@@ -2,7 +2,7 @@ Tags: [[_Kubeflow]], [[__Machine_Learning_Engineering]]
 #Kubeflow #MLEngineering 
 
 # Introduction
-TrainingRuntime is a CRD ([[Kubernetes - CRD|link]]) provided by Kubeflow Trainer ([[Kubeflow Trainer - Introduction|link]]). It is a runtime ([[Runtime|link]]), i.e. set of instructions / configuration, which define how to start and execute code from the TrainJob CRD ([[Kubeflow Trainer - TrainJob CRD|link]]) (which perform calculations related to machine learning (training or inference)).
+TrainingRuntime is a CRD ([[Kubernetes - CRD|link]]) provided by Kubeflow Trainer ([[Kubeflow Trainer - Introduction|link]]). It is a runtime ([[Software Engineering - Runtime|link]]), i.e. set of instructions / configuration, which define how to start and execute code from the TrainJob CRD ([[Kubeflow Trainer - TrainJob CRD|link]]) (which perform calculations related to machine learning (training or inference)).
 
 It defines:
 - How pods are created

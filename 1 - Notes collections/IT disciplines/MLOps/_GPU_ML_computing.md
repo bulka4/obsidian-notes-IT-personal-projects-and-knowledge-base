@@ -1,4 +1,5 @@
-Tags: [[__Machine_Learning_Engineering]]
+Tags: [[__MLOps]]
+#MLOps 
 
 # PyTorch
 1. [[_PyTorch]]

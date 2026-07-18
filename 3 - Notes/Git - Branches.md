@@ -1,5 +1,5 @@
-Tags: [[_Git]]
-#Git 
+Tags: [[_Git]] [[_Software_Engineering]]
+#Git #SoftwareEngineering 
 
 # Introduction
 When we create a new branch, we create it from some specific, existing branch (parent branch) and commit.

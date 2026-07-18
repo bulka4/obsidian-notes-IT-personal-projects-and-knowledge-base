@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Events and messages are used in asynchronous communication ([[Backend Engineering - Asynchronous communication|link]]):
+Events and messages are used in event-driven systems ([[Backend Engineering - Event-driven architecture|link]]):
 - An event represents something that happened 
 	- For example order created, transaction made
 - A message carries information about an event and is sent from one service to another

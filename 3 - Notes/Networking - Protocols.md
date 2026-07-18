@@ -6,6 +6,7 @@ Protocols specifies how communication over a network goes:
 - HTTP - [[Networking - Protocols - HTTP|link]] 
 - gRPC - [[Networking - Protocols - gRPC|link]] 
 - WebSockets - [[Networking - Protocols - WebSockets|link]] 
+- SOAP - [[Networking - Protocols - SOAP (Simple Object Access Protocol)|link]] 
 
 Lower level protocols:
 - TCP - [[Networking - Protocols - TCP|link]] 

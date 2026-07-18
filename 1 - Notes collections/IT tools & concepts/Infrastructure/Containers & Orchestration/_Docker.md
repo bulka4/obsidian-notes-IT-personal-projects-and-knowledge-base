@@ -13,14 +13,14 @@ This is a collection of documents related to the Docker which is an IT tool for 
 # Others
 1. [[Docker - Windows - Disk cleanup]]
 # Docker theory
-5. [[Docker - Image]]
-6. [[Docker - Container]]
-7. [[Docker - Layers]]
-8. [[Docker - Dockerfile]]
-9. [[Docker - Build context directory]]
-10. [[Docker - Volumes]]
-11. [[Docker - Bind Mounting]]
-12. [[Docker - Network namespace]]
+1. [[Docker - Image]]
+2. [[Docker - Container]]
+3. [[Docker - Layers]]
+4. [[Docker - Dockerfile]]
+5. [[Docker - Build context directory]]
+6. [[Docker - Volumes]]
+7. [[Docker - Bind Mounting]]
+8. [[Docker - Network namespace]]
 ## Details
 5. [[Docker - User group]]
 6. [[Docker - Caching]]

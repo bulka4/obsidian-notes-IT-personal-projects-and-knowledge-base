@@ -5,16 +5,30 @@ Tags: [[_Git]]
 When we merge another branch with the current one, then we bring code changes from this branch to the current one.
 
 Changes in the current branch are preserved though, we are only adding new changes from another branch.  
-For example, when we are on the main branch, and we run 'git merge new_branch' command, then all the code changes from the new_branch branch are applied to the main branch (our local files are being changed).
+# Example
+For example, when we have branches and commits like:
+```
+main: A - B - C - D - E
+			\       /
+feature:     C' - D'
+```
+
+then merge creates a new commit E where git tries to combine:
+- All the changes from the feature branch, i.e. changes between commits `D'` and `B`
+- All the changes from the main branch, i.e. changes between commits `D` and `B`
+
+So:
+- All the changes in the `main` branch are preserved
+- And we additionally add changes from the `feature` branch
 
 After merging our new branch still exists and both branches, the new one and the main one, point to the same last commit.
 
 So usually we want to merge our branch with the main one and then push a code.
-
+# Commands
 We do this using those commands:
-- Git switch main <- Go to the main branch
-- Git merge new_branch <- Merge our new branch to the main one
-- Git push origin main
+- `git switch main` <- Go to the main branch
+- `git merge new_branch` <- Merge our new branch to the main one
+- `git push origin main`
 # New commit
 When we merge a branch, there is a new commit being done for that merge. In that commit, we can see all the changes made by the merge (new changes from the merged branch).
 # Squash merge

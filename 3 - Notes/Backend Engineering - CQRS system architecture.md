@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-CQRS is a technique often used in distributed microservices ([[Backend Engineering - Distributed microservices|link]]) and event-driven systems ([[Backend Engineering - Asynchronous communication|link]]). 
+CQRS is a technique often used in distributed microservices ([[Backend Engineering - Distributed systems|link]]) and event-driven systems ([[Backend Engineering - Asynchronous communication|link]]). 
 
 It is useful when reads and writes have different needs:
 - writes need consistency

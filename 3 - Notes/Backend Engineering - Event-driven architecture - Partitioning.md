@@ -14,3 +14,5 @@ We choose a partition key, such as:
 - `accountId`
 
 All events with the same key go to the same partition.
+# Related topics
+- Replication - [[Backend Engineering - Event-driven architecture - Partition replication|link]] 

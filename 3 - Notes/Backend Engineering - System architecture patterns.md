@@ -3,7 +3,7 @@ Tags: [[_Backend_Engineering]]
 
 # Introduction
 Common system architecture patterns include:
-- CQRS
+- CQRS - [[Backend Engineering - CQRS system architecture|link]] 
 - Layered architecture
 - Hexagonal architecture (Ports and Adapters)
 - Clean Architecture

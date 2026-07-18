@@ -13,5 +13,6 @@ When a single request is made using asynchronous communication, it doesn't wait 
 Architectures for obtaining asynchronous communication include:
 - Event-driven systems ([[Backend Engineering - Event-driven architecture|link]])
 - Asynchronous request processing ([[Backend Engineering - Asynchronous request processing|link]])
-# Synchronous (request/response)
-[[Backend Engineering - Synchronous communication]].
+# Related topics
+- Synchronous communication - [[Backend Engineering - Synchronous communication|link]] 
+- Asynchronous request processing - [[Backend Engineering - Asynchronous request processing|link]] 

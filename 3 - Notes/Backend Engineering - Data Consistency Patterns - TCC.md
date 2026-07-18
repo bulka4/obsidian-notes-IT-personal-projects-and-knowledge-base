@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-The TCC (Try-Confirm-Cancel) is a data consistency pattern ([[Backend Engineering - Distributed microservices - Data Consistency Patterns (distributed transactions)|link]]) used in distributed microservices ([[Backend Engineering - Distributed microservices|link]]).
+The TCC (Try-Confirm-Cancel) is a data consistency pattern ([[Backend Engineering - Distributed systems - Data Consistency Patterns (distributed transactions)|link]]) used in distributed microservices ([[Backend Engineering - Distributed systems|link]]).
 
 It is used when services requires some resources to complete their action. It is about logical resources needed for a logical action, not technical ability.
 

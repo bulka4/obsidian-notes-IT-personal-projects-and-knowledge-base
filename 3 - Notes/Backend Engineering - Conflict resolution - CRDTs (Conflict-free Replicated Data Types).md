@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-CRDTs (Conflict-free Replicated Data Types) is a method of conflict resolution ([[Backend Engineering - Distributed microservices - Conflict resolution|link]]). It designs data structures so that replicas can merge automatically without conflicts or inaccuracies.
+CRDTs (Conflict-free Replicated Data Types) is a method of conflict resolution ([[Backend Engineering - Distributed systems - Conflict resolution|link]]). It designs data structures so that replicas can merge automatically without conflicts or inaccuracies.
 # Example
 For example, if we would like to count likes received from different users, we could have data in two replicas like:
 ```

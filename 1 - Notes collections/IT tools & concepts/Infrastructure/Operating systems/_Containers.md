@@ -1,0 +1,21 @@
+Tags: [[_Software_Engineering]] [[__Infrastructure_Engineering]] [[_Containers]]
+#SoftwareEngineering #InfrastructureEngineering #Containers 
+
+# Introduction
+1. [[Software Engineering - Containers]]
+2. [[Software Engineering - Containers - Container vs VM]]
+3. [[Software Engineering - Containers - OCI standard]]
+4. [[Software Engineering - Containers - Union filesystem]]
+5. [[Software Engineering - Containers - Network drivers]]
+	- [[Software Engineering - Containers - Network drivers - Bridge network]]
+	- [[Software Engineering - Containers - Network drivers - Host network]]
+	- [[Software Engineering - Containers - Network drivers - None network]]
+	- [[Software Engineering - Containers - Network drivers - Overlay network]]
+6. [[Software Engineering - Containers - Security]]
+	- [[Software Engineering - Containers - Security - Root inside container]]
+	- [[Software Engineering - Containers - Security - Linux capabilities]]
+	- [[Software Engineering - Containers - Security - Dropping privileges]]
+	- [[Software Engineering - Containers - Security - Read-only filesystem]]
+	- [[Software Engineering - Containers - Security - Image scanning]]
+	- [[Software Engineering - Containers - Security - Secrets handling]]
+7. [[Software Engineering - Containers]]
