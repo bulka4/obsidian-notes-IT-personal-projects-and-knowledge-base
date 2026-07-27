@@ -2,7 +2,7 @@ Tags: [[_Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**Searching** is the process of finding a specific element in a collection of data.
+Searching is the process of finding a specific element in a collection of data.
 
 The choice of search algorithm depends on the **data structure** and whether the data is ordered.
 # 1. Linear search
@@ -54,15 +54,9 @@ Works on:
 - sorted arrays
 - balanced search trees
 # 3. Hash table lookup
-Use a hash function:
-```
-key → hash → memory location
-```
-
-Example:
-```
-users["user123"]
-```
+Use a hash function on the input value and output is location of that input value saved in some data structure, for example:
+- In a table - Hash output is a row number
+- In a list - Hash output is a position in a list
 
 Average complexity:
 ```
@@ -74,7 +68,7 @@ Works for:
 - maps
 - caches
 # 4. Tree search
-In a **Binary Search Tree**:
+In a Binary Search Tree:
 ```
         10
        /  \

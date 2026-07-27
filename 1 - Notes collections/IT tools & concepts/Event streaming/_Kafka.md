@@ -5,7 +5,7 @@ Tags: [[_Backend_Engineering]] [[_Kafka]]
 1. [[Kafka]]
 ## Event-driven architecture
 General notes about an event-driven architecture related to Kafka:
-1. [[Backend Engineering - Event-driven architecture]]
+1. [[Backend Engineering - Event-driven architecture (EDA)]]
 	1. [[Backend Engineering - Event-driven architecture - Benefits and drawbacks]]
 	2. [[Backend Engineering - Event-driven architecture - Events and messages]]
 	3. [[Backend Engineering - Event-driven architecture - Producer and consumer]]

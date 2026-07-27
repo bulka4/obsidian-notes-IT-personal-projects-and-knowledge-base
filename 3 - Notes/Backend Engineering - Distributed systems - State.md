@@ -72,12 +72,20 @@ balance = $100
 
 The distributed state is the state that all nodes should agree on.
 ## Event-driven systems
-In event-driven systems ([[Backend Engineering - Event-driven architecture|link]]):
+In event-driven systems ([[Backend Engineering - Event-driven architecture (EDA)|link]]):
 - A state is a result of applying all the events emitted so far which can be:
 	- a single value
 	- a structured object
 	- or a collection of records
 - When an event is being emitted, that is a state change (change in the data which is a result of applying all events).
+## Devices
+State can also refer to information describing the current condition of a device such as a keyboard, for example:
+- Connected: true
+- Battery level: 80%
+- Caps Lock: ON
+- Num Lock: OFF
+- Currently pressed keys: `["A", "Shift"]`
+- Volume key state: not pressed
 # Related terms
 - Operation / Command - An action that changes state
 - Change - A modification to the state (difference between two states)

@@ -9,3 +9,4 @@ This is a collection of documents related to data architecture, which is a part 
 2. [[Data Engineering - Data architecture - Data mesh]]
 3. [[Data Engineering - Data architecture - Data marts]]
 4. [[Data Engineering - ETL - ELT pipelines]]
+5. [[Data Engineering - Data architecture - Master data]]

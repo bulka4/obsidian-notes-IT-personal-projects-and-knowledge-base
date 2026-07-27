@@ -2,12 +2,12 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Consensus is a mechanism that allows multiple nodes (servers) in a distributed system to agree on a single value or a decision, even when some nodes or a network fail, nodes can't communicate or some messages in an event-driven system ([[Backend Engineering - Event-driven architecture|link]]) are delayed.
+Consensus is a mechanism that allows multiple nodes (servers) in a distributed system to agree on a single value or a decision, even when some nodes or a network fail, nodes can't communicate or some messages in an event-driven system ([[Backend Engineering - Event-driven architecture (EDA)|link]]) are delayed.
 # Examples of what nodes can agree on
 - What is the operation log ([[Backend Engineering - Distributed systems - State|link]]) (what operations were performed, in what order and what is the latest state).
 - Data changes - Nodes agree on the order of data updates
 - Configuration changes - Nodes agree on system settings, e.g. to use a specific version of a specific service
-- Event ordering ([[Backend Engineering - Event-driven architecture|link]]) - Nodes agree on the order of events
+- Event ordering ([[Backend Engineering - Event-driven architecture (EDA)|link]]) - Nodes agree on the order of events
 - Leader election - Nodes agree on who is the leader
 
 Note that some aspects can be considered as an operation (e.g. configuration change) but sometimes they are not considered as an operation so that's why we say broader "decisions".

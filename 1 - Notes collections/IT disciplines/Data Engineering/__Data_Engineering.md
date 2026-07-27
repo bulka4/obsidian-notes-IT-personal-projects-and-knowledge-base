@@ -7,8 +7,26 @@ This is a collection of notes about Data Engineering.
 [[Data Engineering tasks, problems and practices]]
 # Data modelling
  [[_Data_modelling]]
+
+Other topics related to data modelling:
+1. Conceptual data model
+2. Logical data model
+3. Physical data model
+4. Entity-Relationship (ER) modelling
+5. Ontology / knowledge graphs
 # Data architecture
 [[_Data_architecture]]
+
+Other topics related to data architecture:
+1. Data governance
+2. Data ownership
+3. Data lineage
+4. Data contracts
+5. Canonical data models
+6. Master data management (MDM)
+7. Data mesh principles
+# Business modelling
+[[_IT_Business_Modelling]]
 # Orchestration and workflow design
 [[Data Engineering - Orchestration and workflow design]]
 # Techniques

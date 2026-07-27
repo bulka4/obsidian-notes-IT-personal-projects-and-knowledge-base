@@ -2,7 +2,7 @@ Tags: [[_Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Benefits and drawbacks of event-driven systems ([[Backend Engineering - Event-driven architecture|link]]):
+Benefits and drawbacks of event-driven systems ([[Backend Engineering - Event-driven architecture (EDA)|link]]):
 # Benefits
 ## Decoupling services
 Service sends an message to the message broker and doesn't have to know about other services which will receive this request.

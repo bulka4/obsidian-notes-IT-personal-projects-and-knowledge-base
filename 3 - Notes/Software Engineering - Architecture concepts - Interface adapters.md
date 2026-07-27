@@ -14,10 +14,15 @@ Interface Adapters
           ↓
 Use Cases / Entities
 ```
+# What interface adapters include
+Interface adapters include:
+## Controllers
+A controller:
+- Takes an input from any source (e.g. a HTTP request)
+- Calls a function (usually a use case) using data from the input
+- Converts a value returned by a use case into a proper format (required by other parts of the system that will use this controller) and returns it
 
-They include:
-# Controllers
-Convert HTTP requests into use case calls. For example, a REST API controller which takes a request:
+For example, a controller can be a REST API controller which takes a request:
 ```
 POST /tables
 
@@ -37,7 +42,7 @@ class TableController:
 
         self.create_table_use_case.execute(command)
 ```
-# Presenters
+## Presenters
 Presenters convert use case ([[Software Engineering - Architecture concepts - Use case|link]]) results (function outputs) into a different format which is used by  UI. Presenter's output is an API response.
 
 For example, a use case after creating a table returns a domain object ([[Software Engineering - Architecture concepts - Domain objects|link]]):
@@ -63,34 +68,31 @@ Translation:
 ```
 Domain object → API response
 ```
-# Repositories
-Repositories ([[Software Engineering - Architecture concepts - Repository|link]]) convert domain objects ([[Software Engineering - Architecture concepts - Domain objects|link]]) into database operations.
+## Repositories
+Repository ([[Software Engineering - Architecture concepts - Repository|link]]) is an interface ([[Software Engineering - Architecture concepts - Interface|link]]) for reading / saving domain objects ([[Software Engineering - Architecture concepts - Domain objects|link]]) in a database.
 
-The core defines:
+So it converts domain objects into database operations (e.g. a SQL query).
+
+For example, this can be a class like this:
 ```python
-class TableRepository:
+from abc import ABC, abstractmethod
 
-    def save(self, table):
+# Repository interface
+class OrderRepository(ABC):
+
+    @abstractmethod
+    def get(self, order_id: int):
+        """Retrieve an Order aggregate by its ID."""
+        pass
+
+    @abstractmethod
+    def save(self, order):
+        """Persist an Order aggregate."""
         pass
 ```
 
-Infrastructure implements:
-```python
-class PostgresTableRepository(TableRepository):
-
-    def save(self, table):
-        sql = """
-        INSERT INTO tables ...
-        """
-
-        database.execute(sql)
-```
-
-Translation:
-```
-Domain object → SQL query
-```
-# Gateways/Adapters
+So we don't provide here any specific implementation of the methods `get` and `save`.
+## Gateways/Adapters
 Convert calls to external services (hide external APIs).
 
 Core interface:
@@ -116,8 +118,8 @@ Translation:
 ```
 Application request → OpenAI API call
 ```
-# Event Adapters
-Example: publishing domain events.
+## Event Adapters
+Example: publishing domain events in event-driven systems ([[Backend Engineering - Event-driven architecture (EDA)|link]]).
 
 Core:
 ```python

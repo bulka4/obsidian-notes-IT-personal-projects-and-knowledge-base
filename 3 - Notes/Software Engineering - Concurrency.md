@@ -6,19 +6,12 @@ Concurrency is the ability of a system to manage multiple tasks by switching bet
 # Parallelism
 Parallelism is a type of concurrency and it is ability of a system to work on different tasks at the same time using for example two different CPU cores.
 # Why use concurrency?
-To efficiently handle things that spend time waiting:
+Concurrency can be used to progress with some other useful operations while one operation is idle at the moment because it is waiting for something, for example:
 - network requests
 - disk I/O
 - database queries
 - user requests
 - messages from brokers
-# Common concurrency mechanisms
-- threads
-- processes
-- async/await
-- coroutines
-- actors
-- event loops
 # Related topics
 2. [[Software Engineering - Concurrency - Critical section]]
 3. [[Software Engineering - Concurrency - Shared resources]]
@@ -30,7 +23,7 @@ To efficiently handle things that spend time waiting:
 6. [[Software Engineering - Concurrency - Semaphores]]
 7. [[Software Engineering - Concurrency - Monitors]]
 8. [[Software Engineering - Concurrency - Actor model]]
-9. [[Software Engineering - Concurrency - Async programming models]]
+9. [[Software Engineering - Async programming models]]
 10. [[Software Engineering - Concurrency - Synchronization bugs]]
 	1. [[Software Engineering - Concurrency - Race conditions]]
 	2. [[Software Engineering - Concurrency - Deadlocks]]

@@ -2,13 +2,13 @@ Tags: [[_Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**Object-oriented design (OOD)** is the process of designing software by modeling it as a collection of **objects** that represent data and behavior.
+Object-oriented design (OOD) is the process of designing software by modeling it as a collection of objects that represent data and behavior.
 
-An **object** combines:
-- **State** → data (attributes)
-- **Behavior** → actions (methods)
+An object combines:
+- State → data (attributes)
+- Behavior → actions (methods)
 # Example
-```
+```python
 class BankAccount:
     def __init__(self, balance):
         self.balance = balance
@@ -24,9 +24,9 @@ Here:
 - **Encapsulation** → keep data and related operations together; control access to internal state.
 - **Abstraction** → expose only necessary details, hide implementation.
 - **Inheritance** → create new classes based on existing ones.
-- **Polymorphism** → different objects can respond to the same interface differently.
-## Example
-```
+- **Polymorphism** → the same interface ([[Software Engineering - Architecture concepts - Interface|link]]) can have different implementations depending on the object that uses it. In simpler words, we can specify in one class which methods exist and define their logic in other classes.
+## Example - Polymorphism
+```python
 class Shape:
     def area(self):
         pass
@@ -46,6 +46,9 @@ Both `Circle` and `Square` provide `area()`, but implement it differently.
 - Low coupling (classes depend less on each other)
 - High cohesion (related functionality stays together)
 - Reusable and testable components
-# Common design principles
-- **SOLID principles**
-- **Design patterns** (Factory, Strategy, Observer, etc.)
+# Related topics
+1. [[Software Engineering - Object-oriented design - SOLID]]
+2. [[Software Engineering - Object-oriented design - Composition vs inheritance]]
+3. [[Software Engineering - Object-oriented design - Interfaces]]
+4. [[Software Engineering - Object-oriented design - Protocols]]
+5. [[Software Engineering - Object-oriented design - Design patterns]]

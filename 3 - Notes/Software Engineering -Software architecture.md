@@ -7,7 +7,7 @@ Different software architectures:
 2. [[Software Engineering - Hexagonal architecture]]
 3. [[Software Engineering - Clean architecture]]
 4. [[Software Engineering - Microservices vs monoliths]]
-5. [[Backend Engineering - Event-driven architecture]]
+5. [[Backend Engineering - Event-driven architecture (EDA)]]
 	1. [[Backend Engineering - Event-driven architecture - Benefits and drawbacks]]
 	2. [[Backend Engineering - Event-driven architecture - Events and messages]]
 	3. [[Backend Engineering - Event-driven architecture - Producer and consumer]]

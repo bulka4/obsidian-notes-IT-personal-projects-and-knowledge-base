@@ -20,7 +20,7 @@ Partial failures lead to:
 # How systems handle partial failures
 1. Data Consistency Patterns ([[Backend Engineering - Distributed systems - Data Consistency Patterns (distributed transactions)|link]])
 2. Timeouts - Never wait forever.
-3. Retries (with backoff + jitter, [[Software Engineering - Handling failures - Retries with backoff|link]]) - But must be idempotent.
-4. Circuit breaker ([[Software Engineering - Handling failures - Circuit breakers|link]]) - Stop calling failing service temporarily.
-5. Bulkhead isolation ([[Software Engineering - Handling failures - Bulkheads|link]]) - Prevent one failure from taking down everything.
+3. Retries (with backoff + jitter, [[Software Engineering - Fault tolerance - Retries with backoff|link]]) - But must be idempotent.
+4. Circuit breaker ([[Software Engineering - Fault tolerance - Circuit breakers|link]]) - Stop calling failing service temporarily.
+5. Bulkhead isolation ([[Software Engineering - Fault tolerance - Bulkheads|link]]) - Prevent one failure from taking down everything.
 6. Idempotency ([[Backend Engineering - Event-driven architecture - Idempotency|link]]) - Ensures retries don’t corrupt state.

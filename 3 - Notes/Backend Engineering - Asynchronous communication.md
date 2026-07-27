@@ -11,7 +11,7 @@ Note that a service normally can send multiple requests simultaneously so asynch
 When a single request is made using asynchronous communication, it doesn't wait for the request to be fully processed but immediately receives a response confirming that the request has been submitted and once it is processed, a final response will be sent back later (or saved in some database).
 
 Architectures for obtaining asynchronous communication include:
-- Event-driven systems ([[Backend Engineering - Event-driven architecture|link]])
+- Event-driven systems ([[Backend Engineering - Event-driven architecture (EDA)|link]])
 - Asynchronous request processing ([[Backend Engineering - Asynchronous request processing|link]])
 # Related topics
 - Synchronous communication - [[Backend Engineering - Synchronous communication|link]] 

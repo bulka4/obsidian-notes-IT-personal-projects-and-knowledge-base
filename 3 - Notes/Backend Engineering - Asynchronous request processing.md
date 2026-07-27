@@ -10,5 +10,3 @@ Asynchronous request processing is an architecture where:
 - Benefits and drawbacks - [[Backend Engineering - Asynchronous request processing - Benefits and drawbacks|link]] 
 - Message queue - [[Backend Engineering - Asynchronous request processing - Message queue|link]] 
 - Sending back a response - [[Backend Engineering - Asynchronous request processing - Sending back a response|link]] 
-# Questions
-- How responses are sent back in event-driven systems?

@@ -13,6 +13,7 @@ Use them when your data has:
 # Benefits
 - Good management of relationships ([[SQL databases - Relationships|link]]) - Joining data from multiple tables is efficient and code syntax is easy
 - Efficient aggregations and complex calculations - SQL is optimized for this kind of calculations
+- Indexing ([[Databases - Indexes|link]]) - We can create indexes to find values in specific columns faster
 - Strong consistency ([[Databases - Consistency|link]]) - SQL databases satisfies both read and ACID consistencies
 - Transactions - When we have multiple operations to perform, we can make sure that either all of them happen or none happen
 - Data integrity constraints - We can make sure that values are e.g. unique, exists in another table (references ([[SQL databases - Referential integrity|link]])), bigger than 0.

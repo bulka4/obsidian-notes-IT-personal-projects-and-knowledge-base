@@ -88,7 +88,7 @@ Advantages:
 - predictable performance
 - stable sorting
 ## 4. Quick sort
-Choose a **pivot** and partition elements:
+Choose a pivot and partition elements:
 ```
 [5, 2, 8, 1, 3]
 

@@ -2,9 +2,9 @@ Tags: [[_Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**Composition vs inheritance** are two ways to reuse code and model relationships.
+Composition vs inheritance are two ways to reuse code and model relationships.
 # Inheritance ("is-a")
-A class **inherits** behavior from another class.
+A class inherits behavior from another class.
 
 Example:
 ```python
@@ -31,7 +31,7 @@ Cons:
 - Changes in parent can affect children
 - Deep inheritance hierarchies become difficult to maintain
 # Composition ("has-a")
-A class **contains** other objects and delegates work to them.
+A class contains other objects and delegates work to them.
 
 Example:
 ```python

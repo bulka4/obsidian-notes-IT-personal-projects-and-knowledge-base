@@ -2,7 +2,9 @@ Tags: [[_Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Interfaces define a contract: they specify what methods an object should provide, without specifying how they are implemented.
+An interface ([[Software Engineering - Architecture concepts - Interface|link]]) can be implemented as a class. In one class we define which methods exist and in other classes we define their logic.
+
+So interface specifies which methods should be available in every implementation of that interface (i.e. in every class that defines a logic for those methods).
 # Example
 Interface specifying that each object of the `Storage` type should have the `save` method:
 ```python

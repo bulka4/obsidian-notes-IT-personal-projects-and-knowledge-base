@@ -1,5 +1,10 @@
+Tags: [[__My_projects]]
+#MyProjects 
+
 This is a collection of documents about my projects.
 
+# Backend engineering
+1. [[Data governance app with a RAG system]]
 # Data Engineering
 1. [[Data and ML platform project]]
 2. [[Multi-node HDFS, YARN and Spark cluster on Azure Linux VMs project]]

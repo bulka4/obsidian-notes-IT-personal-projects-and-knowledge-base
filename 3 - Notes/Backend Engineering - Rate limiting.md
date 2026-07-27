@@ -11,4 +11,4 @@ For example Redis database can be used to store information about how many reque
 It can be a shared database used by many Kubernetes pods running application.
 # Techniques for implementing rate limiting
 - Token bucket - [[Backend Engineering - Token bucket|link]] 
-- Circuit braker - [[Software Engineering - Handling failures - Circuit breakers|link]] 
+- Circuit braker - [[Software Engineering - Fault tolerance - Circuit breakers|link]] 
