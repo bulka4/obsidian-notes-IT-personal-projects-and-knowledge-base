@@ -9,7 +9,7 @@ A software product is software designed and managed as a product, meaning it has
 - quality expectations,
 - documentation,
 - a lifecycle (development, maintenance, evolution).
-
+# Importance of what we define as a product
 The boundary of what is considered a product is important because it affects:
 - ownership,
 - responsibility,
@@ -32,6 +32,10 @@ If five services are considered separate products:
 - independent evolution.
 
 The right boundary depends on whether the components provide separate value and need independent ownership.
+# Benefits of defining products
+Instead of creating one big system which is maintained by one team, we split it into multiple products where each is maintained separately and independently.
+
+Different products can have impact on each other, on product might depend on others, so when we want to make a change in one products we might need to adapt other products as well, and then multiple teams maintaining those products cooperate instead of one team handling everything.
 # Versions
 A software product can have multiple versions. Versions are usually not separate products; they are different releases of the same product.
 

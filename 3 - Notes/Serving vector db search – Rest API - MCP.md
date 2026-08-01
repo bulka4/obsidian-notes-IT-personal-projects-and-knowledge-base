@@ -1,5 +1,5 @@
-Tags: [[_Vector_databases]]
-#VectorDatabases
+Tags: [[_Databases]] [[_Vector_databases]]
+#Databases #VectorDatabases 
 
 # Introduction
 We can prepare a vector db, which stores data on disk, and create a long running service which enables other apps to search through this db.

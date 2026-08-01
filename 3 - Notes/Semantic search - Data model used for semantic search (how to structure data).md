@@ -1,17 +1,10 @@
-Tags: [[__My_projects]]
-#MyProjects 
+Tags: [[_Databases]] [[_Vector_databases]]
+#Databases #VectorDatabases 
 
 # Introduction
-- For now the semantic search engine is a part of the data governance app but it would be better to deploy it as a separate service.
-- The same engine will be used for the RAG system and for searching option (displaying relevant documents to the user).
-- It will be a MCP tool
-# MCP tool
-MCP tool that provides a semantic search capability works like that:
-- Takes a sentence as an input
-- Converts it into a vector using a LLM
-- Finds documents with sentences with embeddings similar to the input sentence embedding
-# Data model
-Data model used in a vector database for semantic search looks like that:
+When we use a vector database for a semantic search, we usually split text documents into chunks ([[Semantic search - Chunking|link]]) (a fixed-length sequence of tokens) and calculate embeddings for each text chunk.
+
+Then, we can store this data in a vector database in the following format:
 ```
 Collection: document_chunks
 
@@ -35,12 +28,3 @@ where:
 - we have one collection for all text documents for which we create embeddings
 - each record in that collection corresponds to one text chunk
 - metadata indicates which document that text chunk belongs to
-# Clients
-Clients that use this engine:
-- RAG system 
-- searching option (displaying relevant documents to the user)
-# Data pipeline populating a vector database
-Data pipeline populating a vector database works like this:
-- Data is ingested using Python
-- Scheduled using a CronJob
-- 
