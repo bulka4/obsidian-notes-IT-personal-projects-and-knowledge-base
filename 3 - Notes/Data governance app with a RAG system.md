@@ -1,10 +1,6 @@
 Tags: [[__My_projects]]
 #MyProjects 
 
-# High-level plan
-- Deploy data governance app on Kubernetes
-- Set up a pipeline populating a vector db using table documentations
-- Create UI for submitting questions to the RAG system
 # System features
 - Creating tables and columns documentation
 - Find relevant documents using a semantic search engine

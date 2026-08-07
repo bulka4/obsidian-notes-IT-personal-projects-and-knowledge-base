@@ -2,7 +2,7 @@ Tags: [[_Databases]] [[_Vector_databases]]
 #Databases #VectorDatabases 
 
 # Introduction
-Sometimes, when looking for vectors similar to the query ([[Vector databases - Nearest neighbor search and distance metrics|link]]), we can use metadata to perform initial filtering and then find similar vectors in that filtered dataset.
+Sometimes, when looking for vectors similar to the query ([[Machine Learning - Similarity search - Nearest neighbor search|link]]), we can use metadata to perform initial filtering and then find similar vectors in that filtered dataset.
 
 For example, if we have chunks with metadata like this:
 ```

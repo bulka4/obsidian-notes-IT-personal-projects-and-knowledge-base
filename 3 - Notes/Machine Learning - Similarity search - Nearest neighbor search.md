@@ -1,15 +1,10 @@
-Tags: [[_Databases]] [[_Vector_databases]]
-#Databases #VectorDatabases 
+Tags: [[__Machine_Learning]] 
+#MachineLearning  
 
-# Nearest neighbor search
+# Introduction
 Nearest neighbor search is the process of finding items that are the most similar to a given query item.
 
-In vector databases, the items are usually vector embeddings.
-# Distance/similarity metric
-A distance/similarity metric defines what "close"/"similar" means between two vectors. Common metrics include:
-- Cosine similarity
-- Euclidean distance (L2 distance)
-- Dot product (inner product)
+To measure similarity, we use distance / similarity metrics ([[Machine Learning - Similarity search - Distance (similarity) metrics|link]]).
 # Types of nearest neighbor search
 
 ## 1. Exact nearest neighbor search

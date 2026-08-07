@@ -7,6 +7,8 @@ Semantic search is a task of finding sentences with a similar meaning, not neces
 It is done by:
 - Converting sentences into embeddings ([[Sentence embeddings|link]]) which represents a meaning of those sentences and a relation between them
 - Comparing how similar those vectors (embeddings) are
+
+So it is a similarity search task ([[Machine Learning - Similarity search|link]]) and one way to achieve this is to use the nearest neighbor search method ([[Machine Learning - Similarity search - Nearest neighbor search|link]]).
 # Projects
 Projects related to semantic search:
 - [[LSTM seq2seq semantic search project]]

@@ -17,7 +17,11 @@ Because of that, categorical variables should not be used as an input for a mode
 Numeric variables, used as an input for ML models, can have different number of dimensions, as described here - [[Types of numeric inputs for ML models]].
 # Methods
 Methods for converting categorical variables into numeric ones include:
-- [[Encoding categorical variables]]
-- [[Feature embeddings]]
+1. [[Encoding categorical variables]]
+	1. [[Encoding categorical variables - One hot encoding]]
+	2. [[Encoding categorical variables - Target - mean encoding]]
+	3. [[Encoding categorical variables - Frequency encoding]]
+2. [[Feature embeddings]]
+3. [[Positional encoding]]
 
 #MachineLearning 

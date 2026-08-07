@@ -2,7 +2,7 @@ Tags: [[__Machine_Learning]]
 #MachineLearning 
 
 # Introduction
-Sentences can be converted into embeddings (similarly like words - [[Word2vec (word embeddings)|link]]), i.e. vectors which represents a meaning of those sentences and which captures relations between sentences, such that for example similar sentences get created similar embeddings (i.e. a difference / distance between those vectors is small).
+Sentences can be converted into embeddings ([[Feature embeddings|link]]) (similarly like words - [[Word2vec (word embeddings)|link]]), i.e. vectors which represents a meaning of those sentences and which captures relations between sentences, such that for example similar sentences get created similar embeddings (i.e. a difference / distance between those vectors is small).
 
 Converting sentences into embeddings can be used for example for a semantic search ([[Semantic search|link]]).
 # Training a model to create sentence embeddings

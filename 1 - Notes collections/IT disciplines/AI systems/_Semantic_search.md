@@ -2,77 +2,52 @@ Tags: [[_Semantic_search]] [[__AI_systems]]
 #SemanticSearch #AISystems 
 
 # Introduction
-1. [[Semantic search - How it works & embeddings]]
+1. [[Semantic search]]
+	1. [[Sentence embeddings]]
+	2. [[Machine Learning - Similarity search]]
+	3. [[Machine Learning - Similarity search - Nearest neighbor search]]
+	4. [[Machine Learning - Similarity search - Distance (similarity) metrics]]
 2. [[Semantic search - Vector databases]]
+	1. [[_Vector_databases]]
 3. [[Semantic search - Data model used for semantic search (how to structure data)]]
 4. [[Semantic search - Chunking]]
 	1. [[Semantic search - Chunking metadata]]
 	2. [[Semantic search - Overlapping chunks]]
 	3. [[Semantic search - Chunking strategies]]
-5. [[Semantic search - Meta]]
+5. [[Semantic search - Search pipeline]]
+	1. [[Semantic search - Query processing]]
+		1. [[Semantic search - Query rewriting and expansion]]
+	2. [[Semantic search - Reranking]]
+		1. [[Semantic search - Ranking - Cross-encoder reranker]]
+		2. [[Semantic search - Ranking - Learning-to-rank]]
+	3. [[Vector databases - Metadata filtering]]
+6. [[Semantic search - Top-k retrieval and similarity threshold]]
+7. [[Semantic search - Hybrid search]]
+8. [[Semantic search - Multi-vector retrieval]]
 # Other topics to explore
-1. **Semantic search - Overview**
-    - keyword search vs semantic search
-    - embeddings as meaning representation
-    - search pipeline
-2. **Semantic search - Data model**
-    - documents
-    - chunks
-    - metadata
-    - document IDs
-    - linking chunks back to sources
-3. **Semantic search - Embedding generation**
-    - embedding models
-    - model choice
-    - embedding dimensions
-    - domain-specific embeddings
-    - changing embedding models
-4. **Semantic search - Chunking**
-    - chunk size
-    - overlap
-    - chunking strategies
-    - metadata
-    - semantic chunking
-5. **Semantic search - Query processing**
-    - query embedding
-    - query rewriting
-    - query expansion
-    - handling short queries
-6. **Semantic search - Retrieval strategies**
-    - top-k retrieval
-    - similarity thresholds
-    - hybrid search
-    - multi-vector retrieval
-7. **Semantic search - Hybrid search**
-    - combining:
-        - keyword search (BM25)
-        - vector search
-    - ranking results from both
-8. **Semantic search - Reranking**
-    - why vector similarity is not enough
-    - cross-encoder rerankers
-    - two-stage retrieval:
-        - retrieve many candidates
-        - rerank best candidates
-9. **Semantic search - Evaluation**
+1. **Semantic search - Evaluation**
     - precision/recall
     - MRR
     - NDCG
     - retrieval quality evaluation
     - creating test datasets
-10. **Semantic search - Production architecture**
-
-- document ingestion pipeline
-- embedding pipeline
-- vector database
-- search API
-- caching
-- monitoring
-
-11. **Semantic search - Common failure modes**
-
-- bad chunking
-- wrong embedding model
-- missing metadata
-- irrelevant retrieval
-- stale embeddings
+2. **Semantic search - Production architecture**
+	- document ingestion pipeline
+	- embedding pipeline
+	- vector database
+	- search API
+	- caching
+	- monitoring
+3. **Semantic search - Common failure modes**
+	- bad chunking
+	- wrong embedding model
+	- missing metadata
+	- irrelevant retrieval
+	- stale embeddings
+4. Embedding models
+    - Bi-encoders
+    - Cross-encoders
+    - Embedding dimensions
+    - Domain-specific embeddings
+    - Fine-tuning embeddings
+- 

@@ -31,4 +31,4 @@ We can use for example LangChain for that purpose as described here - [[LangChai
 MCP can be used to enable AI agents to use different tools. More information about that can be found here - [[Tools for AI agents - MCP]].
 # Examples
 Below are common examples of tools that are used by AI agents with links to learn more about them:
-- Semantic search with vector databases - [[Semantic search - How it works & embeddings|link]] 
+- Semantic search with vector databases - [[Semantic search|link]] 
