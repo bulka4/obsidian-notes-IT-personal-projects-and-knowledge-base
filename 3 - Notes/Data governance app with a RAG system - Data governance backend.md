@@ -2,7 +2,11 @@ Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
-Data governance app is running UI which users interact with. This app communicates with:
+Data governance backend:
+- Serves UI 
+- Authenticates / authorizes users
+
+It communicates with:
 - Semantic search engine
 - RAG system
 # Architecture
@@ -29,11 +33,13 @@ Here, we can also use a SQL database or a graph database would be even better ([
 > What are the tables dependent (directly or indirectly) on the `Customers` table?
 ### Vector database for semantic search
 As a vector database for semantic search we use Milvus.
-## Collecting metadata from a SQL server
-in the `db_preparation` folder there are scripts for collecting metadata from a SQL server:
+## Collecting metadata from a MS SQL server
+in the `db_preparation` folder there are scripts for collecting metadata from a MSSQL server:
 - Needed for data lineage graphs - what scripts there are in views, procedures and jobs, what are source tables used in those scripts and what is the target table that they populate
 - List of tables and views - for which we will be able to create documentation
-## Permissions
+
+It can be later converted into a plugin to allow easily replacing it with other plugins for other databases than MS SQL server.
+## Authentication and authorization
 We use the Passport library and our own RBAC (with permissions stored in a database) for user authentication and authorization.
 # Kubernetes deployment
 - App running as a deployment (or use Ray Serve optionally)

@@ -25,7 +25,8 @@ Later, to destroy all the Azure resources:
 terraform plan -destroy -out main.destroy.tfplan
 terraform apply "main.destroy.tfplan"
 ```
-# Starting the cluster
+# Starting the kind cluster
+- Start Docker engine
 - Run this command:
 ```bash
 # Run this from the repo root folder

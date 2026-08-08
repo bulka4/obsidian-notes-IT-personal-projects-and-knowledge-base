@@ -2,17 +2,17 @@ Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
-There is a separate service providing a semantic search engine.
+Semantic search service is a separate service used by the data governance backend and RAG system.
 # Serving
-Semantic search engine will be served as:
+Semantic search service will be served as:
 - REST API endpoint
 - MCP tool - which calls that REST API endpoint
 
 MCP tool will be used by the RAG system and REST API endpoint by the data governance app directly.
 # Clients
-Clients that use this engine:
+Clients that use this service:
 - RAG system 
-- searching option (displaying relevant documents to a user)
+- Data governance backend (used in the searching option which displays relevant documents to users)
 # Data model
 Data model used in a vector database for semantic search looks like that:
 ```
@@ -48,7 +48,5 @@ Metadata to include:
 - `chunk_id`
 
 Include this metadata to enable filtering.
-# Data pipeline populating a vector database
-Data pipeline populating a vector database works like this:
-- Data is ingested using Python
-- Scheduled using a CronJob
+# Embedding ingestion pipeline
+[[Data governance app with a RAG system - Embedding Ingestion Pipeline]]
