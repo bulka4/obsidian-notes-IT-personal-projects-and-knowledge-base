@@ -5,11 +5,14 @@ This is a collection of documents related to MCP, that is a technology enabling 
 
 # Introduction
 1. [[MCP - Introduction]]
-2. [[MCP - Protocols used for communication]]
+# Benefits, use cases and comparison to other approaches
+1. [[MCP - Benefits, use cases and comparison to other approaches]]
 # How it works
-2. [[MCP server]]
-	1. [[MCP server - STDIO Transport]]
-	2. [[MCP server - HTTP Transport]]
-3. [[MCP client]]
-# MCP vs normal Python functions
-1. [[MCP vs normal Python functions]]
+1. [[MCP server and client]]
+	1. [[MCP server]]
+		1. [[MCP server - STDIO Transport]]
+		2. [[MCP server - HTTP Transport]]
+	2. [[MCP client]]
+2. [[MCP - Protocols used for communication]]
+# Tools for creating a MCP server and client
+1. [[MCP - Tools for creating a MCP server and client]]

@@ -13,6 +13,7 @@ I can delete files from the below folders (but not those folders themself):
 - C:\Users\mbulka\AppData\Local\npm-cache
 - C:\ProgramData\Package Cache
 - Empty the recycle bin
-- 
+# Recycle bin
+Sometimes, even after emptying the recycle bin, there are still files in the `C:\$RECYCLE.BIN` folder which we can see and remove from the, for example the TreeSize application.
 
 #InfrastructureEngineering 

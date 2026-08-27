@@ -197,20 +197,6 @@ Other topics that might be included:
 ## Schema definition / validation formats
 1. [[Software Engineering - Schema definition (validation) formats]]
 	1. [[Software Engineering - JSON schema]]
-## API design
-1. [[Backend Engineering - API design principles]]
-	1. [[Backend Engineering - Bulk endpoints]]
-2. [[Backend Engineering - API architectures]]
-	1. [[Backend Engineering - API architectures - REST]]
-	2. [[Backend Engineering - API architectures - GraphQL]]
-	3. [[Backend Engineering - API architectures - API gateway]]
-	4. [[Backend Engineering - API architectures - RPC]]
-	5. [[Backend Engineering - Streaming API Architecture]]
-		1. [[Backend Engineering - Streaming API Architecture - Implementations comparison]]
-		2. [[Networking - Protocols - WebSockets]]
-		3. [[Backend Engineering - Streaming API Architecture - Server-Sent Events (SSE)]]
-		4. [[Backend Engineering - Streaming API Architecture - Chunked HTTP]]
-		5. [[Backend Engineering - Streaming API Architecture - gRPC streaming]]
 # Algorithms and data structures
 Data structures:
 1. [[Software Engineering - Hash tables]]

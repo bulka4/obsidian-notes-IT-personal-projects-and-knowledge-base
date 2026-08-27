@@ -8,6 +8,20 @@ A package usually contains:
 - Python modules (`.py` files)
 - Metadata (name, version, dependencies)
 - Configuration files describing how to build/install it
+# How to create a package
+To create a package, we just need to put the `__init__.py` file in a folder (this file can be empty).
+
+For example like this:
+```
+|-- my_package/
+	|-- __init__.py
+	|-- module.py
+```
+# How to run a package
+To run a package, we need to run the following command from the directory containing the package:
+```bash
+python -m my_package.module
+```
 # Example package
 ```
 my_package/

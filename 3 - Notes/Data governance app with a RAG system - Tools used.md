@@ -27,3 +27,5 @@ Ray Serve is used to:
 	- Request batching - Multiple requests are combined into a single forward pass
 	- Fractional GPUs utilization
 		- Multiple processes handling requests can be ran on a single GPU what gives better GPU utilization
+# Node.js
+[[Data governance app with a RAG system - Tools used - Node.js]]

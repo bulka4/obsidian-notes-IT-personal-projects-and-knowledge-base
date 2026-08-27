@@ -1,0 +1,20 @@
+Tags: [[_ONNX]] [[__Machine_Learning]]
+#ONNX #MachineLearning 
+
+# Introduction
+1. [[ONNX - Introduction]]
+2. [[ONNX - Purpose]]
+3. [[ONNX - Model format (computational graph)]]
+4. [[ONNX - Exporting models to ONNX]]
+	- [[ONNX - Exporting models to ONNX - PyTorch]]
+	- [[ONNX - Exporting models to ONNX - Optimum]]
+	- [[ONNX - Exporting models to ONNX - TensorFlow]]
+5. [[ONNX - Dynamic shapes]]
+6. [[ONNX - Inspecting model's input and output]]
+7. [[ONNX - Running ONNX models]]
+	1. [[ONNX - Running ONNX models - ONNX Runtime]]
+		1. [[ONNX - Running ONNX models - The onnxruntime Python library]]
+			1. [[ONNX - The onnxruntime.InferenceSession Python class]]
+				1. [[ONNX - The onnxruntime.InferenceSession Python class - Inspecting model's input and output]]
+				2. [[ONNX - The onnxruntime.InferenceSession Python class - Running a model]]
+		2. [[ONNX - Running ONNX models - The optimum.onnxruntime Python library]]

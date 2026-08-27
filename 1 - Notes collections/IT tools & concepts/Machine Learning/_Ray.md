@@ -1,7 +1,7 @@
 This is a collection of documents related to Ray, an IT tool for ML model training, inference and serving.
 
 # Debugging
-1. [[Ray debugging]]
+1. [[Ray debugging - RayService]]
 # Deployment on Kubernetes
 1. [[Ray - Deployment on Kubernetes using KubeRay]]
 	1. [[KubeRay - RayService CRD]]
@@ -39,6 +39,8 @@ This is a collection of documents related to Ray, an IT tool for ML model traini
 1. [[Ray Serve + FastAPI - HTTP requests handling workflow and communication]]
 2. [[Ray Serve - Python functions for monitoring]]
 3. [[Ray Serve - Checkpoints]]
+4. [[Ray Serve - Serialization]]
+5. [[Ray Serve - Running a Ray Serve app]]
 ## Use cases and features
 1. [[Ray Serve - Use cases and features]]
 ## Features, pros and cons

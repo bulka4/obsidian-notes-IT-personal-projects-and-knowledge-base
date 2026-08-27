@@ -6,10 +6,10 @@ Those notes are about IT tools used for building AI agents. Related notes about 
 # Instruction tuned LLM
 Instruction tuned LLMs are trained specifically to follow provided instructions.
 
-More information about that can be found here - [[Instruction tuned LLMs]].
+More information about that can be found here - [[AI agents - Instruction tuned LLMs]].
 # AI agents tools
 It is a common practice to create AI agents that can use different tools, for example a tool for  semantic search using vector databases.
 
-More information about that can be found here - [[Tools for AI agents]].
+More information about that can be found here - [[AI agents - Using tools by an agent]].
 # LangGraph
 LangGraph can be used to create a multi-agent workflows. More information can be found here - [[LangGraph]].

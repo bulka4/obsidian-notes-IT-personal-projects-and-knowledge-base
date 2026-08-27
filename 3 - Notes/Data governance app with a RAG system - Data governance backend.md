@@ -10,37 +10,75 @@ It communicates with:
 - Semantic search engine
 - RAG system
 # Architecture
+## HTTP server and routes
+We run API using ([[Backend Engineering - Running an API|link]]):
+- Node.js as a HTTP server ([[Backend Engineering - API (HTTP, gRPC, etc.) server|link]]) (which receives requests and returns a response)
+- Express to define routes / handlers ([[Backend Engineering - API endpoint, route and handler|link]]) (a logic for how to handle requests, generate a response)
 ## Databases
-### Tables documentation
-As a database for tables documentation, I have used already MongoDB (NoSQL database) mostly in order to learn it.
+Data that this backend uses:
+- Database metadata about tables, columns and scripts
+- Data lineage data
 
-It would be better to use a SQL database because:
-- Schema will not be changing frequently and each table / column will have always the same fields populated
-- We will create tables for documentation about objects like: 
-	- databases, schemas, tables and columns
-	- data lineage - source and target table, script creating the target table
+All this data is prepared by the metadata extraction pipeline - [[Data governance app with a RAG system - Metadata extraction pipeline|Metadata extraction pipeline]].
 
-	There are clear relationships between those objects which SQL database will handle well:
-	- We can create foreign keys
-	- Joins will be efficient (both calculations and code syntax for performing joins will be efficient)
-	- It will ensure referential integrity ([[SQL databases - Referential integrity|link]])
-- Indexing ([[Databases - Indexes|link]]) - We can create indexes to find values in specific columns faster
-- We can make use of data integrity constraints ([[SQL databases - Data integrity constraints|link]]), e.g. we can specify that column names for one table should be unique.
-### Data lineage
-For data lineage I have also already used MongoDB like for tables documentation.
-
-Here, we can also use a SQL database or a graph database would be even better ([[_Graph_databases|link]]). It would make it easier to answer such questions as for example:
-> What are the tables dependent (directly or indirectly) on the `Customers` table?
-### Vector database for semantic search
-As a vector database for semantic search we use Milvus.
-## Collecting metadata from a MS SQL server
-in the `db_preparation` folder there are scripts for collecting metadata from a MSSQL server:
-- Needed for data lineage graphs - what scripts there are in views, procedures and jobs, what are source tables used in those scripts and what is the target table that they populate
-- List of tables and views - for which we will be able to create documentation
-
-It can be later converted into a plugin to allow easily replacing it with other plugins for other databases than MS SQL server.
+More information about it is here:
+- [[Data governance app with a RAG system - Databases - Database documentation|Database documentation]] 
+- [[Data governance app with a RAG system - Databases - Data lineage data|Data lineage data]] 
+- [[Data governance app with a RAG system - Databases - Redis for caching|Redis for caching]] 
 ## Authentication and authorization
 We use the Passport library and our own RBAC (with permissions stored in a database) for user authentication and authorization.
+
+Available user roles:
+- `newUser` - The default for every user. Can't see nor modify any data
+- `viewer` - Can see all the data but can't modify it
+- `designer` - Can see all the data and modify it
+
+A new user can be created from the app, with the `newUser` role. To change this role, we need to set it up directly in the MongoDB database, the `userDocs` collection.
+
+When starting the app, the admin user is created:
+- username - admin@admin.com
+- password - admin
+- role - designer
+
+The `modules/passport-config.js` script contains a function used for authenticating users.
+## Caching - Redis
+Redis is used for caching. More information is here - [[Data governance app with a RAG system - Databases - Redis for caching]].
+# Features
+## Data lineage visualizations
+Data lineage visualizations are created using the `public/dataLineageScripts.js` script. It assigns x and y coordinates to nodes to position them properly on the screen.
+## Authentication
+- The `usersDocs` MongoDB collection is used 
+# Tooling
+## Node.js
+We use Node.js to run a HTTP server, more notes about it are here - [[Data governance app with a RAG system - Tools used - Node.js]].
+# Starting and accessing the app
+Before we run the app, we need to:
+- Prepare metadata
+	- Run the `helm_charts/metadata_extraction` Helm chart like described here - [[Data governance app with a RAG system - Metadata extraction pipeline|link]]
+	- It will extract metadata about tables and scripts from the source MS SQL Server which will be used by the app (e.g. it prepares a list of tables for which we can create documentation from the app)
+- Prepare Redis:
+	- It will be a database for caching, to speed up loading pages
+  ```bash
+	# Execute below commands from the helm_charts/redis folder
+	helm dependency build
+	helm -n semantic-search install redis . &
+  ```
+
+Then, to start the app, run  one of those commands in a terminal:
+- To run the app in the production mode:
+> `node server.js` 
+- To run the app in the dev mode (to allow us to modify app's code and see results without a need for restarting the app.):
+> `npm run devStart`. 
+
+To access the app, use the URL in a browser: `localhost:8080`
+## Running the app in the dev mode
+To start it in the dev mode, use:
+>`npm run devStart`
+
+This will allow us to modify app's code and see results without a need for restarting the app.
+
+Important info:
+- The `devStart` command is specified in the `package.json` file. 
+- When we set up the `NODE_ENV` env var to `development`, then running `npm install` will install all the packages from the `package.json` file including those under the `devDependencies` field.
 # Kubernetes deployment
-- App running as a deployment (or use Ray Serve optionally)
-- 
+- App running as a deployment

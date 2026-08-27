@@ -10,7 +10,6 @@ For running Docker on Windows we are using either wsl 2 or hyper v. Check which 
 ## Solutions
 ## Solution 1
 This solution is usually enough, If not, then try additionally the solution 2.
-
 - Run:
 ```bash
 # Restart wsl
@@ -23,10 +22,9 @@ wsl --unregister docker-desktop
 	netsh winsock reset
 	netsh int ip reset all
 	```
-	and restart PC (optional)
+	and restart PC (optional, might not be required)
 ## Solution 2
 Try first the solution 1. If it is not enough, then try this one.
-
 - Uninstall Docker in the Control Panel
 - Remove all the files related to Docker:
 	- C:\Users\<YourUsername>\.docker

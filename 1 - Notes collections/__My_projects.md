@@ -67,3 +67,4 @@ This is a collection of documents about my projects.
 # Ideas
 1. [[Apka dla placowek medycznych]]
 2. [[ML models project ideas]]
+3. [[AI systems project ideas]]

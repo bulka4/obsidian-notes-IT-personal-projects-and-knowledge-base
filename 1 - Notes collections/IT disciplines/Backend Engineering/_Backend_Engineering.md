@@ -35,6 +35,26 @@ Tags: [[_Backend_Engineering]]
 1. [[Backend Engineering - Application communication - Performance optimization]]
 	1. [[Backend Engineering - Request batching]]
 	2. [[Backend Engineering - Caching]]
+# APIs
+## API concepts
+1. [[Backend Engineering - API]]
+	1. [[Backend Engineering - Running an API]]
+	2. [[Backend Engineering - API endpoint, route and handler]]
+	3. [[Backend Engineering - API (HTTP, gRPC, etc.) server]]
+## API design
+1. [[Backend Engineering - API design principles]]
+	1. [[Backend Engineering - Bulk endpoints]]
+2. [[Backend Engineering - API architectures]]
+	1. [[Backend Engineering - API architectures - REST]]
+	2. [[Backend Engineering - API architectures - GraphQL]]
+	3. [[Backend Engineering - API architectures - API gateway]]
+	4. [[Backend Engineering - API architectures - RPC]]
+	5. [[Backend Engineering - Streaming API Architecture]]
+		1. [[Backend Engineering - Streaming API Architecture - Implementations comparison]]
+		2. [[Networking - Protocols - WebSockets]]
+		3. [[Backend Engineering - Streaming API Architecture - Server-Sent Events (SSE)]]
+		4. [[Backend Engineering - Streaming API Architecture - Chunked HTTP]]
+		5. [[Backend Engineering - Streaming API Architecture - gRPC streaming]]
 # Security
 1. [[Backend Engineering - Security]]
 	1. Secure protocols:

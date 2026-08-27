@@ -27,7 +27,7 @@ terraform apply "main.destroy.tfplan"
 ```
 # Starting the kind cluster
 - Start Docker engine
-- Run this command:
+- Start the kind cluster:
 ```bash
 # Run this from the repo root folder
 kind create cluster --name data-platform --config kind-config.yaml

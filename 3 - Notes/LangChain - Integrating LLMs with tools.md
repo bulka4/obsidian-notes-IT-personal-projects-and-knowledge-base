@@ -2,7 +2,7 @@ Tags: [[__Machine_Learning_Engineering]], [[_LangChain]]
 #MLEngineering #LangChain 
 
 # Introduction
-LLMs instead of giving answer to a question straight away, can indicate which tool to use and with which parameters. More information about that can be found here - [[Tools for AI agents]].
+LLMs instead of giving answer to a question straight away, can indicate which tool to use and with which parameters. More information about that can be found here - [[AI agents - Using tools by an agent]].
 # Integrating LLMs with tools using LangChain
 LangChain can provide LLMs with built-in support for using tools. When creating an object for using LLM, we can call a function to let this LLM know what tools are available.
 
