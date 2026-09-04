@@ -34,7 +34,7 @@ More information:
 - [[Data governance app with a RAG system - Data governance backend]]
 	- [[Data governance app with a RAG system - Data governance backend#Architecture|Architecture]] 
 		- [[Data governance app with a RAG system - Data governance backend#HTTP server and routes|HTTP server and routes]] 
-		- [[Data governance app with a RAG system - Data governance backend#Databases|Databases]] 
+		- [[Data governance app with a RAG system - Data governance backend#Databases and data models|Databases and data models]] 
 			- [[Data governance app with a RAG system - Databases - Database documentation|Database documentation]] 
 			- [[Data governance app with a RAG system - Databases - Data lineage data|Data lineage data]] 
 		- [[Data governance app with a RAG system - Data governance backend#Authentication and authorization|Authentication and authorization]] 

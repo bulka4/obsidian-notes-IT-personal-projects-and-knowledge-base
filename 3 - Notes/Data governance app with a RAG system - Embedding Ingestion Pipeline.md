@@ -17,7 +17,11 @@ In order to run this pipeline, we need to prepare the following dependencies:
 	- It can be prepared using the `helm_charts/create_milvus_collection` Helm chart ([[Data governance app with a RAG system - Databases - Vector database for semantic search|link]])
 - Source documents
 	- Stored in MongoDB, with a proper schema like described in the `MongoDocumentSource` section below in this document.
-	- It can be prepared using Data Governance Backend UI ([[Data governance app with a RAG system - Data governance backend|link]])
+	- It can be prepared using Data Governance Backend UI ([[Data governance app with a RAG system - Data governance backend|link]]):
+		- access UI at the URL `localhost:8080`
+		- go to the `Data catalog` section
+		- select a table from the left-hand side panel
+		- create a description and click on `save`
 # How the script works
 The main.py script:
 - Reads a documentation from the MongoDB database (all documents from a specific database and collection)

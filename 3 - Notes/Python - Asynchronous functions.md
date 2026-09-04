@@ -29,7 +29,7 @@ result = await cor_obj # run coroutine's computations and get the result
 ```
 
 The `await` command can be used only inside of an asynchronous function and together with an asynchronous function (we can't run `await normal_function()` using a normal function which is not a coroutine).
-# Event loop
+# Event loop and running tasks concurrently
 We can create an event loop ([[Software Engineering - Async programming models - Event loops|link]]) using for example the `asyncio.run()` function like this:
 ```python
 import asyncio
@@ -56,7 +56,7 @@ asyncio.run(task2())
 
 # Run another event loop - for running tasks concurrently.
 # This loop will run once the previous one is finished
-asynction.run(task3())
+asyncio.run(task3())
 ```
 ## `FastAPI`
 `FastAPI` creates an event loop for use so we can use asynchronous functions.

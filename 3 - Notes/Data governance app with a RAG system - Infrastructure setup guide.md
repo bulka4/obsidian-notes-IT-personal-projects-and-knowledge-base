@@ -101,6 +101,14 @@ Deploy the Data Governance Backend:
   ```
 - Access data governance app using this URL in a browser: `localhost:8080`
 ## Embedding ingestion pipeline
+The embedding ingestion pipeline will ingest embeddings into the vector database using tables descriptions created by us using the Data Governance UI.
+
+To create descriptions:
+- access UI at the URL `localhost:8080`
+- go to the `Data catalog` section
+- select a table from the left-hand side panel
+- create a description and click on `save`
+
 To run the embedding ingestion pipeline:
 - Install the Milvus Helm chart:
 	- It will deploy Milvus and create a collection in Milvus that will be used to store embeddings
@@ -124,3 +132,10 @@ To run the Semantic search REST API server:
 	helm dependency build
 	helm -n semantic-search install ray-serve . &
   ```
+## MCP server
+Run the MCP server providing a tool for semantic search (that uses the created REST API server):
+- Install the MCP server Helm chart:
+	```shell
+	# Execute below commands from the helm_charts/mcp_server folder
+	helm -n semantic-search install mcp . &
+	```

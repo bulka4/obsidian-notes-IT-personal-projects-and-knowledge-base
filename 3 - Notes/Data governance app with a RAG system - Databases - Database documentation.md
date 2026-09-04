@@ -3,6 +3,55 @@ Tags: [[__My_projects]]
 
 # Introduction
 Database documentation (about tables, columns, scripts, etc.) data is stored in the MongoDB database which is used by the data governance backend ([[Data governance app with a RAG system - Data governance backend|link]]) and it is prepared by the metadata extraction pipeline ([[Data governance app with a RAG system - Metadata extraction pipeline|link]]).
+# Data model
+To document tables and columns, we use a MongoDB collection with the following schema:
+```json
+table_doc_schema: 
+{
+    tableId: {
+        type: Number,
+        required: true
+    },
+    tableName: {
+        type: String,
+        required: true
+    },
+    sourceScript: String,
+    tableDescription: {
+        type: String
+    },
+    // tableDescription encoded (changed into a vector) using transformer model 
+    // for checking sentence similarity
+    tableDescriptionEncoded: {
+        type: Array
+    },
+    columns: [col_doc_schema]
+}
+
+col_doc_schema: 
+{
+	columnName: {
+        type: String,
+        required: true
+    },
+    foreignKey: {
+        type: Boolean,
+        default: false
+    },
+    primaryKey: {
+        type: Boolean,
+        default: false
+    },
+    columnDescription: {
+        type: String
+    },
+    // columnDescription encoded (changed into a vector) using transformer model 
+    // for checking sentence similarity
+    columnDescriptionEncoded: {
+        type: Array
+    }
+}
+```
 # Deployment
 MongoDB database for this data is deployed using the `helm_charts/mongo_db` Helm chart.
 # Improvements

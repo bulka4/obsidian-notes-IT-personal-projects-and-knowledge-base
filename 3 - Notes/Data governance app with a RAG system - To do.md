@@ -2,20 +2,10 @@ Tags: [[__My_projects]]
 #MyProjects 
 
 # Next steps
-## Deploy the semantic search service
-- Deploy the semantic search service as a separate service so it can be used by the RAG system and the data governance backend
-- Deploy it as REST API endpoint and use that endpoint in the MCP tool
-
-Status:
-- FastAPI routes for the REST API are ready (but not tested yet)
-
-To do:
-- Test FastAPI routes (once we have some data in the vector db)
-- Prepare a MCP tool that uses this REST API
-## Deploy data governance backend
-- Use the semantic search service (REST API) in the data governance backend
-## Prepare embedding ingestion pipeline
-Prepare embedding ingestion pipeline so we have some data in the vector db to test semantic search.
+## Use the new semantic search REST API in the Data Governance Backend
+[[Data governance app with a RAG system - To do - Use the new semantic search REST API in the Data Governance Backend]]
+## Automate embedding ingestion pipeline
+Automate embedding ingestion pipeline such that it is triggered every time we save table description.
 ## RAG system
 Deploy RAG system so it uses the same semantic search MCP tool.
 ## Others

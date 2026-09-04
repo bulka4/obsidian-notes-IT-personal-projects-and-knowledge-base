@@ -36,14 +36,25 @@ async def debug_exception_handler(request: Request, exc: Exception):
 @serve.ingress(app)
 class RAGService:
 ```
-## Check logs files in Ray cluster pods
-In the Ray cluster pods we can check files with logs in the `/tmp/ray/session_latest/logs` folder.
+## Route function logs
+To see logs from executing a route function:
+```python
+@app.get("/search")
+    async def ask(self, query: str, top_k: int = 3) -> list:
+	    print('log')
+```
+
+we can:
+- Run a Ray Serve app using the `serve run` command. Then we will see logs in the terminal where we run this command (more convenient).
+- Search through the log files when running a Ray Serve app using the `RayService` CRD (less convenient).
+### Check logs files in Ray cluster pods
+To see logs from executing a route function, we can check files with logs in the `/tmp/ray/session_latest/logs` folder in the Ray cluster pods.
 
 There should be files with logs with name like ‘driver’, ‘serve’ or ‘controller’. They contain info about starting Ray Serve application.
 
 The `python-core-driver-*` logs relates to Serve driver which starts our app.
 
-The serve/controller-*.log file can contain info about errors in our Ray Serve app code.
+The `serve/controller-*.log` file can contain info about errors in our Ray Serve app code.
 
 Running processes on Ray head node 
 

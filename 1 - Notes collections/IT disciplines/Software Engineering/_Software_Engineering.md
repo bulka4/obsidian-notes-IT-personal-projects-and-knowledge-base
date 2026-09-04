@@ -157,7 +157,8 @@ Other topics that might be included:
 1. [[Software Engineering - Async programming models]]
 	1. [[Software Engineering - Async programming models - Coroutines & tasks]]
 	2. [[Software Engineering - Async programming models - Event loops]]
-	3. [[Software Engineering - Async programming model vs multiple threads]]
+	3. [[Software Engineering - Async programming models - Concurrency]]
+	4. [[Software Engineering - Async programming model vs multiple threads]]
 ## I/O operations
 1. [[Software Engineering - I-O operations]]
 	1. [[Software Engineering - I-O resources]]

@@ -14,7 +14,7 @@ It communicates with:
 We run API using ([[Backend Engineering - Running an API|link]]):
 - Node.js as a HTTP server ([[Backend Engineering - API (HTTP, gRPC, etc.) server|link]]) (which receives requests and returns a response)
 - Express to define routes / handlers ([[Backend Engineering - API endpoint, route and handler|link]]) (a logic for how to handle requests, generate a response)
-## Databases
+## Databases and data models
 Data that this backend uses:
 - Database metadata about tables, columns and scripts
 - Data lineage data
@@ -48,6 +48,28 @@ Redis is used for caching. More information is here - [[Data governance app with
 Data lineage visualizations are created using the `public/dataLineageScripts.js` script. It assigns x and y coordinates to nodes to position them properly on the screen.
 ## Authentication
 - The `usersDocs` MongoDB collection is used 
+## Semantic search
+For semantic search we the `sortDocs` function which sorts table documents using semantic search (based on the semantic scores). 
+
+It uses for that the Rest API route for semantic search ([[Data governance app with a RAG system - Semantic search service|link]]) which:
+- takes a query as an input
+- and provides a response with similarity scores between the given query and all the text chunks from all the documents.
+
+The response in the following format:
+```python
+[
+	{
+		#ID of the table document (taken from the database documentation 
+		# database)
+		'object_id': object_id_1,
+		# One text chunk from the document
+		'text_chunk': text_chunk_1
+		# Similarity score for this text chunk and the given query
+		'similarity_score': similarity_score_1
+	},
+	...
+]
+```
 # Tooling
 ## Node.js
 We use Node.js to run a HTTP server, more notes about it are here - [[Data governance app with a RAG system - Tools used - Node.js]].
