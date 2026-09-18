@@ -15,6 +15,11 @@ Set up a kind cluster and Docker image for interacting with it ([[Data governanc
 # Run this from the repo root folder
 kind create cluster --name data-gov --config kind-config.yaml
 ```
+## Prepare images
+Run commands from the `/bash/build_and_load_images.sh` script on the host (run them outside of the container for interacting with kind. They require to use Docker)
+
+It builds Docker images and loads them to kind, so they can be used to run pods
+# Connect to kind
 - Copy the `.kube` folder (usually located at `C:\Users\username`) into the repo root folder (so it can be copied into the image we build in the next step)
 - Build and run the image for interacting with kind:
 ```bash
@@ -57,85 +62,83 @@ Sometimes, on Windows, using `docker prune` might not release disk space or it d
 - close docker desktop
 - shutdown wsl - run in terminal: `wsl --shutdown`
 - Delete the file (Docker virtual disk): `C:\Users\<username>\AppData\Local\Docker\wsl\disk\ext4.vhdx`
-# Prepare images and Kubernetes secrets
-From inside of the image for interacting with Kubernetes:
-- Run the `bash /root/bash/create_k8s_secrets.sh` command
-	- To create Kubernetes namespaces and secrets we will be using
-- Run commands from the `/bash/build_and_load_images.sh` script on the host (run them outside of the container for interacting with kind. They require to use Docker)
-	- It builds Docker images and loads them to kind, so they can be used to run pods
+# Prepare Kubernetes resources
+From inside of the image for interacting with Kubernetes run the command:
+> `bash /root/bash/create_k8s_secrets.sh`
+
+This creates Kubernetes resources like namespaces and secrets we will be using.
 # Running the system
 ## Extract SQL server metadata
 Prepare source SQL server metadata in the MongoDB for which we will be creating documentation in the Data Governance app:
 - Install the source MS SQL Server:
 	- From which we will extract metadata
   ```bash
-	# Execute below commands from the helm_charts/ms_sql folder
-	helm -n source-db install ms-sql . &
+	helm -n source-db install ms-sql /root/helm_charts/ms_sql &
   ```
 - Install the MongoDB Helm chart:
-	- Where we will save extracted metdata
+	- Where we will save extracted metadata
   ```bash
-  	# Execute below commands from the helm_charts/mongo_db folder
-	helm dependency build
-	helm -n semantic-search install mongo-db . &
+	helm dependency build /root/helm_charts/mongo_db
+	helm -n semantic-search install mongo-db /root/helm_charts/mongo_db &
   ```
 - install the Metadata Extraction Helm chart:
 	- Which runs a script for extracting metadata from the source SQL server into the MongoDB
   ```bash
-	# Execute below commands from the helm_charts/metadata_extraction folder
-	helm -n semantic-search install metadata-extraction . &
+	helm -n semantic-search install metadata-extraction /root/helm_charts/metadata_extraction &
+  ```
+## Embedding ingestion service
+To run the embedding ingestion service ([[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service|link]]):
+- Install the Milvus Helm chart:
+	- It will deploy Milvus and create a collection in Milvus that will be used to store embeddings
+	- In Milvus we will store vector embeddings
+    ```bash
+	helm dependency build /root/helm_charts/create_milvus_collection
+	helm -n semantic-search install milvus /root/helm_charts/create_milvus_collection . &
+    ```
+- Install Kafka Helm chart:
+	```shell
+	helm dependency build /root/helm_charts/kafka
+	helm -n semantic-search install kafka /root/helm_charts/kafka . &
+	```
+- Create a topic in Kafka, where data governance backend will be emitting messages and embedding ingestion service will read messages from:
+  ```shell
+  kubectl -n semantic-search exec -it kafka-controller-0 \
+	  -- kafka-topics.sh \
+		  --create --topic table-descriptions \
+		  --bootstrap-server kafka:9092 \
+		  --partitions 1 \
+		  --replication-factor 1
+  ```
+- Install the embedding ingestion service Helm chart:
+  ```bash
+	helm -n semantic-search install emb-ing /root/helm_charts/embedding_ingestion_service &
   ```
 ## Data Governance Backend
 Deploy the Data Governance Backend:
 - Install the Redis Helm chart:
 	- Redis is used for caching in this backend
   ```bash
-	# Execute below commands from the helm_charts/redis folder
-	helm dependency build
-	helm -n semantic-search install redis . &
+	helm dependency build /root/helm_charts/redis
+	helm -n semantic-search install redis /root/helm_charts/redis &
   ```
 - install the Data Governance Backend Helm chart:
   ```bash
-	# Execute below commands from the helm_charts/data_gov_backend folder
-	helm -n semantic-search install data-gov . &
+	helm -n semantic-search install data-gov /root/helm_charts/data_gov_backend/ &
   ```
-- Access data governance app using this URL in a browser: `localhost:8080`
-## Embedding ingestion pipeline
-The embedding ingestion pipeline will ingest embeddings into the vector database using tables descriptions created by us using the Data Governance UI.
-
-To create descriptions:
-- access UI at the URL `localhost:8080`
-- go to the `Data catalog` section
-- select a table from the left-hand side panel
-- create a description and click on `save`
-
-To run the embedding ingestion pipeline:
-- Install the Milvus Helm chart:
-	- It will deploy Milvus and create a collection in Milvus that will be used to store embeddings
-	- In Milvus we will store vector embeddings
-    ```bash
-	# Execute below commands from the helm_charts/create_milvus_collection folder
-	helm dependency build
-	helm -n semantic-search install milvus . &
-    ```
-- Install the Embedding ingestion pipeline Helm chart:
-  ```bash
-	# Execute below commands from the helm_charts/embedding_ingestion_pipeline folder
-	helm -n semantic-search install emb-ing . &
-  ```
-## Semantic search REST API server
-To run the Semantic search REST API server:
-- Install the Semantic search Helm chart:
-	- It will run a REST API server using Ray Serve
-  ```shell
-	# Execute below commands from the helm_charts/semantic_search_rest_api folder
-	helm dependency build
-	helm -n semantic-search install ray-serve . &
-  ```
+- It takes a few minutes to start the app. In the pod's logs we should see after some time logs `Connection to Redis is ready` and `app started listening to requests`
+- Access data governance UI using this URL in a browser: `localhost:8080`
+- Log in using username `admin@admin.com` and password `admin`
+- Using UI, create descriptions for tables which will be used for the semantic search and RAG system
 ## MCP server
-Run the MCP server providing a tool for semantic search (that uses the created REST API server):
+Run the MCP server providing a tool for semantic search. It uses the semantic search endpoint from created REST API server and it is used by the RAG endpoint from the save server:
 - Install the MCP server Helm chart:
 	```shell
-	# Execute below commands from the helm_charts/mcp_server folder
-	helm -n semantic-search install mcp . &
+	helm -n semantic-search install mcp /root/helm_charts/mcp_server &
 	```
+## RAG REST API server
+To run the RAG REST API server which provides endpoints for answering questions using a RAG system and semantic search:
+- Install the RAG Helm chart (It will run a REST API server using Ray Serve):
+  ```shell
+	helm dependency build /root/helm_charts/rag_rest_api
+	helm -n semantic-search install rag /root/helm_charts/rag_rest_api &
+  ```

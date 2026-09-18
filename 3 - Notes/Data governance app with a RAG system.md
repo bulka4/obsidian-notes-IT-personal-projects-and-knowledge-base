@@ -46,26 +46,35 @@ More information:
 - Providing semantic search functionality
 
 More information:
-- [[Data governance app with a RAG system - Semantic search service]]
-	- [[Data governance app with a RAG system - Embedding Ingestion Pipeline|Embedding Ingestion Pipeline]] 
+- [[Data governance app with a RAG system - Semantic search API]]
+	- [[Data governance app with a RAG system - Semantic search API - Running and using the REST API server|Running and using the REST API server]] 
+	- [[Data governance app with a RAG system - Semantic search API - Architecture|Architecture]] 
+	- [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service|Embedding Ingestion Pipeline]] 
 	- [[Data governance app with a RAG system - Databases - Vector database for semantic search|Vector database for semantic search]] 
+	- [[Data governance app with a RAG system - Ray Serve]]
 ## Embedding Ingestion Pipeline
 - Ingesting vector embeddings into the vector database using SQL database documentation created by users
 
 More information:
-- [[Data governance app with a RAG system - Embedding Ingestion Pipeline]]
+- [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service]]
 	- [[Data governance app with a RAG system - Databases - Vector database for semantic search|Vector database for semantic search]] 
+### Kafka
+[[Data governance app with a RAG system - Kafka]]
 ## RAG system
-- Answering user questions using embeddings from the documentation
-
-More information:
-- [[Data governance app with a RAG system - RAG system]]
+[[Data governance app with a RAG system - RAG system]]
+- [[Data governance app with a RAG system - RAG system - Architecture]]
+- [[Data governance app with a RAG system - Ray Serve]]
+## Ray Serve
+[[Data governance app with a RAG system - Ray Serve]]
 
 System architecture diagram (arrows indicates that one service uses / communicates with another):
 ![a](system_architecture_diagram.svg)
-# Tools used
-[[Data governance app with a RAG system - Tools used]]
-- [[Data governance app with a RAG system - Tools used - Node.js|Node.js]] 
+# Error handling
+How the system handles errors - [[Data governance app with a RAG system - Error handling]]
+# Program design
+[[Data governance app with a RAG system - Program design]]
+# Infrastructure setup guide
+[[Data governance app with a RAG system - Infrastructure setup guide]].
 # Pods for testing tools and interacting with resources
 We can prepare pods for testing tools and interacting with resources using YAML manifests from the `k8s` folder. 
 
@@ -76,10 +85,17 @@ Here's how we can use different pods:
 - `network.yaml` - Tools for testing network (e.g. testing whether we can reach some services through a network, DNS resolution, make REST API calls, etc.)
 
 We connect to the created pod using the `kubectl -n <namespace> exec -it <pod-name> -- /bin/bash` command and inside of the pod we can use tools like it is described in this pod's YAML manifest.
-# Infrastructure setup guide
-[[Data governance app with a RAG system - Infrastructure setup guide]].
 # Infrastructure
 - [[Data governance app with a RAG system - Kind (kubernetes cluster in Docker)]]
 - [[Data governance app with a RAG system - Docker image for interacting with kind]]
 - [[Data governance app with a RAG system - VS Code Kubernetes extension setup for code development]]
 - [[Data governance app with a RAG system - Docker images]]
+# Tools used
+[[Data governance app with a RAG system - Tools used]]
+- [[Data governance app with a RAG system - Tools used - Node.js|Node.js]] 
+# Debugging
+Tips for debugging:
+- [[Data governance app with a RAG system - Debugging pods]]
+- [[Data governance app with a RAG system - Kafka debugging]]
+# Further development
+[[Data governance app with a RAG system - Further development]]

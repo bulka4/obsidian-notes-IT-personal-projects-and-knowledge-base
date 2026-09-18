@@ -39,4 +39,4 @@ Include this metadata to enable filtering.
 ## Milvus collection preparation
 Helm chart which deploys Milvus, also runs the script from the `services/semantic_search/create_milvus_collection` folder to prepare a Milvus collection with specific fields where we will store embeddings and set up an index.
 # Embedding ingestion pipeline
-Pipeline ingesting embeddings into this vector database that will be used for a semantic search is described here - [[Data governance app with a RAG system - Embedding Ingestion Pipeline]].
+Pipeline ingesting embeddings into this vector database that will be used for a semantic search is described here - [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service]].

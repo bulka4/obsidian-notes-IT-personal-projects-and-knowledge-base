@@ -8,3 +8,4 @@ Application Design focuses on what the system does. It defines use cases ([[Soft
 3. [[Software Engineering - Architecture concepts - DTO (Data Transfer Object)]]
 4. [[Software Engineering - Architecture concepts - Command]]
 5. [[Software Engineering - Architecture concepts - Query]]
+6. [[Software Engineering - Architecture concepts - Application (workflow) orchestration layer]]

@@ -20,16 +20,20 @@ Dependencies always point inward - i.e. the inner layers (lower in the graph) sh
 ├─────────────────────┤
 │ Interface Adapters  │
 ├─────────────────────┤
-│ Use Cases           │
+│ Application / core  │
 ├─────────────────────┤
 │ Entities            │
 └─────────────────────┘
 ```
-## Entities
+## Application / core layer
+Application / core layer usually contains:
+- Entities ([[Software Engineering - Architecture concepts - Entity|link]])
+- Use cases ([[Software Engineering - Architecture concepts - Use case|link]])
+- Interfaces ([[Software Engineering - Architecture concepts - Interface|link]])
+### Entities
 This layer contain entities ([[Software Engineering - Architecture concepts - Entity|link]]) with business rules. For example, a class:
 ```python
 class Order:
-
     def confirm(self):
         if self.status != "PENDING":
             raise Exception()
@@ -38,23 +42,22 @@ class Order:
 ```
 
 It doesn't have to contain only interfaces ([[Software Engineering - Architecture concepts - Interface|link]]).
-## Use cases (Application layer)
+### Use cases
 This layer contain use cases ([[Software Engineering - Architecture concepts - Use case|link]]), i.e. application logic - additional operations not defined in entities, for example:
 ```python
 class ConfirmOrderUseCase:
-
     def execute(self, order_id):
-        order = self.repository.get(order_id)
+        order: Order = self.repository.get(order_id)
         order.confirm()
         self.repository.save(order)
 ```
 
 Use cases perform operations on entities. This layer doesn't have to contain only interfaces ([[Software Engineering - Architecture concepts - Interface|link]]).
 ## Interface adapters
-The Interface adapters layer contains:
+The Interface adapters layer ([[Software Engineering - Architecture concepts - Interface adapters|link]]) contains:
 - Controllers - take HTTP requests and uses them to perform use case calls (call functions)
 - Presenters - convert use case ([[Software Engineering - Architecture concepts - Use case|link]]) results (function outputs) into a different format which is used by  UI
-- Repositories - interfaces ([[Software Engineering - Architecture concepts - Interface|link]]) for reading / saving domain objects ([[Software Engineering - Architecture concepts - Domain objects|link]]) in a database.
+- Repositories - for reading / saving domain objects ([[Software Engineering - Architecture concepts - Domain objects|link]]) in a database.
 - Gateways/adapters
 - Event adapters
 
@@ -62,7 +65,7 @@ It converts data between the outside world and the core.
 
 More info here - [[Software Engineering - Architecture concepts - Interface adapters]].
 ## Frameworks & Drivers
-This layer contain logic for functions / methods which is related and dependent on technical details, like:
+This layer contains external technologies that our application uses, for example:
 ```
 FastAPI
 PostgreSQL
@@ -86,7 +89,6 @@ In an e-commerce app, we could have such code in different layers:
 The entity knows only business rules. We could have here such code as:
 ```python
 class Order:
-
     def __init__(
         self,
         order_id,
@@ -96,7 +98,6 @@ class Order:
         self.status = status
 
     def confirm(self):
-
         if self.status != "PENDING":
             raise Exception(
                 "Only pending orders can be confirmed"
@@ -118,25 +119,17 @@ It only knows:
 Contains use cases, operations on entities. For example, we could have here a code like this:
 ```python
 class ConfirmOrderUseCase:
-
     def __init__(
         self,
         order_repository
     ):
         self.order_repository = order_repository
 
-
     def execute(self, order_id):
 		# Load and order, confirm it and save
-        order = self.order_repository.get(
-            order_id
-        )
-
+        order = self.order_repository.get(order_id)
         order.confirm()
-
-        self.order_repository.save(
-            order
-        )
+        self.order_repository.save(order)
 ```
 
 The application layer depends on the domain because it uses the `order` object which is an object of the `Order` class:
@@ -157,25 +150,16 @@ Contains things that translate between the outside world and the core.
 A controller can convert the output of the `confirm_order_use_case.execute` use case into a different format:
 ```python
 class OrderController:
-
     def __init__(
         self,
         confirm_order_use_case
     ):
-        self.confirm_order_use_case = (
-            confirm_order_use_case
-        )
-
+        self.confirm_order_use_case = (confirm_order_use_case)
 
     def confirm(self, order_id):
+        self.confirm_order_use_case.execute(order_id)
 
-        self.confirm_order_use_case.execute(
-            order_id
-        )
-
-        return {
-            "status": "OK"
-        }
+        return {"status": "OK"}
 ```
 
 So the controller depends on the `confirm_order_use_case.execute()` use case:
@@ -193,25 +177,18 @@ A repository can for example implement functions for interacting with a database
 The `SqlOrderRepository` repository shown below will be used as the `order_repository` attribute in the `ConfirmOrderUseCase` use case:
 ```python
 class SqlOrderRepository:
-
     def __init__(self, db):
         self.db = db
 
-
     def get(self, order_id):
-
-        row = self.db.query(
-            "SELECT id, status FROM orders"
-        )
+        row = self.db.query("SELECT id, status FROM orders")
 
         return Order(
             row["id"],
             row["status"]
         )
 
-
     def save(self, order):
-
         self.db.execute(
             "UPDATE orders SET status=?",
             order.status
@@ -244,17 +221,11 @@ In the Frameworks & Drivers layer we perform a dependency injection:
 ```python
 database = PostgreSQLConnection()
 
-repository = SqlOrderRepository(
-    database
-)
+repository = SqlOrderRepository(database)
 
-use_case = ConfirmOrderUseCase(
-    repository
-)
+use_case = ConfirmOrderUseCase(repository)
 
-controller = OrderController(
-    use_case
-)
+controller = OrderController(use_case)
 ```
 ## Full dependency picture
 ```

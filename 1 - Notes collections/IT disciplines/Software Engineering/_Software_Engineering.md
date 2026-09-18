@@ -34,6 +34,7 @@ Other topics that might be included:
 	3. [[Software Engineering - Architecture concepts - DTO (Data Transfer Object)]]
 	4. [[Software Engineering - Architecture concepts - Command]]
 	5. [[Software Engineering - Architecture concepts - Query]]
+	6. [[Software Engineering - Architecture concepts - Application (workflow) orchestration layer]]
 ### Software Structure and Organization
 1. [[Software Engineering - Architecture concepts - Software Structure and Organization]]
 	1. [[Software Engineering - Architecture concepts - Module]]

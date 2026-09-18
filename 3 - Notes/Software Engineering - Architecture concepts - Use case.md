@@ -14,7 +14,6 @@ Entity can contain operations and use cases ([[Software Engineering - Architectu
 For example, we can have the `Order` entity like this:
 ```python
 class Order:
-
     def __init__(self, order_id):
         self.id = order_id
         self.status = "PENDING"
@@ -29,16 +28,12 @@ class Order:
 and a use case can be a class like this:
 ```python
 class ConfirmOrderUseCase:
-
     def __init__(self, order_repository):
         self.order_repository = order_repository
 
     def execute(self, order_id):
-
         order = self.order_repository.get(order_id)
-
         order.confirm()
-
         self.order_repository.save(order)
 ```
 ## How to distinguish

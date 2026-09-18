@@ -9,6 +9,32 @@ Data governance backend:
 It communicates with:
 - Semantic search engine
 - RAG system
+# Kubernetes deployment
+## Dependencies
+Before we deploy the app, we need to satisfy the following requirements:
+- Run the metadata extraction pipeline (more info here - [[Data governance app with a RAG system - Metadata extraction pipeline|link]])
+	- It will extract metadata about tables and scripts from the source MS SQL Server which will be used by the app (e.g. it prepares a list of tables for which we can create documentation from the app)
+- Run the embedding ingestion service (more info here - [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service|link]])
+	- It will be ingesting vector embeddings into a vector store every time we create a table description in the Data Governance app
+- Install the Redis Helm chart:
+	- Redis is used for caching in this backend
+  ```bash
+	# Execute below commands from the helm_charts/redis folder
+	helm dependency build
+	helm -n semantic-search install redis . &
+  ```
+## Data Governance Backend deployment
+Once the dependencies are prepared, we can deploy the Data Governance Backend:
+- install the Data Governance Backend Helm chart:
+  ```bash
+	# Execute below commands from the helm_charts/data_gov_backend folder
+	helm -n semantic-search install data-gov . &
+  ```
+- It takes a few minutes to start the app. In the pod's logs we should see after some time logs `Connection to Redis is ready` and `app started listening to requests`
+# Using the app
+- Access data governance UI using this URL in a browser: `localhost:8080`
+- Log in using username `admin@admin.com` and password `admin`
+- Using UI, create descriptions for tables which will be used for the semantic search and RAG system
 # Architecture
 ## HTTP server and routes
 We run API using ([[Backend Engineering - Running an API|link]]):
@@ -51,7 +77,7 @@ Data lineage visualizations are created using the `public/dataLineageScripts.js`
 ## Semantic search
 For semantic search we the `sortDocs` function which sorts table documents using semantic search (based on the semantic scores). 
 
-It uses for that the Rest API route for semantic search ([[Data governance app with a RAG system - Semantic search service|link]]) which:
+It uses for that the Rest API route for semantic search ([[Data governance app with a RAG system - Semantic search API|link]]) which:
 - takes a query as an input
 - and provides a response with similarity scores between the given query and all the text chunks from all the documents.
 
@@ -70,37 +96,23 @@ The response in the following format:
 	...
 ]
 ```
+## Creating descriptions for tables, columns, etc.
+Using the UI, users can create descriptions for tables, columns, etc. They are saved in the database documentation database ([[Data governance app with a RAG system - Databases - Database documentation|link]]).
+### Emitting a message to Kafka
+When a table description gets updated, a message is emitted to Kafka ([[Data governance app with a RAG system - Kafka|link]]), to a specific topic, describing this event. 
+
+This message is then processed by the embedding ingestion service ([[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service|link]]) which clears a vector database and inserts there new embeddings for all the new, updated table descriptions.
+
+For emitting messages we use a function defined in the `modules/kafka_producer.js` script which is used in the route for updating table descriptions, defined in the `routes/table_docs_route.js` script.
 # Tooling
 ## Node.js
 We use Node.js to run a HTTP server, more notes about it are here - [[Data governance app with a RAG system - Tools used - Node.js]].
-# Starting and accessing the app
-Before we run the app, we need to:
-- Prepare metadata
-	- Run the `helm_charts/metadata_extraction` Helm chart like described here - [[Data governance app with a RAG system - Metadata extraction pipeline|link]]
-	- It will extract metadata about tables and scripts from the source MS SQL Server which will be used by the app (e.g. it prepares a list of tables for which we can create documentation from the app)
-- Prepare Redis:
-	- It will be a database for caching, to speed up loading pages
-  ```bash
-	# Execute below commands from the helm_charts/redis folder
-	helm dependency build
-	helm -n semantic-search install redis . &
-  ```
-
-Then, to start the app, run  one of those commands in a terminal:
+### Running the app
 - To run the app in the production mode:
 > `node server.js` 
 - To run the app in the dev mode (to allow us to modify app's code and see results without a need for restarting the app.):
 > `npm run devStart`. 
 
-To access the app, use the URL in a browser: `localhost:8080`
-## Running the app in the dev mode
-To start it in the dev mode, use:
->`npm run devStart`
-
-This will allow us to modify app's code and see results without a need for restarting the app.
-
 Important info:
 - The `devStart` command is specified in the `package.json` file. 
 - When we set up the `NODE_ENV` env var to `development`, then running `npm install` will install all the packages from the `package.json` file including those under the `devDependencies` field.
-# Kubernetes deployment
-- App running as a deployment

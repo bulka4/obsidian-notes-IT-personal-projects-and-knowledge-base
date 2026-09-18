@@ -18,7 +18,7 @@ Process event
 
 Kafka can make these two actions atomic:
 1. Writing the processed result to a topic ([[Kafka - Topics|link]])
-2. Committing the consumer offset ([[Kafka - Committing consumed offset|link]])
+2. Committing the consumer offset ([[Kafka - Committing offsets|link]])
 
 So after a failure, Kafka does not:
 - write the output but fail to commit the offset (causing duplicates)

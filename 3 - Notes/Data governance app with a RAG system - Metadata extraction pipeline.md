@@ -47,7 +47,10 @@ More information is here:
 - It uses the image built using the `dockerfiles/nodejs.Dockerfile`.
 # Node.js
 We use Node.js to run this pipeline, more notes about it are here - [[Data governance app with a RAG system - Tools used - Node.js]].
+## npm packages
+We install `npm` packages when running the pipeline. They are not baked into the Docker image to reduce its size which is already quite big and might not fit on the disk.
 # Improvements
 - Rewrite the code in Python, use data classes, interfaces and change responsibilities of functions. A new design for this is here - [[Data governance app with a RAG system - Metadata extraction - New code architecture|New code architecture]].
 - Schedule the pipeline using a CronJob
 	- It could be also scheduled in Airflow but for this project Airflow is not needed and CronJob is simpler and good enough
+- Update the code such that it can update metadata (get metadata about new tables) while preserving created descriptions

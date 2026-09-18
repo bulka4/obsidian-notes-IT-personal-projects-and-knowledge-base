@@ -107,7 +107,8 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 1. [[Helm - Install dependencies]]
 2. [[Helm - Install chart]]
 3. [[Helm - Upgrade a chart]]
-4. [[Helm - Check rendered YAML manifest that will be applied]]
+4. [[Helm - Check rendered YAML manifest]]
+5. [[Helm - Check used parameters from values.yaml]]
 # AKS
 [[AKS - Volumes]]
 [[Interacting with AKS]]

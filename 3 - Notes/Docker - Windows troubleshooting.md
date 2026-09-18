@@ -10,6 +10,7 @@ For running Docker on Windows we are using either wsl 2 or hyper v. Check which 
 ## Solutions
 ## Solution 1
 This solution is usually enough, If not, then try additionally the solution 2.
+- Close Docker (from task manager if needed)
 - Run:
 ```bash
 # Restart wsl

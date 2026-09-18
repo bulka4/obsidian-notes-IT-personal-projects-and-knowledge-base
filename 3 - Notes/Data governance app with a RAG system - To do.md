@@ -2,14 +2,14 @@ Tags: [[__My_projects]]
 #MyProjects 
 
 # Next steps
-## Use the new semantic search REST API in the Data Governance Backend
-[[Data governance app with a RAG system - To do - Use the new semantic search REST API in the Data Governance Backend]]
-## Automate embedding ingestion pipeline
-Automate embedding ingestion pipeline such that it is triggered every time we save table description.
-## RAG system
-Deploy RAG system so it uses the same semantic search MCP tool.
+## Documentation
+Document the project and ideas for further improvements - [[Data governance app with a RAG system - To do - Documentation]]
 ## Others
 - Check how Redis is used in the data gov backend for caching
+- Add monitoring: logs, traces, metrics
+- Maybe also add: 
+	- additional logs printing in pods which will confirm that everything works fine with documentation describing how to check those logs
+	- pods from which we can check how the data looks like with a documentation describing how to do this
 # Improvements
 ## Data governance backend
 - Deploy it on Kubernetes

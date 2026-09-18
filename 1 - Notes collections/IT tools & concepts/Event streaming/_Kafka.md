@@ -23,9 +23,8 @@ General notes about an event-driven architecture related to Kafka:
 1. [[Kafka - Topics]]
 2. [[Kafka - Partitioning]]
 	1. [[Kafka - Partition reassignment]]
-3. [[Kafka - Offsets]]
+3. [[Kafka - Committing offsets]]
 	1. [[Kafka - Consumer offsets]]
-	2. [[Kafka - Committing consumed offset]]
 4. [[Kafka - Consumer groups]]
 	1. [[Kafka - Consumer group coordinator]]
 5. [[Kafka - Brokers]]
@@ -72,5 +71,9 @@ General notes about an event-driven architecture related to Kafka:
 	2. [[Kafka - Kafka scaling]]
 19. [[Kafka - MirrorMaker]]
 20. [[Kafka - Disaster recovery]]
+# Debugging
+1. [[Kafka - debugging]]
+# Kafka commands
+1. [[Kafka - Commands]]
 # Questions
 - 

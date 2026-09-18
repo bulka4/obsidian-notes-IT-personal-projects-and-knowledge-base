@@ -2,7 +2,9 @@ Tags: [[__My_projects]]
 #MyProjects 
 
 # Introduction
-Database documentation (about tables, columns, scripts, etc.) data is stored in the MongoDB database which is used by the data governance backend ([[Data governance app with a RAG system - Data governance backend|link]]) and it is prepared by the metadata extraction pipeline ([[Data governance app with a RAG system - Metadata extraction pipeline|link]]).
+Database documentation (about tables, columns, scripts, etc.) data is stored in the MongoDB and it is prepared by the metadata extraction pipeline ([[Data governance app with a RAG system - Metadata extraction pipeline|link]]) which prepares a list of tables, columns, etc.
+
+This data is used by the data governance backend ([[Data governance app with a RAG system - Data governance backend|link]]) and from the UI users can add there descriptions.
 # Data model
 To document tables and columns, we use a MongoDB collection with the following schema:
 ```json
