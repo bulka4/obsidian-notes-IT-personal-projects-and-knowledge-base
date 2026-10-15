@@ -1,4 +1,4 @@
-Tags: [[__Infrastructure_Engineering]] [[_Linux & Bash]] [[_Software_Engineering]]
+Tags: [[__Infrastructure_Engineering]] [[_Linux & Bash]] [[__Software_Engineering]]
 #InfrastructureEngineering #LinuxBash #SoftwareEngineering 
 
 This is a collection of documents related to Linux (operating system) and bash.

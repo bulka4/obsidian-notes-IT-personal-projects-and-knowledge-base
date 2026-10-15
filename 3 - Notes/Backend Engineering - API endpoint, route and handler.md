@@ -1,13 +1,13 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
-# Introduction
+# API endpoint
 An API endpoint is an API operation (operation we perform using API). For example, for HTTP, it is defined by a method and a path used in a URL, like: `GET /users`.
-
+# API route
 An API route is a definition that maps an API endpoint to a handler.
-
+# Handler
 A handler is a function that handles an API endpoint. It contains the logic for handling that endpoint and may delegate work to other components (other functions).
-
+# Example
 For example, in a `FastAPI` code like this:
 ```python
 @app.get("/users")

@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Test isolation means that each test runs independently and does not affect or depend on other tests.
+Test isolation means that each test runs independently - it does not affect or depend on other tests.
 
 A test should:
 - have its own setup

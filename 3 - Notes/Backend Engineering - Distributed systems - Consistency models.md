@@ -1,8 +1,8 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Consistency models define how and when state ([[Backend Engineering - Distributed systems - State|link]]) changes become visible across the system (services) after a write.
+Consistency models define how and when state ([[Software Engineering - State|link]]) changes become visible across the system (services) after a write. When every read will return the latest state (data).
 # Why it matters
 We care about consistency models because in a distributed system different parts of the system may not see data changes at the same time. 
 

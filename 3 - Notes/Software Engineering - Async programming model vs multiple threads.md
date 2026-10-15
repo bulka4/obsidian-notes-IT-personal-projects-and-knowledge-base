@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -25,11 +25,11 @@ Thread 3 → operation C → processing
 - Creating/managing many threads by OS has overhead.
 - Thousands of threads become difficult to manage.
 - Shared memory creates synchronization problems:
-    - race conditions,
-    - locks,
-    - deadlocks.
+    - race conditions ([[Software Engineering - Concurrency - Race conditions|link]]),
+    - locks ([[Software Engineering - Concurrency - Locks|link]]),
+    - deadlocks ([[Software Engineering - Concurrency - Deadlocks|link]]).
 # Event loop
-Using async programming, a single thread can handle multiple operations - it executes one operation at a time but it can switch between operations - pause one operation and progress with another one:
+Using async programming ([[Software Engineering - Async programming models|link]]), a single thread can handle multiple operations - it executes one operation at a time but it can switch between operations - pause one operation and progress with another one:
 ```
 Single thread:
     operation A → waiting

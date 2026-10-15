@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-A semaphore is a synchronization mechanism that controls how many execution paths can access a resource at the same time.
+A semaphore is a synchronization mechanism that controls how many execution paths ([[Software Engineering - Execution path|link]]) / threads / services can access a resource at the same time. This can refer to threads within a single application or to multiple applications.
 
 Unlike a mutex ([[Software Engineering - Concurrency - Mutex|link]]):
 - Mutex → allows only one thread at a time.

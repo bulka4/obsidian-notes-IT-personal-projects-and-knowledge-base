@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]] [[_Kafka]]
+Tags: [[__Backend_Engineering]] [[_Kafka]]
 #BackendEngineering #Kafka 
 
 # Introduction
@@ -7,7 +7,7 @@ Apache Kafka is a distributed event streaming platform used to move, store, and 
 A simple way to think about Kafka:
 > Kafka is a highly scalable, fault-tolerant "log" where applications can publish events and other applications can consume them later.
 
-More info about event-driven systems - [[Backend Engineering - Event-driven architecture (EDA)|link]].
+More info about event-driven systems - [[Software Engineering - Event-driven architecture (EDA)|link]].
 # 1. Why Kafka exists
 Traditional architecture:
 ```

@@ -1,8 +1,8 @@
-Tags: [[_Backend_Engineering]] [[_Kafka]]
+Tags: [[__Backend_Engineering]] [[_Kafka]]
 #BackendEngineering #Kafka 
 
 # Introduction
-An idempotent ([[Backend Engineering - Event-driven architecture - Idempotency|link]]) producer is a Kafka producer ([[Backend Engineering - Event-driven architecture - Producer and consumer|link]]) that prevents storing duplicated messages when a producer retries sending a message (sends it multiple times).
+An idempotent ([[Software Engineering - Event-driven architecture - Idempotency|link]]) producer is a Kafka producer ([[Software Engineering - Event-driven architecture - Producer and consumer|link]]) that prevents storing duplicated messages when a producer retries sending a message (sends it multiple times).
 
 When a response gets lost:
 ```

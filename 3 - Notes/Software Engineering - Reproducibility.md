@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-We say that code is reproducible if it is easy to rerun this code and get the same results.
+We say that code is reproducible if we can rerun it using the same input, configuration and relevant environment / dependencies, and get the same results.
 
 Code might be non-reproducible if:
 - There are additional manual steps required before running the code

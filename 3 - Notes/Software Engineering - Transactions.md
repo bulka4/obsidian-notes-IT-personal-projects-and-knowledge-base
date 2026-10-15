@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -17,4 +17,4 @@ So we end up with money disappeared.
 With a transaction, we make sure that when money are removed from one account then they are added to another account or we don't remove money at all.
 # Related concepts
 - ACID transactions ([[Software Engineering - ACID transactions|link]]) - One common model of transactions are ACID transactions
-- Rollback ([[Software Engineering - Rollback|link]]) - Undo changes done by a transaciton
+- Rollback ([[Software Engineering - Transaction rollback|link]]) - Undo changes done by a transaciton

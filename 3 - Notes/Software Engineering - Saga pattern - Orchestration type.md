@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -20,8 +20,27 @@ For example, we could have a flow like this:
     - Good for enterprise workflows.
 - Netflix Conductor
     - Designed for orchestrating microservice workflows.
+## Custom orchestrator
+Program orchestrator on our own, something like:
+```python
+def place_order(order):
+    reservation = inventory.reserve(order)
+    
+    try:
+        payment = payments.charge(order)
+
+        try:
+            shipping.create_shipment(order)
+        except Exception:
+            payments.refund(payment)
+            raise
+
+    except Exception:
+        inventory.release(reservation)
+        raise
+```
 ## Message brokers + custom orchestrator
-Build our own orchestrator service which talks to multiple services through a message broker ([[Backend Engineering - Event-driven architecture - Message broker|link]]):
+Build our own orchestrator service which talks to multiple services through a message broker ([[Software Engineering - Event-driven architecture - Message broker|link]]):
 ```
 Orchestrator service
         |

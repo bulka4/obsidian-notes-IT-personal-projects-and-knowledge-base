@@ -1,11 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Functional concurrency is an approach to concurrency ([[Software Engineering - Concurrency|link]]) that uses functional programming principles to make parallel and concurrent code safer.
 
-The main idea is:
-> Avoid shared mutable state ([[Backend Engineering - Distributed systems - State|link]]). Instead, use immutable data and independent computations that can run safely at the same time.
+It is about avoiding having multiple functions updating a shared, mutable data and instead making those functions operating on separate, independent data / variables.
 # Traditional concurrent code
 ```python
 id = 0

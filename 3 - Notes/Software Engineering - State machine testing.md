@@ -1,17 +1,11 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**State machine testing** is a testing technique where you model a system as a **finite state machine (FSM)** and test whether it behaves correctly when moving between states through different actions/events.
-
-The idea:
-> A system has states, actions cause transitions, and tests verify that all valid and invalid transitions behave correctly.
-
-A state machine consists of:
-- **States** — the current condition of the system
-- **Events/actions** — things that happen
-- **Transitions** — how actions move the system from one state to another
-- **Rules/invariants** — what must always be true
+State machine testing is a testing technique where we test things like:
+- **State behavior** — does the system behave correctly while in a particular state?
+- **State transitions** — does the correct event/action move the system to the correct next state?
+- **Invalid transitions** — does the system correctly reject transitions that shouldn't be possible?
 # Example
 A bank account:
 ```
@@ -46,15 +40,15 @@ Frozen
 Tests can verify:
 - We cannot withdraw money from an empty account.
 - A frozen account cannot accept withdrawals.
-- Depositing money changes the state correctly.
-- After unfreezing, normal operations resume.
+- Depositing money changes the state correctly (amount of money in an account).
+- After unfreezing, normal operations resume, they work correctly again.
 # Why is it useful?
 Many systems are not just functions:
 ```python
 result = function(input)
 ```
 
-They have **history and memory**:
+They have history and memory:
 - databases
 - network protocols
 - distributed systems
@@ -80,7 +74,7 @@ CONNECTED
 CLOSED
 ```
 
-A bug might only appear after a sequence:
+A bug might only appear after a sequence of operations:
 ```
 connect()
 send_request()

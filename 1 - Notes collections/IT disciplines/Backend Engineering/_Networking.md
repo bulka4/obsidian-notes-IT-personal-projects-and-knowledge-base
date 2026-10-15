@@ -1,3 +1,6 @@
+Tags: [[_Networking]]
+#Networking 
+
 This is a tag related to networking in IT.
 
 # Networking Fundamentals
@@ -15,6 +18,7 @@ This is a tag related to networking in IT.
 - [[Private network]]
 - [[Networking - Firewall]]
 - [[Networking - Netfilter]]
+- [[Networking - Connections]]
 # IP Addressing and Network Segmentation
 - [[Networking - IP address bits]]
 - [[Networking - Subnet]]

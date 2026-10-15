@@ -36,7 +36,7 @@ This is a collection of documents related to Ray, an IT tool for ML model traini
 4. [[Ray Serve - Multiple requests handled by a replica concurrently]]
 5. [[Ray Serve - Multiple deployments]]
 ### Other topics
-1. [[Ray Serve + FastAPI - HTTP requests handling workflow and communication]]
+1. [[Ray Serve - HTTP requests handling workflow and communication (FastAPI example)]]
 2. [[Ray Serve - Python functions for monitoring]]
 3. [[Ray Serve - Checkpoints]]
 4. [[Ray Serve - Serialization]]

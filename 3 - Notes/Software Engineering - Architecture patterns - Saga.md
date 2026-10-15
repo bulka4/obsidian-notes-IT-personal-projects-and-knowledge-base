@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -11,7 +11,7 @@ For example, when we have services like:
 - Payment Service → charge card
 - Inventory Service → reserve stock
 
-and service 3 failed - product can't be sent, then we can perform as compensating steps - return money and cancel order.
+and service 3 failed - product can't be sent, then we can perform as compensating steps - return money and cancel the order.
 # Two types
 - [[Software Engineering - Saga pattern - Choreography (event-driven) type]]
 - [[Software Engineering - Saga pattern - Orchestration type]]

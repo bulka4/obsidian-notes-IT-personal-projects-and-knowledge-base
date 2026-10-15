@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Clean Architecture is an architecture that aims to make the business logic independent of frameworks, databases, UI, and external services.
+Clean Architecture is an architecture which main purpose is to separate business logic from implementation details (e.g. which database is used) using e.g. interfaces ([[Software Engineering - Architecture concepts - Interface|link]]).
 # The main idea
 ```
 Frameworks / UI / Database / External APIs
@@ -258,9 +258,12 @@ Controller → UseCase
 UseCase → Order
 Repository → Order
 ```
-# Relationship to Hexagonal Architecture
+# Relationship to other architectures
+## Hexagonal architecture
 In the clean architecture:
 - Entities and use cases have separate layers while in the hexagonal architecture they are included in the Core
 - Interface adapters are the same as adapters in the hexagonal architecture
 - Interfaces in inner layers (entities and use cases) used for communication with external systems are the same as ports in the hexagonal architecture
 - Frameworks & drivers are the same as external systems in the hexagonal architecture
+## Layered architecture
+In the layered architecture there is no assumption that inner layers (lower in the graph) should not depend on outer layers.

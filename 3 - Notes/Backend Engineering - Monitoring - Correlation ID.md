@@ -1,8 +1,8 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-A correlation ID is a unique identifier attached to a request so that we can find and connect all logs related to that request across different components.
+A correlation ID is used in tracing ([[Backend Engineering - Monitoring - Tracing|link]]) a unique identifier attached to a request so that we can find and connect all logs related to that request across different components.
 
 For example, a user makes a request:
 ```

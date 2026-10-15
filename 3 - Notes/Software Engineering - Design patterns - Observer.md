@@ -1,32 +1,36 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Observer pattern is used when one class needs to call a lot of methods of other classes. If we use multiple classes inside another class, then that class becomes dependent on those other classes.
+Observer pattern is a pattern where one object (called a subject), instead of performing many different operations on its own, it notifies other objects (called observers) to perform all the necessary actions for it. 
 
-To avoid this, we can use the observer pattern where one object (called subject) automatically notifies multiple other objects (called observers) to perform different actions.
-
-Then, when the subject needs to perform some actions, it only needs to notify observers to do this and the subject doesn't need to know how exactly those actions will look like.
+The subject doesn't need to know what actions are performed exactly. Thanks to this, it becomes independent on those actions logic. We can later change observers' logic or add new observers without changing the subject.
 # Example
-Suppose we have an e-commerce system where when order status changes (e.g. it is getting shipped), then multiple other actions need to happen:
+For example, in an e-commerce app, when an order is shipped, we might need to perform multiple actions, like:
 - send an email
 - update inventory
 
-Without observer, the `Order` class would need to use a lot of functions:
+Instead of performing all those actions by one object:
 ```python
-send_email()
-update_inventory()
+class Order:
+	def send_email(...)
+		...
+		
+	def update_inventory(...)
+		...
+		
+	def ship(...)
+		self.send_email()
+		self.update_inventory()
 ```
 
-so it would become dependent on those functions.
-
-Instead, we can create the `Order` class like this:
+the `Order` object might notify all the observers to perform all the necessary actions:
 ```python
 class Order:
     def __init__(self):
         self.observers = []
 
-    def subscribe(self, observer):
+    def subscribe(self, observer: Observer):
         self.observers.append(observer)
 
     def notify(self, event):
@@ -37,9 +41,7 @@ class Order:
         self.notify("Order shipped")
 ```
 
-So it will just notify all the observers when a product is shipped and they will perform all the necessary actions. The `Order` class doesn't know what actions specifically.
-
-We define an interface for observers:
+and observers actions logic is implemented separately, outside of the `Order` class:
 ```python
 from abc import ABC, abstractmethod
 
@@ -47,14 +49,10 @@ class Observer(ABC):
     @abstractmethod
     def update(self, event):
         pass
-```
-
-and multiple implementations:
-```python
+        
 class EmailNotifier(Observer):
     def update(self, event):
         print(f"Sending email: {event}")
-
 
 class InventoryService(Observer):
     def update(self, event):
@@ -77,4 +75,6 @@ Sending email: Order shipped
 Updating inventory because of the event: Order shipped
 ```
 
-So the `Order` class doesn't know about what exactly happens when a product is shipped. It only notifies observers and observers handles all the job.
+So the `Order` class doesn't know about what exactly happens when a product is shipped. It only notifies observers and observers handles all the job. 
+
+We can later change what happens when an order is shipped (change observer's logic) without changing the `Order` class and how it is used.

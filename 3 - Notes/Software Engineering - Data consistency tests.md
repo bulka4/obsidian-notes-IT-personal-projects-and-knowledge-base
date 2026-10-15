@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Data consistency tests verify that data remains correct and consistent across operations, components, or systems ([[Databases - Consistency|link]]).
+Data consistency tests ([[Databases - Data consistency|link]]) verify that data remains correct and consistent across operations, components, or systems.
 
 Examples:
 - database constraints are respected

@@ -6,73 +6,14 @@ Tags: [[__My_projects]]
 # System features
 - Creating tables and columns documentation
 - Find relevant documents using a semantic search engine
-- LLM answering questions based on a created documentation
+- RAG system answering questions based on a created documentation
 - Data lineage graphs generated automatically for a specific MS SQL server (based on automatically extracted SQL scripts from views, procedures and jobs)
+# System design
+[[Data governance app with a RAG system - System design]]
 # System architecture
-System consists of the following parts:
-## Source MS SQL Server
-We deploy on Kubernetes the MS SQL Server from which we collect metadata and for which we create documentation in the data governance app.
-
-More information is here - [[Data governance app with a RAG system - Source MS SQL Server]].
-## Metadata extraction pipeline
-Extracting and saving metadata from the source SQL server (info about tables, columns, sql scripts from views, jobs etc.)
-
-More information:
-- [[Data governance app with a RAG system - Metadata extraction pipeline]]
-	- [[Data governance app with a RAG system - Metadata extraction - New code architecture|New code architecture]] 
-## Databases
-- [[Data governance app with a RAG system - Databases]]
-	- [[Data governance app with a RAG system - Databases - Database documentation|Database documentation]] 
-	- [[Data governance app with a RAG system - Databases - Data lineage data|Data lineage data]] 
-	- [[Data governance app with a RAG system - Databases - Vector database for semantic search|Vector database for semantic search]] 
-	- [[Data governance app with a RAG system - Databases - Redis for caching|Redis for caching]] 
-## Data governance backend
-- Serving UI
-- Handling authentication and authorization
-
-More information:
-- [[Data governance app with a RAG system - Data governance backend]]
-	- [[Data governance app with a RAG system - Data governance backend#Architecture|Architecture]] 
-		- [[Data governance app with a RAG system - Data governance backend#HTTP server and routes|HTTP server and routes]] 
-		- [[Data governance app with a RAG system - Data governance backend#Databases and data models|Databases and data models]] 
-			- [[Data governance app with a RAG system - Databases - Database documentation|Database documentation]] 
-			- [[Data governance app with a RAG system - Databases - Data lineage data|Data lineage data]] 
-		- [[Data governance app with a RAG system - Data governance backend#Authentication and authorization|Authentication and authorization]] 
-		- [[Data governance app with a RAG system - Data governance backend#Caching - Redis|Caching - Redis]] 
-	- [[Data governance app with a RAG system - Data governance backend#Features|Features]] 
-		- [[Data governance app with a RAG system - Data governance backend#Data lineage visualizations|Data lineage visualizations]] 
-	- [[Data governance app with a RAG system - Data governance backend#Kubernetes deployment|Kubernetes deployment]] 
-## Semantic search service
-- Providing semantic search functionality
-
-More information:
-- [[Data governance app with a RAG system - Semantic search API]]
-	- [[Data governance app with a RAG system - Semantic search API - Running and using the REST API server|Running and using the REST API server]] 
-	- [[Data governance app with a RAG system - Semantic search API - Architecture|Architecture]] 
-	- [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service|Embedding Ingestion Pipeline]] 
-	- [[Data governance app with a RAG system - Databases - Vector database for semantic search|Vector database for semantic search]] 
-	- [[Data governance app with a RAG system - Ray Serve]]
-## Embedding Ingestion Pipeline
-- Ingesting vector embeddings into the vector database using SQL database documentation created by users
-
-More information:
-- [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service]]
-	- [[Data governance app with a RAG system - Databases - Vector database for semantic search|Vector database for semantic search]] 
-### Kafka
-[[Data governance app with a RAG system - Kafka]]
-## RAG system
-[[Data governance app with a RAG system - RAG system]]
-- [[Data governance app with a RAG system - RAG system - Architecture]]
-- [[Data governance app with a RAG system - Ray Serve]]
-## Ray Serve
-[[Data governance app with a RAG system - Ray Serve]]
-
-System architecture diagram (arrows indicates that one service uses / communicates with another):
-![a](system_architecture_diagram.svg)
+[[Data governance app with a RAG system - System architecture]]
 # Error handling
 How the system handles errors - [[Data governance app with a RAG system - Error handling]]
-# Program design
-[[Data governance app with a RAG system - Program design]]
 # Infrastructure setup guide
 [[Data governance app with a RAG system - Infrastructure setup guide]].
 # Pods for testing tools and interacting with resources
@@ -97,5 +38,3 @@ We connect to the created pod using the `kubectl -n <namespace> exec -it <pod-na
 Tips for debugging:
 - [[Data governance app with a RAG system - Debugging pods]]
 - [[Data governance app with a RAG system - Kafka debugging]]
-# Further development
-[[Data governance app with a RAG system - Further development]]

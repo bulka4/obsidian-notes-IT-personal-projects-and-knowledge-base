@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Event schema evolution / versioning is used in event sourcing ([[Software Engineering - Architecture patterns - Event sourcing|link]]) and event-driven architecture (EDA - [[Backend Engineering - Event-driven architecture (EDA)|link]]). 
+Event schema evolution / versioning is used in event sourcing ([[Software Engineering - Architecture patterns - Event sourcing|link]]) and event-driven architecture (EDA - [[Software Engineering - Event-driven architecture (EDA)|link]]). 
 
 It is a way how we handle changes in the structure of events over time without breaking old data or consumers.
 

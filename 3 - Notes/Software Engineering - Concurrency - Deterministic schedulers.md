@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Deterministic schedulers are schedulers that control the order in which concurrent tasks ([[Software Engineering - Concurrency|link]]) (threads, processes, goroutines, etc.) are executed so that the same execution order can be reproduced repeatedly.
+Deterministic schedulers are schedulers that control the order in which concurrent tasks ([[Software Engineering - Concurrency|link]]) (threads, processes, goroutines, etc.) within a single application are executed so that the same execution order can be reproduced repeatedly.
 
 Normally, a scheduler is unpredictable:
 ```

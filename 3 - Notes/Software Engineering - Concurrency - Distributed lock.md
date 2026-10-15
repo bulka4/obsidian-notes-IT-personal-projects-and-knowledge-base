@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-A distributed lock is a type of lock ([[Software Engineering - Concurrency - Locks|link]]) used when multiple processes or servers need to coordinate access to a shared resource.
+A distributed lock is a type of lock ([[Software Engineering - Concurrency - Locks|link]]) used when multiple processes (from different applications) or servers need to coordinate access to a shared resource.
 
 A normal mutex/read-write lock usually works inside one machine (between threads). A distributed lock works across multiple machines.
 # Example

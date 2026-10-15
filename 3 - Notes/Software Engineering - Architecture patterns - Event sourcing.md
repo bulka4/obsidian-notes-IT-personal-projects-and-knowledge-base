@@ -1,10 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Event Sourcing is a way of modeling state where the source of truth is a sequence of events (state is a result of applying all the events). 
 
-We store every change as an immutable event instead of storing only the current state. 
+We store every operation that happens in the system which changes the state as an immutable event instead of storing only the current state. 
 
 It is commonly used in databases.
 # Example

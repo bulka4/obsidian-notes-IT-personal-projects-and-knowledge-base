@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**Synchronization bugs** are bugs caused by incorrect coordination between concurrent operations (threads, processes, coroutines, distributed nodes).
+Synchronization bugs are bugs caused by incorrect coordination between concurrent operations (threads, processes, coroutines, distributed nodes).
 
 Types of synchronization bugs. include:
 - Race conditions ([[Software Engineering - Concurrency - Race conditions|link]])
@@ -17,7 +17,7 @@ Thread A:
 signal "work finished"
 
 Thread B:
-starts waiting AFTER the signal
+starts waiting for a signal from the Thread A AFTER the signal
 ```
 
 As a result, thread B waits forever.

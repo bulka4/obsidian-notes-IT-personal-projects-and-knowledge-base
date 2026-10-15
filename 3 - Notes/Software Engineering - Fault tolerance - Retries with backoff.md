@@ -1,8 +1,12 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Retries with backoff is a technique of sending another request after one request failed. Before sending every next request, we wait some time. After every request, we wait longer then previously, for example:
+Retries with backoff is a technique where we:
+- when a request fails, send another one after some time
+- after every request, we wait longer then previously
+
+For example:
 ```
 attempt 1 -> 
 wait 1s -> attempt 2 -> 

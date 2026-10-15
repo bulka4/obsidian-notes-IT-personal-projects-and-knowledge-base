@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -45,3 +45,15 @@ HTTP chunked transfer can send data in any format. It is not structured like in 
 - AI model token streaming
 - long-running computations
 - proxies / gateways streaming upstream responses
+# Comparison to other methods
+## WebSockets
+WebSockets are for bidirectional communication - both sides can exchange messages all the time when a connection is open.
+
+Chunked HTTP is used only for a server to send messages to the client who sent a request.
+## SSE
+- response character
+	- SSE can send different kinds of events over the same connection
+	- HTTP sends fragments of one response
+- response format
+	- SSE uses a predefined event format - i.e. sends events with predefined fields, e.g. `event` and `data`
+	- HTTP can use different formats (JSON, plain text, HTML, etc.)

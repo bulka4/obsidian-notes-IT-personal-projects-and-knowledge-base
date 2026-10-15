@@ -2,9 +2,9 @@ Tags: [[_Networking]]
 #Networking 
 
 # Introduction
-UDP (User Datagram Protocol) is a transport-layer protocol that provides fast, lightweight communication between two devices.
+UDP (User Datagram Protocol) is a transport-layer ([[Networking - OSI model|link]]) protocol that provides fast, lightweight communication between two devices.
 
-Unlike TCP, UDP **does not guarantee** that data arrives, arrives in order, or arrives only once.
+Unlike TCP, UDP does not guarantee that data arrives, arrives in order, or arrives only once.
 
 Its philosophy is:
 > "Send the data as quickly as possible and don't wait for confirmation."

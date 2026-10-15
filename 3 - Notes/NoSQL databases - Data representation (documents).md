@@ -1,5 +1,5 @@
-Tags: [[_Databases]]
-#Databases  
+Tags: [[_Databases]] [[_NoSQL_databases]]
+#Databases #NoSQLDatabases 
 
 # Introduction
 NoSQL databases store documents (usually JSON-like). Documents are grouped into collections.

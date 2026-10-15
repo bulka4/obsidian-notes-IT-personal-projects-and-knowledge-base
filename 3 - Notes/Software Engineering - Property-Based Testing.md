@@ -1,11 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Property-Based Testing (PBT) is a testing approach where instead of writing tests for specific examples, you define general properties (rules/invariants) that must always hold, and a testing framework automatically generates many inputs to check whether those properties are true.
-
-The main idea:
-> Instead of saying "for this input, I expect this output", you say "for all valid inputs, this rule should always be true."
+Property-Based Testing (PBT) is a testing approach where instead of writing tests for specific examples, we define general properties (rules/invariants) that must always hold, and a testing framework automatically generates many inputs to check whether those properties are true.
 # Example
 Instead of testing specific cases when a function should work, we define properties.
 
@@ -41,3 +38,5 @@ set(reverse(x)) == set(x)
 The framework then generates hundreds or thousands of random lists and checks these properties.
 # Tools
 - Python - Hypothesis
+# Related topics
+1. [[Software Engineering - Property-Based Testing - Invariants]]

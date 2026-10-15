@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -16,7 +16,7 @@ Replica B:
 Cart: + phone
 ```
 
-After merging using LWW, we will end up with:
+After merging using LWW, we keep only one value from one replica, with the newest timestamp. It might be for example:
 ```
 Cart: + laptop
 ```
@@ -28,4 +28,4 @@ Cart:
 	+ phone
 ```
 ## Clock accuracy
-LWW depends on timestamps and times on different servers can be desynchronized ([[Backend Engineering - Distributed systems - Clock synchronization|link]]).
+LWW depends on timestamps and times on different servers can be desynchronized ([[Backend Engineering - Distributed systems - Clock (time) synchronization|link]]).

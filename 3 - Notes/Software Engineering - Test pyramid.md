@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-The **Test Pyramid** is a guideline for how many tests of each type we should have:
+The Test Pyramid is a guideline for how many tests of each type we should have:
 ```
             /\
           /   \

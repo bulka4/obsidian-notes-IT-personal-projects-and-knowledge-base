@@ -2,7 +2,7 @@ Tags: [[_Networking]]
 #Networking 
 
 # Introduction
-TCP (Transmission Control Protocol) is a transport-layer protocol that provides reliable, ordered, and error-checked communication between two devices over a network.
+TCP (Transmission Control Protocol) is a transport-layer ([[Networking - OSI model|link]]) protocol that provides reliable, ordered, and error-checked communication between two devices over a network.
 # Where TCP fits
 TCP is in the transport layer ([[Networking - OSI model|link]]). A simplified network stack looks like:
 ```

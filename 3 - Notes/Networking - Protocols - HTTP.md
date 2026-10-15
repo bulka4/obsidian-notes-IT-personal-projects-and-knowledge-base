@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -6,6 +6,8 @@ HTTP is a protocol used for communication:
 1. Client sends a request
 2. Server processes it
 3. Server sends a response (can sent multiple responses using SSE ([[Backend Engineering - Streaming API Architecture - Server-Sent Events (SSE)|link]]))
+
+It is a part of the application layer in the OSI model ([[Networking - OSI model|link]]).
 # Methods
 Common methods available in HTTP:
 - **GET** → retrieve data
@@ -37,7 +39,9 @@ A HTTP request consists of:
 ## Headers
 Headers are attached to requests and carry extra information:
 ```
-Authorization: Bearer token123Content-Type: application/jsonCache-Control: no-cache
+Authorization: Bearer token123
+Content-Type: application/json
+Cache-Control: no-cache
 ```
 
 They are used for:

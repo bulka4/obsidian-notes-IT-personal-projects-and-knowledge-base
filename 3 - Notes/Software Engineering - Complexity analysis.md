@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Complexity analysis is the process of analyzing how much **time** and **memory** an algorithm requires as the input size grows.
+Complexity analysis is the process of analyzing how much time and memory an algorithm requires as the input size grows.
 
 It helps answer:
 > "How does this algorithm scale?"

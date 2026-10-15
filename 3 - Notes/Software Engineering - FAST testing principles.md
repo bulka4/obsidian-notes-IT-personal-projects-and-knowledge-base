@@ -1,10 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 The FAST testing principles are guidelines for writing good automated tests.
 
-**FAST** is an acronym:
+FAST is an acronym:
 ```
 F - Fast
 A - Autonomous

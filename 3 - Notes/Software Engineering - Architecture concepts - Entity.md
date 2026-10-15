@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -12,7 +12,6 @@ Even if a name of an entity changes, it can be the same object.
 For example, in an e-commerce application, that can be an order. It can be implemented as a class with attributes and methods:
 ```python
 class Order:
-
     def __init__(self, order_id):
         self.id = order_id
         self.status = "PENDING"
@@ -24,21 +23,17 @@ class Order:
         self.status = "CONFIRMED"
 ```
 # Entity vs use case
-Entity can contain operations and use cases ([[Software Engineering - Architecture concepts - Use case|link]]) are also operations but different than those which belong to entities.
+Entity can contain operations. Use cases ([[Software Engineering - Architecture concepts - Use case|link]]) are also operations but different than those which belong to entities.
 
 For example, for the `Order` entity from the previous example, a use case can be a class like this:
 ```python
 class ConfirmOrderUseCase:
-
     def __init__(self, order_repository):
         self.order_repository = order_repository
 
     def execute(self, order_id):
-
         order = self.order_repository.get(order_id)
-
         order.confirm()
-
         self.order_repository.save(order)
 ```
 ## How to distinguish

@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Monolith
-A **monolith** is an application where all functionality is built and deployed as one unit.
+A monolith is an application where all functionality is built and deployed as one unit.
 
 Example:
 ```

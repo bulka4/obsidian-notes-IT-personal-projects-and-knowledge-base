@@ -1,8 +1,17 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Function composition means combining small functions to create a larger function, where the output of one function becomes the input of another.
+Function composition means using an output of one function as an input for another one, for example:
+```python
+def double(x):
+    return x * 2
+
+def add_one(x):
+    return x + 1
+
+result = add_one(double(3))  # 7
+```
 # Benefits
 - Build reusable processing pipelines
 - Keep functions small and testable

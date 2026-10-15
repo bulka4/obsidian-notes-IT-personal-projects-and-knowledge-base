@@ -1,8 +1,8 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-REST (Representational State Transfer) is an architectural style for designing web APIs. It is not a protocol and not a library. It is built on top of HTTP ([[Networking - Protocols - HTTP|link]]).
+REST (Representational State Transfer) is an architectural style for designing web APIs. It is not a protocol nor a library. It is built on top of HTTP ([[Networking - Protocols - HTTP|link]]).
 
 REST models our application as a collection of resources. A resource is simply an object in our system, for example:
 - `/users`
@@ -22,7 +22,7 @@ DELETE /users/42     → delete user 42
 The URL identifies what we're working with (the resource), while the HTTP method specifies what action to perform.
 # Key features
 ## Resource-oriented
-URLs represent **things**, not actions.
+URLs represent things, not actions.
 
 Good:
 ```

@@ -2,7 +2,7 @@ This is a tag related to Web Development, i.e. developing web applications.
 
 # Rest API
 1. [[Endpoint]]
-2. [[Web app connections]]
+2. [[Networking - Connections]]
 3. [[ASGI web framework]]
 4. [[ASGI server]]
 5. [[Reverse proxy]]

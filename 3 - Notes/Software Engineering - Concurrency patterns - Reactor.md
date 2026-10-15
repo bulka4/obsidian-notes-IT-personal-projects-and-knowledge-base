@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-The Reactor pattern is an event-driven design pattern used to handle many concurrent I/O operations ([[Software Engineering - I-O operations|link]]) efficiently.
+The Reactor pattern is an event-driven design pattern used to handle many concurrent I/O operations ([[Software Engineering - I-O operations|link]]) efficiently. Those operations can be done by a single or multiple applications.
 
 It is the architectural pattern that connects ideas like sockets ([[Networking - Network Socket|link]]), non-blocking I/O ([[Software Engineering - Blocking vs non-blocking I-O|link]]), event loops ([[Software Engineering - Async programming models - Event loops|link]]), and `epoll` ([[Linux & Bash - Epoll|link]]).
 # Basic idea
@@ -32,8 +32,15 @@ The reactor pattern is also called an event loop because it performs the same ac
 - determines which events occurred
 - dispatches them to handlers
 - repeat the process
+
+A Reactor can use one or multiple threads.
 ## Handlers
-Handlers are application code that processes events.
+Handlers are application code that processes events. 
+
+Each handler is executed by one thread but they are not associated with each other:
+- one handler can be executed by different threads each time 
+- and the same thread can execute different handlers
+- so the number of threads can be different from the number of handlers
 ## Event demultiplexer
 - OS mechanism that waits for events
 - Examples:

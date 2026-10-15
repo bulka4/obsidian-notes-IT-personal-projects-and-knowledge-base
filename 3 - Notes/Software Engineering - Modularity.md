@@ -1,8 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Modularity is the principle of designing software as a collection of separate, independent components (modules) that have clear responsibilities and controlled interactions.
+
+Those components are scripts or pieces of code.
 
 The main goal:
 > Divide a complex system into smaller parts that can be developed, tested, changed, and understood independently.

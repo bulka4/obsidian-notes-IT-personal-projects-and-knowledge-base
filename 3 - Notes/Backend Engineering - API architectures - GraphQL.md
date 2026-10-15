@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -20,7 +20,7 @@ This query is:
 - Parsed by a GraphQL engine
 - Each field is “resolved” - For each field, GraphQL calls a resolver function.
 # Resolver functions
-A resolver function is a JavaScript function that fetch data, for example:
+A resolver function is a function that fetch data, for example:
 ```javaScript
 User: {
   name: (user) => user.name,
@@ -43,3 +43,15 @@ type Order {
   total: Float
 }
 ```
+# Comparison to the REST GET method
+Using REST API and the GET method we can get exactly the same behavior as using GraphQL:
+- We take parameters from the URL for the GET method
+- We process them using our function and return a result
+
+but we need to implement on our own all the features that GraphQL already provides (described in the section below). 
+# Features
+GraphQL provides a standardized way for:
+- Field selection - Client can include in the request only specific fields, doesn't have to include all of them in every request
+- Nested queries - Client requests related data, e.g. a user and their orders
+- Query parsing - Parses GraphQL query syntax into a structured representation
+- Schema validation - Checks requested fields, arguments and types against the schema

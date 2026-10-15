@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -8,7 +8,7 @@ Use Case is a user/system action that the application performs. For example:
 - Train model
 
 Usually a use case orchestrates entities ([[Software Engineering - Architecture concepts - Entity|link]]) (it uses entities' methods) and external systems.
-# Entity vs use case
+# Entity's method vs use case
 Entity can contain operations and use cases ([[Software Engineering - Architecture concepts - Use case|link]]) are also operations but different than those which belong to entities.
 
 For example, we can have the `Order` entity like this:

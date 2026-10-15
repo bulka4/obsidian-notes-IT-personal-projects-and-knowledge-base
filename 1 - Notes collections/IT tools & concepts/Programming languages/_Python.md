@@ -1,4 +1,4 @@
-Tags: [[_Python]] [[__Programming_languages]] [[_Software_Engineering]]
+Tags: [[_Python]] [[__Programming_languages]] [[__Software_Engineering]]
 #Python #ProgrammingLanguages #SoftwareEngineering 
 
 # Introduction
@@ -29,3 +29,6 @@ Tags: [[_Python]] [[__Programming_languages]] [[_Software_Engineering]]
 	2. [[Python - dataclass]]
 13. [[Python - ]]
 14. [[Python - ]]
+# Tools
+## Monitoring
+1. [[Python - Tools - Monitoring - The logging module]]

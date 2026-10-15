@@ -11,8 +11,12 @@ It is:
 - it uses a MCP tool for semantic search which uses the semantic search endpoint ([[Data governance app with a RAG system - Semantic search API|link]]). 
 
 It is deployed together with the semantic search endpoint, using the same `RayService` Kubernetes CR. It should be deployed separately though, using another `RayService` Kubernetes CR, but we might not have enough computational resources for that so both endpoints are deployed together.
-# Architecture
-[[Data governance app with a RAG system - RAG system - Architecture]]
+# Architecture overview
+Here are the most important components of this RAG system:
+- Multi-agent workflow created using LangGraph
+- MCP server providing a tool for semantic search
+- Vector database used for storing document embeddings
+- FastAPI + Ray Serve to serve it as Rest API
 # Running and using the REST API server
 We can deploy the Ray Serve REST API server for semantic search in two modes:
 - Production deployment

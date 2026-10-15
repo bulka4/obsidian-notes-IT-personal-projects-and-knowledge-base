@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -8,9 +8,10 @@ Types of coverage:
 - line coverage - how many lines were executed
 - branch coverage - how many decision paths were executed (paths in `if / else` statements)
 - function coverage - how many functions were called
+- scenario coverage - how many different scenarios we tested (different inputs)
 # Limitations
 ## High coverage does not mean correct software
-Coverage tells us how much code was tested but it doesn't tell us about how many scenarios were tested. For example, for a function:
+Line or function coverage tells us how much code was tested but it doesn't tell us about how many scenarios were tested. For example, for a function:
 ```python
 def divide(a, b):
     return a / b

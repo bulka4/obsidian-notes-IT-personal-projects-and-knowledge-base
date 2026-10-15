@@ -1,4 +1,4 @@
-Tags: [[_Computer_hardware]] [[__Infrastructure_Engineering]] [[_Software_Engineering]]
+Tags: [[_Computer_hardware]] [[__Infrastructure_Engineering]] [[__Software_Engineering]]
 #ComputerHardware #InfrastructureEngineering #SoftwareEngineering 
 
 # Introduction

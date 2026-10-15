@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -15,18 +15,18 @@ In distributed microservices, there might be problems like:
 - Duplicate messages
 - Out-of-order events
 # Related topics
-1. State - [[Backend Engineering - Distributed systems - State|link]] 
-2. Partial failures - [[Backend Engineering - Distributed systems - Partial failures|link]] 
-3. Service discovery - [[Backend Engineering - Distributed systems - Service discovery|link]] 
-4. CAP theorem - [[Backend Engineering - Distributed systems - CAP theorem|link]] 
-5. Backpressure - [[Backend Engineering - Distributed systems - Backpressure|link]] 
-6. Load balancing - [[Backend Engineering - Distributed systems - Load balancing|link]] 
-7. Consensus - [[Backend Engineering - Distributed systems - Consensus|link]] 
-	1. FLP impossibility - [[Backend Engineering - Distributed systems - FLP impossibility|link]] 
-8. Clock synchronization - [[Backend Engineering - Distributed systems - Clock synchronization|link]] 
-9. Logical clocks (timestamps) - [[Backend Engineering - Distributed systems - Logical clocks (timestamps)|link]] 
-	1. Lamport logical clock - [[Backend Engineering - Distributed systems - Lamport logical clock|link]] 
-	2. Vector clocks - [[Backend Engineering - Distributed systems - Vector clocks|link]] 
-10. Conflict resolution - [[Backend Engineering - Distributed systems - Conflict resolution|link]] 
-	1. Last Write Wins (LWW) - [[Backend Engineering - Conflict resolution - Last Write Wins (LWW)|link]] 
-	2. CRDTs (Conflict-free Replicated Data Types) - [[Backend Engineering - Conflict resolution - CRDTs (Conflict-free Replicated Data Types)|link]] 
+1. [[Backend Engineering - Fault tolerance - Distributed systems]]
+	1. [[Backend Engineering - Distributed systems - Partial failures]]
+	2. [[Backend Engineering - Distributed systems - Consensus]]
+2. [[Backend Engineering - Distributed systems - Service discovery]]
+3. [[Backend Engineering - Distributed systems - CAP theorem]]
+4. [[Backend Engineering - Distributed systems - Backpressure]]
+5. [[Backend Engineering - Distributed systems - Load balancing]]
+	1. [[Backend Engineering - Distributed systems - FLP impossibility]]
+6. [[Backend Engineering - Distributed systems - Clock (time) synchronization]]
+7. [[Backend Engineering - Distributed systems - Logical clocks (timestamps)]]
+	1. [[Backend Engineering - Distributed systems - Lamport logical clock]]
+	2. [[Backend Engineering - Distributed systems - Vector clocks]]
+8. [[Backend Engineering - Distributed systems - Conflict resolution]]
+	1. [[Backend Engineering - Conflict resolution - Last Write Wins (LWW)]]
+	2. [[Backend Engineering - Conflict resolution - CRDTs (Conflict-free Replicated Data Types)]]

@@ -1,5 +1,5 @@
-Tags: [[_Databases]]
-#Databases  
+Tags: [[_Databases]] [[_NoSQL_databases]]
+#Databases #NoSQLDatabases 
 
 # Introduction
 NoSQL databases are designed for a simple horizontal scaling. It is simple because:

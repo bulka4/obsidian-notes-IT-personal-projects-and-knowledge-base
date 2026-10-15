@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Testing exceptions and failures means verifying that your code behaves correctly when something goes wrong.
+Testing exceptions and failures means verifying that code behaves correctly (throws proper exceptions, handles failures correctly) when something goes wrong.
 
 A good test should check not only the "happy path" but also error cases.
 # Testing exceptions
@@ -43,20 +43,13 @@ Examples:
 - network timeout
 - permission denied
 
-Example:
-```
-Payment service
+For example, we can test in a payment service what happens when someone wants to use an expired credit card.
 
-Input:
-  expired credit card
-
-Expected:
-  PaymentFailedError
-  No money charged
-  Error logged
-```
-
-The test verifies the whole behavior.
+The test verifies the whole behavior, for example:
+- exception thrown
+- error logged
+- some earlier operations cancelled
+- some operations don't succeed (e.g. no money charged)
 ## Important failure scenarios to test
 ### 1. Invalid input
 ```

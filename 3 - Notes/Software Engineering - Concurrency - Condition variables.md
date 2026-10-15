@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-A condition variable is a synchronization primitive that allows a thread to:
+A condition variable is used to coordinate threads within a single application. It is a synchronization primitive that allows a thread to:
 1. Wait until some condition becomes true
 2. Be notified by another thread when the condition may have changed
 

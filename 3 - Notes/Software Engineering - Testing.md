@@ -1,10 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Unit and integration tests are functions testing our code, whether it works properly:
-- Unit tests test small pieces of code
-- Integration tests test big pieces of code, how small components interact with each other
+Tests are functions testing our code, whether it works properly. There are different kinds of tests:
+- Unit tests - test small pieces of code
+- Integration tests - test big pieces of code, how small components interact with each other
 - End-to-end tests - Test the whole system like a user
 
 For example, a unit test testing a function for creating new feature columns in a table can be:

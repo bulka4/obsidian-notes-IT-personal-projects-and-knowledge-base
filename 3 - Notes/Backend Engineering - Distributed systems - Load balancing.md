@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -14,7 +14,7 @@ Load balancing is a practice of distributing incoming network traffic (requests)
 We can perform load balancing in different ways:
 - Round-robin
 	- Each request goes to the next service in line
-- Least connections ([[Web app connections|link]])
+- Least connections ([[Networking - Connections|link]])
 	- New request goes to the service which has the least active connections
 - Weighted distribution
 	- More powerful servers get more requests

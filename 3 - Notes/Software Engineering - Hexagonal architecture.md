@@ -1,9 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Hexagonal architecture (also called Ports and Adapters) is an evolution of layered architecture that tries to solve one major problem:
-> The business logic should not depend on technical details like databases, Kafka, REST APIs, OpenAI SDKs, etc.
+Hexagonal architecture (also called Ports and Adapters) is an architecture which main purpose is to separate business logic from implementation details (e.g. which database is used) using e.g. interfaces ([[Software Engineering - Architecture concepts - Interface|link]]).
 
 The key idea is:
 ```
@@ -43,7 +42,6 @@ Ports are interfaces ([[Software Engineering - Architecture concepts - Interface
 Example: Repository port
 ```python
 class TableRepository:
-
     def save(self, table):
         pass
 
@@ -55,8 +53,7 @@ The application depends on this interface.
 
 Example: LLM port
 ```python
-class LlmClient:
-
+class LLMClient:
     def generate(self, question, docs):
         pass
 ```
@@ -64,17 +61,32 @@ class LlmClient:
 Example: Event Publisher port
 ```python
 class EventPublisher:
-
     def publish(self, event):
         pass
 ```
+### Inbound and Outbound ports
+Usually we distinguish:
+#### Inbound port
+Interface for calling the application (calling functions from the core):
+```python
+class AnswerQuestionUseCase:
+    def execute(question)
+```
+
+Controller calls it.
+#### Outbound port
+Interface used by the application (functions from the core calls this interface):
+```python
+class LlmClient:
+```
+
+Implemented by adapters.
 ## 3. Adapters
 Adapters implement the ports (they are interface implementations ([[Software Engineering - Architecture concepts - Interface|link]])).
 
 PostgreSQL adapter
 ```python
 class SqlTableRepository(TableRepository):
-
     def save(self, table):
         session.add(table)
 ```
@@ -82,7 +94,6 @@ class SqlTableRepository(TableRepository):
 OpenAI adapter
 ```python
 class OpenAiClient(LlmClient):
-
     def generate(self, question, docs):
         ...
 ```
@@ -90,27 +101,16 @@ class OpenAiClient(LlmClient):
 Kafka adapter
 ```python
 class KafkaPublisher(EventPublisher):
-
     def publish(self, event):
         ...
 ```
-# Input and Output ports
-Usually we distinguish:
-## Input port
-Interface for calling the application:
-```python
-class AnswerQuestionUseCase:
-    def execute(question)
-```
+### Inbound and outbound adapters
+- An inbound adapter calls an inbound port
+- An outbound adapter is an implementation of an outbound adapter
+## Controller
+A controller is a piece of code that receives an incoming request and coordinates what should happen next.
 
-Controller calls it.
-## Output port
-Interface used by the application:
-```python
-class LlmClient:
-```
-
-Implemented by adapters.
+It is an inbound adapter that calls functions from the core.
 # Example
 In an e-commerce app, we could have such code in different layers:
 ## Core (Application + Domain)
@@ -128,7 +128,6 @@ class Order:
         self.status = status
 
     def confirm(self):
-
         if self.status != "PENDING":
             raise Exception(
                 "Only pending orders can be confirmed"
@@ -142,25 +141,16 @@ The business rule: Only pending orders can be confirmed.
 Application use case that coordinates the workflow could be:
 ```python
 class ConfirmOrderUseCase:
-
     def __init__(
         self,
         order_repository
     ):
         self.order_repository = order_repository
 
-
     def execute(self, order_id):
-
-        order = self.order_repository.get(
-            order_id
-        )
-
+        order = self.order_repository.get(order_id)
         order.confirm()
-
-        self.order_repository.save(
-            order
-        )
+        self.order_repository.save(order)
 ```
 
 Responsibilities:
@@ -177,7 +167,6 @@ For example, the use case needs to store orders.
 It defines a port:
 ```python
 class OrderRepository:
-
     def get(self, order_id):
         pass
 
@@ -193,7 +182,6 @@ It does not say which specific technology to use (e.g. PostgreSQL).
 We could have an input adapter which prepares a response for a HTTP request like this:
 ```python
 class OrderController:
-
     def __init__(
         self,
         confirm_order_use_case
@@ -202,9 +190,7 @@ class OrderController:
             confirm_order_use_case
         )
 
-
     def confirm_order(self, request):
-
         self.confirm_order_use_case.execute(
             request.order_id
         )

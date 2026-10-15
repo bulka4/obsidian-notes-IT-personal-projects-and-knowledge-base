@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Docker network drivers define how containers communicate with each other and with external networks.
+Network drivers define how containers communicate with each other and with external networks.
 
 Types of drivers:
 - Bridge network - [[Software Engineering - Containers - Network drivers - Bridge network|link]] 

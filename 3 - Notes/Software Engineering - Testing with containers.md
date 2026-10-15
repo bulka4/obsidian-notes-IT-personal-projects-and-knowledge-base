@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -12,8 +12,8 @@ This method gives us:
 - Reproducibility - Every developer and CI pipeline gets the same environment
 - Isolation - Tests do not affect your local machine or other tests.
 - Easy setup of dependencies - We can start services needed for testing, e.g. databases, message brokers, caches, external APIs
-# Testcontainers
-A popular approach is using libraries like Testcontainers.
+# `Testcontainers`
+A popular approach is using libraries like `Testcontainers`.
 
 They allow tests to programmatically start containers, for example:
 ```java

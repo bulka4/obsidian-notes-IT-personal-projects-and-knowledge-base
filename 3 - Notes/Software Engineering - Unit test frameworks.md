@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -24,23 +24,7 @@ assertNull(value)
 assertThrows(exception)
 ```
 ## Test fixtures
-Code that prepares and cleans up tests.
-
-Example:
-```
-Before each test:
-    Create database
-
-Run test
-
-After each test:
-    Delete database
-```
-
-Used for:
-- creating objects
-- initializing resources
-- cleanup
+[[Software Engineering - Fixtures]]
 ## Test organization
 Frameworks help group tests.
 

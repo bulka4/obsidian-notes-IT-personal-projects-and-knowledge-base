@@ -1,15 +1,15 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-Token-based authentication is a common way to implement authentication and authorization in stateless ([[Backend Engineering - Stateful vs stateless service|link]]) backend systems.
+Token-based authentication is a common way to implement authentication and authorization in stateless ([[Software Engineering - State - Stateful vs stateless service|link]]) backend systems.
 
 In this method, a server gives a token to a client after login, and the client sends it with every request to prove who they are.
 
-This token can be for example in the JWT format ([[Backend Engineering - Security - JWT access token format|link]]).
+This token can be for example in the JWT format ([[Backend Engineering - Security - JWT access token format|link]]) or it can be an API key ([[Backend Engineering - Security - API key|link]]).
 # What problem it solves
 Without a token:
-- server must store sessions (stateful)
+- server must store sessions (information about which users are already authenticated, it is stateful)
 - hard to scale across multiple servers
 
 With JWT:
@@ -30,3 +30,6 @@ Always use expiration time to limit token lifetime.
 Because JWT is stateless, we can’t easily “delete” a token unless we:
 - use short expiration times
 - maintain a blacklist (optional - list of tokens which can't be used for authentication)
+# Related topics
+1. [[Backend Engineering - Security - JWT access token format]]
+2. [[Backend Engineering - Security - API key]]

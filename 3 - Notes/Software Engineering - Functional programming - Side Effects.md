@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -7,7 +7,7 @@ Side effects are any operations where a function interacts with or changes somet
 Examples:
 - Writing to a database
 - Calling an external API
-- Modifying an object outside the function
+- Modifying an object / variable outside the function
 - Writing a file
 - Logging
 - Changing global variables

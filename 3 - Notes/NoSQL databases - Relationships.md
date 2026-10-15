@@ -1,5 +1,5 @@
-Tags: [[_Databases]]
-#Databases  
+Tags: [[_Databases]] [[_NoSQL_databases]]
+#Databases #NoSQLDatabases  
 
 # Introduction
 NoSQL databases don't handle well relations between tables (when a column in one tables references to a column in another table). SQL databases are much better for this [[SQL databases - Relationships|link]].

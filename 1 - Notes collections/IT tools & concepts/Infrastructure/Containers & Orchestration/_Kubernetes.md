@@ -109,6 +109,8 @@ This is a collection of documents related to Kubernetes which is an IT tool for 
 3. [[Helm - Upgrade a chart]]
 4. [[Helm - Check rendered YAML manifest]]
 5. [[Helm - Check used parameters from values.yaml]]
+# Monitoring
+1. [[Containers - Monitoring - Container log files]]
 # AKS
 [[AKS - Volumes]]
 [[Interacting with AKS]]

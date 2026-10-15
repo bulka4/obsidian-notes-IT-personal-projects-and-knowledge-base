@@ -1,10 +1,12 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Adapter allows a class with one interface ([[Software Engineering - Architecture concepts - Interface|link]]) to be used where a different interface is expected.
+Adapter is a technique where we convert a class which is an invalid implementation of an interface ([[Software Engineering - Object-oriented design - Interfaces|link]]), into a new class which is valid.
+
+A class might be invalid for example because its methods are called differently or argument type are different.
 # Example
-For example when we have an interface like this:
+For example, when our interface specifies that each implementation should have the `pay` method:
 ```python
 from abc import ABC, abstractmethod
 
@@ -14,28 +16,14 @@ class PaymentGateway(ABC):
         pass
 ```
 
-and we use the `pay` method in our code:
-```python
-def checkout(gateway):
-    gateway.pay(100)
-```
-
-and we want to use a third-party service which provides:
+and we have a class with a method called differently:
 ```python
 class StripeAPI:
     def charge_card(self, value):
         print(f"Charged {value}")
 ```
 
-then, we can't use it directly because it provides the method called `charge_card` instead of `pay`, so our current code would not work:
-```python
-gateway = StripeAPI()
-gateway.pay(100) # pay method doesn't exist
-```
-
-We would need to change `gateway.pay()` into `gateway.charge_card()` everywhere.
-
-Instead, it is easier to use an adapter:
+We can create a new class that will convert the `StripeAPI` class into a valid implementation of the `PaymentGateway` interface with the `pay` method:
 ```python
 # Adapter class StripeAdapter
 class StripeAdapter:
@@ -44,10 +32,4 @@ class StripeAdapter:
 
     def pay(self, amount):
         self.stripe.charge_card(amount)
-        
-# Use the adapter to create the gateway object
-stripe = StripeAPI()
-gateway = StripeAdapter(stripe)
-
-gateway.pay(100) # pay method works
 ```

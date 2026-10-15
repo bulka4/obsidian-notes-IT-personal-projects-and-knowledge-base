@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -7,7 +7,7 @@ Assertions are statements in tests that check whether the actual result matches 
 If an assertion fails, the test fails.
 
 Example:
-```
+```python
 assert calculate_sum(2, 3) == 5
 ```
 

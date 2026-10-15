@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -18,12 +18,12 @@ Software architecture design can be broken into four dimensions:
 		4. [[Software Engineering - Architecture concepts - Domain Service]]
 	4. [[Software Engineering - Architecture concepts - Domain event]]
 # Application Design (Use Cases and Workflows)
-1. [[Software Engineering - Architecture concepts - Application Design]]
+1. [[Software Engineering - Application Design]]
 	1. [[Software Engineering - Architecture concepts - Use case]]
 	2. [[Software Engineering - Architecture concepts - Application Service]]
-	3. [[Software Engineering - Architecture concepts - DTO (Data Transfer Object)]]
-	4. [[Software Engineering - Architecture concepts - Command]]
-	5. [[Software Engineering - Architecture concepts - Query]]
+	3. [[Software Engineering - Design patterns - DTO (Data Transfer Object)]]
+	4. [[Software Engineering - Design patterns - Command]]
+	5. [[Software Engineering - Design patterns - Query]]
 # Software Structure and Organization
 1. [[Software Engineering - Architecture concepts - Software Structure and Organization]]
 	1. [[Software Engineering - Architecture concepts - Module]]

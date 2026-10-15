@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -23,4 +23,4 @@ Partial failures lead to:
 3. Retries (with backoff + jitter, [[Software Engineering - Fault tolerance - Retries with backoff|link]]) - But must be idempotent.
 4. Circuit breaker ([[Software Engineering - Fault tolerance - Circuit breakers|link]]) - Stop calling failing service temporarily.
 5. Bulkhead isolation ([[Software Engineering - Fault tolerance - Bulkheads|link]]) - Prevent one failure from taking down everything.
-6. Idempotency ([[Backend Engineering - Event-driven architecture - Idempotency|link]]) - Ensures retries don’t corrupt state.
+6. Idempotency ([[Software Engineering - Event-driven architecture - Idempotency|link]]) - Ensures retries don’t corrupt state.

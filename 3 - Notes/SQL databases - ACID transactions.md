@@ -20,7 +20,9 @@ BEGIN;
 COMMIT;
 ```
 # Atomicity with Write-Ahead Log (WAL)
-Atomicity is sometimes implemented using Write-Ahead Log (WAL).
+Atomicity guarantees that either all operations within a transaction succeed or none succeed.
+
+It is sometimes implemented using Write-Ahead Log (WAL).
 
 Before modifying data pages, the database writes records to a log:
 ```

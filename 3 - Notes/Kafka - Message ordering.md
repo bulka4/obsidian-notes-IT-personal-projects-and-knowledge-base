@@ -1,8 +1,8 @@
-Tags: [[_Backend_Engineering]] [[_Kafka]]
+Tags: [[__Backend_Engineering]] [[_Kafka]]
 #BackendEngineering #Kafka 
 
 # Introduction
-Message ordering means the order in which Kafka messages are stored and read ([[Backend Engineering - Event-driven architecture - Ordering|link]]).
+Message ordering means the order in which Kafka messages are stored and read ([[Software Engineering - Event-driven architecture - Ordering|link]]).
 
 Kafka guarantees ordering only within a single partition.
 

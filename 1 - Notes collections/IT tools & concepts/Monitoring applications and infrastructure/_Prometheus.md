@@ -1,7 +1,7 @@
 Tags: [[_Monitoring_applications_and_infrastructure]] [[_Prometheus]] [[__Infrastructure_Engineering]]
 #MonitoringAppsInfra #Prometheus #InfrastructureEngineering 
 
-# Notes
+# Introduction
 1. [[Prometheus - Introduction]]
 2. [[Prometheus - Scraping]]
 3. [[Prometheus - Exporters]]
@@ -9,5 +9,7 @@ Tags: [[_Monitoring_applications_and_infrastructure]] [[_Prometheus]] [[__Infras
 5. [[Prometheus - Data storage]]
 6. [[Prometheus - Labels]]
 7. [[Prometheus - PromQL]]
+# Gathering metrics
+1. [[Prometheus - Gathering metrics]]
 # Kubernetes setup
 1. [[Prometheus - Kubernetes setup with the official Helm chart]]

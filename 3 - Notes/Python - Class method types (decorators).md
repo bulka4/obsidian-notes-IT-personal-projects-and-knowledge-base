@@ -1,4 +1,4 @@
-Tags: [[_Python]] [[__Programming_languages]] [[_Software_Engineering]]
+Tags: [[_Python]] [[__Programming_languages]] [[__Software_Engineering]]
 #Python #ProgrammingLanguages #SoftwareEngineering 
 
 # Instance methods — normal methods

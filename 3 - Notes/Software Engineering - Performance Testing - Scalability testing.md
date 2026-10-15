@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -19,4 +19,4 @@ You have an API:
   45,000 requests/sec
 ```
 
-You check whether adding more servers actually improves capacity.
+We check whether adding more servers actually improves capacity.

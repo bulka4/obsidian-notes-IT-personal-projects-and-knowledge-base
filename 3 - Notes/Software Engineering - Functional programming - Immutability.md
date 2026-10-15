@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Immutability means that once an object is created, it cannot be changed. Instead of modifying it, you create a new object with the desired changes.
+Immutability means that once an object is created, it cannot be changed. Instead of modifying it, we create a new object with the desired changes.
 # Example
 Mutable - change the `name` attribute of the `user` class:
 ```python

@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Redundancy means having extra components or resources so that a failure of one does not stop the system.
+Redundancy means having extra components or resources so that in case of a failure they can start be using instead of failed ones and the system can continue working.
 
 The idea:
 > "Do not depend on a single component; have another one that can take over."

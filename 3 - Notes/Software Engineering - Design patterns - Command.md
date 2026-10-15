@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -57,7 +57,7 @@ class TurnOffCommand:
         self.bulb.turn_off()
 ```
 
-and now we can represent operations as objects which can be stored, passed as an argument to functions etc., for example we can do something like:
+and now we can represent operations as objects which can be stored, passed as an argument to functions etc., for example we can do something like this:
 ```python
 turn_on_command = TurnOnCommand(bulb)
 turn_off_command = TurnOffCommand(bulb)

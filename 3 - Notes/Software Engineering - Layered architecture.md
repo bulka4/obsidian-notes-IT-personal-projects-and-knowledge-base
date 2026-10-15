@@ -1,10 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Layered architecture (also called n-tier architecture) is a way of organizing an application into layers ([[Software Engineering - Architecture concepts - Layer|link]]), where each layer has a specific responsibility and usually communicates only with adjacent layers.
 
-A typical backend application looks like:
+A typical backend application looks like this:
 ```
 Presentation Layer
         ↓
@@ -16,6 +16,8 @@ Infrastructure / Data Access Layer
         ↓
 Database
 ```
+
+The main purpose is to separate business logic from implementation details (e.g. which database is used) using e.g. interfaces ([[Software Engineering - Architecture concepts - Interface|link]]).
 # 1. Presentation Layer
 Responsible for interacting with users or external systems.
 
@@ -35,17 +37,19 @@ def create_table(request: CreateTableRequest):
 
 The controller receives the request and calls the service layer.
 # 2. Application (Service) Layer
-Contains:
+This layer coordinates business operations.
+
+It contains:
+- Interfaces ([[Software Engineering - Architecture concepts - Interface|link]])
 - Use cases ([[Software Engineering - Architecture concepts - Use case|link]]) 
 - Application services ([[Software Engineering - Architecture concepts - Application Service|link]])
-- Commands / Queries ([[Software Engineering - Architecture concepts - Command|link]], [[Software Engineering - Architecture concepts - Query|link]])
-- DTOs ([[Software Engineering - Architecture concepts - DTO (Data Transfer Object)|link]])
-- coordinates business operations. 
+- Commands / Queries ([[Software Engineering - Design patterns - Command|link]], [[Software Engineering - Design patterns - Query|link]])
+- DTOs ([[Software Engineering - Design patterns - DTO (Data Transfer Object)|link]])
 
 For example, functions for:
 - Creating user
 - Load and save order
-- Publish events ([[Backend Engineering - Event-driven architecture (EDA)|link]]), send emails, etc.
+- Publish events ([[Software Engineering - Event-driven architecture (EDA)|link]]), send emails, etc.
 
 It usually:
 - orchestrates workflows,
@@ -101,7 +105,7 @@ class Order:
 
 This belongs in the domain layer.
 # 4. Infrastructure Layer
-Responsible for technical details:
+Responsible for technical details.
 
 For example, it can contain code which interacts with:
 - SQL databases

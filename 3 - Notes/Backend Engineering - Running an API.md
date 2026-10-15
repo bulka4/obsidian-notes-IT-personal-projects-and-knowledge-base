@@ -1,11 +1,15 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-To run an API, we generally need an API server that receives API requests, routes them to the appropriate handlers, executes the application logic, and returns responses.
+To run an API, we generally need an API server that:
+- receives API requests
+- routes them to the appropriate handlers (passes arguments from the request to a proper function) ([[Backend Engineering - API endpoint, route and handler|link]])
+- executes the application logic
+- and returns responses.
 
 An API server typically consists of:
-- a **server** ([[Backend Engineering - API (HTTP, gRPC, etc.) server|link]]) — communicates with clients using the API's protocol, receiving requests and sending responses
+- a **server** ([[Backend Engineering - API (HTTP, gRPC, etc.) server|link]]) — communicates with clients using the API's protocol, receives requests and sends responses back to clients
 - **routing and handlers** ([[Backend Engineering - API endpoint, route and handler|link]]):
 	- routing defines how incoming requests are mapped to handlers
 	- handlers are functions that contain the logic for handling requests

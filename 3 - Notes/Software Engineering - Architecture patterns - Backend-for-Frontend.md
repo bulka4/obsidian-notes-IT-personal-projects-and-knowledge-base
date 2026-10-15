@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -7,7 +7,7 @@ Backend-for-Frontend (BFF) is an architectural pattern where each frontend gets 
 Instead of:
 ```
 Mobile App ----\
-Web App --------> Shared Backend
+Web App --------> Shared Backend ---> Internal Services
 Desktop App ----/
 ```
 
@@ -19,13 +19,15 @@ Web App ------> Web BFF --------> Internal Services
                                /
 Desktop App --> Desktop BFF --/
 ```
+
+In this definition, a backend is a service (a running application) and there are also separate services (other applications) that can talk over a network with the backend service.
 # Combining multiple requests
-BFF can be also used to combine multiple requests into a single one. So instead for one frontend to make requests to a few services, for example:
+BFF can also be used to combine multiple requests into a single one. So instead for one frontend to make requests to a few services, for example:
 - User Service
 - Order Service
 - Recommendation Service
 
-it can make one request to BFF and BFF will handle those multiple requests instead of frontend:
+it makes one request to BFF and BFF will handle those multiple requests instead of frontend:
 ```
 Frontend
     |
@@ -46,9 +48,7 @@ The BFF aggregates data from all the requests:
 }
 ```
 
-and then BFF makes multiple requests internally and combines the results.
-
-The frontend performs only one request.
+and then BFF makes multiple requests, one to every other service, and combines the results. The frontend performs only one request.
 # Example
 ## Mobile vs web app
 - Mobile app needs:

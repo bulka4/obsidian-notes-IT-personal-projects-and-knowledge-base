@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -16,9 +16,19 @@ So it’s:
 1. Client sends a normal HTTP request:
     - `GET /events`
 2. Server responds **but does NOT close the connection**
-3. Server continuously sends messages like:
+3. Server continuously sends events like:
     ```
-    data: new update 1data: new update 2data: new update 3
+	event: progress
+	id: 1
+	data: 50
+	
+	event: user
+	id: 2
+	data: {"id": 123, "name": "Alice"}
+	
+	event: message
+	id: 3
+	data: Hello!
     ```
 4. Client listens and processes events as they arrive
 # Key characteristics
@@ -38,12 +48,20 @@ So it’s:
 # Event format
 SSE sends structured text events:
 ```
+event: progress
+id: 1
+data: 50
+
+event: user
+id: 2
+data: {"id": 123, "name": "Alice"}
+
 event: message
-id: 42
-data: Hello world
+id: 3
+data: Hello!
 ```
 
-Fields:
+with predefined fields:
 - `data:` → payload (main content)
 - `event:` → event type (optional)
 - `id:` → event identifier (for resuming)
@@ -74,7 +92,15 @@ es.addEventListener("message", (e) => {
 ## 3. Event feeds
 - activity streams (GitHub-like feeds)
 - logs / telemetry
-# Comparison to WebSockets
+# Comparison to other methods
+## WebSockets
 WebSockets are for bidirectional communication - both sides can exchange messages all the time when a connection is open.
 
 SSE is used only for a server to send messages to the client who sent a request.
+## Chunked HTTP
+- response character
+	- SSE can send different kinds of events over the same connection
+	- HTTP sends fragments of one response
+- response format
+	- SSE uses a predefined event format - i.e. sends events with predefined fields, e.g. `event` and `data`
+	- HTTP can use different formats (JSON, plain text, HTML, etc.)

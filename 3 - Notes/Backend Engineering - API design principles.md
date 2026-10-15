@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Bulk endpoints
@@ -14,7 +14,7 @@ Common rules:
 # Proper use of HTTP methods
 Each method has a semantic meaning:
 - **GET** → read data (safe, idempotent)
-- **POST** → create or trigger action
+- **POST** → create or trigger action, save data
 - **PUT** → full update (idempotent)
 - **PATCH** → partial update
 - **DELETE** → remove resource
@@ -47,13 +47,13 @@ DELETE /users/{id}
 
 This makes the code more readable, easier to understand and work with.
 # Statelessness
-Each request should contain all the information needed to process it, so we don't need to use additional information from previous requests stored in a state ([[Backend Engineering - Stateful vs stateless service|link]]).
+Each request should contain all the information needed to process it, so we don't need to use additional information from previous requests stored in a state ([[Software Engineering - State - Stateful vs stateless service|link]]).
 
 For example, when using the `GET /orders` endpoint:
 - In a stateful design - server will return orders for the currently logged in user (so it uses the state which contains an information about currently logged in user). 
 - In the statelessness design - server will return orders for the user specified in the request
 
-Stateless design is beneficial as described here - [[Backend Engineering - Stateful vs stateless service|link]].
+Stateless design is beneficial as described here - [[Software Engineering - State - Stateful vs stateless service|link]].
 
 This is a core constraint of REST-based systems.
 # Versioning strategy
@@ -105,11 +105,11 @@ Optional filtering:
 GET /users?role=admin&active=true
 ```
 # Idempotency for safety
-Idempotency ([[Backend Engineering - Event-driven architecture - Idempotency|link]]) ensures repeated requests don’t cause unintended effects.
+Idempotency ([[Software Engineering - Event-driven architecture - Idempotency|link]]) ensures repeated requests don’t cause unintended effects.
 
 Example:
 - `PUT /users/123` is idempotent
-- `POST /payments` is not (unless you add an idempotency key)
+- `POST /payments` is not (unless we add an idempotency key)
 
 Common pattern:
 ```

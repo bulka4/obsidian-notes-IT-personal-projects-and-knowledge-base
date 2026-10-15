@@ -1,4 +1,4 @@
-Tags: [[_Computer_hardware]] [[__Infrastructure_Engineering]] [[_Software_Engineering]]
+Tags: [[_Computer_hardware]] [[__Infrastructure_Engineering]] [[__Software_Engineering]]
 #ComputerHardware #InfrastructureEngineering #SoftwareEngineering 
 
 This is a tag related to a computer hardware. What elements a computer consists of, what role do they play.

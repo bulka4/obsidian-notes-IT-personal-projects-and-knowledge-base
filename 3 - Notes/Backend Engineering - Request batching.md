@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -29,7 +29,7 @@ SELECT * FROM users WHERE id IN (1,2,3);
 - bulk endpoints (`/createUsers`, `/getOrders`) ([[Backend Engineering - Bulk endpoints|link]])
 - GraphQL (naturally reduces overfetching) ([[Backend Engineering - API architectures - GraphQL|link]])
 ## Event processing
-In event-driven systems ([[Backend Engineering - Asynchronous communication|link]]), instead of sending one event at a time, we can send events in chunks to Kafka or queues.
+In event-driven systems ([[Backend Engineering - Asynchronous request processing|link]]), instead of sending one event at a time, we can send events in chunks to Kafka or queues.
 ## Machine learning / analytics
 Perform ETL processes (read data, transform and insert into a database) or make predictions using a ML model on data batches instead of per record.
 

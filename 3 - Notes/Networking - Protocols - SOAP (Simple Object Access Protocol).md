@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -9,6 +9,8 @@ SOAP defines:
 - error handling
 - service description
 - communication rules
+
+It is a part of the application layer in the OSI model ([[Networking - OSI model|link]]).
 # SOAP message format
 SOAP messages are XML documents.
 

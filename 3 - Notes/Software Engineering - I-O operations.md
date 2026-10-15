@@ -1,13 +1,12 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-I/O (Input/Output) means any operation where your program communicates with something outside of its own memory and CPU (with an I/O resource ([[Software Engineering - I-O resources|link]])).
+I/O (Input/Output) means any operation where our program communicates with something outside of its own memory and CPU (with an I/O resource ([[Software Engineering - I-O resources|link]])).
 
 Examples of I/O:
 - Reading/writing files
-- Sending HTTP requests
-- Receiving HTTP requests
+- Sending / receiving HTTP requests
 - Database queries
 - Reading messages from Kafka/RabbitMQ
 - Reading user input

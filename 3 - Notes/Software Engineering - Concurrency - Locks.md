@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Locks are mechanisms that control access to shared resources ([[Software Engineering - Concurrency - Shared resources|link]], e.g. data in memory) when multiple threads/processes execute concurrently.
+Locks are mechanisms that control access to shared resources ([[Software Engineering - Concurrency - Shared resources|link]], e.g. data in memory) when multiple threads or processes execute concurrently. This can refer to processes within a single application or to multiple applications.
 
 A lock ensures only one thread/task ([[Software Engineering - Threads|link]]) is allowed to execute a critical section ([[Software Engineering - Concurrency - Critical section|link]] , a sensitive piece of code) at a time:
 ```

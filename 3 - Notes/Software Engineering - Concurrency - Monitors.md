@@ -1,11 +1,11 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-A monitor is a higher-level synchronization mechanism that combines:
+A monitor is a higher-level synchronization mechanism used to coordinate threads within a single application. It combines:
 1. A lock ([[Software Engineering - Concurrency - Locks|link]]) (to ensure only one thread executes protected code at a time)
 2. Condition variables ([[Software Engineering - Concurrency - Condition variables|link]]) (to allow threads to wait for a specific condition)
-3. Shared state (data) ([[Backend Engineering - Distributed systems - State|link]])
+3. Shared state (data) ([[Software Engineering - State|link]])
 4. Methods (functions)
 
 Its purpose is to control access to its internal state (shared data) and coordinate threads that tries to access or modify this state.

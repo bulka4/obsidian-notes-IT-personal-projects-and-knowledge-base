@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-Black-box testing is a testing approach where you test a system without knowing or depending on its internal implementation.
+Black-box testing is a testing approach where we test a system without knowing or depending on its internal implementation.
 
 We only care about:
 - inputs

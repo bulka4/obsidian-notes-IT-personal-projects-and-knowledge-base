@@ -1,4 +1,4 @@
-Tags: [[_Obsidian]] [[_Software_Engineering]]
+Tags: [[_Obsidian]] [[__Software_Engineering]]
 
 # Introduction
 - Data and ML platform - [[Software Engineering - Projects to do - Data and ML platform|link]]

@@ -9,8 +9,6 @@ It is used by the data governance backend and the RAG system (for the RAG system
 It is deployed together with the endpoint for generating answers using the RAG system, using the same `RayService` Kubernetes CR. It should be deployed separately though, using another `RayService` Kubernetes CR, but we might not have enough computational resources for that so both endpoints are deployed together.
 # Running and using the REST API server
 [[Data governance app with a RAG system - Semantic search API - Running and using the REST API server]]
-# Architecture
-[[Data governance app with a RAG system - Semantic search API - Architecture]]
 # Serving
 Semantic search service will be served as:
 - REST API endpoint

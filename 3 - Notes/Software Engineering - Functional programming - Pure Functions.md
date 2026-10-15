@@ -1,11 +1,11 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Pure functions are functions that:
 1. Always return the same output for the same input.
-2. Don't depend on an external state (external state are variables outside of the function)
-3. Have no side effects (they do not modify external state)
+2. Don't depend on an external state (i.e. on variables outside of the function)
+3. Have no side effects (they do not modify an external state)
 # Example
 This function is impure:
 ```python

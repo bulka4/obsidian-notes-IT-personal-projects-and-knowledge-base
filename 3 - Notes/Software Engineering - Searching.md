@@ -1,10 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Searching is the process of finding a specific element in a collection of data.
 
-The choice of search algorithm depends on the **data structure** and whether the data is ordered.
+The choice of search algorithm depends on the data structure and whether the data is ordered.
 # 1. Linear search
 Check elements one by one:
 ```
@@ -24,7 +24,7 @@ Works on:
 - arrays
 - unsorted lists
 # 2. Binary search
-Requires **sorted data**.
+Requires sorted data.
 
 Idea:
 1. Look at the middle element.
@@ -68,7 +68,7 @@ Works for:
 - maps
 - caches
 # 4. Tree search
-In a Binary Search Tree:
+In a Binary Search Tree ([[Software Engineering - Data structures - Trees|link]]):
 ```
         10
        /  \

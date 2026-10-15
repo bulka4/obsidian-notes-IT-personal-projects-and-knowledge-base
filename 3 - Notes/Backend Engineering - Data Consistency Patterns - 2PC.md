@@ -1,10 +1,10 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
 The 2PC (Two-Phase Commit) is a data consistency pattern ([[Backend Engineering - Distributed systems - Data Consistency Patterns (distributed transactions)|link]]) used in distributed microservices ([[Backend Engineering - Distributed systems|link]]).
 
-It makes sure that all the services have a technical ability to perform their tasks.
+It makes sure that all the services have a technical ability to perform their tasks before they start performing those tasks.
 # How it works
 When services have some actions to perform, then in 2PC method we have two phases:
 ## 1. Prepare phase
@@ -19,7 +19,7 @@ They check it for example by:
 They don't check it by checking business logic, for example:
 - Is the user allowed
 - Does the customer have enough money
-## 1. Commit phase
+## 2. Commit phase
 Coordinator tells everyone to commit (perform their action).
 # Pros:
 - Strong consistency (ACID-like)

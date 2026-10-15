@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**Configuration management** is the process of managing and controlling application settings that determine how software behaves in different environments.
+Configuration management is the process of managing and controlling application settings that determine how software behaves in different environments.
 
 Instead of hardcoding values:
 ```python

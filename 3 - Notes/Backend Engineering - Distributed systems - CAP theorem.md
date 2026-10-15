@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -9,7 +9,7 @@ The CAP theorem is a fundamental principle in distributed systems that states:
 > - P – Partition Tolerance
 
 Here's what each term means:
-1. **Consistency (C)**
+1. **Consistency (C)** ([[Databases - Data consistency|link]])
     - Every read receives the most recent write (data) or an error.
     - All nodes see the same data at the same time.
     - Example: If you update your bank balance, every server immediately returns the updated balance.
@@ -24,10 +24,13 @@ Here's what each term means:
 	    - It means all the services didn't restart or crash at the same time.
     - This is essential for distributed systems because network failures are inevitable.
 # Why can't we have all three?
-When a network partition (failure) occurs, servers cannot communicate with each other, so we can't have the latest data on each one. 
+When a network partition (failure) occurs, servers cannot communicate with each other, we might not have the latest data everywhere because when data gets updated in one place, we can't update the same or related data in other places without communication.
 
 At that point, we must choose between consistency and availability:
-- **Consistency**: To achieve consistency, we must reject some requests (loose availability) until nodes synchronize and each node has the latest data.
+- **Consistency**: ([[Databases - Data consistency|link]])
+	- To achieve consistency, we can't return a stale data as a response. 
+	- Because of a network failure, we might not have the latest data in all the places, so we must reject some requests until network failure is resolved and data is updated everywhere. 
+	- Because we reject some requests, we loose availability.
 - **Availability**: To achieve availability, we must continue serving requests, even if some responses are based on stale data (so we loose consistency).
 
 Or in other words:

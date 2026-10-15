@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-A race condition occurs when multiple concurrent operations access and modify shared data, and the final result depends on the timing or order in which those operations execute.
+A race condition occurs when multiple concurrent operations access and modify shared data, and the final result depends on the timing or order in which those operations execute. This can refer to operations within a single application or to multiple applications.
 
 Example:
 ```

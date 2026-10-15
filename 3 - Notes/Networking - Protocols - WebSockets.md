@@ -1,10 +1,12 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
-WebSockets are a way for a client and server to keep a **continuous, two-way communication channel** open over a single connection.
+WebSockets ([[Networking - Protocols - WebSockets|link]]) are a way for a client and server to keep a continuous, two-way communication channel open over a single connection.
 
 Unlike HTTP (where you request → get response → connection ends), connection in WebSockets stays open.
+
+It is a part of the application layer in the OSI model ([[Networking - OSI model|link]]).
 # How it starts
 We start a connection using a HTTP protocol and then connection switches protocol to a websocket.
 # Stateful connection

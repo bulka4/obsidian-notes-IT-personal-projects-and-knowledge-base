@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**OCI (Open Container Initiative)** is an open standard that defines how containers should be packaged and run.
+OCI (Open Container Initiative) is an open standard that defines how containers should be packaged and run.
 
 The goal is:
 > Make container images and runtimes compatible across different tools.

@@ -1,5 +1,5 @@
-Tags: [[_Databases]]
-#Databases  
+Tags: [[_Databases]] [[_NoSQL_databases]]
+#Databases #NoSQLDatabases 
 
 # Introduction
 NoSQL databases have flexible schema - they are good when data changes often.

@@ -1,4 +1,4 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
@@ -25,8 +25,8 @@ The application needs to know which shard contains a specific data which it is l
 # Partitioning strategies
 - Range partitioning - [[Backend Engineering - Sharding (partitioning) - Range partitioning|link]] 
 - Hash partitioning - [[Backend Engineering - Sharding (partitioning) - Hash partitioning|link]] 
- - Directory-based partitioning - [[Backend Engineering - Sharding (partitioning) - Directory-based partitioning|link]] 
- - Consistent hashing - [[Backend Engineering - Sharding (partitioning) - Consistent hashing|link]] 
+- Directory-based partitioning - [[Backend Engineering - Sharding (partitioning) - Directory-based partitioning|link]] 
+- Consistent hashing - [[Backend Engineering - Sharding (partitioning) - Consistent hashing|link]] 
 # Rebalancing
 As data grows, it might become distributed unequally, for example:
 ```

@@ -1,4 +1,4 @@
-Tags: [[__AI_systems]] [[__Machine_Learning]] [[_Software_Engineering]]
+Tags: [[__AI_systems]] [[__Machine_Learning]] [[__Software_Engineering]]
 #AISystems #MachineLearning #SoftwareEngineering 
 
 This is a collection of documents related to AI systems, i.e. systems / applications which use AI.

@@ -1,10 +1,10 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
 Aggregate is a group of entities ([[Software Engineering - Architecture concepts - Entity|link]])/value objects ([[Software Engineering - Architecture concepts - Value object|link]]) treated as one consistency boundary.
 
-When we want to modify aggregate's entities, we do this by interacting with the aggregate which enforces some rules, instead of modifying an entity directly.
+When we want to modify aggregate's entities, we do this by interacting with the aggregate's root instead of modifying an entity directly. A root is one entity that belongs to that aggregate and it enforces rules.
 # The main ideas
 - An aggregate has one Aggregate Root.
 - External code can only directly access the root 

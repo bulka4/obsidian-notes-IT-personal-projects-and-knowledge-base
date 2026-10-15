@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-**Flaky tests** are tests that sometimes pass and sometimes fail without any changes to the code being tested.
+Flaky tests are tests that sometimes pass and sometimes fail without any changes to the code being tested.
 # Common causes of flaky tests
 ## Timing issues
 Example:
@@ -26,6 +26,8 @@ For example, when relying on an external API, that API may be:
 - slow
 - unavailable
 - rate limited
+
+So a test can pass or fail depending on how that external API behave.
 ## Shared state between tests
 For example, test A deletes a user in a database and test B checks whether that user exists. Depending on execution order, tests can fail.
 ## Random data

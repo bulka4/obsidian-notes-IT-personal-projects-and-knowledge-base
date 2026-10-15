@@ -1,11 +1,11 @@
-Tags: [[_Backend_Engineering]]
+Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
 # Introduction
 Webhook (callback) is one of methods of sending back a response in asynchronous request processing ([[Backend Engineering - Asynchronous request processing - Sending back a response|link]]).
 
 It works like this:
-- Client sends request with callback URL:
+- Client (API gateway) sends request with callback URL:
   ```json
 	{
 	  "jobId": "123",

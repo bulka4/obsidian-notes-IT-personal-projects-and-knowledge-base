@@ -1,8 +1,8 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
-The Choreography (event-driven) saga pattern type ([[Software Engineering - Architecture patterns - Saga|link]]) is used in event-driven systems ([[Backend Engineering - Event-driven architecture (EDA)|link]]).
+The Choreography (event-driven) saga pattern type ([[Software Engineering - Architecture patterns - Saga|link]]) is used in event-driven systems ([[Software Engineering - Event-driven architecture (EDA)|link]]).
 
 Using this type, when a producer sends a message to a consumer and processing the message by the consumer fails, then:
 - Consumer publishes an event about this failure

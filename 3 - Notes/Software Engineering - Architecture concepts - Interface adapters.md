@@ -1,4 +1,4 @@
-Tags: [[_Software_Engineering]]
+Tags: [[__Software_Engineering]]
 #SoftwareEngineering 
 
 # Introduction
@@ -112,7 +112,7 @@ Common examples include:
 - Database adapter - reads / writes data to a database
 - Model adapter - uses a ML model
 ## Event Adapters
-Example: publishing domain events in event-driven systems ([[Backend Engineering - Event-driven architecture (EDA)|link]]).
+Example: publishing domain events in event-driven systems ([[Software Engineering - Event-driven architecture (EDA)|link]]).
 
 Core:
 ```python
