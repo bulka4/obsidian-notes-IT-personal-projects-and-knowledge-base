@@ -149,9 +149,35 @@ To avoid running the embedding ingestion pipeline twice when one a document is u
 - Store in the vector database with embeddings ([[Data governance app with a RAG system - Databases - Vector database for semantic search|link]]) info about when the last time embeddings for each document were updated
 
 Then, we run the ingestion pipeline for a document only when the date of updating the document is earlier than the date of updating embeddings for this document.
-## Atomicity
+## Embeddings data inconsistency
+We might encounter data inconsistency when a table description gets updated and the embedding ingestion pipeline fails. Then, embeddings used for semantic search are not up to date so semantic search uses old documentation.
+
+To deal with this, we could save information about document and embedding versions. Each time a document gets updated we increase its version number. When a version number for embeddings is smaller than for a corresponding document, that means that embeddings are not up to date.
+
+So in the database documentation database ([[Data governance app with a RAG system - Databases - Database documentation|link]]) we would save information:
+```
+{
+	tableID: ...
+	version: ...
+	description: ...
+}
+```
+
+and in the vector store ([[Data governance app with a RAG system - Databases - Vector database for semantic search|link]]) we would save similarly:
+```
+{
+	vector: ...
+	object_id: ... # Corresponding to the tableID
+	version: ...
+}
+```
+
+When embeddings are not up to date, we could for example show in the Data Governance UI ([[Data governance app with a RAG system - Data governance backend|link]]) a warning that the new documentation has not been processed yet when using the semantic search engine and it will use the old documentation.
+
+Another problem is when embeddings for some chunks for a document has been updated but not for all the chunks. This is covered in the embedding ingestion pipeline document > Error handling section > Atomicity ([[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service#Error handling|link]]).
+### Atomicity
 We should make sure that either all embeddings for all chunks for a document are updated or none, to avoid inconsistency, a situation when only a part of embeddings for one document is updated and we don't know which ones.
-### Problem with Milvus
+#### Problem with Milvus
 Milvus unfortunately doesn't support creating atomic transactions, so we can't perform an update of all embeddings for all chunks for one document as a single transaction.
 
 Also, we can't have multiple versions of embeddings in Milvus and information about the active version per document, something like:
@@ -175,7 +201,7 @@ document_id | active_embedding_version
 	 inner join active_embedding_version as av
 		 on av.document_id = e.document_id
  ```
-### Possible solutions
+#### Possible solutions
 What we could do is:
 - Use a vector store that provides atomic transactions (e.g. pgvector)
 - Use a vector store that provides joins so we could use another table indicating what is the active embedding version per document (e.g. pgvector)

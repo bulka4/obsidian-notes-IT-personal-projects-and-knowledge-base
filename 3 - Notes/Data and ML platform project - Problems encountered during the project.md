@@ -4,11 +4,11 @@ Tags: [[__My_projects]]
 # Main problems
 ## Infrastructure
 ### Spark and dbt configuration for Iceberg catalog
-It was complicated to configure Spark and dbt to use correctly Iceberg catalog and access Azure Data Lake.
+It was complicated to configure Spark and dbt to correctly use the Iceberg catalog and access Azure Data Lake.
 
 I needed to create a schema called `default` in the Iceberg catalog before starting Spark Thrift Server because without it I was getting errors that this database doesn't exist.
 
-Also, I couldn't create dynamic Spark configuration inside the Spark Operator YAML manifest. I needed to create them in the Spark application itself.
+Also, I couldn't create a dynamic Spark configuration inside the Spark Operator YAML manifest (insert there values of variables specified during deployment). I needed to create them in the Spark application itself.
 ### Git-sync
 I wanted to set up a pod running git-sync which would systematically pull code from a repo and save it in a volume that could be used by many pods.
 

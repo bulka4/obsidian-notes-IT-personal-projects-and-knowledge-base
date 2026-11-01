@@ -1,6 +1,9 @@
 Tags: [[__Backend_Engineering]]
 #BackendEngineering 
 
+# Full Stack Engineering
+Full Stack Engineering fundamentals helpful to understand frontend:
+[[__Full_Stack_Engineering]]
 # Materials to learn from
 1. [[Backend Engineering - Materials to learn from]]
 # Application communication
@@ -14,7 +17,8 @@ Tags: [[__Backend_Engineering]]
 1. [[Backend Engineering - Asynchronous request processing]]
 	1. [[Backend Engineering - Asynchronous request processing - Benefits and drawbacks]]
 	2. [[Backend Engineering - Asynchronous request processing - Message queue]]
-	3. [[Software Engineering - Event-driven architecture (EDA)]]
+	3. [[Backend Engineering - Asynchronous request processing - Event-driven architecture (EDA)]]
+		1. [[Software Engineering - Event-driven architecture (EDA)]]
 	4. [[Backend Engineering - Asynchronous request processing - Sending back a response]]
 		1. [[Backend Engineering - Asynchronous request processing - Sending back a response using pooling]]
 		2. [[Backend Engineering - Asynchronous request processing - Sending back a response using webhook (callback)]]

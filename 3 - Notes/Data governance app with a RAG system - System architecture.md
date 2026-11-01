@@ -1,6 +1,10 @@
 Tags: [[__My_projects]]
 #MyProjects 
 
+# System architecture diagram
+System architecture diagram (arrows indicates that one service uses / communicates with another):
+![a](system_architecture_diagram.svg)
+
 # System components
 System consists of the following parts:
 ## Source MS SQL Server

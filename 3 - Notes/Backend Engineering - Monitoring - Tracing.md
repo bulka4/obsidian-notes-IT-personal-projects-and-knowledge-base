@@ -5,6 +5,10 @@ Tags: [[__Backend_Engineering]]
 Tracing is a monitoring technique used to understand what happens to a single request as it travels through:
 - Multiple services in a distributed system (that's a distributed tracing)
 - Different functions within a single application (that's a monolithic tracing)
+
+We say:
+- perform / implement tracing
+- collect traces / tracing data
 # Monolithic vs distributed tracing
 ## Monolithic
 In a monolithic application, one request usually goes through one process:

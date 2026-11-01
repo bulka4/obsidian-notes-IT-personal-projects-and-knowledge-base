@@ -4,7 +4,7 @@ Tags: [[__Backend_Engineering]]
 # Introduction
 Data Consistency Patterns (also called distributed transactions) are patterns that maintain consistency across distributed services without a single database transaction.
 
-They make sure that we don't end up in a situation where some services completed their task while others failed.
+They make sure that we don't end up in a situation where some services completed their task (updated data) while others failed.
 
 Those patterns include:
 1. Saga pattern - [[Software Engineering - Architecture patterns - Saga|link]] 

@@ -1,9 +1,6 @@
 Tags: [[__My_projects]]
 #MyProjects 
 
-# System architecture diagram
-System architecture diagram (arrows indicates that one service uses / communicates with another):
-![a](system_architecture_diagram.svg)
 # Workflow/application orchestration
 Workflow/application orchestration is implemented in the `RAGWorkflow` class, defined in the `services/semantic_search/routes/RAGWorkflow.py` file.
 # Entities

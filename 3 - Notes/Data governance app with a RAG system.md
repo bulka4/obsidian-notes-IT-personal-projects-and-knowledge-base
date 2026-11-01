@@ -9,11 +9,26 @@ Tags: [[__My_projects]]
 - RAG system answering questions based on a created documentation
 - Data lineage graphs generated automatically for a specific MS SQL server (based on automatically extracted SQL scripts from views, procedures and jobs)
 # System design
+How code is organised: entities, use cases, adapters, interfaces, API contracts, CQRS
+
 [[Data governance app with a RAG system - System design]]
 # System architecture
+System components: metadata extraction pipeline, databases, data governance backend, semantic search service, embedding ingestion pipeline, RAG system.
+
 [[Data governance app with a RAG system - System architecture]]
+- [[Data governance app with a RAG system - Source MS SQL Server]]
+- [[Data governance app with a RAG system - Metadata extraction pipeline]]
+- [[Data governance app with a RAG system - Databases]]
+- [[Data governance app with a RAG system - Data governance backend]]
+- [[Data governance app with a RAG system - Semantic search API]]
+- [[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service]]
+- [[Data governance app with a RAG system - Event-driven processing with Kafka]]
+- [[Data governance app with a RAG system - RAG system]]
+- [[Data governance app with a RAG system - Ray Serve]]
 # Error handling
 How the system handles errors - [[Data governance app with a RAG system - Error handling]]
+# Monitoring
+[[Data governance app with a RAG system - Monitoring]]
 # Infrastructure setup guide
 [[Data governance app with a RAG system - Infrastructure setup guide]].
 # Pods for testing tools and interacting with resources

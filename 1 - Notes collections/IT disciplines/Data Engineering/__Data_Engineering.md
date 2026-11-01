@@ -33,11 +33,14 @@ Other topics related to data architecture:
 1. [[Data Engineering - Partition-based writes]]
 2. [[Data Engineering - Upsert (MERGE INTO)]]
 3. [[Data Engineering - Change Data Capture (CDC)]]
+# Data storage
+[[__Data_storage]]
+# Databases
+[[_Databases]]
 # Tools
 - Airflow - [[_Airflow]]
 - dbt - [[_dbt]]
 - Databricks - [[_Databricks]]
-- Data storage - [[__Data_storage]]
 - Programming languages - [[__Programming_languages]]
 - Resource managers:
 	- [[_YARN]]

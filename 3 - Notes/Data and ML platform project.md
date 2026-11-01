@@ -61,6 +61,8 @@ How to build workflows on this platform - [[Data and ML platform project - Data 
 What problems we encountered during working on this project - [[Data and ML platform project - Problems encountered during the project|link]].
 # Optional improvements for later
 Optional improvements for this project for later - [[Data and ML platform project - Improvements for later|link]].
+## Monitoring
+[[Data and ML platform project - Monitoring - Ideas]]
 # Reference docs for the tools used
 Official docs which describe tools used in this project are listed here - [[Data and ML platform project - Official docs for the tools used|link]].
 # To do next

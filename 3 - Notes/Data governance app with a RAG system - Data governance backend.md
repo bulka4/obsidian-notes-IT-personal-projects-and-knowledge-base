@@ -75,7 +75,7 @@ Data lineage visualizations are created using the `public/dataLineageScripts.js`
 ## Authentication
 - The `usersDocs` MongoDB collection is used 
 ## Semantic search
-For semantic search we the `sortDocs` function which sorts table documents using semantic search (based on the semantic scores). 
+For semantic search we use the `sortDocs` function which sorts table documents using semantic search (based on the semantic scores). 
 
 It uses for that the Rest API route for semantic search ([[Data governance app with a RAG system - Semantic search API|link]]) which:
 - takes a query as an input
@@ -98,8 +98,8 @@ The response in the following format:
 ```
 ## Creating descriptions for tables, columns, etc.
 Using the UI, users can create descriptions for tables, columns, etc. They are saved in the database documentation database ([[Data governance app with a RAG system - Databases - Database documentation|link]]).
-### Emitting a message to Kafka
-When a table description gets updated, a message is emitted to Kafka ([[Data governance app with a RAG system - Event-driven processing with Kafka|link]]), to a specific topic, describing this event. 
+### Emitting document update events to Kafka
+When a document (table description) gets updated, a message is emitted to Kafka ([[Data governance app with a RAG system - Event-driven processing with Kafka|link]]), to a specific topic, describing this event. 
 
 This message is then processed by the embedding ingestion service ([[Data governance app with a RAG system - Embedding Ingestion Pipeline and Service|link]]) which clears a vector database and inserts there new embeddings for all the new, updated table descriptions.
 

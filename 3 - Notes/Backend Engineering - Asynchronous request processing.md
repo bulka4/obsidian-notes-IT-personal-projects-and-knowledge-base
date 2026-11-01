@@ -41,7 +41,9 @@ To send back the result to the client, there are a few patterns:
 	- Worker processes it and saves results in a shared storage
 	- Client can read the result whenever they want
 # Event-driven architecture
-Event-driven systems are systems where services send messages about events to each other:
+Event-driven architecture is one of ways to implement asynchronous processing.
+
+In this architecture services send messages about events to each other:
 - requester (a service) publishes an event
 - Message broker receives and stores a message with information about the event
 - Multiple other services receives and processes the message

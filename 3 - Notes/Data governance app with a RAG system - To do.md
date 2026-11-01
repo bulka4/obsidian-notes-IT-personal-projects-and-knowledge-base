@@ -19,5 +19,9 @@ Document the project and ideas for further improvements - [[Data governance app 
 	- Show every upstream dependency.
 	- Find every object affected if this column changes.
 ## Metadata extraction
+Documentation - [[Data governance app with a RAG system - Metadata extraction pipeline]].
+
+To do:
 - Rewrite the code in Python - this code will be simpler than in JavaScript
-- 
+- Right now we run it by deploying a Helm chart. Maybe create another HTTP server that provides an endpoint for running this pipeline
+- When running this pipeline, make sure it doesn't delete documentation for tables created so far.
