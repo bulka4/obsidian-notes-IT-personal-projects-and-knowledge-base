@@ -45,7 +45,7 @@ The dev repository is used for running the platform on kind, a Kubernetes cluste
 The prod repository is used for running the platform in cloud on AKS (Azure Kubernetes Service).
 ## Code status
 The dev repository contains all the features. The prod one, only a part of them.
-# Infrastructure guide
+# Infrastructure setup guide
 A guide for how to set up infrastructure:
  - [[Data and ML platform project - Prod repository guide (AKS)]]
  - [[Data and ML platform - Dev repository guide - kind setup]]

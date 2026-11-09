@@ -9,6 +9,11 @@ Tags: [[_JavaScript]] [[__Programming_languages]]
 	1. [[JavaScript - Caching modules]]
 4. [[JavaScript - User authentication]]
 	1. [[JavaScript - User authentication - Passport library]]
+# Working with HTML
+1. [[JavaScript - Functions returning HTML]]
+# Syntax and variables
+1. [[JavaScript - Include all list's elements in a new list]]
+2. [[JavaScript - Adding or overwriting a property of an object]]
 
 # Topics to explore
 1. EventEmitter

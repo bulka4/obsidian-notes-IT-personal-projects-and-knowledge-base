@@ -48,7 +48,7 @@ Both `Circle` and `Square` provide `area()`, but implement it differently.
 - Reusable and testable components
 # Related topics
 1. [[Software Engineering - Object-oriented design - SOLID]]
-2. [[Software Engineering - Object-oriented design - Composition vs inheritance]]
+2. [[Software Engineering - Object-oriented design - Aggregation vs composition vs inheritance]]
 3. [[Software Engineering - Object-oriented design - Interfaces]]
 4. [[Software Engineering - Object-oriented design - Protocols]]
 5. [[Software Engineering - Object-oriented design - Design patterns]]

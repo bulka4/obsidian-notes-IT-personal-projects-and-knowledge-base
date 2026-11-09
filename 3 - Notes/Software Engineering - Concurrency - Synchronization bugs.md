@@ -7,6 +7,7 @@ Synchronization bugs are bugs caused by incorrect coordination between concurren
 Types of synchronization bugs. include:
 - Race conditions ([[Software Engineering - Concurrency - Race conditions|link]])
 - Deadlocks  ([[Software Engineering - Concurrency - Deadlocks|link]])
+- Concurrency anomaly ([[Software Engineering - Concurrency - Concurrency anomaly|link]])
 - Lost notification
 - Incorrect lock usage
 - Visibility problems

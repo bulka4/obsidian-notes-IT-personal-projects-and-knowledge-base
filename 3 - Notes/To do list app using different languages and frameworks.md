@@ -7,31 +7,17 @@ Create one app using different tech stacks:
 - Backend:
 	- Java + Spring
 	- C# + .NET
-# Backend operations to implement
-1. Authentication
-	- User registration
-	- User login
-	- User logout
-	- Token/session validation
-	- Password hashing and verification
-2. User management
-	- Get current user information
-	- Update user profile
-	- Delete user account
-3. Task management (CRUD)
-	- Create a task
-	- Get all tasks belonging to the authenticated user
-	- Get a specific task
-	- Update task (title, description, status)
-	- Delete a task
-4. Additional operations
-	- Filter tasks by status
-	- Search tasks by title
-	- Sort tasks (e.g. by creation date)
-	- Pagination (retrieve tasks in batches)
-5. Backend infrastructure
-	- Input validation
-	- Authorization (users can only access their own tasks)
-	- Error handling
-	- Logging
-	- API documentation (OpenAPI/Swagger)
+
+This is an app allowing users to create a to do list with tasks and adding statuses to those tasks (to do, in progress, completed).
+# Tools and libraries used
+[[To do list app using different languages and frameworks - Tools and libraries used]]
+# Further development
+[[To do list app using different languages and frameworks - Further development]]
+# App design
+[[To do list app using different languages and frameworks - App design]]
+# Infrastructure setup guide
+[[To do list app using different languages and frameworks - Infrastructure setup guide]]
+# ChatGPT prompts
+[[To do list app using different languages and frameworks - ChatGPT prompts]]
+# Questions
+- 

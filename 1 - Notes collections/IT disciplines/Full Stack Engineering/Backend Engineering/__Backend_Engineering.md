@@ -101,6 +101,7 @@ Full Stack Engineering fundamentals helpful to understand frontend:
 	8. [[Backend Engineering - Distributed systems - Conflict resolution]]
 		1. [[Backend Engineering - Conflict resolution - Last Write Wins (LWW)]]
 		2. [[Backend Engineering - Conflict resolution - CRDTs (Conflict-free Replicated Data Types)]]
+	9. [[Backend Engineering - Distributed systems - Reconcilliation]]
 ## Data Consistency Patterns
 1. [[Backend Engineering - Distributed systems - Data Consistency Patterns (distributed transactions)]]
 	1. [[Backend Engineering - Data Consistency Patterns - Consistency boundaries]]

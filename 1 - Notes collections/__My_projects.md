@@ -69,3 +69,5 @@ This is a collection of documents about my projects.
 1. [[Apka dla placowek medycznych]]
 2. [[ML models project ideas]]
 3. [[AI systems project ideas]]
+4. [[Backend systems project ideas]]
+	1. [[Backend systems project ideas - Order management and inventory reservation system]]

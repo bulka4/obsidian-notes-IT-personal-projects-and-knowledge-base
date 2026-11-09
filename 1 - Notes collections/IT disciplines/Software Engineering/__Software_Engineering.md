@@ -120,7 +120,7 @@ Other topics that might be included:
 1. [[Software Engineering - Object-oriented design]]
 	Important:
 	1. [[Software Engineering - Object-oriented design - SOLID]]
-	2. [[Software Engineering - Object-oriented design - Composition vs inheritance]]
+	2. [[Software Engineering - Object-oriented design - Aggregation vs composition vs inheritance]]
 	3. [[Software Engineering - Object-oriented design - Interfaces]]
 	4. [[Software Engineering - Object-oriented design - Protocols]]
 	5. [[Software Engineering - Object-oriented design - Design patterns]]
@@ -169,6 +169,7 @@ Less important:
 	7. [[Software Engineering - Concurrency - Synchronization bugs]]
 		1. [[Software Engineering - Concurrency - Race conditions]]
 		2. [[Software Engineering - Concurrency - Deadlocks]]
+		3. [[Software Engineering - Concurrency - Concurrency anomaly]]
 	
 	Less important:
 	1. [[Software Engineering - Concurrency - Condition variables]]
@@ -177,8 +178,9 @@ Less important:
 	4. [[Software Engineering - Concurrency - Deterministic schedulers]]
 ## Concurrency patterns
 1. [[Software Engineering - Concurrency patterns - Reactor]]
-2. Proactor pattern
-3. Thread pool pattern
+2. [[Software Engineering - Concurrency patterns - Optimistic Concurrency Control (OCC)]]
+3. Proactor pattern
+4. Thread pool pattern
 ## Asynchronous programming
 Important:
 1. [[Software Engineering - Async programming models]]
