@@ -64,9 +64,7 @@ for example:
 ```java
 public void greet(@SomeAnnotation String name)
 ```
-- `@SomeAnnotation` — annotation that provides instructions for how to prepare or validate the `name` parameter. 
-	- It can run a defined method to prepare the parameter and then the `greet` method will be executed with this parameter.
-	- Or it can run a defined method to validate the parameter and throw an exception if the parameter is incorrect
+- `@SomeAnnotation` — annotation ([[Java - Annotations|link]]) that provides instructions for how to prepare or validate the `name` parameter. 
 - `String` — the parameter's type.    
 - `name` — the parameter's name.
 # Related topics

@@ -1,5 +1,5 @@
-Tags: [[_Java]] [[__Programming_languages]]
-#Java #ProgrammingLanguages 
+Tags: [[_Java]] [[__Programming_languages]] [[_Java_Spring_Data]]
+#Java #ProgrammingLanguages #JavaSpringData 
 
 # Introduction
 `@Column` configures how the Java field maps to a database column:

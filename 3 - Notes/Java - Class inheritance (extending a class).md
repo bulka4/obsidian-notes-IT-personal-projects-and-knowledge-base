@@ -93,3 +93,5 @@ How access modifiers matter ([[Java - Modifiers|link]]) for inheritance:
 |`protected`|Yes|
 |package-private (no modifier)|Yes, if in the same package|
 |`private`|No, not directly|
+# Extending a generic class
+Info about extending a generic class - [[Java - Generic classes]]

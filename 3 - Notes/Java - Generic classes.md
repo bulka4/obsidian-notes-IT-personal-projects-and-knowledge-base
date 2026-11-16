@@ -68,3 +68,39 @@ public class Calculator <T extends Number & Comparable<T>> {}
 ```
 
 `T` must extend `Number` and implement `Comparable<T>`.
+# Extending a generic class
+When we create a child class that extends a parent class ([[Java - Class inheritance (extending a class)|link]]), there are a few common options for how we can do that:
+## 1. Child preserves the parent's generic parameters
+```java
+class Parent<T> {
+    T value;
+}
+
+class Child<T> extends Parent<T> {
+}
+```
+
+Here, `Child` is also generic. It passes its own type parameter `T` to the parent.
+
+You can then write:
+```java
+Child<String> child = new Child<>();
+```
+## 2. Child specifies a concrete type
+```java
+class Parent<T> {
+    T value;
+}
+
+class Child extends Parent<String> {
+}
+```
+
+Here, `Child` is not generic. It always inherits `Parent` with `T = String`.
+
+You can write:
+```java
+Child child = new Child();
+```
+
+But not `Child<Integer>`.

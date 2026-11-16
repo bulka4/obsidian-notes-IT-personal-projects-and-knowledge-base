@@ -28,41 +28,44 @@ This is a collection of documents related to Java.
 5. [[Java - Scanner - Input and output streams - `System.in` & `System.out`]]
 6. [[Java - Logical operators]]
 7. [[Java - IDEs - Support for large codebases and refactoring]]
-8. [[Java - Concurrency]]
-9. [[Java - Transactions and data consistency]]
-10. [[Java - Exception handling]]
+8. [[Java - Concurrency
+9. [[Java - Exception handling]]
 	1. [[Java - Exception classes]]
 	2. [[Java - Checked and unchecked exceptions]]
 		1. [[Java - How the compiler check exceptions]]
-11. [[Java - Modifiers]]
+10. [[Java - Modifiers]]
 	1. [[Java - Access modifiers - Benefits]]
 	2. [[Java - Non-access modifiers]]
-12. [[Java - Working with files]]
-13. [[Java - Working with dates and time]]
-14. [[Java - Lambda expressions]]
-15. [[Java - GUI desktop applications]]
-16. [[Java - Scheduling tasks]]
-17. [[Java - Threading]]
+11. [[Java - Working with files]]
+12. [[Java - Working with dates and time]]
+13. [[Java - Lambda expressions]]
+14. [[Java - GUI desktop applications]]
+15. [[Java - Scheduling tasks]]
+16. [[Java - Threading]]
 # Classes
 1. [[Java - The main class and method]]
 2. [[Java - Creating objects of classes]]
 3. [[Java - Methods]]
 	1. [[Java - Generic methods]]
-4. [[Java - Overloaded methods]]
-5. [[Java - Class constructors]]
-6. [[Java - Class inheritance (extending a class)]]
-7. [[Java - The `Object` class]]
-8. [[Java - Abstract class]]
-9. [[Java - Interface]]
+4. [[Java - Annotations]]
+5. [[Java - Overloaded methods]]
+6. [[Java - Class constructors]]
+7. [[Java - Class inheritance (extending a class)]]
+8. [[Java - The `Object` class]]
+9. [[Java - Abstract class]]
+10. [[Java - Interface]]
 	1. [[Java - Functional interface]]
 	2. [[Java - Marker interface]]
 	3. [[Java - Sealed interfaces]]
-10. [[Java - Getters and setters]]
-11. [[Java - Anonymous classes]]
-12. [[Java - Generic classes]]
-13. [[Java - `equals()` and `hashCode()`]]
+11. [[Java - Getters and setters]]
+12. [[Java - Anonymous classes]]
+13. [[Java - Generic classes]]
+14. [[Java - `equals()` and `hashCode()`]]
 	1. [[Java - `equals()` - Comparing objects]]
 	2. [[Java - `hashCode()` - Calculating a hash]]
+15. [[Java - Nested classes]]
+16. [[Java - Record class]]
+17. [[Java - Optional class]]
 # Variables
 1. [[Java - Data types - Primitive and Reference variables]]
 	1. [[Java - Wrapper classes]]
@@ -71,14 +74,32 @@ This is a collection of documents related to Java.
 4. [[Java - Arrays]]
 	1. [[Java - ArrayList]]
 	2. [[Java - Searching an array]]
-5. [[Java - Casting variables]]
-6. [[Java - HashMap]]
-# JPA
-[[_Java_JPA]]
+5. [[Java - Stream]]
+6. [[Java - Casting variables]]
+7. [[Java - HashMap]]
 # Spring
 [[_Java_Spring]]
 # Questions
-- 
+- how to create authenticated user's principal, store it in a security context and pass to a controller using `@AuthenticationPrincipal`?
+
+For later:
+- Java Spring transactions
+
+About my app:
+- How the `TaskRepository` object is created in my app? How Spring creates and manages dependency objects?
+- How `@AuthenticationPrincipal AuthenticatedUser currentUser` works, in the `TaskController.java`? How Spring creates the `currentUser` argument?
+- What is the `UserDetailsService` class?
 # To learn more about
 - The last 3 sections here - [[Java - HashMap]] 
 - How to create our own method parameter annotation - [[Java - Methods]]
+
+About Spring:
+1. IoC (Inversion of Control)
+2. Spring IoC Container and ApplicationContext
+3. Spring Beans
+4. Bean registration (@Component, @Service, @Repository, @Bean)
+5. Dependency Injection (constructor, setter, field)
+6. Component scanning
+7. Bean lifecycle
+8. Bean scopes (singleton, prototype, request, session)
+9. Bean configuration and profiles

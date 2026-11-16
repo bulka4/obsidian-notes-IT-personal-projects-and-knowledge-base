@@ -136,6 +136,7 @@ Other topics that might be included:
 		8. [[Software Engineering - Design patterns - Command]]
 		9. [[Software Engineering - Design patterns - DTO (Data Transfer Object)]]
 		10. [[Software Engineering - Design patterns - Query]]
+		11. [[Software Engineering - Design patterns - Builder pattern]]
 ### Functional programming
 Important:
 1. [[Software Engineering - Functional programming - Immutability]]

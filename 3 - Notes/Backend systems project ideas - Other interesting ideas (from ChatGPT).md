@@ -3,6 +3,27 @@ Tags: [[__My_projects]]
 
 # Introduction
 Project ideas from ChatGPT.
+# Caching
+Imagine your application has 100,000 users, and every request requires querying the database.
+
+You might introduce Redis to cache frequently accessed information.
+
+Sounds simple, but then you encounter questions:
+- When should cached data expire?
+- How do you invalidate cached data after database updates?
+- What happens when multiple requests update the same cached object?
+- How do you prevent thousands of requests from simultaneously querying the database after a cache expires?
+- What happens when Redis becomes unavailable?
+
+Concepts:
+- Redis.
+- Cache invalidation.
+- Cache-aside pattern.
+- Write-through and write-behind caching.
+- Cache stampede.
+- Database indexing.
+- Query optimization.
+- Connection pooling.
 # Payment processing platforms
 - [Designing a Payment System - by Gergely Orosz](https://images.openai.com/static-rsc-4/g7M7cpPzewNbJjQRQ9gX62YyPHHmtcZuZjgJ2tP__xLSmNu5tK0YIDXOVevWF9sMXK6l1CQknofiMyYi8_A6VM_1KntNv2-6vBoGLMbIRuQ9kj7SZ1DlOS9WSpwzYzqUa-2vzRICqbGm9NkNVwiQcQ7VFDizMeuFK6qQw9Gulg4?purpose=inline)
 - [newsletter.pragmaticengineer.com](https://newsletter.pragmaticengineer.com/p/designing-a-payment-system?utm_source=chatgpt.com)

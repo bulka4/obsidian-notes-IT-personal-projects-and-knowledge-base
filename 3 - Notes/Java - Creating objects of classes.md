@@ -6,3 +6,5 @@ We create objects of classes like this:
 ```java
 ClassName objectName = new ClassName(arg1, ...)
 ```
+
+Arguments are passed to the class' constructor ([[Java - Class constructors|link]]).

@@ -56,7 +56,7 @@ Java provides:
 
 Python also supports concurrency, multiprocessing and asynchronous programming, but Java provides a particularly comprehensive set of built-in concurrency tools.
 ## Transactions and data consistency
-More info - [[Java - Transactions and data consistency]]
+More info - [[Java Spring - Transactions (`@Transactional`)]]
 
 Enterprise applications often involve complex business operations.
 

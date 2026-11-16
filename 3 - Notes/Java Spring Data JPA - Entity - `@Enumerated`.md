@@ -1,6 +1,5 @@
-Tags: [[_Java]] [[__Programming_languages]]
-#Java #ProgrammingLanguages 
-
+Tags: [[_Java]] [[__Programming_languages]] [[_Java_Spring_Data]]
+#Java #ProgrammingLanguages #JavaSpringData 
 # Introduction
 The `@Enumerated` option is used with Java enum ([[Java - enum|link]]):
 ```java

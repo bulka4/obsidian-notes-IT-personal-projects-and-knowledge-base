@@ -1,5 +1,5 @@
-Tags: [[_Java]] [[__Programming_languages]]
-#Java #ProgrammingLanguages 
+Tags: [[_Java]] [[__Programming_languages]] [[_Java_Spring_Data]]
+#Java #ProgrammingLanguages #JavaSpringData 
 
 # Introduction
 `@Entity` tells JPA that a Java class represents a database entity (record):
@@ -72,7 +72,7 @@ Task task = new Task(
 );
 ```
 # Related notes
-1. [[Java JPA - Entity - Primary key]]
-2. [[Java JPA - Entity - Specifying columns]]
-3. [[Java JPA - Entity - `@Enumerated`]]
-4. [[Java JPA - Entity - Relationships (`@JoinColumn`)]]
+1. [[Java Spring Data JPA - Entity - Primary key]]
+2. [[Java Spring Data JPA - Entity - Specifying columns]]
+3. [[Java Spring Data JPA - Entity - `@Enumerated`]]
+4. [[Java Spring Data JPA - Entity - Relationships (`@JoinColumn`)]]
